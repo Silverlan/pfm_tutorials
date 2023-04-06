@@ -1,0 +1,7 @@
+"tutorial"
+{
+	$string name "viewport"
+	$string script_file "pfm/tutorials/interface/viewport.lua"
+	$string project_file "tutorials/interface/tut_viewport"
+	$string icon "error"
+}
