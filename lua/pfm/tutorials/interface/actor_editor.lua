@@ -6,7 +6,7 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
 ]]
 
-include("/gui/pfm/tutorials/tutorial.lua")
+include("/pfm/pfm_core_tutorials.lua")
 
 local uuidActor = "3e78882c-d8eb-423c-8a57-757f0158a7c6"
 

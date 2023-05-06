@@ -6,7 +6,7 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
 ]]
 
-include("/gui/pfm/tutorials/tutorial.lua")
+include("/pfm/pfm_core_tutorials.lua")
 
 local nextTutorial = "tutorials/interface/03_model_catalog"
 local assetUrl = "https://sfmlab.com/project/28508/"

@@ -6,7 +6,7 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
 ]]
 
-include("/gui/pfm/tutorials/tutorial.lua")
+include("/pfm/pfm_core_tutorials.lua")
 
 local uuidChair = "ef049de3-1f6b-4930-b5d5-70529ff99864"
 

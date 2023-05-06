@@ -6,7 +6,7 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
 ]]
 
-include("/gui/pfm/tutorials/tutorial.lua")
+include("/pfm/pfm_core_tutorials.lua")
 
 local uuidCat = "0657005c-16f1-4ee0-a6ea-5be960267a32"
 local catTargetLocation = Vector(-133, 14, -168)
@@ -21,7 +21,8 @@ gui.Tutorial.register_tutorial("viewport",function(elTut,pm)
 		init = function(slideData,slide)
 			tool.get_filmmaker():GoToWindow("primary_viewport")
 			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport"))
-			slide:AddMessageBox("This is the primary viewport, where you can preview your scene/animation, select and transform actors, etc.\nYou can also create additional viewports from the \"Windows\" sub-menu in the menu bar.")
+			slide:AddMessageBox("This is the primary viewport, where you can preview your scene/animation, select and transform actors, etc.\nYou can also create additional viewports from the \"Windows\" sub-menu in the menu bar.",
+			"pfm/tutorials/intro/viewport_test.mp3")
 		end,
 		clear = function(slideData)
 
@@ -205,6 +206,6 @@ gui.Tutorial.register_tutorial("viewport",function(elTut,pm)
 		end
 	})
 
-	elTut:StartSlide("viewport_interaction1")
+	elTut:StartSlide("viewport")
 	--elTut:StartSlide("viewport_fin")
 end)

@@ -6,7 +6,7 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
 ]]
 
-include("/gui/pfm/tutorials/tutorial.lua")
+include("/pfm/pfm_core_tutorials.lua")
 
 local uuidChair = "ef049de3-1f6b-4930-b5d5-70529ff99864"
 
@@ -17,10 +17,14 @@ time.create_simple_timer(0.1,function() gui.Tutorial.start_tutorial("intro") end
 gui.Tutorial.register_tutorial("intro",function(elTut,pm)
 	elTut:RegisterSlide("intro",{
 		init = function(slideData,slide)
-			slide:AddMessageBox("Welcome to the Pragma Filmmaker (PFM)! This tutorial will give you a quick overview of the interface of PFM and how to use it.")
+			slide:AddMessageBox(
+				"Welcome to the Pragma Filmmaker (PFM)! This tutorial will give you a quick overview " ..
+				"of the interface of PFM and how to use it.",
+				"pfm/tutorials/intro/welcome.mp3"
+			)
 
 			-- We'll use the opportunity of this tutorial to build the render kernels, if they haven't been built yet
-			pm:BuildKernels()
+			--pm:BuildKernels()
 		end,
 		nextSlide = "introX"
 	})
