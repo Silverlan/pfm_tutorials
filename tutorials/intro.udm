@@ -1,0 +1,6 @@
+"tutorial"
+{
+	$string name "intro"
+	$string script_file "pfm/tutorials/intro.lua"
+	$string icon "error"
+}
