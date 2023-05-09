@@ -8,16 +8,13 @@
 
 include("/pfm/pfm_core_tutorials.lua")
 
-gui.Tutorial.register_tutorial("simple_ik",function(elTut,pm)
-	elTut:RegisterSlide("intro",{
-		init = function(slideData,slide)
+gui.Tutorial.register_tutorial("simple_ik", function(elTut, pm)
+	elTut:RegisterSlide("intro", {
+		init = function(slideData, slide)
 			tool.get_filmmaker():GoToWindow("primary_viewport")
-			
 		end,
-		clear = function(slideData)
-
-		end,
-		nextSlide = ""
+		clear = function(slideData) end,
+		nextSlide = "",
 	})
 
 	elTut:StartSlide("intro")

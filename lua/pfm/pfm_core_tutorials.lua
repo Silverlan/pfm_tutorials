@@ -10,9 +10,9 @@ include("/gui/pfm/tutorials/tutorial.lua")
 
 local path = util.Path.CreatePath(util.get_addon_path())
 path:PopFront()
-path = path +("addons/" .. "vo_" .. locale.get_language())
-pfm.log("Mounting addon '" .. path:GetString() .. "'...",pfm.LOG_CATEGORY_PFM)
+path = path + ("addons/" .. "vo_" .. locale.get_language())
+pfm.log("Mounting addon '" .. path:GetString() .. "'...", pfm.LOG_CATEGORY_PFM)
 local res = engine.mount_addon(path:GetString())
-if(res == false) then
-    pfm.log("Failed to mount addon '" .. path:GetString() .. "'!",pfm.LOG_CATEGORY_PFM,pfm.LOG_SEVERITY_ERROR)
+if res == false then
+	pfm.log("Failed to mount addon '" .. path:GetString() .. "'!", pfm.LOG_CATEGORY_PFM, pfm.LOG_SEVERITY_ERROR)
 end
