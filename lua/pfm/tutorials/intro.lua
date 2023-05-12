@@ -18,13 +18,14 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 			)
 
 			-- We'll use the opportunity of this tutorial to build the render kernels, if they haven't been built yet
-			pm:BuildKernels()
+			-- pm:BuildKernels()
 		end,
 		nextSlide = "interface_sections",
 	})
 	elTut:RegisterSlide("interface_sections", {
 		init = function(slideData, slide)
-			local elFocus = slide:FindPanelByWindow("actor_editor")
+			slide:SetMinWindowFrameDividerFraction(pfm.WINDOW_ACTOR_EDITOR, 0.333)
+			local elFocus = slide:FindPanelByWindow(pfm.WINDOW_ACTOR_EDITOR)
 			slide:SetFocusElement(elFocus)
 			slide:AddHighlight(elFocus)
 			slide:AddMessageBox(
@@ -40,7 +41,8 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("viewport_section", {
 		init = function(slideData, slide)
-			local elFocus = slide:FindPanelByWindow("primary_viewport")
+			slide:SetMinWindowFrameDividerFraction(pfm.WINDOW_PRIMARY_VIEWPORT, 0.666)
+			local elFocus = slide:FindPanelByWindow(pfm.WINDOW_PRIMARY_VIEWPORT)
 			slide:SetFocusElement(elFocus)
 			slide:AddHighlight(elFocus)
 			slide:AddMessageBox(
@@ -51,7 +53,7 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("timeline_section", {
 		init = function(slideData, slide)
-			local elFocus = slide:FindPanelByWindow("timeline")
+			local elFocus = slide:FindPanelByWindow(pfm.WINDOW_TIMELINE)
 			slide:SetFocusElement(elFocus)
 			slide:AddHighlight(elFocus)
 			slide:AddMessageBox(
@@ -62,7 +64,7 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("layout_resize", {
 		init = function(slideData, slide)
-			local divider = slide:FindElementByPath("frame_container_main_container_divider_1")
+			local divider = slide:SetMinWindowFrameDividerFraction(pfm.WINDOW_ACTOR_EDITOR, 0.5)
 			slideData.divider = divider
 			slideData.initialDividerPos = util.is_valid(divider) and divider:GetAbsolutePos() or Vector2i(0, 0)
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
@@ -83,8 +85,8 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("layout_separate_window", {
 		init = function(slideData, slide)
-			pm:GoToWindow("actor_editor")
-			slideData.actorEditor = slide:FindElementByPath("actor_editor")
+			pm:GoToWindow(pfm.WINDOW_ACTOR_EDITOR)
+			slideData.actorEditor = slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR)
 			local elFocus = slide:FindElementByPath("editor_frame")
 			slide:SetFocusElement(elFocus)
 			slide:AddHighlight(slide:FindElementByPath("actor_editor_tab_button/detach_icon"))
@@ -105,7 +107,7 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("layout_reattach_window", {
 		init = function(slideData, slide)
-			slideData.actorEditor = slide:FindElementByPath("actor_editor")
+			slideData.actorEditor = slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR)
 			slide:AddMessageBox(
 				"Once you've detached a window, you can resize it and move it around like any other window.\n"
 					.. "To re-attach it to the main menu, press the X icon on the top right. This will close the window and move the panel back "
@@ -145,6 +147,8 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("layout_change_core2", {
 		init = function(slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath("contents"))
+			slide:AddHighlight(slide:FindElementByPath("contents"))
 			slide:AddMessageBox(
 				"As you can see, the panels are now divided up into three columns instead of two. Other presets are available as well.\n"
 					.. "For the purposes of this tutorial, we'll revert back to the default two-column layout."
@@ -179,6 +183,7 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("tutorial_panel", {
 		init = function(slideData, slide)
+			slide:SetMinWindowFrameDividerFraction(pfm.WINDOW_TUTORIAL_CATALOG, 0.5)
 			slide:SetFocusElement(slide:FindElementByPath("editor_frame"))
 			slide:AddHighlight(slide:FindElementByPath("editor_frame/tutorial_catalog_tab_button"))
 			slide:AddMessageBox(
