@@ -1,0 +1,8 @@
+"tutorial"
+{
+	$string name "web_browser"
+	$string project_file "projects/tutorials/interface/01_viewport"
+	$string icon "error"
+	$string series "interface"
+	$uint32 position_in_series 4
+}
