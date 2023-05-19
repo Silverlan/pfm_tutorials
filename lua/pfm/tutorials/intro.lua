@@ -53,7 +53,7 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("timeline_section", {
 		init = function(slideData, slide)
-			local elFocus = slide:FindPanelByWindow(pfm.WINDOW_TIMELINE)
+			local elFocus = slide:FindPanelByWindow(pfm.WINDOW_TIMELINE_UI_ID)
 			slide:SetFocusElement(elFocus)
 			slide:AddHighlight(elFocus)
 			slide:AddMessageBox(
@@ -86,7 +86,7 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	elTut:RegisterSlide("layout_separate_window", {
 		init = function(slideData, slide)
 			pm:GoToWindow(pfm.WINDOW_ACTOR_EDITOR)
-			slideData.actorEditor = slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR)
+			slideData.actorEditor = slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID)
 			local elFocus = slide:FindElementByPath("editor_frame")
 			slide:SetFocusElement(elFocus)
 			slide:AddHighlight(slide:FindElementByPath("actor_editor_tab_button/detach_icon"))
@@ -107,7 +107,7 @@ gui.Tutorial.register_tutorial("intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("layout_reattach_window", {
 		init = function(slideData, slide)
-			slideData.actorEditor = slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR)
+			slideData.actorEditor = slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID)
 			slide:AddMessageBox(
 				"Once you've detached a window, you can resize it and move it around like any other window.\n"
 					.. "To re-attach it to the main menu, press the X icon on the top right. This will close the window and move the panel back "
