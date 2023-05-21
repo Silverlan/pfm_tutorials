@@ -1,0 +1,6 @@
+"tutorial"
+{
+	$string name "depth_of_field"
+	$string project_file "projects/tutorials/rendering/depth_of_field"
+	$string icon "error"
+}
