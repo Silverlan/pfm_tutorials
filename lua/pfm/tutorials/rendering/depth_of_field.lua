@@ -20,17 +20,6 @@ gui.Tutorial.register_tutorial("dof", function(elTut, pm)
 					.. "done so yet, please end the tutorial now and restart it once you have."
 			)
 		end,
-		clear = function(tutorialData, slideData) end,
-		clearCondition = function(tutorialData, slideData)
-			local actorEditor = pm:GetActorEditor()
-			local actors = actorEditor:GetSelectedActors()
-			if #actors == 1 then
-				local actor = actors[1]
-				tutorialData.cameraActor = actor
-				return actor:HasComponent("pfm_camera")
-			end
-			return false
-		end,
 		nextSlide = "select_camera_actor",
 	})
 	elTut:RegisterSlide("select_camera_actor", {

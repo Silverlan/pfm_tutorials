@@ -1,0 +1,2 @@
+pfm_tutorial_intro = "Einführung"
+pfm_tutorial_viewport = "Ansichtsfenster"

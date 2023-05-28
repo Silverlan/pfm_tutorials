@@ -22,21 +22,37 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 	elTut:RegisterSlide("viewport", {
 		init = function(slideData, slide)
 			tool.get_filmmaker():GoToWindow("primary_viewport")
-			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport"))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddMessageBox(
-				'This is the primary viewport, where you can preview your scene/animation, select and transform actors, etc.\nYou can also create additional viewports from the "Windows" sub-menu in the menu bar.',
-				"pfm/tutorials/intro/viewport_test.mp3"
+				"Welcome to the viewport tutorial. This tutorial will introduce you to the viewport, "
+					.. "where you can preview your scene and animation, move actors around, etc."
 			)
 		end,
 		clear = function(slideData) end,
 		nextSlide = "viewport_interaction1",
 	})
 
+	--[[elTut:RegisterSlide("viewport", {
+		init = function(slideData, slide)
+			tool.get_filmmaker():GoToWindow("primary_viewport")
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
+			slide:AddMessageBox(
+				'This is the viewport, where you can preview your scene/animation, select and transform actors, etc.\nYou can also create additional viewports from the "Windows" sub-menu in the menu bar.',
+				"pfm/tutorials/intro/viewport_test.mp3"
+			)
+		end,
+		clear = function(slideData) end,
+		nextSlide = "viewport_interaction1",
+	})]]
+
 	elTut:RegisterSlide("viewport_interaction1", {
 		init = function(slideData, slide)
 			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport/viewport"))
 			slide:AddMessageBox(
-				"To control the viewport camera, press and hold the right mouse button, which will enable FPS controls. As long as you hold down the button, you can rotate the camera by moving the mouse, and move the camera using WASD. You can also change the field of view using the scroll wheel.\n\nTry moving the camera until you find the origami cat in the dining room."
+				"We'll start with the camera controls. To control the viewport camera, press and hold the right mouse button, which will enable FPS controls. "
+					.. "As long as you hold down the button, "
+					.. "you can rotate the camera by moving the mouse, and move the camera using WASD. You can also change the field of view using the scroll wheel.\n\n"
+					.. "Try moving around in the scene until you find the origami cat in the dining room."
 			)
 
 			slideData.targetEntity = ents.find_by_uuid(uuidCat)
@@ -74,7 +90,8 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 		init = function(slideData, slide)
 			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport/viewport"))
 			slide:AddMessageBox(
-				"Now click the cat with your left mouse button to select it. Selected objects have a yellow outline around them.\nYou cannot select objects that are part of the map."
+				"Now click the cat with your left mouse button to select it. Selected objects have a yellow outline around them.\n"
+					.. "You can only select objects that are part the project, map-objects, like the chairs in this scene, cannot be selected."
 			)
 			slideData.targetEntity = ents.find_by_uuid(uuidCat)
 			pm:DeselectAllActors()
@@ -91,7 +108,7 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 
 	elTut:RegisterSlide("viewport_manip_controls", {
 		init = function(slideData, slide)
-			slide:SetFocusElement(slide:FindElementByPath("pfm_primary_viewport"))
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport/manip_controls"))
 			slide:AddMessageBox(
 				"These are the manipulator controls, which can be used to manipulate selected actors, bones, etc. in the scene. From left to right:\n- Select ("
@@ -122,7 +139,7 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 
 	elTut:RegisterSlide("viewport_move_actor", {
 		init = function(slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport"))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddMessageBox(
 				"Now try moving the actor into the marked spot on the table in the living room using the transform gizmo."
 			)
@@ -154,7 +171,7 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 
 	elTut:RegisterSlide("viewport_manip_controls_fin", {
 		init = function(slideData, slide)
-			slide:SetFocusElement(slide:FindElementByPath("pfm_primary_viewport"))
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport/manip_controls"))
 			slide:AddMessageBox(
 				"You can toggle the transform space between world, local and screen space by pressing the transform button multiple times."
@@ -165,7 +182,7 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 
 	elTut:RegisterSlide("viewport_transform_space", {
 		init = function(slideData, slide)
-			slide:SetFocusElement(slide:FindElementByPath("pfm_primary_viewport"))
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport/vp_settings/transform_space"))
 			slide:AddMessageBox("Alternatively you can also change the transform space over here.")
 		end,
@@ -174,8 +191,11 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 
 	elTut:RegisterSlide("snap_to_grid", {
 		init = function(slideData, slide)
-			slide:SetFocusElement(slide:FindElementByPath("pfm_primary_viewport"))
-			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport/vp_settings/snap_to_grid_spacing"))
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
+			slide:AddHighlight({
+				slide:FindElementByPath("pfm_primary_viewport/vp_settings/snap_to_grid_spacing"),
+				slide:FindElementByPath("pfm_primary_viewport/vp_settings/angular_spacing"),
+			})
 			slide:AddMessageBox("You can also enable snap-to-grid to make it easier to align objects.")
 		end,
 		nextSlide = "viewport_live_render",
@@ -183,7 +203,7 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 
 	elTut:RegisterSlide("viewport_live_render", {
 		init = function(slideData, slide)
-			slide:SetFocusElement(slide:FindElementByPath("pfm_primary_viewport"))
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport/vp_settings/rt_enabled"))
 			slide:AddMessageBox(
 				'The "Live Render" setting toggles the viewport to a real-time raytraced preview of the scene, rendered using the Cycles renderer. This can be useful to get a quick preview of what your scene will look like with baked lightmaps, or when using the Cycles renderer to render the final image.\nYou can still move around the scene with the "Live Render" mode active, but some actions (like adding or removing actors) will not be visible until the mode is deactivated.'
@@ -194,7 +214,7 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 
 	elTut:RegisterSlide("cc_controls", {
 		init = function(slideData, slide)
-			slide:SetFocusElement(slide:FindElementByPath("pfm_primary_viewport"))
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport/cc_controls"))
 			slide:AddMessageBox(
 				"These are the camera controls. Here you toggle between the work and scene camera, or change the scene camera to a different one.\n\nSwitch to the scene camera to continue."
@@ -212,7 +232,7 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 
 	elTut:RegisterSlide("viewport_playback_controls", {
 		init = function(slideData, slide)
-			slide:SetFocusElement(slide:FindElementByPath("pfm_primary_viewport"))
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath("pfm_primary_viewport/playback_controls"))
 			slide:AddMessageBox(
 				"These are the playback controls. Here you can view your animation frame-by-frame, or in real-time by pressing the play-button. Some keybindings are also available:\n"
@@ -253,10 +273,10 @@ gui.Tutorial.register_tutorial("viewport", function(elTut, pm)
 
 	elTut:RegisterSlide("viewport_next_tutorial", {
 		init = function(slideData, slide)
-			pm:LoadProject("projects/" .. nextTutorial)
+			pm:LoadTutorial("interface/render")
 		end,
 	})
 
-	elTut:StartSlide("viewport")
+	elTut:StartSlide("viewport_transform_space")
 	--elTut:StartSlide("viewport_fin")
 end)

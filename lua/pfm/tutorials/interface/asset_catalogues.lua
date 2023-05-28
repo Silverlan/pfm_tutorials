@@ -8,7 +8,7 @@
 
 include("/pfm/pfm_core_tutorials.lua")
 
-gui.Tutorial.register_tutorial("model_editor", function(elTut, pm)
+gui.Tutorial.register_tutorial("asset_catalogues", function(elTut, pm)
 	elTut:RegisterSlide("welcome", {
 		init = function(slideData, slide)
 			slide:OpenWindow("model_catalog")
@@ -46,6 +46,22 @@ gui.Tutorial.register_tutorial("model_editor", function(elTut, pm)
 					.. "imported first. The import process is fully automatic, however external assets will show as a "
 					.. "placeholder icon until they are imported. Once imported, they also count as native assets.\n\n"
 					.. 'If you only want native assets shown in the catalog, you can disable the "Show external assets" option at the top.'
+			)
+		end,
+		clear = function(slideData) end,
+		nextSlide = "external_assets",
+	})
+
+	elTut:RegisterSlide("external_assets", {
+		init = function(slideData, slide)
+			slide:GoToWindow("model_catalog")
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
+			--slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/show_external_assets"))
+			slide:AddMessageBox(
+				'You can import an external asset by right-clicking it and selecting "Import asset", or you can right-click '
+					.. 'the empty space between assets and select "Import all assets". This will import all of the external assets in the current directory, '
+					.. "which may require some time (and disk space).\n"
+					.. "Otherwise external assets are automatically imported whenever they are used for the first time."
 			)
 		end,
 		clear = function(slideData) end,
@@ -260,6 +276,8 @@ gui.Tutorial.register_tutorial("model_editor", function(elTut, pm)
 			pm:LoadTutorial("interface/actor_editor")
 		end,
 	})
+
+	-- TODO: Import by drag-and-drop demo?
 
 	elTut:StartSlide("welcome")
 end)

@@ -33,7 +33,7 @@ gui.Tutorial.register_tutorial("actor_editor", function(elTut, pm)
 		init = function(slideData, slide)
 			setup_layout(pm)
 			-- TODO: Select "Selection Move"
-			slide:AddHighlight(slide:FindElementByPath("actor_editor"))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
 			slide:AddMessageBox(
 				"This is the actor editor. Here you can manage the actors in the current film clip and change actor properties."
 			)

@@ -1,6 +1,6 @@
 "tutorial"
 {
 	$string name "depth_of_field"
-	$string project_file "projects/tutorials/rendering/depth_of_field"
+	$string script_file "pfm/tutorials/rendering/depth_of_field.lua"
 	$string icon "error"
 }

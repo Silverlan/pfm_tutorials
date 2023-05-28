@@ -25,7 +25,7 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 			pm:OpenWindow("web_browser")
 			pm:GoToWindow("web_browser")
 
-			slide:AddHighlight(slide:FindElementByPath("web_browser"))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID))
 			slide:AddMessageBox(
 				"This is the integrated web browser. You can use it to quickly look up information on the Pragma wiki, "
 					.. "or to download and install custom assets.\n"
@@ -157,7 +157,7 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 				explorer:SetPath(assetPath)
 			end
 
-			slide:AddHighlight(slide:FindElementByPath("model_catalog"))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
 			slide:AddMessageBox(
 				"The download is complete and the assets have been automatically extracted, imported and converted "
 					.. "and can now be found in the model explorer.\n"

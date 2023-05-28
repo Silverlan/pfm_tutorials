@@ -1,0 +1,2 @@
+pfm_tutorial_intro = "イントロ"
+pfm_tutorial_viewport = "ビューポート"
