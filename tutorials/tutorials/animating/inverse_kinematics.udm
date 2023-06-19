@@ -1,0 +1,8 @@
+"tutorial"
+{
+	$string name "inverse_kinematics"
+	$string project_file "projects/tutorials/animating/02_inverse_kinematics"
+	$string icon "error"
+	$string series "animating"
+	$uint32 position_in_series 2
+}
