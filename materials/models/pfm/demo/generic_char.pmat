@@ -1,0 +1,16 @@
+"pbr"
+{
+	"properties"
+	{
+		$int32 alpha_mode 0
+		$float alpha_cutoff 0.5
+		$float roughness_factor 0.69
+		$vec3 color_factor [1,1,1]
+		$float metalness_factor 0
+		$vec3 emission_factor [0,0,0]
+	}
+	"textures"
+	{
+		$string albedo_map "models/pfm/demo/generic_char_albedo"
+	}
+}
