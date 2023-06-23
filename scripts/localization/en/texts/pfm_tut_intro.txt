@@ -1,0 +1,29 @@
+pfm_tut_intro_welcome = "Hello and welcome to the Pragma Filmmaker (PFM)! This tutorial will give you a brief introduction to PFM and its interface to get you started.\n\nEvery tutorial is made up of slides like this one. You can move the text-box around by clicking and dragging it with the mouse.\nSome tutorials are voiced, in which case you can toggle the audio using the audio-button to the top left. To the top-right you can see which slide you're on and how many are left for the current tutorial.\n\nYou can click the \"{pfm_continue}\" button to go to the next slide, or quit the tutorial at any time by pressing \"{pfm_end_tutorial}\"."
+
+pfm_tut_intro_interface_sections = "By default, the main interface of PFM is split into three sections: \"Data\", \"View\" and \"Animation\".\nThe highlighted section to the left is the \"data\" section. Here you can find various \"panels\" for creating and editing actors, exploring and downloading assets, etc."
+
+pfm_tut_intro_viewport_section = "On the right-hand side, you can find the \"view\" section. As the name implies, this is where you can find the primary viewport, the render panel, etc."
+
+pfm_tut_intro_timeline_section = "Last but not least, the \"animation\" section at the bottom. Here you can manage film clips, edit animation data in the graph editor panel, etc. We'll go into the details of each panel in later tutorials."
+
+pfm_tut_intro_layout_resize = "There are several ways you can change the layout to your personal liking. To start with, you can click and drag these dividers to resize certain sections of the interface.\n\nTry dragging the divider now."
+
+pfm_tut_intro_layout_separate_window = "You can also click this icon to the top-right of any panel to detach it from the main window.\nThis is especially useful if you want to work with multiple monitors.\n\nTry clicking the icon now."
+
+pfm_tut_intro_layout_reattach_window = "Once you've detached a window, you can resize it and move it around like any other window.\nTo re-attach it to the main UI, press the close button (X) on the top right. This will close the window and move the panel back to its original position.\n\nTry re-attaching the window now."
+
+pfm_tut_intro_layout_change_core = "In addition, you can also change the core layout of the interface by selecting one of the preset options in the \"{view}\" menu in the menu bar.\n\nTry changing the layout now by choosing \"{view}\" > \"{layout}\" > \"three_columns\"."
+
+pfm_tut_intro_layout_change_core2 = "As you can see, the UI sections are now divided up into three columns instead of two.\nOther than the pre-defined presets, custom layouts can be added by creating new layout preset scripts, but that would exceed the scope of this tutorial.\n\nFor now we'll revert back to the default two-column layout."
+
+pfm_tut_intro_layout_save_preference = "Once you have arranged the interface to your liking, you can save the current layout state by selecting \"{view}\" > \"{layout}\" > \"{pfm_save_current_layout_state_as_default}\".\nThe next time you start PFM, this layout will be restored automatically.\n\nThe current layout is also stored in the project file, so opening a PFM project will restore the layout that was used when the project was last saved."
+
+pfm_tut_intro_help_menu = "If you need assistance, you can find useful resources in the \"{help}\" menu in the menu bar.\nHere you can find direct links to open the online documentation, join the Discord server, check out the online bug tracker or restart this tutorial."
+
+pfm_tut_intro_tutorial_panel = "This completes this introductory tutorial. You can now move on to other tutorials by opening the \"{pfm_tutorial_catalog}\" panel."
+
+pfm_tut_intro_tutorial_panel2 = "Here you can find all available tutorials, which are ordered by category. Watch out for the colored circle to the top right of each tutorial, which indicates its difficulty (with green being the easiest and red the hardest).\nSome tutorials are numbered, which means they are part of a series. While possible to start the tutorials in any order, it is generally assumed that you have completed all preceding tutorials."
+
+pfm_tut_intro_tutorial_panel3 = "To begin with, it's usually a good idea to familiarize yourself with the interface a bit more before jumping into any advanced topics. Open the \"interface\" category to continue."
+
+pfm_tut_intro_tutorial_panel4 = "You can now start the interface tutorial series by double-clicking the icon for the \"{pfm_tutorial_viewport}\" tutorial, or if you'd like to do something else, end the tutorial by clicking \"{pfm_end_tutorial}\"."

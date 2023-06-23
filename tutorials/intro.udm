@@ -2,5 +2,6 @@
 {
 	$string name "intro"
 	$string script_file "pfm/tutorials/intro.lua"
-	$string icon "error"
+	$string icon "pfm/logo/pfm_logo"
+	$string difficulty "Beginner"
 }
