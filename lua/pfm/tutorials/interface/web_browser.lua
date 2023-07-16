@@ -12,40 +12,24 @@ local nextTutorial = "tutorials/interface/03_model_catalog"
 local assetUrl = "https://sfmlab.com/project/28508/"
 local assetPath = "lordaardvark/sfm/props/studio"
 
--- lua_exec_cl pfm/tutorials/interface/web_browser.lua
-
-time.create_simple_timer(0.1, function()
-	gui.Tutorial.start_tutorial("web_browser")
-end)
-
-gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
-	elTut:RegisterSlide("wb_intro", {
-		init = function(slideData, slide)
-			pm:GetCentralDivider():SetFraction(0.6)
-			pm:OpenWindow("web_browser")
-			pm:GoToWindow("web_browser")
+gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser", function(elTut, pm)
+	elTut:RegisterSlide("intro", {
+		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("web_browser")
+			slide:SetWindowFrameDividerFraction(pfm.WINDOW_WEB_BROWSER, 0.666, false)
 
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID))
-			slide:AddMessageBox(
-				"This is the integrated web browser. You can use it to quickly look up information on the Pragma wiki, "
-					.. "or to download and install custom assets.\n"
-					.. "If you download any assets through this browser, Pragma will usually be able to automatically detect and install them."
-			)
+			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "asset_download",
 	})
 
 	elTut:RegisterSlide("asset_download", {
-		init = function(slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("web_browser/enable_nsfw_content"))
-			slide:AddMessageBox(
-				"There are several preset bookmarks available, which offer a large amount of assets to download. "
-					.. "Since most of these websites contain NSFW content or ads, they are hidden by default.\n\n"
-					.. "For the purpose of this tutorial we will download a simple SFW model, however the website may still contain NSFW advertisement.\n"
-					.. 'If that is a problem, please end the tutorial now, otherwise enable "NSFW Content" to continue.'
-			)
+		init = function(tutorialData, slideData, slide)
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/enable_nsfw_content"))
+			slide:AddGenericMessageBox()
 		end,
-		clearCondition = function(slideData)
+		clearCondition = function(tutorialData, slideData)
 			local elWb = pm:GetWindow("web_browser")
 			local browser = util.is_valid(elWb) and elWb:GetBrowser() or nil
 			if util.is_valid(browser) == false then
@@ -57,11 +41,12 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 	})
 
 	elTut:RegisterSlide("asset_download_website", {
-		init = function(slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("web_browser/bookmark"))
-			slide:AddMessageBox('Select "SFM Lab" from the bookmark list to continue.')
+		init = function(tutorialData, slideData, slide)
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/bookmark"))
+			slide:AddHighlight("sfm_lab")
+			slide:AddGenericMessageBox()
 		end,
-		clearCondition = function(slideData)
+		clearCondition = function(tutorialData, slideData)
 			local elWb = pm:GetWindow("web_browser")
 			local browser = util.is_valid(elWb) and elWb:GetBrowser() or nil
 			if util.is_valid(browser) == false then
@@ -73,11 +58,9 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 		autoContinue = true,
 	})
 	elTut:RegisterSlide("sfm_lab", {
-		init = function(slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("web_browser/browser"))
-			slide:AddMessageBox(
-				'Side note: To change the category in the search filter option on SFM Lab, scroll down and click the "Category" drop-down menu and use the up/down arrow keys.'
-			)
+		init = function(tutorialData, slideData, slide)
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/browser"))
+			slide:AddGenericMessageBox()
 
 			local vp = tool.get_filmmaker():GetViewport()
 			if util.is_valid(vp) then
@@ -88,12 +71,9 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 	})
 
 	elTut:RegisterSlide("sfm_lab_prop", {
-		init = function(slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("web_browser/browser"))
-			slide:AddMessageBox(
-				"For this tutorial we will download this film-studio prop pack by LordAardvark.\n"
-					.. "Scroll down to the green download button and click it. Then select a free server in the popup and start the download."
-			)
+		init = function(tutorialData, slideData, slide)
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/browser"))
+			slide:AddGenericMessageBox()
 
 			local elWb = pm:GetWindow("web_browser")
 			local browser = util.is_valid(elWb) and elWb:GetBrowser() or nil
@@ -112,7 +92,7 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 		clear = function(slideData)
 			util.remove(slideData.cbOnDownloadStarted)
 		end,
-		clearCondition = function(slideData)
+		clearCondition = function(tutorialData, slideData)
 			return slideData.downloadStarted
 		end,
 		nextSlide = "sfm_lab_prop_dl",
@@ -120,11 +100,9 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 	})
 
 	elTut:RegisterSlide("sfm_lab_prop_dl", {
-		init = function(slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("web_browser/log"))
-			slide:AddMessageBox(
-				"The tutorial will continue once the download has completed. You can check the download progress in the log window."
-			)
+		init = function(tutorialData, slideData, slide)
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/log"))
+			slide:AddGenericMessageBox()
 
 			local elWb = pm:GetWindow("web_browser")
 			local browser = util.is_valid(elWb) and elWb:GetBrowser() or nil
@@ -139,7 +117,7 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 		clear = function(slideData)
 			util.remove(slideData.cbOnDownloadComplete)
 		end,
-		clearCondition = function(slideData)
+		clearCondition = function(tutorialData, slideData)
 			return slideData.downloadComplete
 		end,
 		nextSlide = "sfm_lab_prop_explorer",
@@ -147,7 +125,7 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 	})
 
 	elTut:RegisterSlide("sfm_lab_prop_explorer", {
-		init = function(slideData, slide)
+		init = function(tutorialData, slideData, slide)
 			pm:OpenWindow("model_catalog")
 			pm:GoToWindow("model_catalog")
 
@@ -158,35 +136,25 @@ gui.Tutorial.register_tutorial("web_browser", function(elTut, pm)
 			end
 
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
-			slide:AddMessageBox(
-				"The download is complete and the assets have been automatically extracted, imported and converted "
-					.. "and can now be found in the model explorer.\n"
-					.. "Please note that the automatic installation may not work for all assets, especially .rar-archives may cause issues.\n"
-					.. "In that case you will have to install the assets manually. You can find more information on how to do that in the tutorial "
-					.. "for the model explorer."
-			)
+			slide:AddGenericMessageBox()
 		end,
-		nextSlide = "wb_fin",
+		nextSlide = "fin",
 	})
 
-	elTut:RegisterSlide("wb_fin", {
-		init = function(slideData, slide)
-			slide:AddMessageBox(
-				"This concludes the tutorial on the web browser.\n\n"
-					.. "You can now end the tutorial, or press the continue-button to start the next tutorial in this series."
-			)
+	elTut:RegisterSlide("fin", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetTutorialCompleted()
+			slide:AddGenericMessageBox()
 		end,
 		clear = function(slideData) end,
-		nextSlide = "wb_next_tutorial",
+		nextSlide = "next_tutorial",
 	})
 
-	elTut:RegisterSlide("wb_next_tutorial", {
-		init = function(slideData, slide)
+	elTut:RegisterSlide("next_tutorial", {
+		init = function(tutorialData, slideData, slide)
 			pm:LoadProject("projects/" .. nextTutorial)
 		end,
 	})
 
-	elTut:StartSlide("wb_intro")
-	--_elTut:AddHighlight(gui.find_element_by_index(1177))
-	--_elTut:AddMessageBox("This is the viewport where you can do stuff. AAA BBB CCC DDD")
+	elTut:StartSlide("intro")
 end)

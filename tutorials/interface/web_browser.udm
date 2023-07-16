@@ -1,8 +1,8 @@
 "tutorial"
 {
 	$string name "web_browser"
-	$string project_file "projects/tutorials/interface/01_viewport"
-	$string icon "error"
+	$string script_file "pfm/tutorials/interface/web_browser.lua"
+	$string icon "gui/pfm/tutorials/tutorial_web_browser"
 	$string series "interface"
 	$uint32 position_in_series 4
 }
