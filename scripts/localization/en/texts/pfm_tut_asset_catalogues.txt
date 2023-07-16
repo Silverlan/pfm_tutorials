@@ -1,0 +1,27 @@
+pfm_tut_asset_catalogues_intro = "Welcome to the asset catalog tutorial. Asset catalogs (or explorers) list all of the available assets installed in Pragma, such as models, materials or particle effects. Each of these asset types has a separate catalog, but for the sake of this tutorial we will focus on the model catalog.\n\nOpen the \"Model Catalog\" to continue."
+
+pfm_tut_asset_catalogues_overview = "The model catalog lists all of the installed models that can be used in your project. The directory structure within the catalog corresponds to the structure on disk, relative to the \"models\" directory within Pragma.\nIt can also automatically detect external assets, such as from installed Source Engine games. If you want to hide external assets in the catalog, you can disable the \"{pfm_show_external_assets}\" option at the top.\n\nFor now, try navigating to the directory \"pfm/demo/\"."
+
+pfm_tut_asset_catalogues_overview_external_placeholder = "Some assets may have placeholder icons such as this one. This means that the asset was found, but exists in a non-native format that isn't directly supported by Pragma and has to be converted to a native format before it can be used.\nThis happens automatically the first time you try to use the asset, at which point a model icon will also be generated.\nAlternatively you can also convert the asset immediately by right-clicking it and choosing \"{pfm_asset_import}\".\n\nTry it now with this asset."
+
+pfm_tut_asset_catalogues_overview_external_placeholder2 = "You can also right-click the empty space between assets and select \"{pfm_asset_import_all}\", which will import all of the non-native and external assets in the current directory. Depending on how many assets there are, this may take some time (and disk space)."
+
+pfm_tut_asset_catalogues_smart_filter = "If you want to search for a specific asset, you can use the smart filter at the bottom. The name you enter does not have to be an exact match.\n\nTry typing \"chair\" into the filter field and press enter to continue."
+
+pfm_tut_asset_catalogues_smart_filter2 = "The filter looks through all available assets in all directories and lists the best matches in order, starting at the top."
+
+pfm_tut_asset_catalogues_drag_and_drop = "To place a model in your scene, you can simply drag-and-drop it from the catalog into the viewport to the right.\n\nTry placing this chair somewhere in your scene."
+
+pfm_tut_asset_catalogues_context_menu = "There are also various actions you can perform on a model by right-clicking it in the catalog, or in the viewport.\nYou can get more information for each option through the tooltip by hovering over it, but we'll go through some of the more important ones here."
+
+pfm_tut_asset_catalogues_favorites = "If you plan on using a model frequently, you can add it to your favorites by selecting \"{pfm_asset_icon_add_to_favorites}\", after which it will receive a star icon and appear in the \"{favorites}\" directory in the catalog.\n\nTry adding the highlighted asset to your favorites now."
+
+pfm_tut_asset_catalogues_pack_model = "You can share a model with other people by right-clicking it and selecting \"{pfm_pack_model}\". This will create an archive with the model, as well as all materials and textures used by it. To install the model, the archive can then simply be extracted into the Pragma installation directory.\n\nTry packing the model now."
+
+pfm_tut_asset_catalogues_export_asset = "Similarly, you can also export a model by selecting \"{pfm_asset_export}\". This will convert the model into the glTF format, which can be used to then import it in a modeling software such as Blender.\n\nTry exporting the model now."
+
+pfm_tut_asset_catalogues_asset_icons = "Asset icons are automatically generated, but in some cases the default perspective may not be ideal. You can change it by pressing (and holding) the right-mouse button while holding the alt-key and then moving the mouse around. This also allows you to quickly inspect a model from different perspectives without having to place it in the scene first."
+
+pfm_tut_asset_catalogues_map_import = "Importing a map (e.g. from the Source Engine) will also cause a model to be generated for the map's world geometry, which you can then find within the \"maps\" directory in the model catalog and which can be used just like any other model. This can be handy if you want to use the geometry of multiple maps within the same PFM project."
+
+pfm_tut_asset_catalogues_conclusion = "This concludes the tutorial on the model catalog. The other asset catalogs, which you can find by pressing this icon, function largely the same way.\n\nYou can now end the tutorial, or press the continue-button to start the next tutorial in this series."
