@@ -1,0 +1,27 @@
+pfm_tut_actor_editor_intro = "Welcome to the actor editor tutorial. This tutorial will teach you how to create and delete actors, edit actor properties and how to work with the scene graph."
+
+pfm_tut_actor_editor_scenegraph = "This is the scene graph, which shows you which actors exist in the scene. The top of the graph is always the \"Scene\" node, followed by several \"Collections\"."
+
+pfm_tut_actor_editor_collection = "Collections are a means of grouping actors together. By default actors are grouped by type, but you can also create your own collections.\nYou can create a new sub-collection, or rename or remove an existing collection by right-clicking it. You can also move a collection or actor into another collection using drag-and-drop."
+
+pfm_tut_actor_editor_actor = "Within the collections you can find the actual actors. An actor can be anything from a light source to a prop or the sky. Depending on the context, actors may also be referred to as \"entities\" or \"game objects\"."
+
+pfm_tut_actor_editor_components = "Every actor is made up of \"components\", which define the behavior and properties of the actor. For instance, all light source and particle actors have a \"{c_color}\" component, which allows you to change their color."
+
+pfm_tut_actor_editor_component = "You can edit a property by clicking on it.\nTry clicking on the \"{c_color_p_color}\" property of the \"{c_color}\" component to continue."
+
+pfm_tut_actor_editor_property = "Here you can now see the current value for the property. You can click it to change its value. Depending on the type of property, you may get a different input field, like a text input field or a slider.\nMost properties can also be animated, but we'll get to that in a later tutorial.\n\nFor now, try changing the color of the light source by clicking this field."
+
+pfm_tut_actor_editor_new_component = "By default, actors will only have a small number of components depending on their type and you may need to add additional components yourself. For example, if you create a prop such as this chair, it will not have a \"{c_color_p_color}\" component by default. If you want to change its color, you will have to add the component manually first.\n\nTo do so, right-click the actor, then choose \"{pfm_add_new_component}\" and then click the \"{c_color}\" component in the list."
+
+pfm_tut_actor_editor_chair_color = "Now try changing the chair's color to green."
+
+pfm_tut_actor_editor_custom_components = "Using Pragma's scripting API, you can also create custom components with custom properties using the Lua programming language, which can then be added to actors in the same way."
+
+pfm_tut_actor_editor_create_icon = "You can create new actors, such as cameras, light sources, etc. by clicking this icon. You can also create new props or characters from this menu, however it is generally recommended to use the \"{pfm_model_catalog}\" for that instead.\n\nTo continue this tutorial, try creating a \"{c_fog_controller}\" actor."
+
+pfm_tut_actor_editor_fog_distance = "Now try changing the fog \"{c_fog_controller_p_start}\" property until you can see the fog appearing in the scene."
+
+pfm_tut_actor_editor_fog_distance_range = "Sometimes you may want to set values outside of the default slider range of a property. In this case you can right-click the slider and select \"{pfm_remap_slider_range}\" to change the slider range."
+
+pfm_tut_actor_editor_conclusion = "This concludes the tutorial on the actor editor, as well as the series on the basic interface. There are still some interface elements, like the graph editor, that will be covered in future tutorials.\n\nYou can now end the tutorial, or press the continue-button to start the next series."

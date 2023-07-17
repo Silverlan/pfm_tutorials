@@ -1,6 +1,6 @@
 pfm_tutorial_intro = "Intro"
 pfm_tutorial_actor_editor = "Actor Editor"
-pfm_tutorial_asset_catalogues = "Assets"
+pfm_tutorial_asset_catalogues = "Asset Catalogs"
 pfm_tutorial_render = "Rendering"
 pfm_tutorial_viewport = "Viewport"
 pfm_tutorial_web_browser = "Web Browser"
