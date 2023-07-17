@@ -220,6 +220,7 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 
 			slide:SetFocusElement(actorEditor)
 			slide:AddHighlight(actorEditor:GetToolIconElement())
+			slide:AddHighlight("context_menu/fog_controller")
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
