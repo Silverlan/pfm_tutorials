@@ -1,8 +1,8 @@
 "tutorial"
 {
 	$string name "render"
-	$string project_file "projects/tutorials/interface/01_render"
-	$string icon "error"
+	$string project_file "projects/tutorials/interface/03_render"
+	$string icon "gui/pfm/tutorials/tutorial_render"
 	$string series "interface"
 	$uint32 position_in_series 3
 }
