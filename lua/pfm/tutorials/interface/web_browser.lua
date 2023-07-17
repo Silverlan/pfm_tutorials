@@ -24,6 +24,7 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 		nextSlide = "asset_download",
 	})
 
+	-- TODO: Add segment on how to navigate PFM wiki before getting into asset downloads
 	elTut:RegisterSlide("asset_download", {
 		init = function(tutorialData, slideData, slide)
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/enable_nsfw_content"))
@@ -133,6 +134,7 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 			local explorer = util.is_valid(elMe) and elMe:GetExplorer() or nil
 			if util.is_valid(explorer) then
 				explorer:SetPath(assetPath)
+				explorer:Update()
 			end
 
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
