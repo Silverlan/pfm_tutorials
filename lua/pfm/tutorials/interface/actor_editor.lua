@@ -219,8 +219,9 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 			local actorEditor = tool.get_filmmaker():GetActorEditor()
 
 			slide:SetFocusElement(actorEditor)
-			slide:AddHighlight(actorEditor:GetToolIconElement())
+			local _, elOutline = slide:AddHighlight(actorEditor:GetToolIconElement())
 			slide:AddHighlight("context_menu/fog_controller")
+			slide:SetArrowTarget(elOutline)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
