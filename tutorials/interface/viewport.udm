@@ -2,7 +2,7 @@
 {
 	$string name "viewport"
 	$string project_file "projects/tutorials/interface/01_viewport"
-	$string icon "error"
+	$string icon "gui/pfm/tutorials/tutorial_viewport"
 	$string series "interface"
 	$uint32 position_in_series 1
 }

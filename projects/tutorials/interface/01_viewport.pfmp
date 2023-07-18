@@ -1,63 +1,21 @@
-$string assetType "PFMP"
 "assetData"
 {
 	"session"
 	{
-		"settings"
-		{
-			$float playheadOffset 0
-			$string mapName "pfm_demo"
-			"renderSettings"
-			{
-				$float panoramaRange 180
-				$uint32 width 1920
-				$uint32 frameRate 24
-				$uint32 height 1080
-				$bool preCalculateLight 0
-				$string mode "combined"
-				$uint32 supersamplingFactor 1
-				$float exposure 50
-				$uint32 numberOfFrames 1
-				$string renderEngine "cycles"
-				$string deviceType "gpu"
-				$string preset "standard"
-				$uint32 maxTransparencyBounces 32
-				$float lightIntensityFactor 1
-				$string outputFormat "png"
-				$string colorTransform "filmic-blender"
-				$string colorTransformLook "Medium Contrast"
-				$string denoiseMode "detailed"
-				$bool renderWorld 1
-				$bool renderGameObjects 1
-				$bool renderPlayer 0
-				$bool cameraFrustumCullingEnabled 1
-				$bool pvsCullingEnabled 1
-				$bool progressiveRefinementEnabled 0
-				$bool transparentSky 0
-				$string previewQuality "low"
-				$bool stereoscopic 1
-				$string cameraType "0"
-				$string panoramaType "equirectangular"
-				$uint32 samples 20
-				$bool progressive 1
-				$uint32 tileSize 512
-				$string viewportMode "360_left_eye"
-				$float emissionStrength 0
-			}
-		}
 		$array clips [element;1][
 			{
 				"scene"
 				{
 					$array groups [element;0][]
 					$string name ""
-					$array actors [element;0][]
-					$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 					$string uniqueId "383d4edb-f5f5-4f27-81be-f79706911cd8"
+					$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+					$array actors [element;0][]
 					$bool visible 1
 				}
-				$string camera ""
 				$string name "new_project"
+				$string camera ""
+				$array bookmarkSets [element;0][]
 				$array trackGroups [element;1][
 					{
 						$bool muted 0
@@ -65,18 +23,19 @@ $string assetType "PFMP"
 						$bool visible 1
 						$array tracks [element;1][
 							{
-								$bool muted 0
 								$array animationClips [element;0][]
+								$bool muted 0
 								$array audioClips [element;0][]
-								$array overlayClips [element;0][]
 								$array filmClips [element;1][
 									{
 										"scene"
 										{
-											$array groups [element;3][
+											$array groups [element;4][
 												{
 													$array groups [element;0][]
 													$string name "environment"
+													$string uniqueId "c203a4ae-3eff-4fca-9d61-bd2d5d0d3321"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$array actors [element;1][
 														{
 															$array components [element;5][
@@ -86,8 +45,8 @@ $string assetType "PFMP"
 																	{
 																		$vec3 position [0,0,50]
 																		$quat rotation [1,0,0,0]
-																		$vec3 scale [1,1,1]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																	$string uniqueId "0c465473-a858-4127-af5a-c4836b48b163"
@@ -105,8 +64,8 @@ $string assetType "PFMP"
 																	"properties"
 																	{
 																		$float strength 0.3
-																		$bool transparent 0
 																		$string skyTexture "skies/dusk379.hdr"
+																		$bool transparent 0
 																	}
 																	$string uniqueId "5ef703d2-ed75-4971-9713-4e4d95270c7d"
 																},
@@ -137,13 +96,13 @@ $string assetType "PFMP"
 															$string name "sky"
 														}
 													]
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$string uniqueId "c203a4ae-3eff-4fca-9d61-bd2d5d0d3321"
 													$bool visible 1
 												},
 												{
 													$array groups [element;0][]
 													$string name "cameras"
+													$string uniqueId "4b4f1f85-0789-478e-bc5b-bf91dba41106"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$array actors [element;1][
 														{
 															$array components [element;3][
@@ -153,8 +112,8 @@ $string assetType "PFMP"
 																	{
 																		$vec3 position [-28.107,54.9751,151.0916]
 																		$quat rotation [0.3788,0.0749,-0.9049,0.1789]
-																		$vec3 scale [1,1,1]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																	$string uniqueId "ed213285-4498-4ad5-a9d1-1a1ea027ac1f"
@@ -171,8 +130,8 @@ $string assetType "PFMP"
 																	$string type "camera"
 																	"properties"
 																	{
-																		$float fov 90
 																		$float farz 32768
+																		$float fov 90
 																		$float nearz 1
 																		$float focalDistance 72
 																	}
@@ -183,13 +142,13 @@ $string assetType "PFMP"
 															$string name "scene_camera"
 														}
 													]
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$string uniqueId "4b4f1f85-0789-478e-bc5b-bf91dba41106"
 													$bool visible 1
 												},
 												{
 													$string name "misc"
-													$array actors [element;2][
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
+													$array actors [element;1][
 														{
 															$string name "tutorial_script"
 															$string uniqueId "301d206d-881f-4245-934b-c8fe78a68392"
@@ -201,8 +160,8 @@ $string assetType "PFMP"
 																	{
 																		$vec3 position [5.451,33.9354,11.2042]
 																		$quat rotation [-0.52,0,0.8542,-0]
-																		$vec3 scale [1,1,1]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																},
@@ -211,28 +170,38 @@ $string assetType "PFMP"
 																	$string uniqueId "2eec4988-7af2-4671-b69a-b46678548f66"
 																	"properties"
 																	{
-																		$bool executeOnSpawn 1
-																		$string scriptFile "pfm/tutorials/interface/viewport.lua"
 																		$string code "time.create_simple_timer(0.1,function() gui.Tutorial.start_tutorial('viewport') end)"
+																		$string scriptFile "pfm/tutorials/interface/viewport.lua"
+																		$bool executeOnSpawn 1
 																	}
 																}
 															]
-														},
+														}
+													]
+													$bool visible 1
+													$array groups [element;0][]
+												},
+												{
+													$string uniqueId "c0b8c828-6eab-4091-9429-a4c461f29ed8"
+													$array actors [element;1][
 														{
-															$array components [element;6][
+															$string uniqueId "fde723dd-1ba0-4d3e-8536-e576fc161f80"
+															$string name "generic_char"
+															$array components [element;9][
 																{
+																	$string uniqueId "74736ce6-62fb-4894-9add-b5c79d6c2b6d"
 																	$string type "pfm_actor"
 																	"properties"
 																	{
-																		$vec3 position [-58.2852,31,190.7728]
-																		$quat rotation [0.7071,0.7071,0,0]
-																		$bool static 1
+																		$vec3 position [-72.0237,-9.6943,159.6494]
+																		$quat rotation [1,0,0,0]
 																		$bool visible 1
-																		$vec3 scale [0.01,0.01,0.01]
+																		$vec3 scale [1,1,1]
+																		$bool static 0
 																	}
-																	$string uniqueId "c5f29524-3323-49f5-8fc6-11cd707e3467"
 																},
 																{
+																	$string uniqueId "c233fe8c-94d0-4d13-921e-b9c092457100"
 																	$string type "pfm_model"
 																	"properties"
 																	{
@@ -243,65 +212,703 @@ $string assetType "PFMP"
 
 																		}
 																	}
-																	$string uniqueId "db1c289b-5497-479e-8144-9064d40aad4d"
 																},
 																{
+																	$string uniqueId "ceb987cd-3e00-46ce-825b-274f701761a7"
 																	$string type "model"
 																	"properties"
 																	{
-																		$string model "props/origami_cat"
+																		$string model "pfm/demo/generic_char"
 																		$uint32 skin 0
 																		"bodyGroup"
 																		{
-																			$uint32 ORIGAMI_Chat 0
+																			$uint32 Man 0
 																		}
 																	}
-																	$string uniqueId "150c98d3-8233-4acc-8140-bf040ac84807"
 																},
 																{
+																	$string uniqueId "d058424b-d962-4d30-b444-91e2bb10fc52"
 																	$string type "render"
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "3ee50ec0-3903-4f57-85f0-e1aa8a2ac112"
 																},
 																{
-																	$string type "light_map_receiver"
+																	$string uniqueId "9a647044-37f0-420a-975b-c140475f565a"
+																	$string type "animated"
+																	"properties"
+																	{
+																		"bone"
+																		{
+																			"L.hand"
+																			{
+																				$vec3 position [0.0009,7.223,-0.0001]
+																				$quat rotation [0.9985,-0.0172,0.0009,0.0509]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.008"
+																			{
+																				$vec3 position [0,0.6421,-0]
+																				$quat rotation [0.9964,0.0859,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.lowerArm"
+																			{
+																				$vec3 position [0.0001,6.8408,-0.0006]
+																				$quat rotation [0.9995,-0.0328,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.002"
+																			{
+																				$vec3 position [0,0.7503,0.0001]
+																				$quat rotation [0.997,-0.0774,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"Chest"
+																			{
+																				$vec3 position [0,5.6238,0.0001]
+																				$quat rotation [0.9947,0.103,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.lowerFoot"
+																			{
+																				$vec3 position [0,1.866,-0.0001]
+																				$quat rotation [0.8063,0.5916,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"lowerBody"
+																			{
+																				$vec3 position [0,30.277,0]
+																				$quat rotation [0.9998,0.0181,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"UpperChest"
+																			{
+																				$vec3 position [0,3.5002,-0.0003]
+																				$quat rotation [1,0.0058,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"middleBody"
+																			{
+																				$vec3 position [0,3.9622,0.0658]
+																				$quat rotation [0.994,0.11,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.shoulder"
+																			{
+																				$vec3 position [0,3.7266,0]
+																				$quat rotation [0.544,-0.4978,-0.4038,-0.5414]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.001"
+																			{
+																				$vec3 position [-0,0.5924,0]
+																				$quat rotation [0.7003,0.0981,-0.7003,0.0981]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.010"
+																			{
+																				$vec3 position [0,0.6563,0]
+																				$quat rotation [0.7056,-0.0463,-0.7056,-0.0463]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.upperArm"
+																			{
+																				$vec3 position [0.0014,6.0545,-0.0006]
+																				$quat rotation [0.96,-0.2767,0.0122,-0.0423]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger"
+																			{
+																				$vec3 position [0.8123,2.4948,-0.079]
+																				$quat rotation [0.6993,-0.0327,0.7063,-0.1044]
+																				$vec3 scale [1,1,1]
+																			}
+																			"head"
+																			{
+																				$vec3 position [0,2.9788,0.0001]
+																				$quat rotation [0,0,0.9966,0.0814]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.001"
+																			{
+																				$vec3 position [0,0.5924,0]
+																				$quat rotation [0.7003,-0.0981,-0.7003,-0.0981]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.003"
+																			{
+																				$vec3 position [0.2667,2.6572,-0.0418]
+																				$quat rotation [0.6847,-0.1058,0.6991,-0.1764]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.hand"
+																			{
+																				$vec3 position [-0.0009,7.223,0.0001]
+																				$quat rotation [0.9927,0.0225,-0.1068,0.0487]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.004"
+																			{
+																				$vec3 position [0.0001,0.8316,0]
+																				$quat rotation [0.706,-0.039,-0.706,-0.039]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.005"
+																			{
+																				$vec3 position [-0,0.7723,0]
+																				$quat rotation [0.9998,-0.0201,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.006"
+																			{
+																				$vec3 position [-0.2844,2.5413,0.004]
+																				$quat rotation [0.6944,-0.062,0.7044,-0.1334]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.007"
+																			{
+																				$vec3 position [0.0001,0.747,0]
+																				$quat rotation [0.7038,-0.0684,-0.7038,-0.0684]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.008"
+																			{
+																				$vec3 position [-0,0.642,0]
+																				$quat rotation [0.9964,-0.0859,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.003"
+																			{
+																				$vec3 position [0.2693,2.6578,-0.0153]
+																				$quat rotation [0.6225,0.1866,0.7551,0.0866]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.012"
+																			{
+																				$vec3 position [1.1741,1.3781,-0.4181]
+																				$quat rotation [0.8163,-0.0235,0.4692,-0.3362]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.002"
+																			{
+																				$vec3 position [-0,0.7503,-0.0001]
+																				$quat rotation [0.997,0.0774,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.lowerArm"
+																			{
+																				$vec3 position [-0.0001,6.8408,0.0006]
+																				$quat rotation [0.9995,0.0328,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.013"
+																			{
+																				$vec3 position [0,0.4504,0]
+																				$quat rotation [0.7815,0.0654,-0.6056,0.135]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.005"
+																			{
+																				$vec3 position [0,0.7723,-0]
+																				$quat rotation [0.9998,0.0201,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.014"
+																			{
+																				$vec3 position [0.0001,0.683,-0]
+																				$quat rotation [0.9926,0.0115,0.0617,0.1039]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.upperLeg"
+																			{
+																				$vec3 position [2.8904,-0.7783,-0.2877]
+																				$quat rotation [0.0019,-0.7072,0.0253,0.7066]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.009"
+																			{
+																				$vec3 position [-0.7978,2.4445,0.0098]
+																				$quat rotation [0.7,-0.0279,0.7066,-0.0997]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.011"
+																			{
+																				$vec3 position [-0,0.6525,-0.0001]
+																				$quat rotation [0.9882,-0.1539,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.004"
+																			{
+																				$vec3 position [-0.0001,0.8316,0]
+																				$quat rotation [0.706,0.039,-0.706,0.039]
+																				$vec3 scale [1,1,1]
+																			}
+																			"neck"
+																			{
+																				$vec3 position [0,6.1738,0.1266]
+																				$quat rotation [0.9925,0.1219,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.009"
+																			{
+																				$vec3 position [-0.7822,2.4449,0.159]
+																				$quat rotation [0.6283,0.102,0.7711,0.0172]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.shoulder"
+																			{
+																				$vec3 position [0,3.7266,0]
+																				$quat rotation [0.0563,-0.7353,0.6752,-0.016]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.upperArm"
+																			{
+																				$vec3 position [-0.0007,6.0527,-0.0002]
+																				$quat rotation [0.7286,0.1797,0.6251,-0.2146]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.lowerFoot"
+																			{
+																				$vec3 position [0,1.866,-0.0001]
+																				$quat rotation [0.8063,0.5916,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger"
+																			{
+																				$vec3 position [0.8105,2.4955,-0.0942]
+																				$quat rotation [0.6281,0.1072,0.7704,0.0215]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.006"
+																			{
+																				$vec3 position [-0.2792,2.5418,0.0562]
+																				$quat rotation [0.6267,0.1392,0.7653,0.0476]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.007"
+																			{
+																				$vec3 position [-0.0001,0.747,0]
+																				$quat rotation [0.7038,0.0684,-0.7038,0.0684]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.010"
+																			{
+																				$vec3 position [-0,0.6563,0]
+																				$quat rotation [0.7056,0.0463,-0.7056,0.0463]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.011"
+																			{
+																				$vec3 position [0,0.6525,0.0001]
+																				$quat rotation [0.9882,0.1539,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.foot"
+																			{
+																				$vec3 position [0,13.7513,0.0013]
+																				$quat rotation [0.7055,0.0451,-0.707,0.0223]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.012"
+																			{
+																				$vec3 position [1.2359,1.3786,0.1609]
+																				$quat rotation [0.5906,0.3219,0.7333,-0.0994]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.013"
+																			{
+																				$vec3 position [-0,0.4505,0]
+																				$quat rotation [0.7312,-0.1492,-0.6656,-0.0148]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.014"
+																			{
+																				$vec3 position [0,0.6831,0.0001]
+																				$quat rotation [0.9905,0.0101,-0.0888,0.1041]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.lowerLeg"
+																			{
+																				$vec3 position [-0.0001,12.7209,0.0012]
+																				$quat rotation [1,-0.0031,-0,-0.0085]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.foot"
+																			{
+																				$vec3 position [-0.0002,13.7513,-0.0011]
+																				$quat rotation [0.7065,0.0223,-0.706,0.0451]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.upperLeg"
+																			{
+																				$vec3 position [-2.8904,-0.7783,-0.2877]
+																				$quat rotation [0.0253,0.7067,0.0019,-0.7071]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.lowerLeg"
+																			{
+																				$vec3 position [-0.0001,12.7209,-0.0012]
+																				$quat rotation [1,0.0031,0.0006,-0.0085]
+																				$vec3 scale [1,1,1]
+																			}
+																		}
+																	}
+																},
+																{
+																	$string uniqueId "9eea1b8e-1844-4e65-bc9b-3a5f7739acad"
+																	$string type "eye"
+																	"properties"
+																	{
+																		$float blinkDuration 0.2
+																		$vec3 viewTarget [0,0,0]
+																		$bool blinkingEnabled 1
+																		$float localViewTargetFactor 1
+																	}
+																},
+																{
+																	$string uniqueId "6dbf2edd-70e5-4aa7-aa7b-b98acbb44795"
+																	$string type "flex"
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "aa639a7a-4bb4-433c-b911-6133f8ec1450"
 																},
 																{
-																	$string type "color"
+																	$string uniqueId "e97fe908-08c7-4931-8b50-0d9c679954f8"
+																	$string type "ik_solver"
 																	"properties"
 																	{
-																		$vec3 color [1,1,1]
-																		$float alpha 1
+																		"rigConfig"
+																		{
+																			$array bones [element;16][
+																				{
+																					$string name "L.shoulder"
+																					$bool locked 1
+																				},
+																				{
+																					$string name "L.upperArm"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "L.lowerArm"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "L.hand"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "R.shoulder"
+																					$bool locked 1
+																				},
+																				{
+																					$string name "R.upperArm"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "R.lowerArm"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "R.hand"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "lowerBody"
+																					$bool locked 1
+																				},
+																				{
+																					$string name "L.upperLeg"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "L.lowerLeg"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "L.foot"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "lowerBody"
+																					$bool locked 1
+																				},
+																				{
+																					$string name "R.upperLeg"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "R.lowerLeg"
+																					$bool locked 0
+																				},
+																				{
+																					$string name "R.foot"
+																					$bool locked 0
+																				}
+																			]
+																			$array controls [element;8][
+																				{
+																					$string bone "L.lowerArm"
+																					$string type "Drag"
+																					$float maxForce -1
+																					$float rigidity 5
+																				},
+																				{
+																					$string bone "L.hand"
+																					$string type "OrientedDrag"
+																					$float maxForce -1
+																					$float rigidity 10
+																				},
+																				{
+																					$string bone "R.lowerArm"
+																					$string type "Drag"
+																					$float maxForce -1
+																					$float rigidity 5
+																				},
+																				{
+																					$string bone "R.hand"
+																					$string type "OrientedDrag"
+																					$float maxForce -1
+																					$float rigidity 10
+																				},
+																				{
+																					$string bone "L.lowerLeg"
+																					$string type "Drag"
+																					$float maxForce -1
+																					$float rigidity 5
+																				},
+																				{
+																					$string bone "L.foot"
+																					$string type "OrientedDrag"
+																					$float maxForce -1
+																					$float rigidity 10
+																				},
+																				{
+																					$string bone "R.lowerLeg"
+																					$string type "Drag"
+																					$float maxForce -1
+																					$float rigidity 5
+																				},
+																				{
+																					$string bone "R.foot"
+																					$string type "OrientedDrag"
+																					$float maxForce -1
+																					$float rigidity 10
+																				}
+																			]
+																			$array constraints [element;12][
+																				{
+																					$string bone0 "L.shoulder"
+																					$string type "BallSocket"
+																					$string bone1 "L.upperArm"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "L.upperArm"
+																					$string type "BallSocket"
+																					$string bone1 "L.lowerArm"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "L.lowerArm"
+																					$string type "BallSocket"
+																					$string bone1 "L.hand"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "R.shoulder"
+																					$string type "BallSocket"
+																					$string bone1 "R.upperArm"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "R.upperArm"
+																					$string type "BallSocket"
+																					$string bone1 "R.lowerArm"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "R.lowerArm"
+																					$string type "BallSocket"
+																					$string bone1 "R.hand"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "lowerBody"
+																					$string type "BallSocket"
+																					$string bone1 "L.upperLeg"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "L.upperLeg"
+																					$string type "BallSocket"
+																					$string bone1 "L.lowerLeg"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "L.lowerLeg"
+																					$string type "BallSocket"
+																					$string bone1 "L.foot"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "lowerBody"
+																					$string type "BallSocket"
+																					$string bone1 "R.upperLeg"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "R.upperLeg"
+																					$string type "BallSocket"
+																					$string bone1 "R.lowerLeg"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				},
+																				{
+																					$string bone0 "R.lowerLeg"
+																					$string type "BallSocket"
+																					$string bone1 "R.foot"
+																					$float rigidity 1000
+																					$float maxForce -1
+																					$string axis "Z"
+																					$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																					$ang minAngles [1,1,1]
+																					$ang maxAngles [-1,-1,-1]
+																				}
+																			]
+																		}
+																		$string rigConfigFile ""
+																		"control"
+																		{
+																			"L.hand"
+																			{
+																				$vec3 position [1.0584,26.7404,10.2899]
+																				$quat rotation [-0.1182,-0.3703,-0.71,-0.5873]
+																				$bool locked 0
+																			}
+																			"L.lowerArm"
+																			{
+																				$vec3 position [13.5751,41.0962,0.3519]
+																				$bool locked 0
+																			}
+																			"L.lowerLeg"
+																			{
+																				$vec3 position [4.0857,44.6735,13.3776]
+																				$bool locked 0
+																			}
+																			"R.lowerArm"
+																			{
+																				$vec3 position [-13.7596,37.7059,4.4461]
+																				$bool locked 0
+																			}
+																			"R.hand"
+																			{
+																				$vec3 position [-3.3093,24.8,8.5584]
+																				$quat rotation [-0.676,-0.6243,-0.0161,-0.391]
+																				$bool locked 0
+																			}
+																			"L.foot"
+																			{
+																				$vec3 position [4.8588,13.7906,14.7632]
+																				$quat rotation [0,-0,0.0376,0.9993]
+																				$bool locked 0
+																			}
+																			"R.lowerLeg"
+																			{
+																				$vec3 position [-7.0297,47.3266,11.9958]
+																				$bool locked 0
+																			}
+																			"R.foot"
+																			{
+																				$vec3 position [-3.1706,10.4158,14.5541]
+																				$quat rotation [-0,-0,-0.0376,-0.9993]
+																				$bool locked 0
+																			}
+																		}
 																	}
-																	$string uniqueId "5035ec65-8904-4084-9c18-50ec803b3a8a"
+																},
+																{
+																	$string uniqueId "0890942a-e9de-4709-b6f4-2a72e78e5b64"
+																	$string type "pfm_fbik"
+																	"properties"
+																	{
+
+																	}
 																}
 															]
-															$string uniqueId "0657005c-16f1-4ee0-a6ea-5be960267a32"
-															$string name "origami_cat"
 														}
 													]
-													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
 													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$bool visible 1
 													$array groups [element;0][]
+													$bool visible 1
+													$string name "actors"
 												}
 											]
 											$string name ""
-											$array actors [element;0][]
-											$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 											$string uniqueId "83c01533-31ca-4cdd-a620-203dfdd837a0"
+											$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+											$array actors [element;0][]
 											$bool visible 1
 										}
-										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
 										$string name "shot1"
+										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
+										$array bookmarkSets [element;0][]
 										$array trackGroups [element;1][
 											{
 												$bool muted 0
@@ -309,117 +916,11 @@ $string assetType "PFMP"
 												$bool visible 1
 												$array tracks [element;1][
 													{
+														$array animationClips [element;0][]
 														$bool muted 0
-														$array animationClips [element;1][
-															{
-																$string actor "0657005c-16f1-4ee0-a6ea-5be960267a32"
-																$string uniqueId "b6dd0a3e-e353-49f5-8cfc-bc7259afdebb"
-																$string name "origami_cat"
-																"timeFrame"
-																{
-																	$float duration 0
-																	$float scale 1
-																	$float start 0
-																	$float offset 0
-																}
-																"editorData"
-																{
-																	$array channels [element;1][
-																		{
-																			"graphCurve"
-																			{
-																				$array keys [element;3][
-																					{
-																						$arrayLz4 times [float;1][0]
-																						$arrayLz4 values [float;1][-58.2852]
-																						$arrayLz4 easing [uint32;1][0]
-																						$arrayLz4 inTimes [float;1][-0.5]
-																						$arrayLz4 outDeltas [float;1][0]
-																						$arrayLz4 inDeltas [float;1][0]
-																						$arrayLz4 inHandleTypes [uint32;1][1]
-																						$arrayLz4 outTimes [float;1][0.5]
-																						$arrayLz4 interpolation [uint32;1][2]
-																						$arrayLz4 outHandleTypes [uint32;1][1]
-																					},
-																					{
-																						$arrayLz4 times [float;1][0]
-																						$arrayLz4 values [float;1][31]
-																						$arrayLz4 easing [uint32;1][0]
-																						$arrayLz4 inTimes [float;1][-0.5]
-																						$arrayLz4 outDeltas [float;1][0]
-																						$arrayLz4 inDeltas [float;1][0]
-																						$arrayLz4 inHandleTypes [uint32;1][1]
-																						$arrayLz4 outTimes [float;1][0.5]
-																						$arrayLz4 interpolation [uint32;1][2]
-																						$arrayLz4 outHandleTypes [uint32;1][1]
-																					},
-																					{
-																						$arrayLz4 times [float;1][0]
-																						$arrayLz4 values [float;1][190.7728]
-																						$arrayLz4 easing [uint32;1][0]
-																						$arrayLz4 inTimes [float;1][-0.5]
-																						$arrayLz4 outDeltas [float;1][0]
-																						$arrayLz4 inDeltas [float;1][0]
-																						$arrayLz4 inHandleTypes [uint32;1][1]
-																						$arrayLz4 outTimes [float;1][0.5]
-																						$arrayLz4 interpolation [uint32;1][2]
-																						$arrayLz4 outHandleTypes [uint32;1][1]
-																					}
-																				]
-																			}
-																			$string targetPath "ec/pfm_actor/position"
-																			"bookmarkSet"
-																			{
-																				$string uniqueId "4df25775-5580-4b17-a20d-578aa39305d8"
-																				$array bookmarks [element;1][
-																					{
-																						$float time 0
-																						$string note ""
-																					}
-																				]
-																			}
-																		}
-																	]
-																}
-																"animation"
-																{
-																	$string assetType "PANIMA"
-																	"assetData"
-																	{
-																		$float duration 0
-																		$array channels [element;3][
-																			{
-																				$string targetPath "ec/pfm_actor/rotation"
-																				$string interpolation "Linear"
-																				$arrayLz4 times [float;1][0]
-																				$string expression "var angles[3] := {90,((time /2.0) %1.0) *360.0,0}; var rot[4] := {0,0,0,1}; q_from_euler_angles(angles,rot); return [rot];"
-																				$arrayLz4 values [quat;1][[0.7071,0.7071,0,0]]
-																			},
-																			{
-																				$string targetPath "ec/color/color"
-																				$string interpolation "Linear"
-																				$arrayLz4 times [float;1][0]
-																				$arrayLz4 values [vec3;1][[1,1,1]]
-																				$string expression "var hsv[3] := {((time /2.0) %1.0) *360.0,1,1}; var rgb[3] := {0,0,0}; hsv_to_rgb(hsv,rgb); return [rgb];"
-																			},
-																			{
-																				$string interpolation "Linear"
-																				$arrayLz4 times [float;1][0]
-																				$string targetPath "ec/pfm_actor/position"
-																				$string expression "var pos[3] := {value[0],value[1] +(sin(time /2.0 *pi *2.0) +1.0) /2.0 *20.0,value[2]}; return [pos];"
-																				$arrayLz4 values [vec3;1][[-58.2852,31,190.7728]]
-																			}
-																		]
-																		$float speedFactor 1
-																		$string flags "None"
-																	}
-																	$uint32 assetVersion 1
-																}
-															}
-														]
 														$array audioClips [element;0][]
-														$array overlayClips [element;0][]
 														$array filmClips [element;0][]
+														$array overlayClips [element;0][]
 														$string name "animSetEditorChannels"
 														$float volume 1
 														$string uniqueId "55d2167b-26b1-4e49-89ba-ef3e7e51b93f"
@@ -428,8 +929,6 @@ $string assetType "PFMP"
 												$string uniqueId "7989692b-e298-4de3-bc51-faca6b098c45"
 											}
 										]
-										$array bookmarkSets [element;0][]
-										$int32 activeBookmarkSet 0
 										"timeFrame"
 										{
 											$float scale 1
@@ -437,11 +936,13 @@ $string assetType "PFMP"
 											$float start 0
 											$float duration 60
 										}
+										$int32 activeBookmarkSet 0
 										$float fadeIn 0
 										$float fadeOut 0
 										$string uniqueId "a2951b11-9dfd-4709-bf4c-9d037f24d4cb"
 									}
 								]
+								$array overlayClips [element;0][]
 								$string name "Film"
 								$float volume 1
 								$string uniqueId "e6dd472c-27df-4448-b7a3-3cfccb8f0117"
@@ -450,8 +951,6 @@ $string assetType "PFMP"
 						$string uniqueId "8043c218-eff3-4fdd-b255-b53c66d82715"
 					}
 				]
-				$array bookmarkSets [element;0][]
-				$int32 activeBookmarkSet 0
 				"timeFrame"
 				{
 					$float scale 1
@@ -459,14 +958,96 @@ $string assetType "PFMP"
 					$float start 0
 					$float duration 60
 				}
+				$int32 activeBookmarkSet 0
 				$float fadeIn 0
 				$float fadeOut 0
 				$string uniqueId "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 			}
 		]
+		"settings"
+		{
+			$float playheadOffset 0
+			$string mapName "pfm_demo"
+			$bool readOnly 1
+			"layoutState"
+			{
+				$array windows [element;0][]
+				$array containers [element;0][]
+				"layout_state"
+				{
+					"containers"
+					{
+						"main_container"
+						{
+							$array frameSizeRatios [float;1][0.2766]
+						}
+						"viewport_container"
+						{
+							$array frameSizeRatios [float;1][0.75]
+						}
+					}
+					"windows"
+					{
+						"main"
+						{
+							"detachedWindow"
+							{
+								$vec2 pos [0.287,0.0463]
+								$vec2 size [0.6667,0.8704]
+							}
+						}
+					}
+				}
+			}
+			"renderSettings"
+			{
+				$float panoramaRange 180
+				$uint32 width 1280
+				$uint32 frameRate 24
+				$string mode "combined"
+				$uint32 supersamplingFactor 2
+				$uint32 height 720
+				$bool preCalculateLight 0
+				$float exposure 50
+				$string renderEngine "cycles"
+				$uint32 numberOfFrames 1
+				$string deviceType "gpu"
+				$string preset "standard"
+				$uint32 maxTransparencyBounces 32
+				$float lightIntensityFactor 1
+				$string outputFormat "png"
+				$string colorTransform "filmic-blender"
+				$string colorTransformLook "Medium Contrast"
+				$string denoiseMode "detailed"
+				$bool renderWorld 1
+				$bool renderGameObjects 1
+				$bool renderPlayer 0
+				$bool cameraFrustumCullingEnabled 1
+				$bool pvsCullingEnabled 1
+				$bool progressiveRefinementEnabled 0
+				$bool transparentSky 0
+				$bool stereoscopic 1
+				$string previewQuality "low"
+				$string cameraType "0"
+				$string panoramaType "equirectangular"
+				$bool progressive 1
+				$uint32 samples 20
+				$uint32 tileSize 512
+				$string viewportMode "360_left_eye"
+				$float emissionStrength 0
+			}
+			$string layout "cfg/pfm/layouts/default.udm"
+			$string cameraView "Work"
+			"workCamera"
+			{
+				$float fov 90
+				$transform pose [[-101.1108,46.3728,179.1614][0.5326,0.1124,0.8208,-0.1731]]
+			}
+		}
 		$string name ""
 		$string uniqueId "7220022f-6cca-43cb-9ed7-0bb59c3a872d"
 		$string activeClip "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 	}
 }
+$string assetType "PFMP"
 $uint32 assetVersion 1

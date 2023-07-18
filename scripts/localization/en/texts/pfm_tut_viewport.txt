@@ -1,0 +1,29 @@
+pfm_tut_viewport_intro = "Welcome to the viewport tutorial. This tutorial will introduce you to the viewport panel, where you can preview your scene and animation, select and move actors, control the camera, etc."
+
+pfm_tut_viewport_interaction1 = "We'll start with the camera controls. To control the viewport camera, press and hold the right mouse button, which will enable FPS-style controls. As long as you hold down the button, you can rotate the camera by moving the mouse, and move the camera using WASD. You can move faster or slower by holding down the shift- or alt-key respectively. You can also change the field of view using the scroll wheel.\n\nTry moving around in the scene until you find the character sitting in the chair in the dining room."
+
+pfm_tut_viewport_interaction2 = "To select the character, you can either click them directly, or click and hold the left mouse button to create a rectangular selection. Note how, other than the character in the chair, no other objects in this scene are selectable. This is because they are part of the map, and map objects cannot be selected or edited.\n\nSelect the character to continue."
+
+pfm_tut_viewport_interaction3 = "You can tell which objects are selected by the yellow outline around them.\n\nIf the selected object is a character, you can also hover over the character's body parts to highlight the character's bones. Clicking the character again will select that bone in the actor editor.\n\nYou can also right-click the character to perform various actions on it, but we'll go into more detail on that in another tutorial."
+
+pfm_tut_viewport_manip_controls = "Below the viewport you can find the manipulator controls, which can be used to move, rotate or scale selected actors, bones, etc. You can hover over each control to see its function and keyboard shortcut.\n\nClick on the \"{pfm_viewport_tool_move}\" manipulator to continue."
+
+pfm_tut_viewport_move_actor = "Now try moving the actor to the marked spot on the chair in the living room using the transform gizmo. You can follow the red dashed line to find it."
+
+pfm_tut_viewport_rotate_actor = "Next, switch to the \"{pfm_viewport_tool_rotate}\" manipulator and rotate the actor so that they are facing the table."
+
+pfm_tut_viewport_manip_controls_fin = "You can toggle the transform space between world, local and screen space by pressing the \"{pfm_viewport_tool_move}\" or \"{pfm_viewport_tool_rotate}\" manipulator multiple times."
+
+pfm_tut_viewport_transform_space = "Alternatively you can also change the transform space in the viewport settings to the right."
+
+pfm_tut_viewport_snap_to_grid = "In addition, you can also enable snap-to-grid to make it easier to align objects. You can click these buttons to increase the positional or rotational grid size, or hold the alt-key to decrease it."
+
+pfm_tut_viewport_live_render = "Another feature to keep in mind is the \"{pfm_viewport_rt_enabled}\" option. With this option you can enable or disable real-time raytracing for the viewport. This can be useful to get a quick preview of what your scene will look like with baked lightmaps, or in case you plan on using the Cycles X renderer to render your scene.\n\nTry enabling it now. Please note that PFM may appear frozen for a short time after enabling it."
+
+pfm_tut_viewport_live_render_active = "As long as the \"{pfm_viewport_rt_enabled}\" mode is active, you can still move the camera, but some actions (like adding or removing actors) will not be visible until the mode is deactivated.\n\nYou will see some use cases in later tutorials, but let's deactivate it for now."
+
+pfm_tut_viewport_cc_controls = "Over here you can find the camera controls. Using these controls, you can toggle between the work and scene camera, or change the scene camera to a different one.\n\nSwitch to the scene camera by pressing the button that says \"{pfm_work_camera}\" to continue."
+
+pfm_tut_viewport_playback_controls = "Finally, these are the playback controls. Here you can view your animation frame-by-frame, or in real-time by pressing the play-button. You can hover over each button to see its function and keyboard shortcut.\n\nPress the play button to continue."
+
+pfm_tut_viewport_fin = "This concludes the tutorial on the viewport.\n\nYou can now end the tutorial, or press the continue-button to start the next tutorial in this series."
