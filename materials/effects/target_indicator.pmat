@@ -1,0 +1,7 @@
+"particle"
+{
+	"textures"
+	{
+		$string albedo_map "effects/target_indicator"
+	}
+}
