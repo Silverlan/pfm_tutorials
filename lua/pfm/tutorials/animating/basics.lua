@@ -9,12 +9,33 @@
 include("/pfm/pfm_core_tutorials.lua")
 
 local uuidCamera = "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
+local camStartLocation = Vector(-163.264, 37.3805, -168.18)
+local camEndLocation = Vector(-111.308, 34.7855, -166.199)
+local camStartFov = 45
+local camEndFov = 85
+local fovTolerance = 5.0
+local duration = 2.0
 
--- lua_exec_cl pfm/tutorials/animating/basics.lua
+local durationEpsilon = 0.0001
 
-time.create_simple_timer(0.1, function()
-	gui.Tutorial.start_tutorial("basic_animating")
-end)
+local function get_keyframe(pm, i)
+	local timeline = pm:GetTimeline()
+	local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
+	local graphCurve = util.is_valid(graphEditor) and graphEditor:GetGraphCurve(1) or nil
+	if graphCurve == nil then
+		return
+	end
+	local dps = {}
+	for _, dp in ipairs(graphCurve.curve:GetDataPoints()) do
+		if dp:IsValid() then
+			table.insert(dps, dp)
+		end
+	end
+	table.sort(dps, function(a, b)
+		return a:GetTime() < b:GetTime()
+	end)
+	return dps[i]
+end
 
 gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", function(elTut, pm)
 	elTut:RegisterSlide("intro", {
@@ -62,6 +83,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/cameras/header"))
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/header")
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/camera/header")
 			slide:AddHighlight(
@@ -88,14 +110,14 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
 			slide:AddHighlight(item)
 
-			slide:AddGenericMessageBox()
+			slide:AddGenericMessageBox({ tostring(camStartFov) })
 		end,
 		clearCondition = function(tutorialData, slideData)
 			if util.is_valid(slideData.fovSlider) == false then
 				return true
 			end
 			local val = slideData.fovSlider:GetValue()
-			return val >= 40.0 and val <= 50.0
+			return val >= (camStartFov - fovTolerance) and val <= (camStartFov + fovTolerance)
 		end,
 		clear = function(tutorialData, slideData) end,
 		nextSlide = "animated_property",
@@ -170,7 +192,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 				slide:SetArrowTarget(dp)
 			end
 
-			slide:AddGenericMessageBox()
+			slide:AddGenericMessageBox({ tostring(camStartFov) })
 		end,
 		nextSlide = "graph_editor_playhead",
 	})
@@ -180,7 +202,13 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 
-			local t = 2.0
+			local timeline = pm:GetTimeline()
+			if util.is_valid(timeline) then
+				timeline:SetTimeRange(-4.0, 5.0)
+				timeline:SetDataRange(0, 120)
+			end
+
+			local t = duration
 			local bm = pm:AddBookmark(t, true)
 			slideData.bookmark = bm
 
@@ -195,7 +223,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 				end
 			end
 
-			slide:AddGenericMessageBox()
+			slide:AddGenericMessageBox({ tostring(duration) })
 		end,
 		clearCondition = function(tutorialData, slideData)
 			local timeline = pm:GetTimeline()
@@ -204,7 +232,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 				return true
 			end
 			local offset = playhead:GetTimeOffset()
-			return offset >= 1.999 and offset <= 2.0001
+			return offset >= (duration - durationEpsilon) and offset <= (duration + durationEpsilon)
 		end,
 		clear = function(tutorialData, slideData)
 			if slideData.bookmark ~= nil then
@@ -223,14 +251,14 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 			slide:AddHighlight(item)
 
-			slide:AddGenericMessageBox()
+			slide:AddGenericMessageBox({ tostring(camEndFov) })
 		end,
 		clearCondition = function(tutorialData, slideData)
 			if util.is_valid(slideData.fovSlider) == false then
 				return true
 			end
 			local val = slideData.fovSlider:GetValue()
-			return val >= 80.0 and val <= 90.0
+			return val >= (camEndFov - fovTolerance) and val <= (camEndFov + fovTolerance)
 		end,
 		clear = function(tutorialData, slideData) end,
 		nextSlide = "graph_editor_curve",
@@ -246,26 +274,353 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
-		nextSlide = "animated_property",
+		nextSlide = "graph_editor_controls",
 	})
 
-	elTut:StartSlide("graph_editor_curve")
-
-	-- TODO: Describe graph editor
-
-	-- Clear animation at the end of the tutorial?
-	elTut:RegisterSlide("animation_mode_indicator", {
+	elTut:RegisterSlide("graph_editor_controls", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
-			--slide:AddGenericMessageBox()
-			slide:AddMessageBox(
-				"If you change a property in the actor editor while in animation mode, a keyframe will automatically be created for the current frame. In addition, a yellow outline will appear around the property, indicating that it is animating. There is also an arrow icon next to the property."
-					.. "If you exit animation mode, by going back to the clip editor, note how the field is now greyed out. Animated properties cannot be edited outside of animation mode. If you click the greyed out field, you will automatically be redirected to animation mode instead."
-					.. "If you want to remove animation, right-click, then choose Clear Animation."
-			)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
-		nextSlide = "scenegraph",
+		nextSlide = "graph_editor_curve_keyframe",
+	})
+
+	elTut:RegisterSlide("graph_editor_curve_keyframe", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID .. "/bookmark"))
+
+			local timeline = pm:GetTimeline()
+			local playhead = util.is_valid(timeline) and timeline:GetPlayhead() or nil
+			if util.is_valid(playhead) then
+				playhead:SetTimeOffset(1.0)
+			end
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			local timeline = pm:GetTimeline()
+			local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
+			local graphCurve = util.is_valid(graphEditor) and graphEditor:GetGraphCurve(1) or nil
+			local numDataPoints = 0
+			for _, dp in ipairs(graphCurve.curve:GetDataPoints()) do
+				if dp:IsValid() then
+					numDataPoints = numDataPoints + 1
+				end
+			end
+			return numDataPoints >= 3
+		end,
+		nextSlide = "graph_editor_select_keyframe",
+	})
+
+	elTut:RegisterSlide("graph_editor_select_keyframe", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			local timeline = pm:GetTimeline()
+			local playhead = util.is_valid(timeline) and timeline:GetPlayhead() or nil
+			if util.is_valid(playhead) then
+				playhead:SetTimeOffset(0.8)
+			end
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			local dp = get_keyframe(pm, 2)
+			if dp == nil then
+				return true
+			end
+			return dp:IsSelected()
+		end,
+		nextSlide = "graph_editor_move_mode",
+	})
+
+	elTut:RegisterSlide("graph_editor_move_mode", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID .. "/move"))
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			local timeline = pm:GetTimeline()
+			local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
+			if util.is_valid(graphEditor) == false then
+				return true
+			end
+			return graphEditor:GetCursorMode() == gui.PFMTimelineGraph.CURSOR_MODE_MOVE
+		end,
+		nextSlide = "graph_editor_move_keyframe",
+	})
+
+	elTut:RegisterSlide("graph_editor_move_keyframe", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "graph_editor_handles",
+	})
+
+	elTut:RegisterSlide("graph_editor_handles", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			local dp = get_keyframe(pm, 2)
+			local ctrl = util.is_valid(dp) and dp:GetTangentControl() or nil
+			local inCtrl = util.is_valid(ctrl) and ctrl:GetInControl() or nil
+			if util.is_valid(inCtrl) then
+				slide:SetArrowTarget(inCtrl)
+			end
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "graph_editor_handle_type",
+	})
+
+	elTut:RegisterSlide("graph_editor_handle_type", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			slide:AddHighlight("context_menu/handle_type")
+			slide:AddHighlight("context_menu_handle_type/free")
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "graph_editor_vector_handle_type",
+	})
+
+	elTut:RegisterSlide("graph_editor_vector_handle_type", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			slide:AddHighlight("context_menu/handle_type")
+			slide:AddHighlight("context_menu_handle_type/vector")
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "graph_editor_interp",
+	})
+
+	elTut:RegisterSlide("graph_editor_interp", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "graph_editor_easing",
+	})
+
+	elTut:RegisterSlide("graph_editor_easing", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath("contents"))
+			slide:AddHighlight(slide:FindElementByPath("contents"))
+
+			slide:AddHighlight("context_menu/easing_mode")
+			local el = slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/browser", false)
+			if el ~= nil then
+				slide:SetArrowTarget(el)
+			end
+
+			local webBrowser = pm:OpenWindow(pfm.WINDOW_WEB_BROWSER)
+			pm:GoToWindow(pfm.WINDOW_WEB_BROWSER)
+			if util.is_valid(webBrowser) then
+				webBrowser:GetBrowser():SetUrl("https://easings.net/")
+				webBrowser:GetBrowser():Update()
+			end
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "graph_editor_delete_keyframe",
+	})
+
+	elTut:RegisterSlide("graph_editor_delete_keyframe", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "camera_start_frame",
+	})
+
+	elTut:RegisterSlide("camera_start_frame", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			local timeline = pm:GetTimeline()
+			local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
+			local dp0 = get_keyframe(pm, 1)
+			local dp1 = get_keyframe(pm, 2)
+			local dp2 = get_keyframe(pm, 3)
+			if util.is_valid(graphEditor) and util.is_valid(dp2) then
+				graphEditor:RemoveDataPoint(dp1)
+				dp1 = dp2
+			end
+
+			if util.is_valid(dp0) then
+				dp0:ChangeDataValue(0.0, camStartFov)
+			end
+			if util.is_valid(dp1) then
+				dp1:ChangeDataValue(duration, camEndFov)
+			end
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			local timeline = pm:GetTimeline()
+			local playhead = util.is_valid(timeline) and timeline:GetPlayhead() or nil
+			if util.is_valid(playhead) == false then
+				return true
+			end
+			local offset = playhead:GetTimeOffset()
+			return offset >= -durationEpsilon and offset <= durationEpsilon
+		end,
+		nextSlide = "work_camera",
+	})
+
+	elTut:RegisterSlide("work_camera", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/cc_controls/cc_camera"))
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			local vp = tool.get_filmmaker():GetViewport()
+			if util.is_valid(vp) == false then
+				return true
+			end
+			return vp:IsWorkCamera()
+		end,
+		nextSlide = "camera_move",
+	})
+
+	elTut:RegisterSlide("camera_move", {
+		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("actor_editor")
+
+			slide:SetFocusElement(slide:FindElementByPath("contents"))
+			slide:AddHighlight(slide:FindElementByPath("contents"))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/cameras/header"))
+			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/header")
+			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/camera/header") -- TODO: Set as primary highlight
+
+			slide:AddHighlight(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID .. "/manip_controls/manip_move") -- TODO: Set as primary highlight
+
+			slide:AddGenericMessageBox()
+
+			slideData.targetEntity = ents.find_by_uuid(uuidCamera)
+			if util.is_valid(slideData.targetEntity) == false then
+				return
+			end
+			slideData.locationMarker = slide:AddLocationMarker(camStartLocation)
+
+			local targetInfo = slide:AddViewportTarget(camStartLocation, function()
+				local ent = ents.find_by_uuid(uuidCamera)
+				return ent:GetPos()
+			end, 4.0)
+			if util.is_valid(targetInfo.lineEntity) then
+				targetInfo.lineEntity:SetColor(Color.Red)
+			end
+			slideData.targetInfo = targetInfo
+		end,
+		clearCondition = function(tutorialData, slideData, slide)
+			return slideData.targetInfo.isInRange()
+		end,
+		clear = function(tutorialData, slideData)
+			util.remove(slideData.locationMarker)
+		end,
+		nextSlide = "camera_pos",
+	})
+
+	elTut:RegisterSlide("camera_pos", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+
+			local actorEditor = pm:GetActorEditor()
+			local entActor = ents.find_by_uuid(uuidCamera)
+			local pfmActorC = (entActor ~= nil) and entActor:GetComponent(ents.COMPONENT_PFM_ACTOR) or nil
+			if util.is_valid(actorEditor) then
+				actorEditor:SelectActor(pfmActorC:GetActorData(), true, "ec/pfm_actor/position")
+			end
+
+			local el = slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID .. "/properties/ec_pfm_actor_position", false)
+			if util.is_valid(el) then
+				el:Expand()
+				el:Select()
+				slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID .. "/properties/ec_pfm_actor_position")
+				slide:SetArrowTarget(el)
+			end
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "camera_end_frame",
+	})
+
+	elTut:RegisterSlide("camera_end_frame", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath("contents"))
+			slide:AddHighlight(slide:FindElementByPath("contents"))
+
+			slide:AddGenericMessageBox()
+
+			slideData.targetEntity = ents.find_by_uuid(uuidCamera)
+			if util.is_valid(slideData.targetEntity) == false then
+				return
+			end
+			slideData.locationMarker = slide:AddLocationMarker(camEndLocation)
+
+			local targetInfo = slide:AddViewportTarget(camEndLocation, function()
+				local ent = ents.find_by_uuid(uuidCamera)
+				return ent:GetPos()
+			end, 4.0)
+			if util.is_valid(targetInfo.lineEntity) then
+				targetInfo.lineEntity:SetColor(Color.Red)
+			end
+			slideData.targetInfo = targetInfo
+		end,
+		clearCondition = function(tutorialData, slideData, slide)
+			return slideData.targetInfo.isInRange()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "playback",
+	})
+
+	elTut:RegisterSlide("playback", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath("contents"))
+			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/cc_controls/cc_camera"))
+			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/playback_controls"))
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "conclusion",
 	})
 
 	elTut:RegisterSlide("conclusion", {
@@ -273,12 +628,14 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:SetTutorialCompleted()
 			slide:AddGenericMessageBox()
 		end,
-		nextSlide = "viewport_next_tutorial",
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "next_tutorial",
 	})
 
-	elTut:RegisterSlide("viewport_next_tutorial", {
+	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			pm:LoadTutorial("interface/render") -- TODO: Which one is the next series? (lighting?)
+			pm:LoadTutorial("interface/render") -- TODO
 		end,
 	})
+	elTut:StartSlide("intro")
 end)

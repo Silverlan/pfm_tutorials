@@ -1,74 +1,59 @@
-pfm_tut_basic_animating_intro = "Welcome to the tutorial series on animating. This series will cover how to animate characters using inverse kinematics, constraints, animation drivers, motion capture, the graph editor and more.\nFor this introductory tutorial, you will get a basic overview and learn how to animate simple properties. This series assumes that you have already completed the tutorial series on the interface of PFM."
+pfm_tut_basic_animating_intro = "Welcome to the tutorial series on animating with PFM. This series will cover how to animate characters using inverse kinematics, as well as how to use constraints, animation drivers, motion capture, the graph editor and more.\nFor this introductory tutorial, you will get a basic overview and learn how to animate simple properties. This series assumes that you have already completed the tutorial series on the interface of PFM."
 
-pfm_tut_basic_animating_animation_mode = "In order to animate something in PFM, you have to first enter the \"animation mode\". You can do so by simply switching over to the graph editor in the timeline panel.\n\nTry to do so now."
+pfm_tut_basic_animating_animation_mode = "In order to animate something in PFM, you have to first enter the \"animation mode\". You can do so by simply switching over to the graph editor in the timeline panel.\n\nTry doing so now."
 
-pfm_tut_basic_animating_animation_mode_indicator = "Note how a red outline has appeared around the viewport. This outline indicates that you are now in animation mode. Any changes you make to the scene while in this mode, such as moving or rotating an actor, will cause an animation to be created for that actor."
+pfm_tut_basic_animating_animation_mode_indicator = "Note how a red outline has appeared around the viewport. This outline indicates that you are now in animation mode. Any changes you make to the scene while in this mode, such as moving or rotating an actor, will create an animation keyframe for the current timeline frame."
 
-pfm_tut_basic_animating_dolly_zoom_intro = "We'll start with something simple: For our first animation, we'll create a dolly-zoom effect with the scene camera. This involves animating two properties of the camera: The field of view, and the position. We'll start with the field of view.\n\nSelect the Field of View property in the actor editor."
+pfm_tut_basic_animating_dolly_zoom_intro = "To demonstrate, we'll start with something simple: For our first animation, we'll create a \"dolly zoom\" effect with the scene camera. This involves animating two properties of the camera: The field of view, and the position.\n\nSelect the \"{c_camera_p_fov}\" property of the scene camera in the actor editor to continue."
 
-pfm_tut_basic_animating_dolly_zoom_fov = "Now try changing the field of view to 45°."
+pfm_tut_basic_animating_dolly_zoom_fov = "Now try changing the field of view to {}°."
 
-pfm_tut_basic_animating_animated_property = "By changing the value in animation mode, you have now created a keyframe for this property for the current frame, and the property is now an animated property. Animated properties are highlighted by a yellow outline around them."
+pfm_tut_basic_animating_animated_property = "By changing the value in animation mode, you have now created a keyframe for this property for the current frame, and the property is now an animated property. You can tell if a property is animated by the yellow outline around it."
 
-pfm_tut_basic_animating_animated_property_icon = "In addition, animated properties also have a play-icon like this one in the scene graph. Clicking it will switch directly to the keyframe data for this property in the graph editor.\n\nTry clicking it now."
+pfm_tut_basic_animating_animated_property_icon = "In addition, animated properties also have a play-icon like this one next to them in the scene graph. Clicking it will switch directly to the keyframe data for this property in the graph editor.\n\nTry clicking it now."
 
-pfm_tut_basic_animating_graph_editor = "The graph editor is where you can see the actual keyframe values and animation graphs. Since we have created only a single keyframe so far, there is no animation graph yet, so let's add a second keyframe."
+pfm_tut_basic_animating_graph_editor = "The graph editor is where you can see the actual keyframes and animation graphs. As you can see, there is only one keyframe right now, which is the one we have just created for the fov property. The x-axis value corresponds to the timestamp, in this case 0, and the y-axis value to the property value, in this case {}.\nWe'll be referring to the x-axis as the \"time\" axis, and the y-axis as the \"data\" axis from now on.\nSince we have created only a single keyframe so far, there is no animation graph yet, so let's add a second keyframe."
 
-pfm_tut_basic_animating_graph_editor_playhead = "We want the fov to change over a period of two seconds, so move the playhead to the indicated position."
+pfm_tut_basic_animating_graph_editor_playhead = "We'll use a duration of {} seconds for our animation. To do so, move the playhead to the indicated timestamp on the timeline."
 
-pfm_tut_basic_animating_graph_editor_2nd_fov_keyframe = "Next change the fov to 85 to create a new keyframe at this timestamp."
+pfm_tut_basic_animating_graph_editor_2nd_fov_keyframe = "Next, change the camera's fov to {}° to create a new keyframe at this timestamp."
 
-pfm_tut_basic_animating_graph_editor_curve = "As you can see, a graph curve has now formed between the two keyframes. If the curve is not entirely visible or too small, you can right-click inside the graph and choose \"{pfm_fit_view_to_data}\" to make the view fit the graph curve."
+pfm_tut_basic_animating_graph_editor_curve = "As you can see, a graph curve has now formed between the two keyframes in the graph editor. If the curve is not entirely visible or too small, you can right-click inside the graph and choose \"{pfm_fit_view_to_data}\" to make the view fit the graph curve."
 
-pfm_tut_basic_animating_graph_editor_controls = "To move the graph view you can also hold down the middle mouse button and move the mouse. You can zoom in and out on the x-axis using the scroll wheel, or the y-axis by holding down the ctrl-key at the same time. Holding down the alt-key while zooming, will zoom in/out on both axes. You can also hold the right mouse button and move the mouse to zoom in on the current mouse position."
+pfm_tut_basic_animating_graph_editor_controls = "To move the graph view you can hold down the middle mouse button and move the mouse. You can zoom in and out on the x-axis using the scroll wheel, or the y-axis by holding down the ctrl-key at the same time. Holding down the alt-key while zooming, will zoom in/out on both axes.\nYou can also hold the ctrl-key and the right mouse-button at the same time and move the mouse to zoom in and out on the current mouse position."
 
-pfm_tut_basic_animating_graph_editor_move_playhead = "Now try to move the playhead between the two keyframes to see how the FOV changes between them."
+pfm_tut_basic_animating_graph_editor_move_playhead = "Before we continue with the animation, let's take a closer look at what you can do with keyframes and animation curves. You can try moving the playhead between the two keyframes after each step to see how it affects the fov in the viewport."
 
-pfm_tut_basic_animating_graph_editor_curve_center = "In some cases, you may want to add additional keyframes to an existing curve.\n\nMove the playhead to the center between the two keyframes to continue."
+pfm_tut_basic_animating_graph_editor_curve_keyframe = "Instead of using the actor editor, you can also create a new keyframe in the graph editor by pressing this button. Doing so will place the new keyframe on the path of the existing animation curve.\n\nTry doing so now. The playhead has been moved inbetween the two existing keyframes, so this is where the new keyframe will be placed."
 
-pfm_tut_basic_animating_graph_editor_curve_keyframe = "Now press this button to create another keyframe. Note how the keyframe is placed on the path of the curve."
-
-pfm_tut_basic_animating_graph_editor_select_keyframe = "Once a keyframe has been created, you can select it by clicking it, or by creating a rectangular selection by pressing and holding the left mouse button.\n\nTry selecting the middle keyframe now."
+pfm_tut_basic_animating_graph_editor_select_keyframe = "Once a keyframe has been created, you can select it by clicking it, or by creating a rectangular selection around it by pressing and holding the left mouse button.\n\nTry selecting the middle keyframe now."
 
 pfm_tut_basic_animating_graph_editor_move_mode = "Next, click this button to switch to the \"Move\" mode."
 
-pfm_tut_basic_animating_graph_editor_move_keyframe = "Now try moving the keyframe by clicking into the graph and moving the mouse. You can see how the path of the curve changes accordingly. You can hold the alt-key while moving the keyframe to only move it on the x-axis, or hold the shift-key to only move it on the y-axis.\n\nYou can move the playhead around to see how moving the keyframes affects the animation."
+pfm_tut_basic_animating_graph_editor_move_keyframe = "The \"Move\" mode allows you to freely move keyframes around on the x- and y-axis, updating the graph when you do. Try moving the keyframe by clicking into the graph and moving the mouse. You can see how the path of the graph curve changes accordingly. You can hold the alt-key while moving the keyframe to only move it on the x-axis, or hold the shift-key to only move it on the y-axis. Alternatively you can also use the two text fields at the top of the graph editor to change the timestamp or data value of the selected keyframe to specific values."
 
-pfm_tut_basic_animating_graph_editor_handles = "You may have noticed that when selecting the keyframe, two new dots have appeared to each side of the keyframe. These are called \"handles\" and allow you to control the flow of the curve. Try clicking and dragging one of the handles to see how it affects the curve."
+pfm_tut_basic_animating_graph_editor_handles = "You may have noticed that, when selecting the keyframe, two new dots have appeared to each side of the keyframe. These are called \"handles\" and allow you to control the flow of the curve around the keyframe. Try clicking and dragging one of the handles to see how it affects the curve."
 
-pfm_tut_basic_animating_graph_editor_handle_type = "There are three different types of handles: \"free\", \"aligned\" and \"vector\". The default handle type when you create a new keyframe is \"aligned\", which means that changing one of the two handles will align the other handle accordingly. If you want to move the handles independently from each other, you can change the handle type to \"free\". To do so, right-click the selected keyframe, then select \"Handle Type\" > \"Free\"."
+pfm_tut_basic_animating_graph_editor_handle_type = "There are three different types of keyframe handles: \"free\", \"aligned\" and \"vector\". The default handle type when you create a new keyframe is \"aligned\", which means that changing one of the two handles will also affect the other accordingly. If you want to move the handles independently from each other, for instance to create a sharp angle in the curve, you can change the handle type to \"free\". To do so, right-click the selected keyframe, then select \"{pfm_graph_editor_handle_type}\" > \"{pfm_graph_editor_handle_type_free}\" and then try moving the handles again."
 
-pfm_tut_basic_animating_graph_editor_vector_handle_type = "TODO"
+pfm_tut_basic_animating_graph_editor_vector_handle_type = "The \"vector\" handle type is special in that the handles will always point to the previous or next keyframe in the curve. Vector handles cannot be moved, attempting to do so will convert them to free handles."
 
-pfm_tut_basic_animating_graph_editor_interp = "In addition, you can change the flow of the curve by changing its interpolation type. To change the type, right-click the curve, then choose \"Interpolation\" and select one of the types to see its effect. Changing the interpolation type only affects the portion of the curve between the current keyframe and the next keyframe, the previous curve segment will remain unaffected.\nNote that the keyframe handles only have an effect if the interpolation type is set to Bezier."
+pfm_tut_basic_animating_graph_editor_interp = "In addition, you can change the flow of the curve altogether by changing its interpolation type. To change the interpolation type, right-click the curve, then choose \"{pfm_graph_editor_interpolation}\" and select one of the types to see its effect. Changing the interpolation type only affects the portion of the curve between the selected keyframe and the next keyframe, the previous curve segment will remain unaffected.\nNote that the keyframe handles only work if the interpolation type is set to Bézier, which is the default interpolation type."
 
-pfm_tut_basic_animating_graph_editor_easing = "You can change the flow of the curve even further by changing the easing type. You can find the different easing types by right-clicking the curve and choosing one of the items in the \"Easing Type\" sub-menu. Please note that the easing type has no effect if the interpolation type is set to Bezier, Linear or Constant."
+pfm_tut_basic_animating_graph_editor_easing = "All interpolation types, except \"Bézier\", \"Linear\" and \"Constant\", are also influenced by the \"{pfm_graph_editor_easing_mode}\". The easing type controls the interpolation speed of the curve segment, and can be used, for example, to make a curve segment start slowly, then speed up and then slow down near the end. You can find the different easing types by right-clicking the curve and choosing one of the items in the \"{pfm_graph_editor_easing_mode}\" sub-menu.\nYou can find an overview of the available easing types and interpolation methods in the web browser panel."
 
-pfm_tut_basic_animating_graph_editor_delete_keyframe = "For our dolly-zoom we'll keep it simple and stick to two keyframes with Bezier interpolation.\n\nSelect the middle keyframe and press the delete key to delete it."
+pfm_tut_basic_animating_graph_editor_delete_keyframe = "For our dolly-zoom we'll keep it simple and stick to two keyframes with Bézier interpolation.\n\nPress \"{pfm_continue}\" to continue to the next slide and reset the graph."
 
-pfm_tut_basic_animating_camera_start_frame = "To complete our dolly-zoom effect, we still need to animate the position of our camera. We want to move the position over the same time period as the fov, so let's go back to the frame time of the first keyframe. You can use the \"[\" and \"]\" keys to quickly jump between bookmarks and keyframes.\n\nGo back to the first keyframe to continue."
+pfm_tut_basic_animating_camera_start_frame = "To complete our dolly-zoom effect, we still need to animate the position of our camera. We want to move the camera over the same time period as the fov, so let's move the playhead back to the timestamp of the first keyframe. Instead of moving the playhead manually, you can use the \"[\" and \"]\" keys to quickly jump from one keyframe to another.\n\nTry using the keys to move the playhead back to the timestamp of the first keyframe."
 
-pfm_tut_basic_animating_work_camera = "Next, switch to the work camera, so we can move the scene camera using the manipulator controls."
+pfm_tut_basic_animating_work_camera = "Next, switch to the work camera, so we can move the scene camera in the viewport."
 
-pfm_tut_basic_animating_camera_move = "Now select the scene camera in the actor editor and move it to the indicated position in the viewport."
+pfm_tut_basic_animating_camera_move = "Now select the scene camera in the actor editor and move it to the indicated position in the viewport using the manipulator controls."
 
-pfm_tut_basic_animating_graph_editor_camera_pos = "If you take another look into the graph editor, you'll notice that the position has been split into it's x, y and z components. Each axis is represented by its own graph curve."
+pfm_tut_basic_animating_camera_pos = "Note how, in the graph editor, the position has been split into its x, y and z components, which each have their own graph. This is the case for all vector- and angle-based properties."
 
-pfm_tut_basic_animating_graph_editor_camera_rot = "Rotate the camera to face the character in the chair."
+pfm_tut_basic_animating_camera_end_frame = "Now move the playhead to the second keyframe (by pressing \"]\") and then move the camera to the indicated target position. Make sure to do it in this order, otherwise moving the camera will overwrite the position at the first keyframe."
 
-pfm_tut_basic_animating_camera_end_frame = "Now move the playhead to the second keyframe."
+pfm_tut_basic_animating_playback = "Congratulations, you have now created your first animation in PFM! You can see it in action by switching back to the scene camera, and using the playback controls to play the animation from the beginning."
 
-pfm_tut_basic_animating_camera_end_pos = "Move the camera to the target position in the viewport."
-
-pfm_tut_basic_animating_camera_rot_remove = "???"
-
-pfm_tut_basic_animating_conclusion = "Congratulations, you have now created your first animation in PFM!"
-
--- To complete out dolly-zoom effect, we still need to change the position of the camera
-
--- You can press the X button to move the playhead straight to the first bookmark, i.e. first keyframe
-
--- Move camera
--- Clear rotation
-
--- Remove animation
+pfm_tut_basic_animating_conclusion = "This concludes the first animation tutorial.\n\nYou can now end the tutorial, or press the continue-button to start the next tutorial in this series."
