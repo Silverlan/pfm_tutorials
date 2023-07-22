@@ -1,0 +1,29 @@
+pfm_tut_intro_welcome = "Hallo und herzlich willkommen beim Pragma Filmmaker (PFM)! Dieses Tutorial bietet Ihnen eine kurze Einführung in PFM und seine Benutzeroberfläche, um Ihnen den Einstieg zu erleichtern.\n\nJedes Tutorial besteht aus Folien wie dieser. Sie können das Textfeld mit der Maus verschieben, indem Sie darauf klicken und es ziehen.\nManche Tutorials sind vertont, in diesem Fall können Sie den Ton mithilfe der Audio-Schaltfläche oben links ein- oder ausschalten. Oben rechts sehen Sie, auf welcher Folie Sie sich befinden und wie viele Folien in diesem Tutorial noch übrig sind.\n\nSie können auf die Schaltfläche "{pfm_continue}" klicken, um zur nächsten Folie zu gelangen, oder das Tutorial jederzeit beenden, indem Sie "{pfm_end_tutorial}" drücken."
+
+pfm_tut_intro_interface_sections = "Standardmäßig ist die Hauptoberfläche von PFM in drei Abschnitte unterteilt: "Daten", "Ansicht" und "Animation".\nDer hervorgehobene Abschnitt links ist der "Daten"-Abschnitt. Hier finden Sie verschiedene "Panels" zur Erstellung und Bearbeitung von Akteuren, zum Erkunden und Herunterladen von Assets usw."
+
+pfm_tut_intro_viewport_section = "Auf der rechten Seite finden Sie den "Ansicht"-Abschnitt. Wie der Name schon sagt, befindet sich hier die Hauptansicht, das Render-Panel usw."
+
+pfm_tut_intro_timeline_section = "Last but not least, der "Animation"-Abschnitt unten. Hier können Sie Filmclips verwalten, Animationsdaten im Graph Editor Panel bearbeiten, usw. In späteren Tutorials werden wir detailliert auf jedes Panel eingehen."
+
+pfm_tut_intro_layout_resize = "Es gibt mehrere Möglichkeiten, das Layout nach Ihren persönlichen Vorlieben anzupassen. Sie können beispielsweise auf diese Trennlinien klicken und ziehen, um bestimmte Bereiche der Benutzeroberfläche zu vergrößern oder zu verkleinern.\n\nVersuchen Sie jetzt, die Trennlinie zu verschieben."
+
+pfm_tut_intro_layout_separate_window = "Sie können auch auf dieses Symbol oben rechts in einem beliebigen Panel klicken, um es vom Hauptfenster zu lösen.\nDies ist besonders nützlich, wenn Sie mit mehreren Monitoren arbeiten möchten.\n\nVersuchen Sie jetzt auf das Symbol zu klicken."
+
+pfm_tut_intro_layout_reattach_window = "Sobald Sie ein Fenster abgetrennt haben, können Sie es wie jedes andere Fenster in der Größe verändern und verschieben.\nUm es wieder an die Haupt-Benutzeroberfläche anzudocken, klicken Sie auf die Schließen-Schaltfläche (X) oben rechts. Dadurch wird das Fenster geschlossen und das Panel kehrt an seine ursprüngliche Position zurück.\n\nVersuchen Sie nun, das Fenster wieder anzudocken."
+
+pfm_tut_intro_layout_change_core = "Zusätzlich können Sie auch das grundlegende Layout der Benutzeroberfläche ändern, indem Sie eine der vorgegebenen Optionen im "{view}"-Menü in der Menüleiste auswählen.\n\nProbieren Sie jetzt das Layout zu ändern, indem Sie "{view}" > "{layout}" > "three_columns" auswählen."
+
+pfm_tut_intro_layout_change_core2 = "Wie Sie sehen können, sind die Abschnitte der Benutzeroberfläche nun in drei Spalten anstatt zwei aufgeteilt.\nNeben den vordefinierten Layouts können benutzerdefinierte Layouts hinzugefügt werden, indem Sie neue Layout-Vorlagenskripte erstellen. Das würde jedoch den Rahmen dieses Tutorials sprengen.\n\nFür den Moment werden wir zum standardmäßigen Zwei-Spalten-Layout zurückkehren."
+
+pfm_tut_intro_layout_save_preference = "Sobald Sie die Benutzeroberfläche nach Ihren Wünschen angeordnet haben, können Sie den aktuellen Layout-Zustand speichern, indem Sie "{view}" > "{layout}" > "{pfm_save_current_layout_state_as_default}" auswählen.\nDas nächste Mal, wenn Sie PFM starten, wird dieses Layout automatisch wiederhergestellt.\n\nDas aktuelle Layout wird auch in der Projektdatei gespeichert. Beim Öffnen eines PFM-Projekts wird das Layout wiederhergestellt, das verwendet wurde, als das Projekt zuletzt gespeichert wurde."
+
+pfm_tut_intro_help_menu = "Wenn Sie Hilfe benötigen, finden Sie nützliche Ressourcen im "{help}"-Menü in der Menüleiste.\nHier finden Sie direkte Links zur Online-Dokumentation, um dem Discord-Server beizutreten, das Online-Bug-Tracker zu überprüfen oder dieses Tutorial neu zu starten."
+
+pfm_tut_intro_tutorial_panel = "Damit ist dieses einführende Tutorial abgeschlossen. Sie können nun zu anderen Tutorials über das "{pfm_tutorial_catalog}"-Panel wechseln."
+
+pfm_tut_intro_tutorial_panel2 = "Hier finden Sie alle verfügbaren Tutorials, die nach Kategorien geordnet sind. Achten Sie auf den farbigen Kreis oben rechts in jedem Tutorial, der den Schwierigkeitsgrad angibt (grün für leicht und rot für schwer).\nEinige Tutorials sind nummeriert, was bedeutet, dass sie Teil einer Serie sind. Obwohl Sie die Tutorials in beliebiger Reihenfolge starten können, wird im Allgemeinen vorausgesetzt, dass Sie alle vorhergehenden Tutorials abgeschlossen haben."
+
+pfm_tut_intro_tutorial_panel3 = "Um zu beginnen, ist es in der Regel eine gute Idee, sich mit der Benutzeroberfläche vertraut zu machen, bevor Sie zu fortgeschrittenen Themen übergehen. Öffnen Sie die Kategorie "Benutzeroberfläche", um fortzufahren."
+
+pfm_tut_intro_tutorial_panel4 = "Sie können nun die Tutorial-Serie zur Benutzeroberfläche starten, indem Sie auf das Symbol für das Tutorial "{pfm_tutorial_viewport}" doppelklicken. Wenn Sie etwas anderes tun möchten, beenden Sie das Tutorial, indem Sie auf "{pfm_end_tutorial}" klicken."
