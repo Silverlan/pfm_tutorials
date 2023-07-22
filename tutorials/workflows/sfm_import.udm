@@ -1,0 +1,6 @@
+"tutorial"
+{
+	$string name "sfm_import"
+	$string icon "gui/pfm/tutorials/tutorial_sfm_import"
+	$string type "workflow"
+}

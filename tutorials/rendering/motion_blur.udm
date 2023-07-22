@@ -1,0 +1,5 @@
+"tutorial"
+{
+	$string name "motion_blur"
+	$string icon "gui/pfm/tutorials/tutorial_motion_blur"
+}

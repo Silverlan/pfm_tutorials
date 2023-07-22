@@ -1,0 +1,5 @@
+"tutorial"
+{
+	$string name "material_overrides"
+	$string icon "gui/pfm/tutorials/tutorial_material_overrides"
+}

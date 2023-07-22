@@ -1,0 +1,7 @@
+"tutorial"
+{
+	$string name "full_body_ik"
+	$string icon "gui/pfm/tutorials/tutorial_full_body_ik"
+	$string series "animating"
+	$uint32 position_in_series 5
+}

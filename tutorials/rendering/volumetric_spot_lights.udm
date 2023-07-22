@@ -1,0 +1,5 @@
+"tutorial"
+{
+	$string name "volumetric_spot_lights"
+	$string icon "gui/pfm/tutorials/tutorial_volumetric_spot_lights"
+}

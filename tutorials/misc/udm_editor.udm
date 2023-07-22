@@ -1,0 +1,5 @@
+"tutorial"
+{
+	$string name "udm_editor"
+	$string icon "gui/pfm/tutorials/tutorial_udm_editor"
+}

@@ -1,0 +1,5 @@
+"tutorial"
+{
+	$string name "cel_shading_outline"
+	$string icon "gui/pfm/tutorials/tutorial_cel_shading_outline"
+}

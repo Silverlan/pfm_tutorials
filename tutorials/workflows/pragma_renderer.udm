@@ -1,0 +1,6 @@
+"tutorial"
+{
+	$string name "pragma_renderer"
+	$string icon "gui/pfm/tutorials/tutorial_pragma_renderer"
+	$string type "workflow"
+}

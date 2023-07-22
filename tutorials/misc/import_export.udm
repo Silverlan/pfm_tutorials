@@ -1,0 +1,5 @@
+"tutorial"
+{
+	$string name "import_export"
+	$string icon "gui/pfm/tutorials/tutorial_import_export"
+}

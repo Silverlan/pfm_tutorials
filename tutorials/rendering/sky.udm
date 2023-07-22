@@ -1,0 +1,5 @@
+"tutorial"
+{
+	$string name "sky"
+	$string icon "gui/pfm/tutorials/tutorial_sky"
+}

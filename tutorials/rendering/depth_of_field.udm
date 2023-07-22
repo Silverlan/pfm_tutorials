@@ -1,0 +1,5 @@
+"tutorial"
+{
+	$string name "depth_of_field"
+	$string icon "gui/pfm/tutorials/tutorial_depth_of_field"
+}

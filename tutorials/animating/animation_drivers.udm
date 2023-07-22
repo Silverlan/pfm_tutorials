@@ -1,0 +1,7 @@
+"tutorial"
+{
+	$string name "animation_drivers"
+	$string icon "gui/pfm/tutorials/tutorial_animation_drivers"
+	$string series "animating"
+	$uint32 position_in_series 6
+}

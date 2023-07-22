@@ -1,6 +1,6 @@
 "tutorial"
 {
-	$string name "basic_animating"
+	$string name "animation_basics"
 	$string project_file "projects/tutorials/animating/01_basics"
 	$string icon "gui/pfm/tutorials/tutorial_basic_animating"
 	$string series "animating"

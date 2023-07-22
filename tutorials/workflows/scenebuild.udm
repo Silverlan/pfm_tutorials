@@ -1,0 +1,6 @@
+"tutorial"
+{
+	$string name "scenebuild"
+	$string icon "gui/pfm/tutorials/tutorial_scenebuild"
+	$string type "workflow"
+}
