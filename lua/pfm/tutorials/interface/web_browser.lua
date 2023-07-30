@@ -154,7 +154,7 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 
 	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			pm:LoadProject("projects/" .. nextTutorial)
+			pm:LoadTutorial("interface/actor_editor")
 		end,
 	})
 

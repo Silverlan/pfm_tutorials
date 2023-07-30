@@ -1,6 +1,6 @@
 pfm_tut_web_browser_intro = "PFM comes with an integrated web browser, which you can use to quickly look up information on the Pragma wiki, or to download custom assets.\nAny assets you download through the browser will be automatically imported and installed by Pragma."
 
-pfm_tut_web_browser_asset_download = "You can choose from several preset bookmarks for websites that offer a large amount of assets to download.\nFor the purpose of this tutorial we will download some simple props from sfmlab.com. Since this website contains obscene ads, it is hidden by default and you have to click the \"{pfm_web_browser_enable_nsfw_content}\" switch to unhide it.\n\nIf you do not wish to see obscene content, please end the tutorial now. Otherwise enable \"NSFW Content\" to continue."
+pfm_tut_web_browser_asset_download = "You can choose from several preset bookmarks for websites that offer a large amount of assets to download.\nFor the purpose of this tutorial we will download some simple props from sfmlab.com. Since this website contains obscene ads, it is hidden by default and you have to click the \"{pfm_web_browser_enable_nsfw_content}\" switch to unhide it.\n\nIf you are uncomfortable with that, please end the tutorial now. Otherwise enable \"NSFW Content\" to continue."
 
 pfm_tut_web_browser_asset_download_website = "Next, select \"SFM Lab\" from the bookmark list to continue."
 
