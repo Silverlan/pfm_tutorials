@@ -264,7 +264,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 
 	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			pm:LoadTutorial("interface/actor_editor")
+			pm:LoadTutorial("interface/render")
 		end,
 	})
 	elTut:StartSlide("intro")
