@@ -289,7 +289,10 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 
 	elTut:RegisterSlide("viewport_next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			pm:LoadTutorial("interface/render") -- TODO: Which one is the next series? (lighting?)
+			-- pm:LoadTutorial("interface/render") -- TODO: Which one is the next series? (lighting?)
+			time.create_simple_timer(0.0, function()
+				gui.Tutorial.close_tutorial()
+			end)
 		end,
 	})
 
