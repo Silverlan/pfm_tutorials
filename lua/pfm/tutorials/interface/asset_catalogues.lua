@@ -249,6 +249,13 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 	elTut:RegisterSlide("conclusion", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetTutorialCompleted()
+
+			slide:SetFocusElement(slide:FindElementByPath("editor_frame/tab_button_container"))
+			local _, elOutline = slide:AddHighlight(slide:FindElementByPath("editor_frame/panel_add_button"))
+			slide:AddHighlight("context_menu/material_catalog")
+			slide:AddHighlight("context_menu/model_catalog")
+			slide:AddHighlight("context_menu/particle_catalog")
+			slide:SetArrowTarget(elOutline)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
