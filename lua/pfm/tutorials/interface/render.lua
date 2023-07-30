@@ -11,7 +11,7 @@ include("/pfm/pfm_core_tutorials.lua")
 gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(elTut, pm)
 	elTut:RegisterSlide("intro", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_RENDER_UI_ID))
 			slide:AddGenericMessageBox()
 		end,
@@ -21,7 +21,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("sections", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_RENDER_UI_ID))
 			slide:AddGenericMessageBox()
 		end,
@@ -31,7 +31,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("render_engine", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:AddHighlight(slide:FindElementByPath("window_render/render_engine"))
 			slide:AddGenericMessageBox()
 
@@ -50,7 +50,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("render_image", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:AddHighlight({
 				slide:FindElementByPath("window_render/bt_render_preview"),
 				slide:FindElementByPath("window_render/bt_render_image"),
@@ -87,7 +87,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("render_progress", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:SetFocusElement(pm)
 			slide:AddHighlight(slide:FindElementByPath("info_bar/icon_container"))
 			slide:AddGenericMessageBox()
@@ -118,7 +118,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("saved_render", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:AddHighlight(slide:FindElementByPath("window_render/bt_open_output_dir"))
 			slide:AddGenericMessageBox()
 		end,
@@ -127,7 +127,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("render_job", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:AddHighlight(slide:FindElementByPath("window_render/bt_create_render_job"))
 			slide:AddGenericMessageBox()
 
@@ -161,7 +161,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("render_job_script", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			local renderFileName = "render"
 			if os.SYSTEM_WINDOWS then
 				renderFileName = renderFileName .. ".bat"
@@ -179,7 +179,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("vr_render", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:AddHighlight({
 				slide:FindElementByPath("window_render/preset"),
 				slide:FindElementByPath("window_render/render_engine"),
@@ -202,7 +202,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("vr_render_start", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:AddHighlight(slide:FindElementByPath("window_render/bt_render_image"))
 			slide:AddGenericMessageBox()
 
@@ -236,7 +236,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("vr_view", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:AddHighlight(slide:FindElementByPath("window_render/render_viewport"))
 			slide:AddGenericMessageBox()
 		end,
@@ -245,7 +245,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("vr_view_mode", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("render")
+			slide:GoToWindow("render")
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath("window_render/preview_mode"))
 			slide:AddGenericMessageBox()
@@ -270,7 +270,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("viewport_next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			pm:LoadTutorial("interface/render")
+			pm:LoadTutorial("interface/web_browser")
 		end,
 	})
 
