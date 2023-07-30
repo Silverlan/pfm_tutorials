@@ -4,4 +4,5 @@
 	$string icon "gui/pfm/tutorials/tutorial_constraints"
 	$string series "animating"
 	$uint32 position_in_series 3
+	$string difficulty "intermediate"
 }

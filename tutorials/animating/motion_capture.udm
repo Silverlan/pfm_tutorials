@@ -2,4 +2,5 @@
 {
 	$string name "motion_capture"
 	$string icon "gui/pfm/tutorials/tutorial_motion_capture"
+	$string difficulty "intermediate"
 }

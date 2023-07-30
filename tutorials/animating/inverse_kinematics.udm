@@ -5,4 +5,5 @@
 	$string icon "gui/pfm/tutorials/tutorial_inverse_kinematics"
 	$string series "animating"
 	$uint32 position_in_series 2
+	$string difficulty "intermediate"
 }

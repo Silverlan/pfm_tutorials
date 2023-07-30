@@ -5,4 +5,5 @@
 	$string icon "gui/pfm/tutorials/tutorial_web_browser"
 	$string series "interface"
 	$uint32 position_in_series 4
+	$string difficulty "beginner"
 }

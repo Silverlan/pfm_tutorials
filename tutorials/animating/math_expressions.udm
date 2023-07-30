@@ -4,4 +4,5 @@
 	$string icon "gui/pfm/tutorials/tutorial_math_expressions"
 	$string series "animating"
 	$uint32 position_in_series 4
+	$string difficulty "intermediate"
 }
