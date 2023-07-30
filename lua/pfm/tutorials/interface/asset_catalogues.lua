@@ -123,6 +123,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 			slide:AddHighlight(
 				slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
 			)
+			-- TODO: Mention holding shift- or alt-key to change placing behavior
 			slide:AddGenericMessageBox()
 			local gameView = pm:GetGameView()
 			local projectC = util.is_valid(gameView) and gameView:GetComponent(ents.COMPONENT_PFM_PROJECT) or nil
