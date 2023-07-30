@@ -10,13 +10,7 @@ include("/pfm/pfm_core_tutorials.lua")
 
 local uuidChar = "fde723dd-1ba0-4d3e-8536-e576fc161f80"
 local charTargetLocation = Vector(-80.3301, 22.377, -164.07)
-local nextTutorial = "tutorials/interface/02_actor_editor"
-
--- lua_exec_cl pfm/tutorials/interface/viewport.lua
-
-time.create_simple_timer(0.1, function()
-	gui.Tutorial.start_tutorial("viewport")
-end)
+local charChairToleranceDistance = 7.0
 
 gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", function(elTut, pm)
 	elTut:RegisterSlide("intro", {
@@ -160,7 +154,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 				end
 				local pose = animC:GetGlobalBonePose("lowerBody")
 				return (pose ~= nil) and pose:GetOrigin() or Vector()
-			end, 4.0)
+			end, charChairToleranceDistance)
 			if util.is_valid(targetInfo.lineEntity) then
 				targetInfo.lineEntity:SetColor(Color.Red)
 			end
