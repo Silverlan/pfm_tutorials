@@ -9,8 +9,8 @@
 include("/pfm/pfm_core_tutorials.lua")
 
 local uuidCamera = "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
-local camStartLocation = Vector(-163.264, 37.3805, -168.18)
-local camEndLocation = Vector(-111.308, 34.7855, -166.199)
+local camStartLocation = Vector(-133.753, 40.5682, -167.544)
+local camEndLocation = Vector(-95.7086, 40.5682, -167.544)
 local camStartFov = 45
 local camEndFov = 85
 local fovTolerance = 5.0
@@ -526,7 +526,6 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:AddHighlight(slide:FindElementByPath("contents"))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/cameras/header"))
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/header")
-			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/camera/header") -- TODO: Set as primary highlight
 
 			slide:AddHighlight(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID .. "/manip_controls/manip_move") -- TODO: Set as primary highlight
 
@@ -634,7 +633,10 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 
 	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			pm:LoadTutorial("interface/render") -- TODO
+			-- pm:LoadTutorial("interface/render") -- TODO
+			time.create_simple_timer(0.0, function()
+				gui.Tutorial.close_tutorial()
+			end)
 		end,
 	})
 	elTut:StartSlide("intro")
