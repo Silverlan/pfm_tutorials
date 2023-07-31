@@ -443,8 +443,10 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			local webBrowser = pm:OpenWindow(pfm.WINDOW_WEB_BROWSER)
 			pm:GoToWindow(pfm.WINDOW_WEB_BROWSER)
 			if util.is_valid(webBrowser) then
-				webBrowser:GetBrowser():SetUrl("https://easings.net/")
-				webBrowser:GetBrowser():Update()
+				time.create_simple_timer(0.1, function()
+					webBrowser:GetBrowser():SetUrl("https://easings.net/")
+					webBrowser:GetBrowser():Update()
+				end)
 			end
 
 			slide:AddGenericMessageBox()
