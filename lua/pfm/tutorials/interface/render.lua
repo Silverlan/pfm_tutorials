@@ -250,11 +250,14 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 			slide:AddHighlight(slide:FindElementByPath("window_render/preview_mode"))
 			slide:AddGenericMessageBox()
 		end,
-		nextSlide = "vr_video",
+		nextSlide = "image_sequence",
 	})
 
-	elTut:RegisterSlide("vr_video", {
+	elTut:RegisterSlide("image_sequence", {
 		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("render")
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
+			slide:AddHighlight(slide:FindElementByPath("window_render/frame_count"))
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "conclusion",

@@ -1,8 +1,8 @@
 pfm_tut_render_intro = "Welcome to the render tutorial. This tutorial will teach you how to render images and animations with the render panel."
 
-pfm_tut_render_sections = "This is the render panel, which is split into two sections:\nTo the left is the render preview, which is initially black because nothing has been rendered yet.\nOn the right you can find various options, which allow you to change the renderer, the render resolution, etc."
+pfm_tut_render_sections = "This is the render panel, which is split into two sections:\nTo the left is the render preview, which is initially black because nothing has been rendered yet.\nOn the right you can find various options, which allow you to change the renderer, the render resolution, etc. You can get more information for each option by hovering over it with the mouse."
 
-pfm_tut_render_render_engine = "By default there are two render engines available: \"Pragma\" and \"{pfm_render_engine_cycles}\".\nThe Pragma render engine simply uses Pragma's own renderer for the image. The overall render quality will be lower compared to {pfm_render_engine_cycles}, but rendering will be significantly faster. Pragma is recommended if you're planning on rendering animations.\n\n{pfm_render_engine_cycles} is a path tracing renderer, which can be used to create highly realistic images at the cost of very slow render times.\nThis renderer is usually a good option if you want to render a single still image.\n\nFor this demonstration we will be using the {pfm_render_engine_cycles} renderer. Switch to it to continue."
+pfm_tut_render_render_engine = "By default there are two render engines available: \"Pragma\" and \"{pfm_render_engine_cycles}\".\nThe Pragma render engine simply uses Pragma's own renderer for the image. The overall render quality will be lower compared to {pfm_render_engine_cycles}, but rendering will be significantly faster. Pragma is recommended if you're planning on rendering animations.\n\n{pfm_render_engine_cycles} is a path tracing renderer, which can be used to create highly realistic images at the cost of very slow render times.\nThis renderer is usually a good option if you want to render a single image, like a poster.\n\nFor this demonstration we will be using the {pfm_render_engine_cycles} renderer. Switch to it to continue."
 
 pfm_tut_render_render_image = "You can use these buttons to render the image.\nRendering a preview will create a low-resolution image, which will not get saved to disk.\nIt's fast to render and should give you a good approximation of what the final render will look like.\n\n\"{pfm_render_image}\" will generate the full-resolution image. Depending on the project, your hardware and the render settings, this can take several minutes or more.\n\nTry rendering the full-resolution image now. Please note that Pragma may appear frozen for a bit if this is the first render for this project session."
 
@@ -16,12 +16,12 @@ pfm_tut_render_render_job_script = "A file explorer window should now have appea
 
 pfm_tut_render_vr_render = "You can also use PFM to render other image types, such as equirectangular images for VR.\n\nChange the preset to \"{pfm_rt_preset_vr}\" and the render engine to \"Pragma\" to continue."
 
-pfm_tut_render_vr_render_start = "Now press the \"{pfm_render_image}\" button to start the render. To get the full VR experience the scene will have to be rendered twice, once for the left eye and once for the right eye.\nThe resulting image will then be stitched together into one equirectangular image."
+pfm_tut_render_vr_render_start = "Now press the \"{pfm_render_image}\" button to start the render. The scene will be rendered twice, once for the left eye and once for the right eye, which will then be stitched together to a single equirectangular image and saved to disk."
 
-pfm_tut_render_vr_view = "You can click and drag the left mouse button in the rendered image to look around as a 360 degree view."
+pfm_tut_render_vr_view = "When rendering VR images, you can click and drag the left mouse button in the render preview to look around as a 360 degree view."
 
-pfm_tut_render_vr_view_mode = "You can toggle between the left and right eye view for the preview viewport, or select \"{pfm_cycles_preview_mode_flat}\" to view the actual image."
+pfm_tut_render_vr_view_mode = "You can click this option to toggle the preview between the left eye and the right eye, or select \"{pfm_cycles_preview_mode_flat}\" to view the actual equirectangular image. Please note that PFM can only render image sequences. In order to render a VR video, you will need a video editing software capable of working with equirectangular images."
 
-pfm_tut_render_vr_video = "PFM can only render image sequences, so you will still need a video editing software capable of generating VR videos."
+pfm_tut_render_image_sequence = "To render a sequence of images instead of a single frame, you can change the number of frames in the settings. To render the entire film clip, you can right-click the field and choose \"{pfm_number_of_frames_set_to_end_of_clip}\"."
 
 pfm_tut_render_conclusion = "This concludes the tutorial on the render panel.\n\nYou can now end the tutorial, or press the continue-button to start the next tutorial in this series."
