@@ -1,63 +1,21 @@
-$string assetType "PFMP"
 "assetData"
 {
 	"session"
 	{
-		"settings"
-		{
-			$float playheadOffset 0
-			$string mapName "pfm_demo"
-			"renderSettings"
-			{
-				$float panoramaRange 180
-				$uint32 width 1920
-				$uint32 frameRate 24
-				$uint32 height 1080
-				$bool preCalculateLight 0
-				$string mode "combined"
-				$uint32 supersamplingFactor 1
-				$float exposure 50
-				$uint32 numberOfFrames 1
-				$string renderEngine "cycles"
-				$string deviceType "gpu"
-				$string preset "standard"
-				$uint32 maxTransparencyBounces 32
-				$float lightIntensityFactor 1
-				$string outputFormat "png"
-				$string colorTransform "filmic-blender"
-				$string colorTransformLook "Medium Contrast"
-				$string denoiseMode "detailed"
-				$bool renderWorld 1
-				$bool renderGameObjects 1
-				$bool renderPlayer 0
-				$bool cameraFrustumCullingEnabled 1
-				$bool pvsCullingEnabled 1
-				$bool progressiveRefinementEnabled 0
-				$bool transparentSky 0
-				$string previewQuality "low"
-				$bool stereoscopic 1
-				$string cameraType "0"
-				$string panoramaType "equirectangular"
-				$uint32 samples 20
-				$bool progressive 1
-				$uint32 tileSize 512
-				$string viewportMode "360_left_eye"
-				$float emissionStrength 0
-			}
-		}
 		$array clips [element;1][
 			{
 				"scene"
 				{
 					$array groups [element;0][]
 					$string name ""
-					$array actors [element;0][]
-					$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 					$string uniqueId "383d4edb-f5f5-4f27-81be-f79706911cd8"
+					$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+					$array actors [element;0][]
 					$bool visible 1
 				}
-				$string camera ""
 				$string name "new_project"
+				$string camera ""
+				$array bookmarkSets [element;0][]
 				$array trackGroups [element;1][
 					{
 						$bool muted 0
@@ -65,18 +23,19 @@ $string assetType "PFMP"
 						$bool visible 1
 						$array tracks [element;1][
 							{
-								$bool muted 0
 								$array animationClips [element;0][]
+								$bool muted 0
 								$array audioClips [element;0][]
-								$array overlayClips [element;0][]
 								$array filmClips [element;1][
 									{
 										"scene"
 										{
-											$array groups [element;3][
+											$array groups [element;4][
 												{
 													$array groups [element;0][]
 													$string name "environment"
+													$string uniqueId "c203a4ae-3eff-4fca-9d61-bd2d5d0d3321"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$array actors [element;1][
 														{
 															$array components [element;5][
@@ -86,8 +45,8 @@ $string assetType "PFMP"
 																	{
 																		$vec3 position [0,0,50]
 																		$quat rotation [1,0,0,0]
-																		$vec3 scale [1,1,1]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																	$string uniqueId "0c465473-a858-4127-af5a-c4836b48b163"
@@ -105,8 +64,8 @@ $string assetType "PFMP"
 																	"properties"
 																	{
 																		$float strength 0.3
-																		$bool transparent 0
 																		$string skyTexture "skies/dusk379.hdr"
+																		$bool transparent 0
 																	}
 																	$string uniqueId "5ef703d2-ed75-4971-9713-4e4d95270c7d"
 																},
@@ -137,13 +96,13 @@ $string assetType "PFMP"
 															$string name "sky"
 														}
 													]
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$string uniqueId "c203a4ae-3eff-4fca-9d61-bd2d5d0d3321"
 													$bool visible 1
 												},
 												{
 													$array groups [element;0][]
 													$string name "cameras"
+													$string uniqueId "4b4f1f85-0789-478e-bc5b-bf91dba41106"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$array actors [element;1][
 														{
 															$array components [element;3][
@@ -151,10 +110,10 @@ $string assetType "PFMP"
 																	$string type "pfm_actor"
 																	"properties"
 																	{
-																		$vec3 position [-28.107,54.9751,151.0916]
-																		$quat rotation [0.3788,0.0749,-0.9049,0.1789]
-																		$vec3 scale [1,1,1]
+																		$vec3 position [-114.9053,54.457,193.7523]
+																		$quat rotation [0.7071,0,0.7071,0]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																	$string uniqueId "ed213285-4498-4ad5-a9d1-1a1ea027ac1f"
@@ -171,8 +130,8 @@ $string assetType "PFMP"
 																	$string type "camera"
 																	"properties"
 																	{
-																		$float fov 90
 																		$float farz 32768
+																		$float fov 90.4761
 																		$float nearz 1
 																		$float focalDistance 72
 																	}
@@ -183,13 +142,13 @@ $string assetType "PFMP"
 															$string name "scene_camera"
 														}
 													]
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$string uniqueId "4b4f1f85-0789-478e-bc5b-bf91dba41106"
 													$bool visible 1
 												},
 												{
 													$string name "misc"
-													$array actors [element;2][
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
+													$array actors [element;1][
 														{
 															$string name "tutorial_script"
 															$string uniqueId "301d206d-881f-4245-934b-c8fe78a68392"
@@ -201,8 +160,8 @@ $string assetType "PFMP"
 																	{
 																		$vec3 position [5.451,33.9354,11.2042]
 																		$quat rotation [-0.52,0,0.8542,-0]
-																		$vec3 scale [1,1,1]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																},
@@ -211,97 +170,902 @@ $string assetType "PFMP"
 																	$string uniqueId "2eec4988-7af2-4671-b69a-b46678548f66"
 																	"properties"
 																	{
-																		$bool executeOnSpawn 1
-																		$string scriptFile "pfm/tutorials/animating/basics.lua"
 																		$string code "time.create_simple_timer(0.1,function() gui.Tutorial.start_tutorial('basic_animating') end)"
+																		$string scriptFile "pfm/tutorials/animating/basics.lua"
+																		$bool executeOnSpawn 1
 																	}
 																}
 															]
-														},
+														}
+													]
+													$bool visible 1
+													$array groups [element;0][]
+												},
+												{
+													$string uniqueId "92c1946a-8bf5-4789-85e8-43f3fb63da93"
+													$array actors [element;1][
 														{
+															$string name "spot_light"
+															$string uniqueId "4f499ae7-98ff-4b81-a9fa-4abd229e094a"
 															$array components [element;6][
 																{
-																	$string type "pfm_actor"
 																	"properties"
 																	{
-																		$vec3 position [-58.2852,31,190.7728]
-																		$quat rotation [0.7071,0.7071,0,0]
-																		$bool static 1
+																		$vec3 position [-162.6101,72.0839,-102.6449]
+																		$quat rotation [0.4327,0.0844,0.8756,-0.1973]
+																		$vec3 scale [1,1,1]
 																		$bool visible 1
-																		$vec3 scale [0.01,0.01,0.01]
+																		$bool static 0
 																	}
-																	$string uniqueId "c5f29524-3323-49f5-8fc6-11cd707e3467"
+																	$string uniqueId "959676b7-739f-4b54-9851-646c930c8d6a"
+																	$string type "pfm_actor"
 																},
 																{
-																	$string type "pfm_model"
 																	"properties"
 																	{
-																		$float flexControllerScale 1
-																		$bool flexControllerLimitsEnabled 1
-																		"materialOverrides"
-																		{
 
-																		}
 																	}
-																	$string uniqueId "db1c289b-5497-479e-8144-9064d40aad4d"
+																	$string uniqueId "e604b183-c650-47b6-b8cf-103018b67025"
+																	$string type "pfm_light_spot"
 																},
 																{
-																	$string type "model"
 																	"properties"
 																	{
-																		$string model "props/origami_cat"
-																		$uint32 skin 0
-																		"bodyGroup"
-																		{
-																			$uint32 ORIGAMI_Chat 0
-																		}
-																	}
-																	$string uniqueId "150c98d3-8233-4acc-8140-bf040ac84807"
-																},
-																{
-																	$string type "render"
-																	"properties"
-																	{
+																		$float intensity 74.8
+																		$uint8 intensityType 0
 																		$bool castShadows 1
+																		$float falloffExponent 1
+																		$bool baked 0
 																	}
-																	$string uniqueId "3ee50ec0-3903-4f57-85f0-e1aa8a2ac112"
+																	$string uniqueId "4e4761dd-e7ea-4137-b5b4-73595d8e9e31"
+																	$string type "light"
 																},
 																{
-																	$string type "light_map_receiver"
 																	"properties"
 																	{
-
+																		$float blendFraction 0.1
+																		$float outerConeAngle 60
+																		$float coneStartOffset 0
 																	}
-																	$string uniqueId "aa639a7a-4bb4-433c-b911-6133f8ec1450"
+																	$string uniqueId "14048bcf-2666-4dde-ab34-73e41dcf05c1"
+																	$string type "light_spot"
 																},
 																{
-																	$string type "color"
+																	"properties"
+																	{
+																		$float radius 168
+																	}
+																	$string uniqueId "89e7cdc5-246e-4c60-b7df-ab72ebac9bdf"
+																	$string type "radius"
+																},
+																{
 																	"properties"
 																	{
 																		$vec3 color [1,1,1]
 																		$float alpha 1
 																	}
-																	$string uniqueId "5035ec65-8904-4084-9c18-50ec803b3a8a"
+																	$string uniqueId "ea7e7a87-9972-4e58-bc3e-3943a889f297"
+																	$string type "color"
 																}
 															]
-															$string uniqueId "0657005c-16f1-4ee0-a6ea-5be960267a32"
-															$string name "origami_cat"
 														}
 													]
-													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
 													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$bool visible 1
+													$string name "lighting"
 													$array groups [element;0][]
+													$bool visible 1
 												}
 											]
 											$string name ""
-											$array actors [element;0][]
-											$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 											$string uniqueId "83c01533-31ca-4cdd-a620-203dfdd837a0"
+											$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+											$array actors [element;1][
+												{
+													$string name "generic_char"
+													$string uniqueId "5cd21a5d-daa4-4d3d-8da1-2a6231f122ed"
+													$array components [element;9][
+														{
+															$string uniqueId "0587f036-1a02-4520-90bb-9e8641d74c2b"
+															$string type "pfm_actor"
+															"properties"
+															{
+																$vec3 position [-75.8496,-9.6943,-167.6138]
+																$quat rotation [0.7071,0,-0.7071,0]
+																$vec3 scale [1,1,1]
+																$bool visible 1
+																$bool static 0
+															}
+														},
+														{
+															$string uniqueId "5b0cba85-9df9-44a6-be36-f157ce9d593b"
+															$string type "pfm_model"
+															"properties"
+															{
+																$float flexControllerScale 1
+																$bool flexControllerLimitsEnabled 1
+																"materialOverrides"
+																{
+
+																}
+															}
+														},
+														{
+															$string uniqueId "40c83392-69bc-4a19-977c-03e94dc865d8"
+															$string type "model"
+															"properties"
+															{
+																$string model "pfm/demo/generic_char"
+																$uint32 skin 0
+																"bodyGroup"
+																{
+																	$uint32 Man 0
+																}
+															}
+														},
+														{
+															$string uniqueId "b7711eb0-a563-40fa-9bd0-ecb541168289"
+															$string type "render"
+															"properties"
+															{
+																$bool castShadows 1
+															}
+														},
+														{
+															$string uniqueId "637ef1e8-2f52-4ea0-a0b9-c44b7ffca866"
+															$string type "animated"
+															"properties"
+															{
+																"bone"
+																{
+																	"R.lowerFoot"
+																	{
+																		$vec3 position [0,1.866,-0.0001]
+																		$quat rotation [0.8063,0.5916,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"lowerBody"
+																	{
+																		$vec3 position [0,30.277,0]
+																		$quat rotation [0.9998,0.0181,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.002"
+																	{
+																		$vec3 position [0,0.7503,0.0001]
+																		$quat rotation [0.997,-0.0774,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"Chest"
+																	{
+																		$vec3 position [0,5.6238,0.0001]
+																		$quat rotation [0.9947,0.103,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.008"
+																	{
+																		$vec3 position [0,0.6421,-0]
+																		$quat rotation [0.9964,0.0859,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.lowerArm"
+																	{
+																		$vec3 position [0.0001,6.8408,-0.0006]
+																		$quat rotation [0.9995,-0.0328,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.hand"
+																	{
+																		$vec3 position [0.0009,7.223,-0.0001]
+																		$quat rotation [0.9985,-0.0172,0.0009,0.0509]
+																		$vec3 scale [1,1,1]
+																	}
+																	"UpperChest"
+																	{
+																		$vec3 position [0,3.5002,-0.0003]
+																		$quat rotation [1,0.0058,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"middleBody"
+																	{
+																		$vec3 position [0,3.9622,0.0658]
+																		$quat rotation [0.994,0.11,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.shoulder"
+																	{
+																		$vec3 position [0,3.7266,0]
+																		$quat rotation [0.544,-0.4978,-0.4038,-0.5414]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.upperArm"
+																	{
+																		$vec3 position [0.0014,6.0545,-0.0006]
+																		$quat rotation [0.96,-0.2767,0.0122,-0.0423]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.010"
+																	{
+																		$vec3 position [0,0.6563,0]
+																		$quat rotation [0.7056,-0.0463,-0.7056,-0.0463]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.001"
+																	{
+																		$vec3 position [-0,0.5924,0]
+																		$quat rotation [0.7003,0.0981,-0.7003,0.0981]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger"
+																	{
+																		$vec3 position [0.8123,2.4948,-0.079]
+																		$quat rotation [0.6993,-0.0327,0.7063,-0.1044]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.001"
+																	{
+																		$vec3 position [0,0.5924,0]
+																		$quat rotation [0.7003,-0.0981,-0.7003,-0.0981]
+																		$vec3 scale [1,1,1]
+																	}
+																	"head"
+																	{
+																		$vec3 position [0,2.9788,0.0001]
+																		$quat rotation [0,0,0.9966,0.0814]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.003"
+																	{
+																		$vec3 position [0.2667,2.6572,-0.0418]
+																		$quat rotation [0.6847,-0.1058,0.6991,-0.1764]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.004"
+																	{
+																		$vec3 position [0.0001,0.8316,0]
+																		$quat rotation [0.706,-0.039,-0.706,-0.039]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.hand"
+																	{
+																		$vec3 position [-0.0009,7.223,0.0001]
+																		$quat rotation [0.9927,0.0225,-0.1068,0.0487]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.005"
+																	{
+																		$vec3 position [-0,0.7723,0]
+																		$quat rotation [0.9998,-0.0201,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.006"
+																	{
+																		$vec3 position [-0.2844,2.5413,0.004]
+																		$quat rotation [0.6944,-0.062,0.7044,-0.1334]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.007"
+																	{
+																		$vec3 position [0.0001,0.747,0]
+																		$quat rotation [0.7038,-0.0684,-0.7038,-0.0684]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.008"
+																	{
+																		$vec3 position [-0,0.642,0]
+																		$quat rotation [0.9964,-0.0859,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.012"
+																	{
+																		$vec3 position [1.1741,1.3781,-0.4181]
+																		$quat rotation [0.8163,-0.0235,0.4692,-0.3362]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.003"
+																	{
+																		$vec3 position [0.2693,2.6578,-0.0153]
+																		$quat rotation [0.6225,0.1866,0.7551,0.0866]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.013"
+																	{
+																		$vec3 position [0,0.4504,0]
+																		$quat rotation [0.7815,0.0654,-0.6056,0.135]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.lowerArm"
+																	{
+																		$vec3 position [-0.0001,6.8408,0.0006]
+																		$quat rotation [0.9995,0.0328,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.002"
+																	{
+																		$vec3 position [-0,0.7503,-0.0001]
+																		$quat rotation [0.997,0.0774,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.014"
+																	{
+																		$vec3 position [0.0001,0.683,-0]
+																		$quat rotation [0.9926,0.0115,0.0617,0.1039]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.005"
+																	{
+																		$vec3 position [0,0.7723,-0]
+																		$quat rotation [0.9998,0.0201,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.009"
+																	{
+																		$vec3 position [-0.7978,2.4445,0.0098]
+																		$quat rotation [0.7,-0.0279,0.7066,-0.0997]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.upperLeg"
+																	{
+																		$vec3 position [2.8904,-0.7783,-0.2877]
+																		$quat rotation [0.0019,-0.7072,0.0253,0.7066]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.finger.011"
+																	{
+																		$vec3 position [-0,0.6525,-0.0001]
+																		$quat rotation [0.9882,-0.1539,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"neck"
+																	{
+																		$vec3 position [0,6.1738,0.1266]
+																		$quat rotation [0.9925,0.1219,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.004"
+																	{
+																		$vec3 position [-0.0001,0.8316,0]
+																		$quat rotation [0.706,0.039,-0.706,0.039]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.shoulder"
+																	{
+																		$vec3 position [0,3.7266,0]
+																		$quat rotation [0.0563,-0.7353,0.6752,-0.016]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.009"
+																	{
+																		$vec3 position [-0.7822,2.4449,0.159]
+																		$quat rotation [0.6283,0.102,0.7711,0.0172]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.upperArm"
+																	{
+																		$vec3 position [-0.0007,6.0527,-0.0002]
+																		$quat rotation [0.7286,0.1797,0.6251,-0.2146]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger"
+																	{
+																		$vec3 position [0.8105,2.4955,-0.0942]
+																		$quat rotation [0.6281,0.1072,0.7704,0.0215]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.lowerFoot"
+																	{
+																		$vec3 position [0,1.866,-0.0001]
+																		$quat rotation [0.8063,0.5916,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.006"
+																	{
+																		$vec3 position [-0.2792,2.5418,0.0562]
+																		$quat rotation [0.6267,0.1392,0.7653,0.0476]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.007"
+																	{
+																		$vec3 position [-0.0001,0.747,0]
+																		$quat rotation [0.7038,0.0684,-0.7038,0.0684]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.010"
+																	{
+																		$vec3 position [-0,0.6563,0]
+																		$quat rotation [0.7056,0.0463,-0.7056,0.0463]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.011"
+																	{
+																		$vec3 position [0,0.6525,0.0001]
+																		$quat rotation [0.9882,0.1539,0,0]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.012"
+																	{
+																		$vec3 position [1.2359,1.3786,0.1609]
+																		$quat rotation [0.5906,0.3219,0.7333,-0.0994]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.foot"
+																	{
+																		$vec3 position [0,13.7513,0.0013]
+																		$quat rotation [0.7055,0.0451,-0.707,0.0223]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.013"
+																	{
+																		$vec3 position [-0,0.4505,0]
+																		$quat rotation [0.7312,-0.1492,-0.6656,-0.0148]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.finger.014"
+																	{
+																		$vec3 position [0,0.6831,0.0001]
+																		$quat rotation [0.9905,0.0101,-0.0888,0.1041]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.lowerLeg"
+																	{
+																		$vec3 position [-0.0001,12.7209,0.0012]
+																		$quat rotation [1,-0.0031,-0,-0.0085]
+																		$vec3 scale [1,1,1]
+																	}
+																	"L.foot"
+																	{
+																		$vec3 position [-0.0002,13.7513,-0.0011]
+																		$quat rotation [0.7065,0.0223,-0.706,0.0451]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.upperLeg"
+																	{
+																		$vec3 position [-2.8904,-0.7783,-0.2877]
+																		$quat rotation [0.0253,0.7067,0.0019,-0.7071]
+																		$vec3 scale [1,1,1]
+																	}
+																	"R.lowerLeg"
+																	{
+																		$vec3 position [-0.0001,12.7209,-0.0012]
+																		$quat rotation [1,0.0031,0.0006,-0.0085]
+																		$vec3 scale [1,1,1]
+																	}
+																}
+															}
+														},
+														{
+															$string uniqueId "90bd11d1-98cc-4057-8def-c22214d3182a"
+															$string type "eye"
+															"properties"
+															{
+																$vec3 viewTarget [0,0,0]
+																$float blinkDuration 0.2
+																$bool blinkingEnabled 1
+																$float localViewTargetFactor 1
+															}
+														},
+														{
+															$string uniqueId "e2a4f7d2-0830-4777-80fd-e411e20678ef"
+															$string type "flex"
+															"properties"
+															{
+
+															}
+														},
+														{
+															$string uniqueId "172b1453-184f-40c4-aa19-1de786372ac7"
+															$string type "ik_solver"
+															"properties"
+															{
+																"rigConfig"
+																{
+																	$array bones [element;20][
+																		{
+																			$string name "L.shoulder"
+																			$bool locked 1
+																		},
+																		{
+																			$string name "L.upperArm"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "L.lowerArm"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "L.hand"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "R.shoulder"
+																			$bool locked 1
+																		},
+																		{
+																			$string name "R.upperArm"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "R.lowerArm"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "R.hand"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "lowerBody"
+																			$bool locked 1
+																		},
+																		{
+																			$string name "L.upperLeg"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "L.lowerLeg"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "L.foot"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "R.upperLeg"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "R.lowerLeg"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "R.foot"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "middleBody"
+																			$bool locked 1
+																		},
+																		{
+																			$string name "Chest"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "UpperChest"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "neck"
+																			$bool locked 0
+																		},
+																		{
+																			$string name "head"
+																			$bool locked 0
+																		}
+																	]
+																	$array controls [element;11][
+																		{
+																			$string bone "L.lowerArm"
+																			$string type "Drag"
+																			$float rigidity 5
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "L.hand"
+																			$string type "OrientedDrag"
+																			$float rigidity 10
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "R.lowerArm"
+																			$string type "Drag"
+																			$float rigidity 5
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "R.hand"
+																			$string type "OrientedDrag"
+																			$float rigidity 10
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "L.lowerLeg"
+																			$string type "Drag"
+																			$float rigidity 5
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "L.foot"
+																			$string type "OrientedDrag"
+																			$float rigidity 10
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "R.lowerLeg"
+																			$string type "Drag"
+																			$float rigidity 5
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "R.foot"
+																			$string type "OrientedDrag"
+																			$float rigidity 10
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "UpperChest"
+																			$string type "Drag"
+																			$float rigidity 5
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "neck"
+																			$string type "Drag"
+																			$float rigidity 5
+																			$float maxForce -1
+																		},
+																		{
+																			$string bone "head"
+																			$string type "OrientedDrag"
+																			$float rigidity 10
+																			$float maxForce -1
+																		}
+																	]
+																	$array constraints [element;16][
+																		{
+																			$string bone0 "L.shoulder"
+																			$string type "BallSocket"
+																			$string bone1 "L.upperArm"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "L.upperArm"
+																			$string type "BallSocket"
+																			$string bone1 "L.lowerArm"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "L.lowerArm"
+																			$string type "BallSocket"
+																			$string bone1 "L.hand"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "R.shoulder"
+																			$string type "BallSocket"
+																			$string bone1 "R.upperArm"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "R.upperArm"
+																			$string type "BallSocket"
+																			$string bone1 "R.lowerArm"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "R.lowerArm"
+																			$string type "BallSocket"
+																			$string bone1 "R.hand"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "lowerBody"
+																			$string type "BallSocket"
+																			$string bone1 "L.upperLeg"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "L.upperLeg"
+																			$string type "BallSocket"
+																			$string bone1 "L.lowerLeg"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "L.lowerLeg"
+																			$string type "BallSocket"
+																			$string bone1 "L.foot"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "lowerBody"
+																			$string type "BallSocket"
+																			$string bone1 "R.upperLeg"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "R.upperLeg"
+																			$string type "BallSocket"
+																			$string bone1 "R.lowerLeg"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "R.lowerLeg"
+																			$string type "BallSocket"
+																			$string bone1 "R.foot"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "middleBody"
+																			$string type "BallSocket"
+																			$string bone1 "Chest"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "Chest"
+																			$string type "BallSocket"
+																			$string bone1 "UpperChest"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "UpperChest"
+																			$string type "BallSocket"
+																			$string bone1 "neck"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		},
+																		{
+																			$string bone0 "neck"
+																			$string type "BallSocket"
+																			$string bone1 "head"
+																			$float rigidity 1000
+																			$float maxForce -1
+																			$string axis "Z"
+																			$ang minAngles [1,1,1]
+																			$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+																			$ang maxAngles [-1,-1,-1]
+																		}
+																	]
+																}
+																$string rigConfigFile ""
+																"control"
+																{
+																	"L.lowerArm"
+																	{
+																		$vec3 position [13.5751,41.0962,0.3519]
+																		$bool locked 0
+																	}
+																	"L.hand"
+																	{
+																		$vec3 position [1.0584,26.7404,10.2899]
+																		$quat rotation [-0.1182,-0.3703,-0.71,-0.5873]
+																		$bool locked 0
+																	}
+																	"R.lowerArm"
+																	{
+																		$vec3 position [-13.7596,37.7059,4.4461]
+																		$bool locked 0
+																	}
+																	"L.lowerLeg"
+																	{
+																		$vec3 position [4.0857,44.6735,13.3776]
+																		$bool locked 0
+																	}
+																	"R.hand"
+																	{
+																		$vec3 position [-3.3093,24.8,8.5584]
+																		$quat rotation [-0.676,-0.6243,-0.0161,-0.391]
+																		$bool locked 0
+																	}
+																	"L.foot"
+																	{
+																		$vec3 position [4.8588,13.7906,14.7632]
+																		$quat rotation [0,-0,0.0376,0.9993]
+																		$bool locked 0
+																	}
+																	"R.lowerLeg"
+																	{
+																		$vec3 position [-7.0297,47.3266,11.9958]
+																		$bool locked 0
+																	}
+																	"R.foot"
+																	{
+																		$vec3 position [-3.1706,10.4158,14.5541]
+																		$quat rotation [-0,-0,-0.0376,-0.9993]
+																		$bool locked 0
+																	}
+																	"UpperChest"
+																	{
+																		$vec3 position [-0,45.1091,-0.0233]
+																	}
+																	"neck"
+																	{
+																		$vec3 position [-0,51.2058,-1.0041]
+																	}
+																	"head"
+																	{
+																		$vec3 position [0.35,53.0167,5.88]
+																		$quat rotation [0,0,0.8591,0.5117]
+																	}
+																}
+															}
+														},
+														{
+															$string uniqueId "f1de4b11-b1c8-4943-8723-0a95ccd7c5cd"
+															$string type "pfm_fbik"
+															"properties"
+															{
+
+															}
+														}
+													]
+												}
+											]
 											$bool visible 1
 										}
-										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
 										$string name "shot1"
+										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
+										$array bookmarkSets [element;0][]
 										$array trackGroups [element;1][
 											{
 												$bool muted 0
@@ -309,68 +1073,124 @@ $string assetType "PFMP"
 												$bool visible 1
 												$array tracks [element;1][
 													{
-														$bool muted 0
 														$array animationClips [element;1][
 															{
-																$string actor "0657005c-16f1-4ee0-a6ea-5be960267a32"
-																$string uniqueId "b6dd0a3e-e353-49f5-8cfc-bc7259afdebb"
-																$string name "origami_cat"
+																"animation"
+																{
+																	"assetData"
+																	{
+																		$float speedFactor 1
+																		$float duration 0
+																		$array channels [element;4][
+																			{
+																				$string interpolation "Linear"
+																				$arrayLz4 times [float;511][0,2.0118,2.0236,2.0354,2.0471,2.0589,2.0707,2.0825,2.0943,2.1061,2.1178,2.1296,2.1414,2.1532,2.165,2.1768,2.1886,2.2003,2.2121,2.2239,2.2357,2.2475,2.2593,2.271,2.2828,2.2946,2.3064,2.3182,2.33,2.3418,2.3535,2.3653,2.3771,2.3889,2.4007,2.4125,2.4242,2.436,2.4478,2.4596,2.4714,2.4832,2.4949,2.5067,2.5185,2.5303,2.5421,2.5539,2.5657,2.5774,2.5892,2.601,2.6128,2.6246,2.6364,2.6481,2.6599,2.6717,2.6835,2.6953,2.7071,2.7189,2.7306,2.7424,2.7542,2.766,2.7778,2.7896,2.8013,2.8131,2.8249,2.8367,2.8485,2.8603,2.8721,2.8838,2.8956,2.9074,2.9192,2.931,2.9428,2.9545,2.9663,2.9781,2.9899,3.0017,3.0135,3.0253,3.037,3.0488,3.0606,3.0724,3.0842,3.096,3.1077,3.1195,3.1313,3.1431,3.1549,3.1667,3.17,3.1801,3.1902,3.2003,3.2037,3.2104,3.2205,3.2239,3.2273,3.2306,3.2407,3.2475,3.2508,3.2542,3.2576,3.2609,3.2677,3.271,3.2744,3.2811,3.2879,3.2912,3.2946,3.3013,3.3081,3.3114,3.3148,3.3182,3.3215,3.3249,3.3283,3.3316,3.335,3.3384,3.3418,3.3451,3.3485,3.3519,3.3552,3.3586,3.362,3.3653,3.3687,3.3721,3.3754,3.3788,3.3822,3.3855,3.3889,3.3923,3.3956,3.399,3.4024,3.4057,3.4091,3.4125,3.4158,3.4192,3.4226,3.4259,3.4293,3.4327,3.436,3.4394,3.4428,3.4461,3.4495,3.4529,3.4562,3.4596,3.463,3.4663,3.4697,3.4731,3.4764,3.4798,3.4832,3.4865,3.4899,3.4933,3.4966,3.5,3.5036,3.5185,3.5327,3.5489,3.5651,3.5799,3.5947,3.6094,3.6235,3.6275,3.6454,3.6595,3.6738,3.6877,3.6916,3.725,3.7513,3.7665,3.7805,3.7951,3.8099,3.8317,3.8451,3.8588,3.8728,3.8868,3.9011,3.9156,3.9318,3.946,3.9599,3.9636,3.9796,3.9936,4.0081,4.0123,4.0276,4.0415,4.0555,4.0595,4.0732,4.0865,4.0905,4.1118,4.1257,4.139,4.153,4.1567,4.1789,4.1925,4.2059,4.2203,4.2349,4.2495,4.2626,4.2664,4.2851,4.3016,4.315,4.3286,4.3331,4.3522,4.3959,4.4295,4.4571,4.4789,4.4924,4.5057,4.5201,4.5237,4.5384,4.552,4.5556,4.5715,4.5855,4.5986,4.6023,4.6166,4.6205,4.6435,4.658,4.6711,4.7142,4.7455,4.773,4.7863,4.7995,4.8136,4.8277,4.8416,4.8551,4.8592,4.8736,4.887,4.8911,4.9064,4.9199,4.9244,4.9405,4.9544,4.9681,4.972,4.9927,5.0336,5.0669,5.0951,5.1091,5.1226,5.1368,5.15,5.1631,5.1771,5.1916,5.1953,5.2084,5.2131,5.2303,5.245,5.2613,5.2759,5.2908,5.3194,5.3361,5.3507,5.3664,5.3811,5.3949,5.4081,5.4226,5.4361,5.4503,5.4643,5.4684,5.4878,5.501,5.5145,5.5279,5.5323,5.5687,5.5918,5.6063,5.6209,5.6344,5.6491,5.6646,5.6799,5.6951,5.7088,5.7234,5.7371,5.7508,5.7547,5.768,5.7723,5.7892,5.8041,5.8188,5.8338,5.8481,5.8523,5.8685,5.8823,5.8959,5.9008,5.915,5.9289,5.9335,5.9543,5.9985,6.0321,6.0561,6.0707,6.0843,6.1047,6.1184,6.1332,6.1466,6.1608,6.1748,6.1885,6.2018,6.2161,6.2203,6.2356,6.249,6.2534,6.2701,6.2855,6.2991,6.3124,6.3167,6.3368,6.3512,6.3658,6.3803,6.3946,6.4087,6.4126,6.427,6.441,6.4452,6.4641,6.4803,6.4948,6.5086,6.5234,6.5375,6.5521,6.5564,6.5742,6.5895,6.6037,6.6178,6.6329,6.6371,6.6577,6.6722,6.6871,6.7012,6.7154,6.7284,6.7334,6.7518,6.7661,6.7807,6.7957,6.8104,6.8263,6.8406,6.8448,6.8619,6.8771,6.8914,6.9056,6.9198,6.9241,6.9422,6.9565,6.9708,6.985,6.9893,7.0127,7.0273,7.0434,7.0581,7.0722,7.0864,7.1004,7.1159,7.1303,7.1446,7.1491,7.1648,7.18,7.1958,7.2102,7.2251,7.2404,7.2445,7.2643,7.2789,7.2949,7.309,7.3228,7.338,7.3521,7.3726,7.3983,7.4141,7.4288,7.4429,7.4569,7.4713,7.4857,7.5004,7.515,7.5296,7.5434,7.5485,7.5655,7.5808,7.5952,7.6093,7.6235,7.6278,7.6442,7.6587,7.673,7.6773,7.6926,7.7082,7.7229,7.7377,7.7526,7.7574,7.773,7.7875,7.8021,7.8166,7.8211,7.836,7.8501,7.8645,7.8688,7.8914,7.9069,7.9209,7.9352,7.9494,7.9639,7.9783,7.993,7.9971,8.0127,8.0273,8.0416,8.0556,8.0594,8.0822,8.0977,8.1139,8.1305,8.1455,8.1803,8.2038,8.2281,8.2426,8.2562,8.2704]
+																				$string targetPath "ec/ik_solver/control/R.hand/position"
+																				$arrayLz4 values [vec3;511][[-3.3093,24.8,8.5584],[-3.3095,24.8004,8.5583],[-3.31,24.8018,8.5582],[-3.3108,24.8041,8.5579],[-3.312,24.8073,8.5575],[-3.3136,24.8115,8.557],[-3.3155,24.8167,8.5564],[-3.3178,24.8229,8.5557],[-3.3205,24.8301,8.5549],[-3.3236,24.8384,8.5541],[-3.3271,24.8477,8.5532],[-3.331,24.8581,8.5522],[-3.3353,24.8697,8.5512],[-3.3401,24.8823,8.5502],[-3.3453,24.8961,8.5492],[-3.3509,24.9111,8.5481],[-3.357,24.9273,8.547],[-3.3636,24.9447,8.546],[-3.3707,24.9634,8.5449],[-3.3783,24.9834,8.5439],[-3.3863,25.0046,8.5429],[-3.3949,25.0272,8.5419],[-3.404,25.0511,8.541],[-3.4137,25.0764,8.5402],[-3.4239,25.1031,8.5395],[-3.4347,25.1313,8.5389],[-3.446,25.1609,8.5383],[-3.4579,25.192,8.5379],[-3.4704,25.2246,8.5377],[-3.4836,25.2588,8.5376],[-3.4974,25.2945,8.5377],[-3.5118,25.3319,8.5379],[-3.5268,25.3709,8.5384],[-3.5425,25.4116,8.5391],[-3.559,25.454,8.54],[-3.5761,25.4981,8.5412],[-3.5939,25.5441,8.5426],[-3.6124,25.5918,8.5444],[-3.6317,25.6414,8.5464],[-3.6517,25.6929,8.5488],[-3.6725,25.7463,8.5515],[-3.6941,25.8016,8.5546],[-3.7164,25.859,8.5581],[-3.7396,25.9183,8.562],[-3.7637,25.9798,8.5663],[-3.7885,26.0434,8.5711],[-3.8143,26.1091,8.5763],[-3.8409,26.177,8.5821],[-3.8684,26.2472,8.5884],[-3.8968,26.3197,8.5952],[-3.9261,26.3945,8.6026],[-3.9564,26.4716,8.6106],[-3.9877,26.5512,8.6193],[-4.0199,26.6332,8.6286],[-4.0532,26.7177,8.6386],[-4.0874,26.8048,8.6492],[-4.1227,26.8945,8.6607],[-4.159,26.9869,8.6729],[-4.1964,27.0819,8.6859],[-4.2349,27.1797,8.6997],[-4.2745,27.2803,8.7143],[-4.3152,27.3838,8.7299],[-4.3571,27.4901,8.7464],[-4.4,27.5994,8.7638],[-4.4442,27.7118,8.7822],[-4.4896,27.8272,8.8016],[-4.5361,27.9457,8.8221],[-4.5839,28.0674,8.8436],[-4.6329,28.1923,8.8663],[-4.6832,28.3205,8.8901],[-4.7347,28.4521,8.9151],[-4.7875,28.5871,8.9413],[-4.8417,28.7255,8.9687],[-4.8971,28.8675,8.9974],[-4.9539,29.013,9.0274],[-5.012,29.1622,9.0588],[-5.0715,29.3151,9.0916],[-5.1324,29.4717,9.1258],[-5.1946,29.6322,9.1615],[-5.2583,29.7966,9.1986],[-5.3233,29.9649,9.2373],[-5.3898,30.1372,9.2775],[-5.4577,30.3136,9.3193],[-5.5271,30.4942,9.3628],[-5.5979,30.6789,9.4079],[-5.6702,30.8679,9.4547],[-5.744,31.0612,9.5032],[-5.8193,31.259,9.5535],[-5.896,31.4612,9.6056],[-5.9743,31.6679,9.6595],[-6.054,31.8792,9.7152],[-6.1353,32.0951,9.7729],[-6.2181,32.3157,9.8324],[-6.3024,32.5411,9.8939],[-6.3882,32.7714,9.9574],[-6.4755,33.0065,10.0229],[-6.5644,33.2466,10.0904],[-6.6548,33.4917,10.16],[-6.7467,33.7418,10.2316],[-6.8402,33.9971,10.3053],[-6.8671,34.0709,10.3267],[-6.9478,34.2927,10.3912],[-7.0284,34.5155,10.4561],[-7.1089,34.7394,10.5215],[-7.1357,34.8143,10.5434],[-7.1893,34.9646,10.5874],[-7.2695,35.1912,10.6539],[-7.2963,35.2671,10.6762],[-7.323,35.3432,10.6986],[-7.3497,35.4195,10.7211],[-7.4297,35.6497,10.789],[-7.483,35.8044,10.8347],[-7.5096,35.8822,10.8578],[-7.5362,35.9602,10.8809],[-7.5627,36.0386,10.9041],[-7.5893,36.1173,10.9275],[-7.6423,36.276,10.9745],[-7.6688,36.3559,10.9983],[-7.6953,36.4364,11.0222],[-7.7482,36.5989,11.0704],[-7.8009,36.7641,11.1194],[-7.8273,36.8478,11.1442],[-7.8536,36.9326,11.1692],[-7.9062,37.1056,11.22],[-7.9586,37.285,11.272],[-7.9848,37.3782,11.2986],[-8.011,37.4746,11.3256],[-8.0371,37.5759,11.3532],[-8.0632,37.6846,11.3814],[-8.0892,37.8075,11.4103],[-8.1153,37.968,11.4402],[-8.1413,38.1253,11.4708],[-8.1674,38.219,11.4496],[-8.1934,38.2968,11.4084],[-8.2196,38.3685,11.3856],[-8.2461,38.437,11.3691],[-8.2733,38.5036,11.3563],[-8.3025,38.5689,11.3459],[-8.3382,38.6332,11.3372],[-8.3794,38.6968,11.3299],[-8.4198,38.7599,11.3238],[-8.4585,38.8225,11.3185],[-8.4962,38.8849,11.3141],[-8.533,38.9469,11.3103],[-8.5693,39.0087,11.3071],[-8.605,39.0703,11.3044],[-8.6404,39.1317,11.3022],[-8.6755,39.193,11.3004],[-8.7103,39.2542,11.299],[-8.7449,39.3152,11.2979],[-8.7793,39.3762,11.2972],[-8.8135,39.437,11.2967],[-8.8475,39.4978,11.2966],[-8.8814,39.5586,11.2966],[-8.9152,39.6192,11.297],[-8.9488,39.6798,11.2975],[-8.9824,39.7404,11.2982],[-9.0158,39.8009,11.2992],[-9.0492,39.8614,11.3003],[-9.0824,39.9219,11.3016],[-9.1156,39.9823,11.3031],[-9.1487,40.0427,11.3048],[-9.1818,40.103,11.3066],[-9.2147,40.1634,11.3085],[-9.2476,40.2237,11.3106],[-9.2805,40.284,11.3128],[-9.3133,40.3443,11.3151],[-9.346,40.4045,11.3176],[-9.3787,40.4648,11.3201],[-9.4114,40.525,11.3228],[-9.444,40.5853,11.3256],[-9.4765,40.6455,11.3285],[-9.509,40.7057,11.3315],[-9.5415,40.7659,11.3346],[-9.5739,40.826,11.3378],[-9.6063,40.8862,11.3411],[-9.6387,40.9464,11.3444],[-9.671,41.0066,11.3479],[-9.7033,41.0667,11.3514],[-9.7356,41.1269,11.355],[-9.7678,41.187,11.3587],[-9.8,41.2472,11.3625],[-10.1705,41.3387,11.2141],[-10.0952,41.834,11.249],[-10.1318,42.5888,11.3724],[-9.858,42.9635,11.2601],[-9.8249,43.3645,11.2935],[-9.6425,44.1244,11.3335],[-9.5872,44.518,11.3439],[-9.5241,44.9107,11.4072],[-9.4807,45.671,11.423],[-9.4807,45.671,11.423],[-9.386,46.4296,11.3053],[-9.3505,46.7987,11.2536],[-9.3857,47.1594,11.2009],[-9.7779,47.4285,11.2987],[-9.7779,47.4285,11.2987],[-9.442,48.5707,11.1043],[-9.2442,49.0596,10.9811],[-9.2581,49.2479,10.9447],[-9.1583,49.6975,10.8595],[-9.1138,49.866,10.8284],[-9.0666,50.0558,10.7838],[-8.9485,50.4003,10.6889],[-8.9001,50.7334,10.6076],[-8.8669,50.8936,10.5679],[-8.9173,51.0437,10.5704],[-8.9286,51.2143,10.5456],[-8.9488,51.5411,10.4829],[-9.0584,51.704,10.4875],[-9.1245,51.8727,10.4413],[-9.3209,52.185,10.4055],[-9.4082,52.3406,10.3779],[-9.4082,52.3406,10.3779],[-9.6616,52.6162,10.3644],[-9.7158,52.736,10.3436],[-9.8425,52.8167,10.3776],[-9.8425,52.8167,10.3776],[-9.868,53.0125,10.3471],[-9.9252,53.0591,10.3818],[-9.8804,53.1271,10.3653],[-9.8804,53.1271,10.3653],[-9.8472,53.2331,10.383],[-9.7628,53.2802,10.3667],[-9.7628,53.2802,10.3667],[-9.6188,53.3343,10.3665],[-9.2205,53.3703,10.2857],[-8.8857,53.3391,10.2364],[-8.6874,53.2954,10.2466],[-8.6874,53.2954,10.2466],[-8.028,53.1609,10.2658],[-7.2314,52.9882,10.2927],[-6.8944,52.8494,10.358],[-6.4934,52.6983,10.3716],[-6.7579,52.4097,10.5965],[-5.4412,52.1576,10.3966],[-5.2549,51.8842,10.3705],[-5.2549,51.8842,10.3705],[-4.6007,51.4467,10.3606],[-4.3938,51.2901,10.2666],[-4.0097,51.086,10.2842],[-4.2512,51.1966,10.3574],[-4.2512,51.1966,10.3574],[-4.6926,51.7781,10.3558],[-6.4503,53.3185,10.5476],[-8.0836,54.284,10.5852],[-9.0051,54.6505,10.4327],[-9.5547,54.7454,10.2576],[-9.6894,54.7761,10.1374],[-9.6463,54.7472,9.9561],[-9.2713,54.5823,9.9631],[-9.2713,54.5823,9.9631],[-8.473,54.3239,10.0688],[-7.9602,54.1056,10.1477],[-7.9602,54.1056,10.1477],[-6.8806,53.5481,10.2735],[-6.361,53.2063,10.3771],[-5.9071,52.8472,10.43],[-5.9071,52.8472,10.43],[-5.2889,52.1666,10.5883],[-5.2889,52.1666,10.5883],[-5.3546,51.8773,10.6827],[-5.4212,51.9029,10.6925],[-5.652,52.0712,10.6555],[-7.0905,53.0782,10.8469],[-8.6501,53.8578,11.0388],[-10.023,54.2841,11.1244],[-10.2062,54.2508,11.0658],[-10.2086,54.2319,11.0185],[-10.0033,54.0953,11.0625],[-9.7063,54.0055,11.098],[-9.1946,53.8208,11.22],[-8.7572,53.6235,11.2735],[-8.7572,53.6235,11.2735],[-7.8008,53.1537,11.3923],[-7.3998,52.8428,11.425],[-7.3998,52.8428,11.425],[-6.5067,52.2267,11.3907],[-6.2089,51.9176,11.3944],[-6.2089,51.9176,11.3944],[-5.7612,51.4997,11.3229],[-5.671,51.4798,11.3154],[-5.8641,51.6397,11.2781],[-5.8641,51.6397,11.2781],[-6.2955,52.0123,11.3662],[-7.8985,53.0405,11.6453],[-9.6091,53.7132,11.8668],[-10.6235,53.8954,11.8895],[-11.319,53.9772,11.9769],[-11.3745,53.9133,11.9759],[-11.2885,53.8973,11.9897],[-11.0584,53.8243,12.0546],[-10.6342,53.7284,12.1245],[-10.3524,53.6522,12.2325],[-9.9952,53.5776,12.303],[-9.9952,53.5776,12.303],[-9.2596,53.3387,12.4427],[-9.2596,53.3387,12.4427],[-8.2893,52.9763,12.5224],[-7.6825,52.7036,12.4905],[-7.358,52.3817,12.4621],[-6.4178,51.7955,12.35],[-6.0178,51.5213,12.2784],[-5.4181,51.0594,12.0938],[-5.0166,50.7008,11.9865],[-4.9021,50.6281,11.9724],[-4.7432,50.4765,11.9166],[-4.7411,50.5507,11.9382],[-4.8814,50.7052,11.9526],[-5.0434,50.8676,11.9569],[-5.4109,51.2559,12.0063],[-5.7383,51.5307,12.0257],[-6.1408,51.8323,12.0314],[-6.5327,52.1184,12.0391],[-6.5327,52.1184,12.0391],[-7.8431,52.8239,11.9511],[-8.3014,53.0209,11.9308],[-8.7232,53.1537,11.8592],[-9.1274,53.2754,11.8488],[-9.1274,53.2754,11.8488],[-10.2141,53.4859,11.5609],[-10.4343,53.4396,11.4872],[-10.4984,53.4216,11.4387],[-10.5225,53.3858,11.4522],[-10.6048,53.3315,11.3996],[-10.5891,53.2987,11.4101],[-10.5793,53.2525,11.4103],[-10.5439,53.1643,11.4105],[-10.4621,53.1052,11.4147],[-10.3602,53.0439,11.408],[-10.1611,52.933,11.3732],[-9.958,52.8608,11.3416],[-9.7851,52.7942,11.3088],[-9.7851,52.7942,11.3088],[-9.3405,52.642,11.2841],[-9.3405,52.642,11.2841],[-8.7979,52.4543,11.2348],[-8.4491,52.321,11.1987],[-8.0816,52.1733,11.155],[-7.3654,51.8523,11.0702],[-6.9025,51.6856,11.0036],[-6.9025,51.6856,11.0036],[-6.2775,51.2817,10.9507],[-5.9045,51.097,10.8786],[-5.6873,50.9087,10.8213],[-5.6873,50.9087,10.8213],[-5.2432,50.6065,10.7093],[-5.124,50.5052,10.6174],[-5.124,50.5052,10.6174],[-4.9297,50.3558,10.5314],[-4.8826,50.2446,10.4825],[-5.17,50.3645,10.5649],[-5.5168,50.4821,10.621],[-5.9195,50.6136,10.7067],[-6.194,50.692,10.7493],[-6.6762,50.8198,10.8732],[-6.9552,50.8662,10.9134],[-7.2225,50.9153,11.0026],[-7.7064,50.9809,11.0802],[-7.9252,51.0146,11.1033],[-8.1558,51.0088,11.1563],[-8.3679,51.0106,11.164],[-8.7393,50.9717,11.2153],[-8.8975,50.9333,11.2104],[-8.8975,50.9333,11.2104],[-9.08,50.8656,11.205],[-9.191,50.8136,11.2047],[-9.191,50.8136,11.2047],[-9.2545,50.7012,11.2055],[-9.2414,50.6166,11.2034],[-9.23,50.531,11.2207],[-9.2478,50.4323,11.2389],[-9.2478,50.4323,11.2389],[-9.1657,50.0937,11.3062],[-9.1685,49.9267,11.3557],[-9.1527,49.7744,11.3998],[-9.1409,49.5943,11.4249],[-9.0533,49.2648,11.4551],[-9.0007,49.0588,11.4758],[-9.0007,49.0588,11.4758],[-8.8823,48.6711,11.5112],[-8.8438,48.4313,11.5442],[-8.8438,48.4313,11.5442],[-8.6883,47.9647,11.6026],[-8.5946,47.7065,11.626],[-8.4566,47.2173,11.6788],[-8.396,46.9527,11.6946],[-8.332,46.7006,11.7095],[-8.2343,46.175,11.7365],[-8.1885,45.9291,11.7336],[-8.1885,45.9291,11.7336],[-8.0991,45.4654,11.7095],[-8.0955,45.2466,11.6993],[-8.0673,45.0357,11.6723],[-8.0343,44.6022,11.6315],[-8.0425,44.3997,11.6226],[-8.0425,44.3997,11.6226],[-8.0889,44.0018,11.5944],[-8.1189,43.6116,11.5672],[-8.1652,43.4377,11.5321],[-8.1753,43.2594,11.4834],[-8.1857,43.0812,11.4586],[-8.2281,42.6965,11.3827],[-8.2281,42.6965,11.3827],[-8.2596,42.2677,11.3163],[-8.2758,42.0371,11.2761],[-8.2682,41.7951,11.241],[-8.2902,41.3195,11.1489],[-8.2624,41.0616,11.1029],[-8.2562,40.7981,11.0608],[-8.2369,40.2843,10.9728],[-8.2369,40.2843,10.9728],[-8.2149,39.7892,10.8667],[-8.1853,39.5477,10.8191],[-8.1466,39.3214,10.77],[-8.0989,38.8417,10.6711],[-8.0549,38.6171,10.6314],[-8.0549,38.6171,10.6314],[-8.0264,38.1556,10.5402],[-8.0049,37.9232,10.4998],[-7.9721,37.6867,10.4606],[-7.9004,37.22,10.3737],[-7.9004,37.22,10.3737],[-7.8202,36.7855,10.2927],[-8.0802,36.5887,10.3081],[-7.8748,36.123,10.1537],[-7.7966,35.9152,10.1045],[-7.6096,35.7198,10.073],[-7.4248,35.3205,9.9778],[-7.2687,35.16,10.0218],[-7.1991,35.0079,9.9836],[-7.0774,34.7084,10.0299],[-6.9875,34.5841,10.011],[-6.9875,34.5841,10.011],[-6.7698,34.35,10.0124],[-6.6718,34.2787,10.0161],[-6.5612,34.2166,9.9618],[-6.4102,34.0934,9.9471],[-6.3334,34.0402,9.9279],[-6.2514,34.0024,9.9187],[-6.2514,34.0024,9.9187],[-6.0516,33.8503,9.8558],[-6.0505,33.8221,9.8457],[-5.9943,33.7947,9.7821],[-5.9283,33.7385,9.7491],[-5.8865,33.7123,9.7326],[-5.8092,33.6911,9.6729],[-5.7745,33.6599,9.6555],[-5.7745,33.6599,9.6555],[-5.6086,33.5086,9.5229],[-5.5812,33.4964,9.5132],[-5.5013,33.4938,9.4686],[-5.4402,33.4455,9.4429],[-5.4105,33.4053,9.43],[-5.3336,33.3663,9.3923],[-5.3047,33.3233,9.3807],[-5.2141,33.2652,9.3309],[-5.2079,33.2536,9.3224],[-5.1588,33.2511,9.2904],[-5.1092,33.2251,9.2666],[-5.1092,33.2251,9.2666],[-5.0039,33.1987,9.218],[-4.9678,33.1721,9.204],[-4.9245,33.1591,9.1854],[-4.9002,33.1457,9.1733],[-4.8159,33.1355,9.132],[-4.8159,33.1355,9.132],[-4.8121,33.1244,9.1364],[-4.7549,33.1257,9.1188],[-4.7659,33.1072,9.134],[-4.7659,33.1072,9.134],[-4.7004,33.0995,9.1016],[-4.7271,33.0863,9.1223],[-4.6806,33.0757,9.1144],[-5.2152,32.9525,9.4731],[-5.2147,32.9453,9.4808],[-5.2147,32.9453,9.4808],[-5.2413,32.9136,9.5126],[-5.2449,32.8982,9.5143],[-5.2491,32.8697,9.5287],[-5.256,32.8618,9.5281],[-5.256,32.8618,9.5281],[-5.2869,32.8539,9.5456],[-5.2815,32.8575,9.5384],[-5.2825,32.8619,9.5407],[-5.2825,32.8619,9.5407],[-5.275,32.8619,9.5198],[-5.2936,32.8577,9.5312],[-5.3087,32.8532,9.5257],[-5.3099,32.8501,9.518],[-5.3205,32.8469,9.5129],[-5.3296,32.8415,9.5181],[-5.3145,32.8423,9.5048],[-5.312,32.8447,9.4962],[-5.312,32.8447,9.4962],[-5.3322,32.8209,9.4897],[-5.3294,32.819,9.4809],[-5.3364,32.8205,9.4866],[-5.3384,32.8233,9.4762],[-5.3384,32.8233,9.4762],[-5.3508,32.8113,9.4639],[-5.3506,32.8133,9.4601],[-5.3571,32.8135,9.4658],[-5.3542,32.8081,9.4671],[-5.3541,32.8072,9.4682],[-5.3419,32.8123,9.4706],[-5.3353,32.811,9.4651],[-5.3311,32.8068,9.4558],[-5.332,32.8069,9.4583],[-5.3371,32.8049,9.4554],[-5.3451,32.8032,9.4601]]
+																			},
+																			{
+																				$string interpolation "Linear"
+																				$arrayLz4 times [float;429][0,2.0177,2.0323,2.0492,2.0652,2.0807,2.0963,2.1107,2.1243,2.1382,2.1524,2.1564,2.1733,2.1891,2.2051,2.2188,2.2337,2.2486,2.2529,2.2709,2.2879,2.3033,2.3187,2.3342,2.3493,2.3648,2.3826,2.4171,2.4575,2.4991,2.5308,2.5554,2.5807,2.5954,2.61,2.6246,2.6399,2.6546,2.6691,2.6833,2.6975,2.7112,2.7154,2.7293,2.7437,2.7482,2.7637,2.7798,2.7972,2.8122,2.8275,2.8426,2.8582,2.8732,2.8879,2.8922,2.9083,2.9227,2.9366,2.9407,2.9542,2.9683,2.9725,2.9893,3.0046,3.0187,3.0345,3.0496,3.0635,3.0676,3.0862,3.1009,3.1154,3.1298,3.1438,3.1484,3.1676,3.1822,3.1991,3.2149,3.2302,3.2458,3.2604,3.2748,3.29,3.3046,3.3086,3.3231,3.3385,3.3534,3.3684,3.3725,3.3883,3.4042,3.4187,3.4345,3.4495,3.4641,3.4684,3.4888,3.5036,3.5185,3.5327,3.5489,3.5651,3.5799,3.5947,3.6094,3.6235,3.6275,3.6454,3.6595,3.6738,3.6877,3.6916,3.725,3.7513,3.7665,3.7805,3.7951,3.8099,3.8317,3.8451,3.8588,3.8728,3.8868,3.9011,3.9156,3.9318,3.946,3.9599,3.9636,3.9796,3.9936,4.0081,4.0123,4.0276,4.0415,4.0555,4.0595,4.0732,4.0865,4.0905,4.1118,4.1257,4.139,4.153,4.1567,4.1789,4.1925,4.2059,4.2203,4.2349,4.2495,4.2626,4.2664,4.2851,4.3016,4.315,4.3286,4.3331,4.3522,4.3959,4.4295,4.4571,4.4789,4.4924,4.5057,4.5201,4.5237,4.5384,4.552,4.5556,4.5715,4.5855,4.5986,4.6023,4.6166,4.6205,4.6435,4.658,4.6711,4.7142,4.7455,4.773,4.7863,4.7995,4.8136,4.8277,4.8416,4.8551,4.8592,4.8736,4.887,4.8911,4.9064,4.9199,4.9244,4.9405,4.9544,4.9681,4.972,4.9927,5.0336,5.0669,5.0951,5.1091,5.1226,5.1368,5.15,5.1631,5.1771,5.1916,5.1953,5.2084,5.2131,5.2303,5.245,5.2613,5.2759,5.2908,5.3194,5.3361,5.3507,5.3664,5.3811,5.3949,5.4081,5.4226,5.4361,5.4503,5.4643,5.4684,5.4878,5.501,5.5145,5.5279,5.5323,5.5687,5.5918,5.6063,5.6209,5.6344,5.6491,5.6646,5.6799,5.6951,5.7088,5.7234,5.7371,5.7508,5.7547,5.768,5.7723,5.7892,5.8041,5.8188,5.8338,5.8481,5.8523,5.8685,5.8823,5.8959,5.9008,5.915,5.9289,5.9335,5.9543,5.9985,6.0321,6.0561,6.0707,6.0843,6.1047,6.1184,6.1332,6.1466,6.1608,6.1748,6.1885,6.2018,6.2161,6.2203,6.2356,6.249,6.2534,6.2701,6.2855,6.2991,6.3124,6.3167,6.3368,6.3512,6.3658,6.3803,6.3946,6.4087,6.4126,6.427,6.441,6.4452,6.4641,6.4803,6.4948,6.5086,6.5234,6.5375,6.5521,6.5564,6.5742,6.5895,6.6037,6.6178,6.6329,6.6371,6.6577,6.6722,6.6871,6.7012,6.7154,6.7284,6.7334,6.7518,6.7661,6.7807,6.7957,6.8104,6.8263,6.8406,6.8448,6.8619,6.8771,6.8914,6.9056,6.9198,6.9241,6.9422,6.9565,6.9708,6.985,6.9893,7.0127,7.0273,7.0434,7.0581,7.0722,7.0864,7.1004,7.1159,7.1303,7.1446,7.1491,7.1648,7.18,7.1958,7.2102,7.2251,7.2404,7.2445,7.2643,7.2789,7.2949,7.309,7.3228,7.338,7.3521,7.3726,7.3983,7.4141,7.4288,7.4429,7.4569,7.4713,7.4857,7.5004,7.515,7.5296,7.5434,7.5485,7.5655,7.5808,7.5952,7.6093,7.6235,7.6278,7.6442,7.6587,7.673,7.6773,7.6926,7.7082,7.7229,7.7377,7.7526,7.7574,7.773,7.7875,7.8021,7.8166,7.8211,7.836,7.8501,7.8645,7.8688,7.8914,7.9069,7.9209,7.9352,7.9494,7.9639,7.9783,7.993,7.9971,8.0127,8.0273,8.0416,8.0556,8.0594,8.0822,8.0977,8.1139,8.1305,8.1455,8.1803,8.2038,8.2281,8.2426,8.2562,8.2704]
+																				$string targetPath "ec/ik_solver/control/R.hand/rotation"
+																				$arrayLz4 values [quat;429][[-0.676,-0.6243,-0.0161,-0.391],[-0.656,-0.7278,0.0228,-0.1988],[-0.6558,-0.7279,0.0227,-0.199],[-0.6564,-0.7273,0.023,-0.199],[-0.6569,-0.7276,0.0239,-0.196],[-0.657,-0.7274,0.0232,-0.1968],[-0.6562,-0.7276,0.0229,-0.1987],[-0.6562,-0.728,0.0243,-0.1968],[-0.6561,-0.7286,0.0255,-0.1951],[-0.658,-0.7277,0.0272,-0.1917],[-0.6578,-0.7278,0.0267,-0.1923],[-0.6578,-0.7278,0.0267,-0.1923],[-0.6567,-0.7278,0.0248,-0.196],[-0.6565,-0.7276,0.0239,-0.1976],[-0.6562,-0.7271,0.0221,-0.2007],[-0.655,-0.7265,0.0184,-0.2069],[-0.6546,-0.7261,0.017,-0.2099],[-0.6547,-0.7257,0.0166,-0.2106],[-0.6547,-0.7257,0.0166,-0.2106],[-0.6545,-0.7255,0.016,-0.2122],[-0.6545,-0.7256,0.0161,-0.2117],[-0.6545,-0.7257,0.0165,-0.2115],[-0.6545,-0.7259,0.0168,-0.211],[-0.6542,-0.7261,0.0168,-0.2109],[-0.654,-0.7263,0.0164,-0.2112],[-0.6529,-0.7265,0.015,-0.2137],[-0.6524,-0.7266,0.0143,-0.215],[-0.6513,-0.7274,0.0127,-0.2157],[-0.6506,-0.728,0.0116,-0.216],[-0.649,-0.7275,0.0079,-0.2226],[-0.648,-0.7283,0.0084,-0.2229],[-0.6482,-0.7284,0.0083,-0.2216],[-0.6477,-0.7291,0.0076,-0.2213],[-0.6467,-0.7295,0.0063,-0.2228],[-0.6466,-0.729,0.0068,-0.2246],[-0.6463,-0.7289,0.0069,-0.2258],[-0.6459,-0.7288,0.0076,-0.2273],[-0.6459,-0.7284,0.0081,-0.2283],[-0.6458,-0.7283,0.0084,-0.2289],[-0.6457,-0.7281,0.0086,-0.2298],[-0.6461,-0.7277,0.0099,-0.2302],[-0.6463,-0.7277,0.0097,-0.2294],[-0.6463,-0.7277,0.0097,-0.2294],[-0.6464,-0.728,0.0079,-0.2282],[-0.6469,-0.7279,0.0073,-0.2273],[-0.6469,-0.7279,0.0073,-0.2273],[-0.6476,-0.7277,0.0083,-0.2259],[-0.6476,-0.7277,0.009,-0.2259],[-0.6477,-0.7274,0.0088,-0.2263],[-0.6481,-0.7269,0.0078,-0.2269],[-0.6484,-0.7267,0.0072,-0.2266],[-0.6497,-0.726,0.0075,-0.2255],[-0.6505,-0.7253,0.0077,-0.2252],[-0.6513,-0.7248,0.0079,-0.2246],[-0.6526,-0.7239,0.008,-0.2236],[-0.6526,-0.7239,0.008,-0.2236],[-0.6547,-0.723,0.0101,-0.2201],[-0.6565,-0.7224,0.0125,-0.2167],[-0.6581,-0.7217,0.0145,-0.214],[-0.6581,-0.7217,0.0145,-0.214],[-0.662,-0.7188,0.0173,-0.2116],[-0.6638,-0.7162,0.0183,-0.2147],[-0.6638,-0.7162,0.0183,-0.2147],[-0.6676,-0.7123,0.0221,-0.2155],[-0.6694,-0.711,0.0246,-0.214],[-0.6714,-0.7095,0.0271,-0.2122],[-0.6779,-0.7049,0.0352,-0.2056],[-0.6809,-0.7024,0.0386,-0.2036],[-0.6844,-0.6991,0.0424,-0.2024],[-0.6844,-0.6991,0.0424,-0.2024],[-0.6923,-0.6919,0.0493,-0.1988],[-0.6944,-0.6903,0.0515,-0.1967],[-0.6967,-0.6882,0.0536,-0.1955],[-0.6991,-0.6855,0.0548,-0.1957],[-0.7044,-0.6808,0.0605,-0.1915],[-0.7044,-0.6808,0.0605,-0.1915],[-0.7085,-0.6769,0.0687,-0.1875],[-0.709,-0.6761,0.0717,-0.1873],[-0.708,-0.6768,0.0722,-0.1884],[-0.7085,-0.677,0.0685,-0.187],[-0.7048,-0.6819,0.0681,-0.1835],[-0.7116,-0.6785,0.0733,-0.1668],[-0.7173,-0.674,0.0784,-0.1582],[-0.7227,-0.6693,0.0838,-0.1506],[-0.7334,-0.6575,0.0942,-0.1446],[-0.7368,-0.6537,0.0971,-0.1428],[-0.7368,-0.6537,0.0971,-0.1428],[-0.7436,-0.6459,0.0992,-0.1414],[-0.7485,-0.6405,0.1015,-0.139],[-0.7546,-0.6335,0.1055,-0.1346],[-0.7675,-0.6187,0.117,-0.1204],[-0.7675,-0.6187,0.117,-0.1204],[-0.7815,-0.6009,0.1261,-0.1109],[-0.7875,-0.5926,0.1289,-0.11],[-0.7928,-0.5849,0.131,-0.1109],[-0.7976,-0.578,0.1324,-0.1109],[-0.8082,-0.5637,0.1347,-0.1049],[-0.8142,-0.5555,0.1379,-0.0974],[-0.8142,-0.5555,0.1379,-0.0974],[-0.8339,-0.5252,0.1563,-0.066],[-0.8401,-0.5152,0.1585,-0.0601],[-0.8487,-0.5001,0.1617,-0.058],[-0.8551,-0.4892,0.1629,-0.0534],[-0.8668,-0.4671,0.1686,-0.0438],[-0.8727,-0.4559,0.1707,-0.0369],[-0.8869,-0.4305,0.1667,-0.017],[-0.8943,-0.4168,0.1627,-0.003],[-0.9004,-0.4035,0.1627,0.0072],[-0.9086,-0.3792,0.1731,0.0248],[-0.9086,-0.3792,0.1731,0.0248],[-0.9166,-0.3525,0.1862,0.0305],[-0.9227,-0.337,0.1841,0.0336],[-0.9276,-0.322,0.1858,0.0367],[-0.933,-0.3082,0.182,0.0384],[-0.933,-0.3082,0.182,0.0384],[-0.9442,-0.2775,0.1717,0.0456],[-0.9474,-0.2596,0.1799,0.052],[-0.9506,-0.2389,0.1881,0.0624],[-0.954,-0.2191,0.1915,0.0718],[-0.9556,-0.2107,0.1921,0.0747],[-0.9565,-0.2034,0.194,0.0787],[-0.9581,-0.1866,0.1989,0.0877],[-0.959,-0.1777,0.2012,0.0912],[-0.9603,-0.159,0.2065,0.1],[-0.9605,-0.1506,0.21,0.1031],[-0.9606,-0.1432,0.2146,0.1039],[-0.9607,-0.1361,0.2186,0.1033],[-0.9614,-0.1221,0.2263,0.0982],[-0.962,-0.1135,0.2294,0.0953],[-0.9629,-0.1044,0.2321,0.0897],[-0.9648,-0.0889,0.2364,0.0733],[-0.9648,-0.0889,0.2364,0.0733],[-0.966,-0.0768,0.2411,0.0535],[-0.9657,-0.0706,0.246,0.0447],[-0.9646,-0.0651,0.2527,0.0374],[-0.9646,-0.0651,0.2527,0.0374],[-0.9617,-0.0537,0.2675,0.0272],[-0.9601,-0.0481,0.2743,0.0253],[-0.9589,-0.0426,0.2793,0.0275],[-0.9589,-0.0426,0.2793,0.0275],[-0.9587,-0.031,0.2812,0.0307],[-0.9598,-0.0257,0.2777,0.0321],[-0.9598,-0.0257,0.2777,0.0321],[-0.9605,-0.0158,0.2763,0.0296],[-0.962,-0.0029,0.2716,0.0283],[-0.9619,0.0076,0.2713,0.0333],[-0.9613,0.0167,0.2723,0.0397],[-0.9613,0.0167,0.2723,0.0397],[-0.9617,0.0313,0.2634,0.0686],[-0.9639,0.0253,0.2336,0.1255],[-0.9626,0.0226,0.2254,0.1486],[-0.9602,0.0177,0.2181,0.1733],[-0.9584,0.0148,0.2093,0.1933],[-0.9577,0.0093,0.1783,0.2256],[-0.955,0.0075,0.1655,0.2461],[-0.955,0.0075,0.1655,0.2461],[-0.9438,0.0101,0.1438,0.2973],[-0.9334,0.0151,0.1469,0.3271],[-0.9088,0.036,0.1705,0.379],[-0.8982,0.0514,0.1951,0.3905],[-0.8982,0.0514,0.1951,0.3905],[-0.9027,0.0665,0.2231,0.3618],[-0.9109,0.0648,0.2233,0.3407],[-0.961,0.0348,0.2041,0.1836],[-0.9746,0.0367,0.2042,0.0843],[-0.9755,0.0522,0.2125,0.0215],[-0.9675,0.0861,0.2371,-0.0168],[-0.9609,0.1178,0.249,-0.0269],[-0.9639,0.1236,0.2359,-0.0032],[-0.9639,0.1236,0.2359,-0.0032],[-0.9703,0.1198,0.2055,0.0442],[-0.972,0.1128,0.1937,0.0705],[-0.972,0.1128,0.1937,0.0705],[-0.9692,0.0842,0.1711,0.1557],[-0.9644,0.0753,0.1597,0.1967],[-0.9577,0.0684,0.1495,0.2362],[-0.9577,0.0684,0.1495,0.2362],[-0.9397,0.0557,0.1415,0.3065],[-0.9397,0.0557,0.1415,0.3065],[-0.9241,0.0496,0.155,0.3457],[-0.924,0.0525,0.1598,0.3433],[-0.9303,0.0559,0.1566,0.327],[-0.9479,0.0568,0.1453,0.2779],[-0.9723,0.0476,0.1532,0.1699],[-0.9883,0.0367,0.1389,0.0507],[-0.9863,0.0538,0.1501,-0.0418],[-0.9814,0.0666,0.1739,-0.0464],[-0.9792,0.0769,0.1848,-0.0317],[-0.9789,0.082,0.1861,-0.0181],[-0.9814,0.0725,0.1724,0.0443],[-0.9818,0.0619,0.1638,0.0738],[-0.9818,0.0619,0.1638,0.0738],[-0.9802,0.0444,0.1416,0.1312],[-0.9777,0.0359,0.1271,0.1631],[-0.9777,0.0359,0.1271,0.1631],[-0.9667,0.0245,0.0998,0.2345],[-0.957,0.022,0.093,0.274],[-0.957,0.022,0.093,0.274],[-0.9393,0.0229,0.1029,0.3264],[-0.9342,0.0222,0.1059,0.3399],[-0.9408,0.0212,0.1067,0.321],[-0.9408,0.0212,0.1067,0.321],[-0.9537,0.0189,0.1049,0.2813],[-0.9617,0.0183,0.1102,0.2502],[-0.9834,0.0102,0.1374,0.1178],[-0.9913,0.004,0.1312,-0.0127],[-0.9818,0.0078,0.1392,-0.1294],[-0.9766,0.0119,0.1676,-0.1341],[-0.9745,0.0144,0.1758,-0.1386],[-0.9782,0.0164,0.172,-0.1153],[-0.9822,0.0177,0.1675,-0.0834],[-0.9854,0.0117,0.1664,-0.0329],[-0.9867,0.006,0.1613,-0.0212],[-0.9867,0.006,0.1613,-0.0212],[-0.9912,-0.0135,0.131,0.0093],[-0.9912,-0.0135,0.131,0.0093],[-0.993,-0.0345,0.0977,0.0563],[-0.9916,-0.0456,0.0802,0.091],[-0.9874,-0.0511,0.0706,0.1322],[-0.9814,-0.0517,0.0662,0.1727],[-0.9673,-0.0525,0.0521,0.2426],[-0.9607,-0.056,0.0391,0.269],[-0.946,-0.0713,0.0019,0.3163],[-0.9432,-0.0716,0.0073,0.3244],[-0.9405,-0.0643,0.0266,0.3327],[-0.9393,-0.0612,0.0338,0.3358],[-0.9418,-0.0558,0.0414,0.3289],[-0.9429,-0.0519,0.0467,0.3256],[-0.9532,-0.044,0.0634,0.2923],[-0.9599,-0.0391,0.0742,0.2673],[-0.9657,-0.0339,0.0832,0.2435],[-0.9736,-0.0269,0.0915,0.2075],[-0.9736,-0.0269,0.0915,0.2075],[-0.9882,-0.0067,0.1054,0.1107],[-0.9906,0.0013,0.112,0.0787],[-0.9919,0.009,0.1182,0.0467],[-0.992,0.0165,0.1242,0.0175],[-0.992,0.0165,0.1242,0.0175],[-0.9878,0.0317,0.1498,-0.028],[-0.9816,0.0481,0.1711,-0.0692],[-0.9833,0.054,0.1545,-0.0799],[-0.9843,0.0568,0.147,-0.0789],[-0.9845,0.0579,0.1457,-0.0785],[-0.9844,0.0576,0.1452,-0.0811],[-0.9845,0.0553,0.1435,-0.0839],[-0.9853,0.0496,0.1363,-0.0908],[-0.9857,0.0463,0.1329,-0.093],[-0.9856,0.0439,0.1337,-0.0934],[-0.9842,0.0435,0.1507,-0.0822],[-0.9841,0.0461,0.1551,-0.0727],[-0.9855,0.0486,0.1513,-0.06],[-0.9855,0.0486,0.1513,-0.06],[-0.9891,0.0479,0.1348,-0.0338],[-0.9891,0.0479,0.1348,-0.0338],[-0.9913,0.043,0.1242,-0.004],[-0.9908,0.0421,0.1276,0.016],[-0.9904,0.0425,0.1268,0.034],[-0.9902,0.0429,0.1204,0.0569],[-0.9881,0.0382,0.0968,0.113],[-0.9881,0.0382,0.0968,0.113],[-0.9811,0.0298,0.0851,0.1711],[-0.9766,0.0258,0.0807,0.1977],[-0.9723,0.0237,0.0777,0.219],[-0.9723,0.0237,0.0777,0.219],[-0.9665,0.0212,0.0711,0.2457],[-0.9661,0.0196,0.0653,0.2491],[-0.9661,0.0196,0.0653,0.2491],[-0.9673,0.0168,0.0522,0.2478],[-0.9679,0.0166,0.0532,0.2451],[-0.9707,0.0088,0.0657,0.2311],[-0.9772,-0.0021,0.0775,0.1977],[-0.9856,-0.009,0.0821,0.1473],[-0.9885,-0.0114,0.084,0.1249],[-0.9905,-0.014,0.0867,0.1062],[-0.9933,-0.0198,0.0917,0.0681],[-0.9939,-0.0217,0.096,0.0493],[-0.9948,-0.0276,0.097,0.0129],[-0.9952,-0.0304,0.0931,-0.0057],[-0.995,-0.0332,0.0906,-0.0239],[-0.9946,-0.0359,0.0881,-0.042],[-0.9936,-0.0378,0.0888,-0.0594],[-0.9912,-0.0416,0.0922,-0.085],[-0.9912,-0.0416,0.0922,-0.085],[-0.9903,-0.0462,0.0856,-0.0994],[-0.9903,-0.0493,0.0782,-0.1033],[-0.9903,-0.0493,0.0782,-0.1033],[-0.9901,-0.0581,0.0641,-0.1108],[-0.9902,-0.0638,0.0592,-0.1097],[-0.9901,-0.07,0.0569,-0.1078],[-0.9897,-0.0767,0.055,-0.1074],[-0.9897,-0.0767,0.055,-0.1074],[-0.9875,-0.1088,0.0397,-0.1074],[-0.986,-0.1209,0.0315,-0.1102],[-0.984,-0.1346,0.0218,-0.1148],[-0.9817,-0.1469,0.013,-0.1201],[-0.9774,-0.1691,0.0076,-0.1265],[-0.9753,-0.1798,0.0063,-0.1282],[-0.9753,-0.1798,0.0063,-0.1282],[-0.9701,-0.2034,-0.0028,-0.1325],[-0.967,-0.2157,-0.0111,-0.1351],[-0.967,-0.2157,-0.0111,-0.1351],[-0.9597,-0.2419,-0.027,-0.1405],[-0.9551,-0.2578,-0.0316,-0.1423],[-0.9469,-0.2854,-0.0392,-0.1428],[-0.9425,-0.2984,-0.0435,-0.144],[-0.9377,-0.3114,-0.0486,-0.146],[-0.9329,-0.3233,-0.0528,-0.1494],[-0.9237,-0.3455,-0.0564,-0.1555],[-0.9237,-0.3455,-0.0564,-0.1555],[-0.9185,-0.3615,-0.0499,-0.1525],[-0.9158,-0.3697,-0.047,-0.1497],[-0.9146,-0.3744,-0.0435,-0.1463],[-0.9099,-0.3858,-0.0416,-0.1467],[-0.9069,-0.3919,-0.0413,-0.1488],[-0.9069,-0.3919,-0.0413,-0.1488],[-0.899,-0.4068,-0.0425,-0.1562],[-0.8951,-0.4142,-0.0422,-0.1592],[-0.8891,-0.425,-0.04,-0.1649],[-0.8868,-0.4293,-0.0382,-0.1666],[-0.8849,-0.4331,-0.0351,-0.1677],[-0.8793,-0.443,-0.0294,-0.1723],[-0.8793,-0.443,-0.0294,-0.1723],[-0.8686,-0.4585,-0.0314,-0.185],[-0.8629,-0.4667,-0.0336,-0.1911],[-0.8572,-0.4748,-0.0344,-0.1964],[-0.8519,-0.4823,-0.0349,-0.2014],[-0.8412,-0.498,-0.032,-0.2081],[-0.8353,-0.5066,-0.0309,-0.2114],[-0.8221,-0.5258,-0.0308,-0.2163],[-0.8221,-0.5258,-0.0308,-0.2163],[-0.8101,-0.541,-0.0339,-0.2234],[-0.8051,-0.5476,-0.0327,-0.2257],[-0.8003,-0.5542,-0.0312,-0.2268],[-0.7955,-0.5611,-0.0297,-0.2268],[-0.7848,-0.5757,-0.0338,-0.2271],[-0.7848,-0.5757,-0.0338,-0.2271],[-0.7735,-0.5876,-0.0389,-0.2341],[-0.7684,-0.5935,-0.0356,-0.2366],[-0.7628,-0.6004,-0.0333,-0.238],[-0.756,-0.6087,-0.0316,-0.2387],[-0.756,-0.6087,-0.0316,-0.2387],[-0.7332,-0.632,-0.0419,-0.2475],[-0.7266,-0.637,-0.0472,-0.2531],[-0.7158,-0.6464,-0.0506,-0.2593],[-0.7107,-0.654,-0.0461,-0.2549],[-0.7045,-0.662,-0.0443,-0.2518],[-0.6904,-0.6795,-0.0483,-0.2434],[-0.6832,-0.6873,-0.0535,-0.2409],[-0.6765,-0.6927,-0.0598,-0.2428],[-0.6718,-0.695,-0.0648,-0.2479],[-0.661,-0.7018,-0.0665,-0.2571],[-0.661,-0.7018,-0.0665,-0.2571],[-0.6514,-0.7126,-0.0663,-0.2519],[-0.6471,-0.7191,-0.0682,-0.2437],[-0.6446,-0.7212,-0.0738,-0.2427],[-0.6454,-0.7212,-0.077,-0.2397],[-0.6459,-0.7224,-0.0726,-0.2358],[-0.6437,-0.7253,-0.0711,-0.2335],[-0.6437,-0.7253,-0.0711,-0.2335],[-0.6322,-0.7352,-0.077,-0.2322],[-0.6302,-0.7357,-0.0785,-0.2355],[-0.6295,-0.7345,-0.0788,-0.241],[-0.629,-0.7357,-0.0738,-0.2402],[-0.6326,-0.7364,-0.0672,-0.2304],[-0.6338,-0.7377,-0.0641,-0.2235],[-0.6351,-0.7392,-0.0613,-0.2153],[-0.6351,-0.7392,-0.0613,-0.2153],[-0.6311,-0.7429,-0.0657,-0.2133],[-0.6317,-0.7432,-0.063,-0.2113],[-0.6348,-0.7426,-0.0603,-0.2046],[-0.637,-0.7425,-0.0582,-0.1989],[-0.6384,-0.7436,-0.0561,-0.1904],[-0.6361,-0.7455,-0.0577,-0.1907],[-0.6329,-0.7481,-0.0587,-0.1907],[-0.6276,-0.7523,-0.0609,-0.1911],[-0.6264,-0.7532,-0.0608,-0.1914],[-0.626,-0.7528,-0.0605,-0.1942],[-0.6267,-0.7522,-0.056,-0.1958],[-0.6267,-0.7522,-0.056,-0.1958],[-0.6269,-0.7535,-0.0532,-0.1909],[-0.6263,-0.7545,-0.0541,-0.1886],[-0.6247,-0.7559,-0.0558,-0.1878],[-0.6232,-0.7571,-0.0564,-0.1875],[-0.622,-0.7582,-0.0549,-0.1876],[-0.622,-0.7582,-0.0549,-0.1876],[-0.6231,-0.7571,-0.0529,-0.1893],[-0.6237,-0.7565,-0.0524,-0.1898],[-0.6235,-0.7565,-0.052,-0.1904],[-0.6235,-0.7565,-0.052,-0.1904],[-0.6235,-0.7569,-0.0527,-0.1887],[-0.6234,-0.7568,-0.0526,-0.1895],[-0.6233,-0.756,-0.0529,-0.1928],[-0.623,-0.756,-0.0529,-0.1939],[-0.6224,-0.7559,-0.0537,-0.1958],[-0.6224,-0.7559,-0.0537,-0.1958],[-0.6229,-0.7542,-0.055,-0.2004],[-0.6234,-0.7536,-0.0547,-0.2011],[-0.6245,-0.7529,-0.0539,-0.2008],[-0.625,-0.7525,-0.0531,-0.2006],[-0.625,-0.7525,-0.0531,-0.2006],[-0.6254,-0.7511,-0.0527,-0.2048],[-0.6251,-0.7509,-0.0515,-0.2068],[-0.6253,-0.7508,-0.05,-0.2066],[-0.6253,-0.7508,-0.05,-0.2066],[-0.6252,-0.7512,-0.0484,-0.2061],[-0.6255,-0.7508,-0.0477,-0.2065],[-0.6256,-0.7504,-0.0479,-0.2081],[-0.6254,-0.7489,-0.0488,-0.2137],[-0.6258,-0.7486,-0.0484,-0.2136],[-0.6263,-0.7483,-0.0478,-0.2134],[-0.6264,-0.7481,-0.0474,-0.2137],[-0.6272,-0.7481,-0.0453,-0.212],[-0.6272,-0.7481,-0.0453,-0.212],[-0.6278,-0.747,-0.0442,-0.214],[-0.6279,-0.7461,-0.0443,-0.2172],[-0.6283,-0.7455,-0.044,-0.2178],[-0.6288,-0.7453,-0.0433,-0.2174],[-0.6288,-0.7453,-0.0433,-0.2174],[-0.6313,-0.7435,-0.0421,-0.2168],[-0.6316,-0.7429,-0.0421,-0.2175],[-0.6319,-0.7425,-0.0425,-0.2181],[-0.632,-0.7423,-0.0428,-0.2185],[-0.6318,-0.7425,-0.0431,-0.2184],[-0.6315,-0.7426,-0.0437,-0.2186],[-0.6319,-0.7427,-0.0433,-0.2174],[-0.6324,-0.7425,-0.0429,-0.2165],[-0.6329,-0.7423,-0.0425,-0.2157],[-0.6333,-0.7424,-0.0423,-0.2147],[-0.6332,-0.7421,-0.043,-0.2158]]
+																			},
+																			{
+																				$string interpolation "Linear"
+																				$arrayLz4 times [float;464][2,2.0004,2.0008,2.0025,2.0051,2.0072,2.0088,2.0118,2.0139,2.0156,2.016,2.0168,2.0177,2.0181,2.0189,2.0194,2.0198,2.0202,2.0206,2.021,2.0215,2.0219,2.0223,2.0227,2.0231,2.0236,2.0244,2.0257,2.0265,2.0274,2.0295,2.0299,2.032,2.0345,2.0354,2.0391,2.04,2.0417,2.0492,2.0652,2.0807,2.0963,2.1107,2.1243,2.1382,2.1524,2.1564,2.1733,2.1891,2.2051,2.2188,2.2337,2.2486,2.2529,2.2709,2.2879,2.3033,2.3187,2.3342,2.3493,2.3648,2.3826,2.4171,2.4575,2.4991,2.5308,2.5554,2.5807,2.5954,2.61,2.6246,2.6399,2.6546,2.6691,2.6833,2.6975,2.7112,2.7154,2.7293,2.7437,2.7482,2.7637,2.7798,2.7972,2.8122,2.8275,2.8426,2.8582,2.8732,2.8879,2.8922,2.9083,2.9227,2.9366,2.9407,2.9542,2.9683,2.9725,2.9893,3.0046,3.0187,3.0345,3.0496,3.0635,3.0676,3.0862,3.1009,3.1154,3.1298,3.1438,3.1484,3.1676,3.1822,3.1991,3.2149,3.2302,3.2458,3.2604,3.2748,3.29,3.3046,3.3086,3.3231,3.3385,3.3534,3.3684,3.3725,3.3883,3.4042,3.4187,3.4345,3.4495,3.4641,3.4684,3.4888,3.5036,3.5185,3.5327,3.5489,3.5651,3.5799,3.5947,3.6094,3.6235,3.6275,3.6454,3.6595,3.6738,3.6877,3.6916,3.725,3.7513,3.7665,3.7805,3.7951,3.8099,3.8317,3.8451,3.8588,3.8728,3.8868,3.9011,3.9156,3.9318,3.946,3.9599,3.9636,3.9796,3.9936,4.0081,4.0123,4.0276,4.0415,4.0555,4.0595,4.0732,4.0865,4.0905,4.1118,4.1257,4.139,4.153,4.1567,4.1789,4.1925,4.2059,4.2203,4.2349,4.2495,4.2626,4.2664,4.2851,4.3016,4.315,4.3286,4.3331,4.3522,4.3959,4.4295,4.4571,4.4789,4.4924,4.5057,4.5201,4.5237,4.5384,4.552,4.5556,4.5715,4.5855,4.5986,4.6023,4.6166,4.6205,4.6435,4.658,4.6711,4.7142,4.7455,4.773,4.7863,4.7995,4.8136,4.8277,4.8416,4.8551,4.8592,4.8736,4.887,4.8911,4.9064,4.9199,4.9244,4.9405,4.9544,4.9681,4.972,4.9927,5.0336,5.0669,5.0951,5.1091,5.1226,5.1368,5.15,5.1631,5.1771,5.1916,5.1953,5.2084,5.2131,5.2303,5.245,5.2613,5.2759,5.2908,5.3194,5.3361,5.3507,5.3664,5.3811,5.3949,5.4081,5.4226,5.4361,5.4503,5.4643,5.4684,5.4878,5.501,5.5145,5.5279,5.5323,5.5687,5.5918,5.6063,5.6209,5.6344,5.6491,5.6646,5.6799,5.6951,5.7088,5.7234,5.7371,5.7508,5.7547,5.768,5.7723,5.7892,5.8041,5.8188,5.8338,5.8481,5.8523,5.8685,5.8823,5.8959,5.9008,5.915,5.9289,5.9335,5.9543,5.9985,6.0321,6.0561,6.0707,6.0843,6.1047,6.1184,6.1332,6.1466,6.1608,6.1748,6.1885,6.2018,6.2161,6.2203,6.2356,6.249,6.2534,6.2701,6.2855,6.2991,6.3124,6.3167,6.3368,6.3512,6.3658,6.3803,6.3946,6.4087,6.4126,6.427,6.441,6.4452,6.4641,6.4803,6.4948,6.5086,6.5234,6.5375,6.5521,6.5564,6.5742,6.5895,6.6037,6.6178,6.6329,6.6371,6.6577,6.6722,6.6871,6.7012,6.7154,6.7284,6.7334,6.7518,6.7661,6.7807,6.7957,6.8104,6.8263,6.8406,6.8448,6.8619,6.8771,6.8914,6.9056,6.9198,6.9241,6.9422,6.9565,6.9708,6.985,6.9893,7.0127,7.0273,7.0434,7.0581,7.0722,7.0864,7.1004,7.1159,7.1303,7.1446,7.1491,7.1648,7.18,7.1958,7.2102,7.2251,7.2404,7.2445,7.2643,7.2789,7.2949,7.309,7.3228,7.338,7.3521,7.3726,7.3983,7.4141,7.4288,7.4429,7.4569,7.4713,7.4857,7.5004,7.515,7.5296,7.5434,7.5485,7.5655,7.5808,7.5952,7.6093,7.6235,7.6278,7.6442,7.6587,7.673,7.6773,7.6926,7.7082,7.7229,7.7377,7.7526,7.7574,7.773,7.7875,7.8021,7.8166,7.8211,7.836,7.8501,7.8645,7.8688,7.8914,7.9069,7.9209,7.9352,7.9494,7.9639,7.9783,7.993,7.9971,8.0127,8.0273,8.0416,8.0556,8.0594,8.0822,8.0977,8.1139,8.1305,8.1455,8.1803,8.2038,8.2281,8.2426,8.2562,8.2704]
+																				$string targetPath "ec/ik_solver/control/head/position"
+																				$arrayLz4 values [vec3;464][[0.35,53.0167,5.88],[0.35,53.0167,5.88],[0.35,53.0167,5.88],[0.35,53.0167,5.88],[0.35,53.0167,5.8799],[0.35,53.0168,5.8799],[0.35,53.0168,5.8798],[0.35,53.0169,5.8796],[0.3499,53.017,5.8793],[0.3499,53.0171,5.8791],[0.3499,53.0171,5.879],[0.3499,53.0172,5.8788],[0.3499,53.0173,5.8786],[0.3499,53.0173,5.8784],[0.3498,53.0175,5.8781],[0.3498,53.0176,5.8779],[0.3498,53.0177,5.8776],[0.3498,53.0179,5.8772],[0.3497,53.0182,5.8765],[0.3494,53.0195,5.8733],[0.3494,53.0197,5.8726],[0.3493,53.0199,5.8722],[0.3493,53.02,5.8719],[0.3493,53.0201,5.8716],[0.3493,53.0202,5.8715],[0.3493,53.0203,5.8713],[0.3492,53.0204,5.871],[0.3492,53.0205,5.8707],[0.3492,53.0206,5.8706],[0.3492,53.0206,5.8704],[0.3492,53.0207,5.8702],[0.3492,53.0207,5.8701],[0.3491,53.0208,5.87],[0.3491,53.0209,5.8698],[0.3491,53.0209,5.8698],[0.3491,53.0209,5.8697],[0.3491,53.0209,5.8697],[0.3491,53.0209,5.8697],[0.3501,53.0202,5.8699],[0.3625,53.0191,5.8695],[0.361,53.0172,5.871],[0.3682,53.014,5.871],[0.3675,53.0128,5.877],[0.3669,53.0153,5.8777],[0.3656,53.0142,5.8799],[0.3735,53.0164,5.8772],[0.3735,53.0164,5.8772],[0.3636,53.0141,5.8854],[0.3559,53.0186,5.8877],[0.3471,53.018,5.8923],[0.3394,53.0219,5.8949],[0.3307,53.0217,5.8979],[0.3277,53.0233,5.9013],[0.3277,53.0233,5.9013],[0.3264,53.0262,5.8982],[0.3331,53.0299,5.8936],[0.327,53.0331,5.8936],[0.3145,53.0396,5.895],[0.3033,53.0426,5.8977],[0.3061,53.0474,5.8963],[0.2997,53.0563,5.8985],[0.3064,53.0579,5.8925],[0.2746,53.0685,5.9057],[0.2709,53.0802,5.9101],[0.2483,53.1044,5.9094],[0.2187,53.1166,5.9142],[0.1853,53.134,5.9209],[0.1541,53.1453,5.9167],[0.1148,53.1598,5.9097],[0.1027,53.1665,5.9096],[0.0917,53.1749,5.9057],[0.0781,53.1831,5.9029],[0.0622,53.2069,5.8929],[0.0482,53.2231,5.8923],[0.0492,53.2468,5.8804],[0.0273,53.29,5.8761],[0.0294,53.3071,5.8685],[0.0294,53.3071,5.8685],[0.0119,53.3696,5.871],[0.0138,53.4048,5.8651],[0.0138,53.4048,5.8651],[0.0148,53.4721,5.8495],[0.0118,53.517,5.8403],[0.0113,53.5608,5.8288],[0.0122,53.6498,5.7982],[-0.0076,53.6959,5.783],[-0.0138,53.7831,5.7448],[-0.0315,53.8272,5.7267],[-0.0364,53.871,5.7025],[-0.0519,53.9575,5.6511],[-0.0519,53.9575,5.6511],[-0.0761,54.0406,5.5899],[-0.0818,54.0818,5.5587],[-0.0972,54.123,5.53],[-0.0972,54.123,5.53],[-0.1154,54.208,5.4585],[-0.1255,54.2489,5.4223],[-0.1255,54.2489,5.4223],[-0.1449,54.3262,5.3478],[-0.1588,54.3644,5.3131],[-0.1708,54.4017,5.2769],[-0.2072,54.4753,5.2023],[-0.2258,54.5108,5.1563],[-0.2428,54.5413,5.1138],[-0.2428,54.5413,5.1138],[-0.2973,54.6186,4.9909],[-0.3093,54.6405,4.9493],[-0.3237,54.6577,4.8962],[-0.3413,54.6776,4.8533],[-0.3727,54.7182,4.7616],[-0.3727,54.7182,4.7616],[-0.4127,54.7515,4.6854],[-0.4312,54.7637,4.6496],[-0.443,54.7786,4.6091],[-0.4636,54.8092,4.5232],[-0.4672,54.8209,4.4852],[-0.4847,54.8441,4.4091],[-0.4897,54.8538,4.375],[-0.4894,54.8625,4.3395],[-0.5011,54.8737,4.2694],[-0.5003,54.8774,4.2347],[-0.5003,54.8774,4.2347],[-0.504,54.881,4.1666],[-0.512,54.8773,4.1362],[-0.5162,54.8729,4.1045],[-0.5192,54.8689,4.0391],[-0.5192,54.8689,4.0391],[-0.5323,54.8623,3.9772],[-0.5404,54.8577,3.9481],[-0.5518,54.856,3.9234],[-0.5607,54.855,3.8567],[-0.5659,54.8534,3.8206],[-0.568,54.8551,3.7851],[-0.568,54.8551,3.7851],[-0.5813,54.8663,3.6836],[-0.5806,54.8706,3.6506],[-0.5803,54.8739,3.6219],[-0.571,54.8813,3.5866],[-0.576,54.8949,3.5237],[-0.5764,54.9028,3.4936],[-0.5676,54.9214,3.4274],[-0.5601,54.9282,3.3975],[-0.5618,54.9359,3.3687],[-0.5604,54.9574,3.3138],[-0.5604,54.9574,3.3138],[-0.5537,54.9762,3.2594],[-0.5458,54.985,3.2332],[-0.5302,55.0016,3.2039],[-0.5313,55.0152,3.1811],[-0.5313,55.0152,3.1811],[-0.5168,55.0565,3.1126],[-0.5118,55.083,3.0709],[-0.4883,55.1141,3.0285],[-0.479,55.1457,2.9929],[-0.4731,55.1603,2.9771],[-0.4607,55.1756,2.9645],[-0.4471,55.2033,2.9384],[-0.4412,55.2133,2.9319],[-0.4228,55.2333,2.9131],[-0.4132,55.2406,2.9134],[-0.4029,55.242,2.9083],[-0.4021,55.2446,2.9073],[-0.3908,55.2524,2.9045],[-0.3842,55.2565,2.9023],[-0.3727,55.2613,2.8976],[-0.3558,55.2632,2.8955],[-0.3558,55.2632,2.8955],[-0.351,55.264,2.9055],[-0.3513,55.265,2.9115],[-0.3471,55.2657,2.9172],[-0.3471,55.2657,2.9172],[-0.345,55.2661,2.9271],[-0.341,55.2677,2.9325],[-0.3468,55.2687,2.9418],[-0.3468,55.2687,2.9418],[-0.3528,55.2691,2.9598],[-0.3604,55.2683,2.9692],[-0.3604,55.2683,2.9692],[-0.3695,55.2688,2.9897],[-0.3841,55.2655,3.0071],[-0.3883,55.2656,3.015],[-0.4022,55.2647,3.0249],[-0.4022,55.2647,3.0249],[-0.4213,55.2627,3.047],[-0.4332,55.2583,3.0618],[-0.4411,55.2569,3.0723],[-0.4553,55.2557,3.0824],[-0.4682,55.2535,3.0888],[-0.4915,55.2501,3.1046],[-0.4901,55.247,3.1075],[-0.4901,55.247,3.1075],[-0.5099,55.2429,3.1254],[-0.5103,55.2405,3.1293],[-0.5179,55.2379,3.1387],[-0.5119,55.2369,3.1416],[-0.5119,55.2369,3.1416],[-0.4927,55.2289,3.1492],[-0.4842,55.2244,3.1538],[-0.4316,55.2218,3.1618],[-0.3949,55.2262,3.1682],[-0.3725,55.2247,3.1667],[-0.3657,55.2265,3.1716],[-0.354,55.2311,3.1648],[-0.3541,55.2337,3.1567],[-0.3541,55.2337,3.1567],[-0.3628,55.2392,3.1511],[-0.3597,55.243,3.1428],[-0.3597,55.243,3.1428],[-0.3711,55.2481,3.1427],[-0.3775,55.2506,3.1397],[-0.3694,55.2557,3.1313],[-0.3694,55.2557,3.1313],[-0.3764,55.2566,3.1326],[-0.3764,55.2566,3.1326],[-0.3807,55.2549,3.1288],[-0.3822,55.2539,3.1286],[-0.3824,55.249,3.1284],[-0.3771,55.2413,3.1299],[-0.3479,55.2242,3.1304],[-0.3316,55.2121,3.1458],[-0.3188,55.1984,3.156],[-0.3151,55.1966,3.1538],[-0.3115,55.1917,3.1536],[-0.3076,55.1914,3.151],[-0.3066,55.1931,3.1478],[-0.3072,55.1923,3.145],[-0.3072,55.1923,3.145],[-0.3121,55.1968,3.1455],[-0.3175,55.1979,3.1475],[-0.3175,55.1979,3.1475],[-0.3219,55.2029,3.1498],[-0.331,55.2089,3.1555],[-0.331,55.2089,3.1555],[-0.3386,55.2098,3.1631],[-0.3286,55.2078,3.1634],[-0.3287,55.2049,3.1673],[-0.3287,55.2049,3.1673],[-0.3219,55.1986,3.1774],[-0.3118,55.1952,3.1793],[-0.2973,55.1815,3.1985],[-0.2754,55.169,3.2053],[-0.2648,55.1532,3.2121],[-0.278,55.1517,3.2159],[-0.2832,55.1495,3.2159],[-0.2894,55.1458,3.2232],[-0.3015,55.145,3.2242],[-0.3125,55.1447,3.2207],[-0.3189,55.1489,3.222],[-0.3189,55.1489,3.222],[-0.3319,55.1536,3.2249],[-0.3319,55.1536,3.2249],[-0.3392,55.1586,3.2303],[-0.3449,55.1616,3.2363],[-0.3566,55.166,3.2435],[-0.367,55.1667,3.25],[-0.3789,55.1705,3.2603],[-0.3878,55.1704,3.2654],[-0.4047,55.1644,3.2783],[-0.4091,55.1597,3.2848],[-0.4177,55.1475,3.2948],[-0.4226,55.1432,3.3069],[-0.4191,55.1381,3.3109],[-0.41,55.1346,3.3113],[-0.4015,55.1239,3.319],[-0.3968,55.1185,3.3242],[-0.3904,55.1137,3.3266],[-0.3848,55.1093,3.3303],[-0.3848,55.1093,3.3303],[-0.3684,55.0975,3.3455],[-0.3632,55.0944,3.3498],[-0.3568,55.0929,3.3525],[-0.3499,55.0901,3.3543],[-0.3499,55.0901,3.3543],[-0.3394,55.0893,3.3628],[-0.3298,55.092,3.3657],[-0.3286,55.0926,3.3701],[-0.3304,55.0938,3.3723],[-0.3282,55.0926,3.3766],[-0.3315,55.0915,3.3811],[-0.3294,55.0896,3.383],[-0.333,55.0833,3.3891],[-0.3323,55.0811,3.3924],[-0.3352,55.077,3.3975],[-0.3421,55.066,3.4034],[-0.3492,55.0584,3.4064],[-0.3512,55.0464,3.4122],[-0.3512,55.0464,3.4122],[-0.3802,55.0309,3.4208],[-0.3802,55.0309,3.4208],[-0.4051,55.0205,3.4221],[-0.4166,55.0162,3.4223],[-0.4298,55.0079,3.4301],[-0.446,55.0018,3.433],[-0.4812,54.9937,3.4409],[-0.4812,54.9937,3.4409],[-0.5006,54.9862,3.4414],[-0.5145,54.9822,3.4425],[-0.5269,54.9781,3.4424],[-0.5269,54.9781,3.4424],[-0.5549,54.9659,3.4486],[-0.5595,54.9605,3.4471],[-0.5595,54.9605,3.4471],[-0.5761,54.9459,3.4415],[-0.5852,54.9355,3.4397],[-0.5992,54.921,3.4501],[-0.5951,54.9098,3.4682],[-0.5969,54.8954,3.4889],[-0.5954,54.8917,3.4978],[-0.5972,54.8854,3.5053],[-0.5883,54.8749,3.5144],[-0.5798,54.8693,3.5177],[-0.579,54.8557,3.5368],[-0.5791,54.8483,3.5419],[-0.5736,54.8404,3.5443],[-0.5741,54.8308,3.5516],[-0.5764,54.819,3.5595],[-0.5722,54.7924,3.5727],[-0.5722,54.7924,3.5727],[-0.5708,54.7594,3.5887],[-0.5726,54.7376,3.5992],[-0.5726,54.7376,3.5992],[-0.5853,54.6929,3.6276],[-0.5829,54.6647,3.6379],[-0.5753,54.6398,3.653],[-0.5753,54.6123,3.6668],[-0.5753,54.6123,3.6668],[-0.5783,54.5197,3.7207],[-0.5843,54.4876,3.7485],[-0.5771,54.4541,3.7723],[-0.5781,54.42,3.8026],[-0.5724,54.3534,3.853],[-0.5719,54.3217,3.8816],[-0.5719,54.3217,3.8816],[-0.5546,54.2563,3.9309],[-0.554,54.2242,3.9627],[-0.554,54.2242,3.9627],[-0.5403,54.1585,4.0108],[-0.5394,54.1222,4.0371],[-0.5354,54.0519,4.0909],[-0.5308,54.0142,4.1197],[-0.5221,53.9805,4.1463],[-0.5193,53.9447,4.1725],[-0.5056,53.8753,4.222],[-0.5056,53.8753,4.222],[-0.4945,53.8093,4.2776],[-0.4855,53.7758,4.3033],[-0.4923,53.7389,4.3309],[-0.4843,53.6703,4.3828],[-0.4823,53.6369,4.4065],[-0.4823,53.6369,4.4065],[-0.4638,53.5706,4.4515],[-0.4599,53.537,4.4761],[-0.4528,53.4741,4.5275],[-0.4515,53.4415,4.5542],[-0.4469,53.4141,4.578],[-0.4358,53.3561,4.6237],[-0.4358,53.3561,4.6237],[-0.4239,53.3056,4.6728],[-0.4201,53.2813,4.6946],[-0.417,53.2563,4.7191],[-0.4169,53.2327,4.7399],[-0.3964,53.1828,4.7727],[-0.3929,53.1573,4.7903],[-0.3783,53.1177,4.8288],[-0.3783,53.1177,4.8288],[-0.3604,53.0902,4.8584],[-0.3611,53.0753,4.8776],[-0.3599,53.0615,4.8924],[-0.3547,53.0478,4.9063],[-0.3395,53.0199,4.9284],[-0.3395,53.0199,4.9284],[-0.3429,52.9922,4.955],[-0.3388,52.9802,4.9638],[-0.3394,52.9669,4.9742],[-0.3387,52.9555,4.9854],[-0.3387,52.9555,4.9854],[-0.332,52.9124,5.0069],[-0.3273,52.8965,5.013],[-0.3236,52.8612,5.0284],[-0.324,52.8419,5.0352],[-0.3249,52.824,5.0442],[-0.3139,52.7898,5.0582],[-0.3156,52.7713,5.0711],[-0.3081,52.7547,5.083],[-0.3067,52.7388,5.0971],[-0.3024,52.7078,5.1266],[-0.3024,52.7078,5.1266],[-0.2875,52.6752,5.1522],[-0.2874,52.659,5.1725],[-0.2766,52.6415,5.1867],[-0.275,52.6087,5.2223],[-0.2737,52.5955,5.2406],[-0.2711,52.5835,5.2592],[-0.2711,52.5835,5.2592],[-0.2724,52.5432,5.3287],[-0.2696,52.5279,5.3533],[-0.2705,52.516,5.3787],[-0.272,52.4855,5.4378],[-0.2641,52.4732,5.4624],[-0.2645,52.4585,5.4903],[-0.2466,52.4466,5.5088],[-0.2466,52.4466,5.5088],[-0.2572,52.3921,5.6301],[-0.2508,52.3637,5.6877],[-0.2583,52.3493,5.7204],[-0.2576,52.315,5.7858],[-0.2606,52.3006,5.819],[-0.2676,52.2836,5.8543],[-0.2673,52.2681,5.8856],[-0.2698,52.2365,5.9499],[-0.2732,52.2193,5.9852],[-0.2762,52.2021,6.0199],[-0.2736,52.1687,6.089],[-0.2736,52.1687,6.089],[-0.283,52.1369,6.1618],[-0.2805,52.1238,6.1955],[-0.2785,52.1034,6.2277],[-0.2724,52.0892,6.2569],[-0.2715,52.0548,6.3231],[-0.2715,52.0548,6.3231],[-0.2663,52.02,6.3874],[-0.2582,52.0053,6.4165],[-0.2582,51.9889,6.4432],[-0.2582,51.9889,6.4432],[-0.2626,51.9598,6.4988],[-0.2603,51.9472,6.5213],[-0.2557,51.9177,6.5677],[-0.2463,51.9087,6.5879],[-0.2486,51.898,6.6105],[-0.2486,51.898,6.6105],[-0.2415,51.8808,6.6479],[-0.248,51.8724,6.6697],[-0.2477,51.8558,6.7006],[-0.2493,51.8511,6.7113],[-0.2493,51.8511,6.7113],[-0.2459,51.841,6.7315],[-0.2501,51.8365,6.7377],[-0.2415,51.8335,6.7431],[-0.2415,51.8335,6.7431],[-0.2412,51.8253,6.7604],[-0.2394,51.822,6.7644],[-0.2436,51.8183,6.7712],[-0.2374,51.8115,6.7803],[-0.2361,51.8074,6.7814],[-0.2369,51.8029,6.7857],[-0.2352,51.7999,6.7903],[-0.2274,51.7904,6.7978],[-0.2274,51.7904,6.7978],[-0.2257,51.7792,6.8104],[-0.2235,51.7778,6.816],[-0.2221,51.7761,6.82],[-0.224,51.7709,6.8221],[-0.224,51.7709,6.8221],[-0.2239,51.7579,6.8311],[-0.226,51.7542,6.8327],[-0.2295,51.7499,6.8393],[-0.2237,51.7469,6.8431],[-0.2262,51.7442,6.8458],[-0.2177,51.7385,6.8465],[-0.2112,51.7377,6.8503],[-0.2127,51.7399,6.8527],[-0.211,51.7394,6.8527],[-0.2119,51.738,6.853],[-0.2107,51.7376,6.8526]]
+																			},
+																			{
+																				$string interpolation "Linear"
+																				$arrayLz4 times [float;429][0,2.0177,2.0323,2.0492,2.0652,2.0807,2.0963,2.1107,2.1243,2.1382,2.1524,2.1564,2.1733,2.1891,2.2051,2.2188,2.2337,2.2486,2.2529,2.2709,2.2879,2.3033,2.3187,2.3342,2.3493,2.3648,2.3826,2.4171,2.4575,2.4991,2.5308,2.5554,2.5807,2.5954,2.61,2.6246,2.6399,2.6546,2.6691,2.6833,2.6975,2.7112,2.7154,2.7293,2.7437,2.7482,2.7637,2.7798,2.7972,2.8122,2.8275,2.8426,2.8582,2.8732,2.8879,2.8922,2.9083,2.9227,2.9366,2.9407,2.9542,2.9683,2.9725,2.9893,3.0046,3.0187,3.0345,3.0496,3.0635,3.0676,3.0862,3.1009,3.1154,3.1298,3.1438,3.1484,3.1676,3.1822,3.1991,3.2149,3.2302,3.2458,3.2604,3.2748,3.29,3.3046,3.3086,3.3231,3.3385,3.3534,3.3684,3.3725,3.3883,3.4042,3.4187,3.4345,3.4495,3.4641,3.4684,3.4888,3.5036,3.5185,3.5327,3.5489,3.5651,3.5799,3.5947,3.6094,3.6235,3.6275,3.6454,3.6595,3.6738,3.6877,3.6916,3.725,3.7513,3.7665,3.7805,3.7951,3.8099,3.8317,3.8451,3.8588,3.8728,3.8868,3.9011,3.9156,3.9318,3.946,3.9599,3.9636,3.9796,3.9936,4.0081,4.0123,4.0276,4.0415,4.0555,4.0595,4.0732,4.0865,4.0905,4.1118,4.1257,4.139,4.153,4.1567,4.1789,4.1925,4.2059,4.2203,4.2349,4.2495,4.2626,4.2664,4.2851,4.3016,4.315,4.3286,4.3331,4.3522,4.3959,4.4295,4.4571,4.4789,4.4924,4.5057,4.5201,4.5237,4.5384,4.552,4.5556,4.5715,4.5855,4.5986,4.6023,4.6166,4.6205,4.6435,4.658,4.6711,4.7142,4.7455,4.773,4.7863,4.7995,4.8136,4.8277,4.8416,4.8551,4.8592,4.8736,4.887,4.8911,4.9064,4.9199,4.9244,4.9405,4.9544,4.9681,4.972,4.9927,5.0336,5.0669,5.0951,5.1091,5.1226,5.1368,5.15,5.1631,5.1771,5.1916,5.1953,5.2084,5.2131,5.2303,5.245,5.2613,5.2759,5.2908,5.3194,5.3361,5.3507,5.3664,5.3811,5.3949,5.4081,5.4226,5.4361,5.4503,5.4643,5.4684,5.4878,5.501,5.5145,5.5279,5.5323,5.5687,5.5918,5.6063,5.6209,5.6344,5.6491,5.6646,5.6799,5.6951,5.7088,5.7234,5.7371,5.7508,5.7547,5.768,5.7723,5.7892,5.8041,5.8188,5.8338,5.8481,5.8523,5.8685,5.8823,5.8959,5.9008,5.915,5.9289,5.9335,5.9543,5.9985,6.0321,6.0561,6.0707,6.0843,6.1047,6.1184,6.1332,6.1466,6.1608,6.1748,6.1885,6.2018,6.2161,6.2203,6.2356,6.249,6.2534,6.2701,6.2855,6.2991,6.3124,6.3167,6.3368,6.3512,6.3658,6.3803,6.3946,6.4087,6.4126,6.427,6.441,6.4452,6.4641,6.4803,6.4948,6.5086,6.5234,6.5375,6.5521,6.5564,6.5742,6.5895,6.6037,6.6178,6.6329,6.6371,6.6577,6.6722,6.6871,6.7012,6.7154,6.7284,6.7334,6.7518,6.7661,6.7807,6.7957,6.8104,6.8263,6.8406,6.8448,6.8619,6.8771,6.8914,6.9056,6.9198,6.9241,6.9422,6.9565,6.9708,6.985,6.9893,7.0127,7.0273,7.0434,7.0581,7.0722,7.0864,7.1004,7.1159,7.1303,7.1446,7.1491,7.1648,7.18,7.1958,7.2102,7.2251,7.2404,7.2445,7.2643,7.2789,7.2949,7.309,7.3228,7.338,7.3521,7.3726,7.3983,7.4141,7.4288,7.4429,7.4569,7.4713,7.4857,7.5004,7.515,7.5296,7.5434,7.5485,7.5655,7.5808,7.5952,7.6093,7.6235,7.6278,7.6442,7.6587,7.673,7.6773,7.6926,7.7082,7.7229,7.7377,7.7526,7.7574,7.773,7.7875,7.8021,7.8166,7.8211,7.836,7.8501,7.8645,7.8688,7.8914,7.9069,7.9209,7.9352,7.9494,7.9639,7.9783,7.993,7.9971,8.0127,8.0273,8.0416,8.0556,8.0594,8.0822,8.0977,8.1139,8.1305,8.1455,8.1803,8.2038,8.2281,8.2426,8.2562,8.2704]
+																				$string targetPath "ec/ik_solver/control/head/rotation"
+																				$arrayLz4 values [quat;429][[0,0,0.8591,0.5117],[-0.01,-0.0294,-0.8728,-0.487],[-0.01,-0.0295,-0.8728,-0.487],[-0.01,-0.0295,-0.8728,-0.4869],[-0.01,-0.0295,-0.8727,-0.4871],[-0.0101,-0.0295,-0.8727,-0.4872],[-0.0099,-0.0294,-0.8726,-0.4874],[-0.01,-0.0294,-0.8725,-0.4875],[-0.0102,-0.0292,-0.8725,-0.4876],[-0.0106,-0.0286,-0.8725,-0.4876],[-0.0108,-0.0285,-0.8725,-0.4876],[-0.0108,-0.0285,-0.8725,-0.4876],[-0.0107,-0.0288,-0.8725,-0.4876],[-0.0106,-0.0291,-0.8727,-0.4873],[-0.0106,-0.0294,-0.8728,-0.4869],[-0.0108,-0.029,-0.873,-0.4866],[-0.0108,-0.0289,-0.8732,-0.4863],[-0.0109,-0.029,-0.8733,-0.4862],[-0.0109,-0.029,-0.8733,-0.4862],[-0.0113,-0.0285,-0.8732,-0.4863],[-0.0115,-0.0285,-0.8734,-0.486],[-0.0117,-0.0286,-0.8735,-0.4857],[-0.0123,-0.0287,-0.8738,-0.4852],[-0.0128,-0.0284,-0.874,-0.4849],[-0.0133,-0.028,-0.8741,-0.4847],[-0.0142,-0.0273,-0.8751,-0.4829],[-0.0144,-0.027,-0.8759,-0.4815],[-0.0156,-0.0267,-0.8774,-0.4787],[-0.018,-0.025,-0.8779,-0.4778],[-0.0212,-0.0229,-0.8798,-0.4743],[-0.0231,-0.023,-0.8814,-0.4713],[-0.0254,-0.0205,-0.8823,-0.4694],[-0.0261,-0.0208,-0.8831,-0.4678],[-0.0271,-0.0205,-0.8839,-0.4664],[-0.0281,-0.0191,-0.8848,-0.4647],[-0.0286,-0.0186,-0.8852,-0.4638],[-0.0289,-0.0183,-0.8859,-0.4625],[-0.0287,-0.0179,-0.8877,-0.4591],[-0.0285,-0.0175,-0.8889,-0.4568],[-0.0282,-0.0174,-0.8902,-0.4543],[-0.0271,-0.0182,-0.8934,-0.448],[-0.0277,-0.0193,-0.8963,-0.4421],[-0.0277,-0.0193,-0.8963,-0.4421],[-0.0256,-0.0198,-0.8993,-0.436],[-0.0252,-0.0201,-0.9011,-0.4324],[-0.0252,-0.0201,-0.9011,-0.4324],[-0.0243,-0.0207,-0.9063,-0.4212],[-0.0232,-0.0207,-0.9081,-0.4175],[-0.0232,-0.0207,-0.91,-0.4134],[-0.0231,-0.0189,-0.9139,-0.4046],[-0.0232,-0.0173,-0.9161,-0.3997],[-0.0224,-0.0163,-0.9202,-0.3905],[-0.0218,-0.0164,-0.9219,-0.3864],[-0.0214,-0.0164,-0.9236,-0.3823],[-0.0219,-0.0153,-0.9271,-0.3739],[-0.0219,-0.0153,-0.9271,-0.3739],[-0.0231,-0.0136,-0.9304,-0.3654],[-0.0236,-0.0128,-0.9319,-0.3617],[-0.0239,-0.0123,-0.9332,-0.3582],[-0.0239,-0.0123,-0.9332,-0.3582],[-0.0244,-0.0122,-0.9357,-0.3516],[-0.0247,-0.0121,-0.937,-0.3481],[-0.0247,-0.0121,-0.937,-0.3481],[-0.026,-0.0108,-0.9395,-0.3412],[-0.0267,-0.0102,-0.9407,-0.3379],[-0.0275,-0.01,-0.9418,-0.3347],[-0.0287,-0.0097,-0.9436,-0.3295],[-0.0296,-0.0096,-0.9443,-0.3274],[-0.0308,-0.0091,-0.9449,-0.3257],[-0.0308,-0.0091,-0.9449,-0.3257],[-0.0364,-0.0058,-0.9464,-0.3206],[-0.039,-0.0047,-0.9464,-0.3204],[-0.0411,-0.0032,-0.9469,-0.3187],[-0.0429,-0.002,-0.9473,-0.3173],[-0.046,-0.0011,-0.9478,-0.3153],[-0.046,-0.0011,-0.9478,-0.3153],[-0.0485,-0.0001,-0.9483,-0.3136],[-0.05,0.0005,-0.9486,-0.3124],[-0.0512,0.0015,-0.9489,-0.3113],[-0.0546,0.0032,-0.9491,-0.3101],[-0.0562,0.0044,-0.9492,-0.3095],[-0.0589,0.0056,-0.9494,-0.3082],[-0.06,0.0055,-0.9496,-0.3076],[-0.0608,0.0052,-0.9497,-0.307],[-0.0624,0.0053,-0.9499,-0.3061],[-0.0633,0.0059,-0.9499,-0.306],[-0.0633,0.0059,-0.9499,-0.306],[-0.0659,0.0073,-0.9496,-0.3064],[-0.067,0.0077,-0.9494,-0.3066],[-0.0681,0.008,-0.9492,-0.3069],[-0.0703,0.0087,-0.9489,-0.3074],[-0.0703,0.0087,-0.9489,-0.3074],[-0.0721,0.009,-0.9488,-0.3073],[-0.0732,0.0091,-0.9488,-0.3071],[-0.0741,0.0092,-0.9487,-0.3071],[-0.075,0.0093,-0.9487,-0.3069],[-0.077,0.0099,-0.9487,-0.3064],[-0.0779,0.0103,-0.9487,-0.3062],[-0.0779,0.0103,-0.9487,-0.3062],[-0.0799,0.0105,-0.9488,-0.3055],[-0.0803,0.0104,-0.9489,-0.3049],[-0.0807,0.0103,-0.949,-0.3043],[-0.0811,0.0104,-0.9493,-0.3035],[-0.0816,0.0105,-0.9498,-0.3016],[-0.082,0.0106,-0.95,-0.3009],[-0.082,0.0105,-0.9505,-0.2995],[-0.082,0.0102,-0.9508,-0.2986],[-0.082,0.0099,-0.951,-0.2977],[-0.0818,0.0089,-0.9517,-0.2955],[-0.0818,0.0089,-0.9517,-0.2955],[-0.0814,0.0079,-0.9526,-0.2929],[-0.0811,0.0074,-0.9531,-0.2914],[-0.0805,0.0068,-0.9536,-0.29],[-0.08,0.0061,-0.954,-0.2887],[-0.08,0.0061,-0.954,-0.2887],[-0.0787,0.0041,-0.9552,-0.285],[-0.0783,0.0032,-0.9559,-0.2828],[-0.0778,0.0024,-0.9566,-0.2808],[-0.0769,0.001,-0.9572,-0.2788],[-0.0765,-0,-0.9576,-0.2776],[-0.0762,-0.0009,-0.958,-0.2765],[-0.0756,-0.0016,-0.9585,-0.2747],[-0.0754,-0.0018,-0.9587,-0.2741],[-0.0744,-0.0026,-0.9593,-0.2724],[-0.0739,-0.0033,-0.9595,-0.2717],[-0.0734,-0.0039,-0.9598,-0.2708],[-0.073,-0.0043,-0.96,-0.2701],[-0.0724,-0.0046,-0.9603,-0.2692],[-0.0722,-0.0047,-0.9604,-0.2689],[-0.072,-0.0049,-0.9604,-0.2688],[-0.0714,-0.0058,-0.9605,-0.2686],[-0.0714,-0.0058,-0.9605,-0.2686],[-0.0707,-0.0068,-0.9606,-0.2687],[-0.0705,-0.0073,-0.9606,-0.2685],[-0.0703,-0.0074,-0.9606,-0.2687],[-0.0703,-0.0074,-0.9606,-0.2687],[-0.0702,-0.0075,-0.9605,-0.269],[-0.0705,-0.0074,-0.9604,-0.2693],[-0.0706,-0.0074,-0.9604,-0.2694],[-0.0706,-0.0074,-0.9604,-0.2694],[-0.0708,-0.0074,-0.9603,-0.2697],[-0.0711,-0.0073,-0.9603,-0.2697],[-0.0711,-0.0073,-0.9603,-0.2697],[-0.0712,-0.0074,-0.9603,-0.2696],[-0.0714,-0.0074,-0.9602,-0.2697],[-0.0715,-0.0072,-0.9602,-0.2697],[-0.0716,-0.0069,-0.9602,-0.2697],[-0.0716,-0.0069,-0.9602,-0.2697],[-0.0717,-0.0065,-0.9602,-0.2697],[-0.0716,-0.0062,-0.9602,-0.2699],[-0.0716,-0.0062,-0.9601,-0.2701],[-0.0716,-0.006,-0.9601,-0.2702],[-0.0715,-0.0058,-0.96,-0.2705],[-0.0712,-0.0053,-0.9599,-0.2708],[-0.0713,-0.0054,-0.96,-0.2707],[-0.0713,-0.0054,-0.96,-0.2707],[-0.0717,-0.0049,-0.9599,-0.2708],[-0.072,-0.0046,-0.9598,-0.271],[-0.0726,-0.0043,-0.9597,-0.2715],[-0.0728,-0.0044,-0.9596,-0.2717],[-0.0728,-0.0044,-0.9596,-0.2717],[-0.0725,-0.0052,-0.9595,-0.2719],[-0.0723,-0.0055,-0.9595,-0.2719],[-0.0704,-0.0074,-0.9597,-0.2718],[-0.0686,-0.0099,-0.9598,-0.2717],[-0.0675,-0.0111,-0.96,-0.2712],[-0.066,-0.0121,-0.9603,-0.2705],[-0.0646,-0.0129,-0.9606,-0.2698],[-0.0641,-0.0131,-0.9607,-0.2695],[-0.0641,-0.0131,-0.9607,-0.2695],[-0.0638,-0.0127,-0.9608,-0.2695],[-0.0635,-0.0126,-0.9608,-0.2694],[-0.0635,-0.0126,-0.9608,-0.2694],[-0.0632,-0.0121,-0.9609,-0.2691],[-0.0631,-0.0123,-0.961,-0.2687],[-0.0631,-0.0125,-0.9612,-0.2682],[-0.0631,-0.0125,-0.9612,-0.2682],[-0.0634,-0.0129,-0.9614,-0.2674],[-0.0634,-0.0129,-0.9614,-0.2674],[-0.0645,-0.0128,-0.9613,-0.2675],[-0.0651,-0.0127,-0.9611,-0.2679],[-0.0656,-0.0128,-0.961,-0.2683],[-0.0659,-0.0133,-0.9607,-0.2692],[-0.0649,-0.0146,-0.9604,-0.2703],[-0.0628,-0.0163,-0.9603,-0.2712],[-0.0604,-0.0177,-0.9605,-0.2711],[-0.0598,-0.0178,-0.9605,-0.2711],[-0.0594,-0.0176,-0.9605,-0.271],[-0.059,-0.0172,-0.9605,-0.2712],[-0.0585,-0.0163,-0.9605,-0.2715],[-0.0583,-0.0159,-0.9605,-0.2716],[-0.0583,-0.0159,-0.9605,-0.2716],[-0.0582,-0.0154,-0.9605,-0.2715],[-0.0582,-0.0151,-0.9606,-0.2713],[-0.0582,-0.0151,-0.9606,-0.2713],[-0.0583,-0.0149,-0.9608,-0.2707],[-0.0584,-0.0147,-0.9608,-0.2703],[-0.0584,-0.0147,-0.9608,-0.2703],[-0.0586,-0.0151,-0.9611,-0.2694],[-0.0587,-0.0154,-0.9612,-0.2691],[-0.059,-0.0157,-0.9612,-0.269],[-0.059,-0.0157,-0.9612,-0.269],[-0.0594,-0.0163,-0.9611,-0.2692],[-0.0597,-0.0167,-0.9609,-0.2696],[-0.06,-0.0177,-0.9604,-0.2715],[-0.0593,-0.0194,-0.9601,-0.2726],[-0.0583,-0.0198,-0.9601,-0.2728],[-0.0577,-0.0198,-0.9601,-0.2727],[-0.0573,-0.0197,-0.9602,-0.2726],[-0.057,-0.0195,-0.9602,-0.2726],[-0.0569,-0.019,-0.9602,-0.2726],[-0.0571,-0.0176,-0.9602,-0.2726],[-0.0572,-0.0171,-0.9602,-0.2728],[-0.0572,-0.0171,-0.9602,-0.2728],[-0.0571,-0.0164,-0.9602,-0.2727],[-0.0571,-0.0164,-0.9602,-0.2727],[-0.057,-0.016,-0.9604,-0.2721],[-0.0571,-0.016,-0.9605,-0.2716],[-0.0572,-0.016,-0.9606,-0.2712],[-0.0575,-0.0161,-0.9607,-0.2709],[-0.0583,-0.0164,-0.9607,-0.2709],[-0.0586,-0.0164,-0.9606,-0.2711],[-0.0595,-0.0164,-0.9603,-0.272],[-0.0598,-0.0166,-0.9601,-0.2724],[-0.0602,-0.0166,-0.9599,-0.2732],[-0.0603,-0.0164,-0.9597,-0.2738],[-0.0604,-0.0164,-0.9596,-0.2743],[-0.0603,-0.0166,-0.9595,-0.2747],[-0.0596,-0.0174,-0.9593,-0.2753],[-0.0593,-0.0176,-0.9592,-0.2756],[-0.0589,-0.0178,-0.9592,-0.2759],[-0.0584,-0.0179,-0.9591,-0.2763],[-0.0584,-0.0179,-0.9591,-0.2763],[-0.057,-0.0179,-0.959,-0.2768],[-0.0565,-0.018,-0.959,-0.2769],[-0.056,-0.0182,-0.959,-0.277],[-0.0556,-0.0182,-0.959,-0.277],[-0.0556,-0.0182,-0.959,-0.277],[-0.0551,-0.0182,-0.9591,-0.277],[-0.0547,-0.0179,-0.9591,-0.277],[-0.0549,-0.0172,-0.959,-0.2772],[-0.055,-0.017,-0.959,-0.2774],[-0.0552,-0.0171,-0.9589,-0.2776],[-0.0553,-0.0173,-0.9589,-0.2778],[-0.0555,-0.0175,-0.9588,-0.278],[-0.0563,-0.0174,-0.9585,-0.2786],[-0.0566,-0.0173,-0.9584,-0.2789],[-0.0571,-0.0173,-0.9583,-0.2793],[-0.0577,-0.0175,-0.9581,-0.2799],[-0.0581,-0.0176,-0.9579,-0.2803],[-0.0587,-0.0175,-0.9578,-0.2807],[-0.0587,-0.0175,-0.9578,-0.2807],[-0.0603,-0.0165,-0.9573,-0.2821],[-0.0603,-0.0165,-0.9573,-0.2821],[-0.0617,-0.0157,-0.9569,-0.2833],[-0.0622,-0.0154,-0.9567,-0.2837],[-0.0626,-0.0152,-0.9566,-0.2842],[-0.063,-0.0147,-0.9564,-0.2845],[-0.0642,-0.0133,-0.9562,-0.285],[-0.0642,-0.0133,-0.9562,-0.285],[-0.0657,-0.012,-0.956,-0.2857],[-0.0664,-0.0115,-0.9557,-0.2863],[-0.0672,-0.011,-0.9555,-0.2868],[-0.0672,-0.011,-0.9555,-0.2868],[-0.0684,-0.0103,-0.9551,-0.288],[-0.0691,-0.0101,-0.9549,-0.2886],[-0.0691,-0.0101,-0.9549,-0.2886],[-0.0704,-0.0097,-0.9544,-0.2899],[-0.0711,-0.0092,-0.9541,-0.2906],[-0.0719,-0.0086,-0.9534,-0.2927],[-0.0709,-0.0095,-0.9532,-0.2937],[-0.0692,-0.011,-0.9532,-0.2941],[-0.0687,-0.0113,-0.9532,-0.2942],[-0.0682,-0.0116,-0.9532,-0.2943],[-0.0674,-0.0127,-0.9531,-0.2947],[-0.0671,-0.0131,-0.9529,-0.2952],[-0.0666,-0.0137,-0.9526,-0.2966],[-0.0663,-0.0137,-0.9523,-0.2974],[-0.0661,-0.0138,-0.952,-0.2983],[-0.0659,-0.0141,-0.9517,-0.2994],[-0.0657,-0.0148,-0.9513,-0.3008],[-0.066,-0.0159,-0.9502,-0.304],[-0.066,-0.0159,-0.9502,-0.304],[-0.067,-0.0164,-0.9487,-0.3084],[-0.0675,-0.0163,-0.9479,-0.3107],[-0.0675,-0.0163,-0.9479,-0.3107],[-0.069,-0.0153,-0.9462,-0.3158],[-0.0694,-0.0149,-0.9452,-0.3185],[-0.0696,-0.0146,-0.9443,-0.3212],[-0.0698,-0.0142,-0.9433,-0.324],[-0.0698,-0.0142,-0.9433,-0.324],[-0.0695,-0.0135,-0.9403,-0.3328],[-0.0694,-0.0137,-0.9393,-0.3357],[-0.0694,-0.0138,-0.9382,-0.3387],[-0.0696,-0.0141,-0.9371,-0.3417],[-0.07,-0.0139,-0.935,-0.3473],[-0.0702,-0.0136,-0.9339,-0.3502],[-0.0702,-0.0136,-0.9339,-0.3502],[-0.0705,-0.0133,-0.932,-0.3553],[-0.0705,-0.0136,-0.9309,-0.358],[-0.0705,-0.0136,-0.9309,-0.358],[-0.0699,-0.0144,-0.9286,-0.364],[-0.07,-0.0145,-0.9275,-0.3668],[-0.0699,-0.0145,-0.9254,-0.3721],[-0.0699,-0.0144,-0.9244,-0.3745],[-0.0699,-0.0142,-0.9234,-0.377],[-0.0698,-0.0141,-0.9224,-0.3796],[-0.069,-0.0146,-0.9205,-0.3843],[-0.069,-0.0146,-0.9205,-0.3843],[-0.0678,-0.0156,-0.9185,-0.3892],[-0.067,-0.016,-0.9174,-0.3918],[-0.0667,-0.0164,-0.9165,-0.394],[-0.0661,-0.0165,-0.9147,-0.3982],[-0.0662,-0.0161,-0.9137,-0.4006],[-0.0662,-0.0161,-0.9137,-0.4006],[-0.0658,-0.0154,-0.9114,-0.4058],[-0.0653,-0.0153,-0.9104,-0.4081],[-0.0638,-0.0157,-0.9089,-0.4117],[-0.0632,-0.0159,-0.9082,-0.4134],[-0.0625,-0.016,-0.9075,-0.415],[-0.0611,-0.0165,-0.9061,-0.4182],[-0.0611,-0.0165,-0.9061,-0.4182],[-0.0599,-0.0174,-0.9043,-0.4223],[-0.0595,-0.0179,-0.9033,-0.4245],[-0.0595,-0.018,-0.9023,-0.4265],[-0.0593,-0.0183,-0.9014,-0.4284],[-0.0586,-0.0192,-0.9002,-0.431],[-0.0585,-0.0198,-0.9,-0.4314],[-0.0568,-0.0209,-0.8984,-0.4349],[-0.0568,-0.0209,-0.8984,-0.4349],[-0.0559,-0.0209,-0.8971,-0.4376],[-0.0552,-0.0211,-0.8966,-0.4389],[-0.0547,-0.0212,-0.8961,-0.4398],[-0.0542,-0.0213,-0.8957,-0.4408],[-0.0529,-0.0217,-0.8951,-0.4421],[-0.0529,-0.0217,-0.8951,-0.4421],[-0.052,-0.0218,-0.8942,-0.444],[-0.0516,-0.0216,-0.8936,-0.4453],[-0.0512,-0.0216,-0.893,-0.4465],[-0.0507,-0.0216,-0.8923,-0.4479],[-0.0507,-0.0216,-0.8923,-0.4479],[-0.0495,-0.0214,-0.8902,-0.4522],[-0.049,-0.0211,-0.8895,-0.4536],[-0.0476,-0.0208,-0.888,-0.4567],[-0.0468,-0.0206,-0.8873,-0.4582],[-0.046,-0.0204,-0.8865,-0.4599],[-0.0445,-0.02,-0.885,-0.4629],[-0.044,-0.0195,-0.8844,-0.4642],[-0.0435,-0.0188,-0.8837,-0.4656],[-0.043,-0.0185,-0.8829,-0.4671],[-0.0416,-0.0185,-0.8816,-0.4697],[-0.0416,-0.0185,-0.8816,-0.4697],[-0.0401,-0.0191,-0.8806,-0.4716],[-0.0398,-0.019,-0.8801,-0.4726],[-0.0399,-0.019,-0.8792,-0.4742],[-0.0402,-0.0183,-0.8782,-0.4762],[-0.0401,-0.0182,-0.8774,-0.4776],[-0.0399,-0.0184,-0.8767,-0.479],[-0.0399,-0.0184,-0.8767,-0.479],[-0.0387,-0.0191,-0.8747,-0.4827],[-0.0388,-0.019,-0.8741,-0.4838],[-0.0386,-0.019,-0.8734,-0.485],[-0.0383,-0.0184,-0.8722,-0.4873],[-0.038,-0.0183,-0.8715,-0.4886],[-0.0375,-0.0184,-0.871,-0.4895],[-0.0371,-0.0186,-0.8704,-0.4904],[-0.0371,-0.0186,-0.8704,-0.4904],[-0.036,-0.0179,-0.8678,-0.4951],[-0.0357,-0.0178,-0.8665,-0.4975],[-0.0355,-0.0179,-0.8661,-0.4983],[-0.0352,-0.0179,-0.8653,-0.4996],[-0.0345,-0.018,-0.8639,-0.502],[-0.034,-0.0182,-0.8632,-0.5033],[-0.0335,-0.0186,-0.8625,-0.5045],[-0.0325,-0.0188,-0.8611,-0.507],[-0.0323,-0.0187,-0.8604,-0.5081],[-0.0321,-0.0186,-0.8598,-0.5092],[-0.0313,-0.0185,-0.8587,-0.5111],[-0.0313,-0.0185,-0.8587,-0.5111],[-0.0298,-0.0189,-0.8578,-0.5127],[-0.0292,-0.0191,-0.8573,-0.5136],[-0.0286,-0.0191,-0.8568,-0.5144],[-0.0282,-0.0191,-0.8562,-0.5154],[-0.0277,-0.0192,-0.8551,-0.5173],[-0.0277,-0.0192,-0.8551,-0.5173],[-0.027,-0.0195,-0.8541,-0.519],[-0.0266,-0.0195,-0.8535,-0.5199],[-0.0262,-0.0195,-0.853,-0.5208],[-0.0262,-0.0195,-0.853,-0.5208],[-0.0256,-0.0193,-0.8523,-0.522],[-0.0252,-0.0194,-0.852,-0.5226],[-0.0245,-0.0198,-0.8518,-0.5229],[-0.0242,-0.02,-0.8515,-0.5234],[-0.0242,-0.0199,-0.8512,-0.5239],[-0.0242,-0.0199,-0.8512,-0.5239],[-0.0236,-0.0197,-0.8505,-0.525],[-0.0233,-0.0198,-0.8504,-0.5252],[-0.0228,-0.0199,-0.85,-0.5258],[-0.0227,-0.0198,-0.8497,-0.5263],[-0.0227,-0.0198,-0.8497,-0.5263],[-0.0223,-0.0198,-0.8492,-0.5271],[-0.0221,-0.0197,-0.8492,-0.5272],[-0.0221,-0.0195,-0.849,-0.5275],[-0.0221,-0.0195,-0.849,-0.5275],[-0.0214,-0.0189,-0.8484,-0.5286],[-0.0212,-0.0187,-0.8483,-0.5287],[-0.0208,-0.0188,-0.848,-0.5292],[-0.0208,-0.0185,-0.8472,-0.5305],[-0.0209,-0.0183,-0.8469,-0.531],[-0.0208,-0.0181,-0.8468,-0.5311],[-0.0206,-0.0179,-0.8467,-0.5313],[-0.0198,-0.0181,-0.8465,-0.5317],[-0.0198,-0.0181,-0.8465,-0.5317],[-0.0193,-0.0183,-0.8462,-0.5322],[-0.0189,-0.0182,-0.846,-0.5325],[-0.0189,-0.0181,-0.8457,-0.5329],[-0.0188,-0.0181,-0.8457,-0.533],[-0.0188,-0.0181,-0.8457,-0.533],[-0.019,-0.0175,-0.8451,-0.5338],[-0.019,-0.0174,-0.845,-0.534],[-0.0189,-0.0175,-0.845,-0.5341],[-0.0188,-0.0172,-0.8447,-0.5345],[-0.0187,-0.0171,-0.8445,-0.5348],[-0.0184,-0.0171,-0.8445,-0.5349],[-0.0179,-0.0174,-0.8447,-0.5346],[-0.0178,-0.0175,-0.8447,-0.5346],[-0.0176,-0.0176,-0.8446,-0.5347],[-0.0177,-0.0175,-0.8446,-0.5347],[-0.018,-0.017,-0.8445,-0.5349]]
+																			}
+																		]
+																		$string flags "None"
+																	}
+																	$string assetType "PANIMA"
+																	$uint32 assetVersion 1
+																}
 																"timeFrame"
 																{
 																	$float duration 0
 																	$float scale 1
-																	$float start 0
 																	$float offset 0
+																	$float start 0
 																}
+																$string uniqueId "8bf07035-6fe2-4804-9d9c-728d20283c12"
+																$string name "generic_char"
 																"editorData"
 																{
-																	$array channels [element;1][
+																	$array channels [element;4][
 																		{
+																			$string targetPath "ec/ik_solver/control/R.hand/position"
+																			"bookmarkSet"
+																			{
+																				$string uniqueId "d7790ed7-58da-4331-bb94-4fa6c348fc3c"
+																				$array bookmarks [element;3][
+																					{
+																						$float time 0
+																						$string note ""
+																					},
+																					{
+																						$float time 1.5
+																						$string note ""
+																					},
+																					{
+																						$float time 1.1667
+																						$string note ""
+																					}
+																				]
+																			}
 																			"graphCurve"
 																			{
 																				$array keys [element;3][
 																					{
-																						$arrayLz4 times [float;1][0]
-																						$arrayLz4 values [float;1][-58.2852]
-																						$arrayLz4 easing [uint32;1][0]
-																						$arrayLz4 inTimes [float;1][-0.5]
-																						$arrayLz4 outDeltas [float;1][0]
-																						$arrayLz4 inDeltas [float;1][0]
-																						$arrayLz4 inHandleTypes [uint32;1][1]
-																						$arrayLz4 outTimes [float;1][0.5]
-																						$arrayLz4 interpolation [uint32;1][2]
-																						$arrayLz4 outHandleTypes [uint32;1][1]
+																						$arrayLz4 times [float;3][0,1.1667,1.5]
+																						$arrayLz4 values [float;3][-3.3093,-6.8402,-9.8]
+																						$arrayLz4 easing [uint32;3][0,0,0]
+																						$arrayLz4 outDeltas [float;3][0,-2.6429,-2.6429]
+																						$arrayLz4 inTimes [float;3][-0.5,-0.3306,-0.2765]
+																						$arrayLz4 inDeltas [float;3][0,2.6429,2.6429]
+																						$arrayLz4 inHandleTypes [uint32;3][1,1,1]
+																						$arrayLz4 outTimes [float;3][0.5,0.3306,0.2765]
+																						$arrayLz4 outHandleTypes [uint32;3][1,1,1]
+																						$arrayLz4 interpolation [uint32;3][2,2,2]
 																					},
 																					{
-																						$arrayLz4 times [float;1][0]
-																						$arrayLz4 values [float;1][31]
-																						$arrayLz4 easing [uint32;1][0]
-																						$arrayLz4 inTimes [float;1][-0.5]
-																						$arrayLz4 outDeltas [float;1][0]
-																						$arrayLz4 inDeltas [float;1][0]
-																						$arrayLz4 inHandleTypes [uint32;1][1]
-																						$arrayLz4 outTimes [float;1][0.5]
-																						$arrayLz4 interpolation [uint32;1][2]
-																						$arrayLz4 outHandleTypes [uint32;1][1]
+																						$arrayLz4 times [float;3][0,1.1667,1.5]
+																						$arrayLz4 values [float;3][24.8,33.9971,41.2472]
+																						$arrayLz4 easing [uint32;3][0,0,0]
+																						$arrayLz4 outDeltas [float;3][0,6.7886,5.7442]
+																						$arrayLz4 inTimes [float;3][-0.5,-0.3102,-0.3216]
+																						$arrayLz4 inDeltas [float;3][0,-6.7886,-5.7442]
+																						$arrayLz4 inHandleTypes [uint32;3][1,1,1]
+																						$arrayLz4 outTimes [float;3][0.5,0.3102,0.3216]
+																						$arrayLz4 outHandleTypes [uint32;3][1,1,1]
+																						$arrayLz4 interpolation [uint32;3][2,2,2]
 																					},
 																					{
-																						$arrayLz4 times [float;1][0]
-																						$arrayLz4 values [float;1][190.7728]
-																						$arrayLz4 easing [uint32;1][0]
-																						$arrayLz4 inTimes [float;1][-0.5]
-																						$arrayLz4 outDeltas [float;1][0]
-																						$arrayLz4 inDeltas [float;1][0]
-																						$arrayLz4 inHandleTypes [uint32;1][1]
-																						$arrayLz4 outTimes [float;1][0.5]
-																						$arrayLz4 interpolation [uint32;1][2]
-																						$arrayLz4 outHandleTypes [uint32;1][1]
+																						$arrayLz4 times [float;3][0,1.1667,1.5]
+																						$arrayLz4 values [float;3][8.5584,10.3053,11.3625]
+																						$arrayLz4 easing [uint32;3][0,0,0]
+																						$arrayLz4 outDeltas [float;3][0,2.0888,0.3697]
+																						$arrayLz4 inTimes [float;3][-0.5,-0.3291,-0.3273]
+																						$arrayLz4 inDeltas [float;3][0,-2.0888,-0.3697]
+																						$arrayLz4 inHandleTypes [uint32;3][1,1,1]
+																						$arrayLz4 outTimes [float;3][0.5,0.3291,0.3273]
+																						$arrayLz4 outHandleTypes [uint32;3][1,1,1]
+																						$arrayLz4 interpolation [uint32;3][2,2,2]
 																					}
 																				]
 																			}
-																			$string targetPath "ec/pfm_actor/position"
+																		},
+																		{
+																			$string targetPath "ec/ik_solver/control/R.hand/rotation"
 																			"bookmarkSet"
 																			{
-																				$string uniqueId "4df25775-5580-4b17-a20d-578aa39305d8"
+																				$string uniqueId "8077716f-0519-4fba-9718-9509d798ebc5"
 																				$array bookmarks [element;1][
 																					{
 																						$float time 0
@@ -378,48 +1198,169 @@ $string assetType "PFMP"
 																					}
 																				]
 																			}
+																			"graphCurve"
+																			{
+																				$array keys [element;3][
+																					{
+																						$arrayLz4 times [float;1][0]
+																						$arrayLz4 values [float;1][56.2618]
+																						$arrayLz4 easing [uint32;1][0]
+																						$arrayLz4 outDeltas [float;1][0]
+																						$arrayLz4 inTimes [float;1][-0.5]
+																						$arrayLz4 inDeltas [float;1][0]
+																						$arrayLz4 inHandleTypes [uint32;1][1]
+																						$arrayLz4 outTimes [float;1][0.5]
+																						$arrayLz4 outHandleTypes [uint32;1][1]
+																						$arrayLz4 interpolation [uint32;1][2]
+																					},
+																					{
+																						$arrayLz4 times [float;1][0]
+																						$arrayLz4 values [float;1][66.6666]
+																						$arrayLz4 easing [uint32;1][0]
+																						$arrayLz4 outDeltas [float;1][0]
+																						$arrayLz4 inTimes [float;1][-0.5]
+																						$arrayLz4 inDeltas [float;1][0]
+																						$arrayLz4 inHandleTypes [uint32;1][1]
+																						$arrayLz4 outTimes [float;1][0.5]
+																						$arrayLz4 outHandleTypes [uint32;1][1]
+																						$arrayLz4 interpolation [uint32;1][2]
+																					},
+																					{
+																						$arrayLz4 times [float;1][0]
+																						$arrayLz4 values [float;1][98.8322]
+																						$arrayLz4 easing [uint32;1][0]
+																						$arrayLz4 outDeltas [float;1][0]
+																						$arrayLz4 inTimes [float;1][-0.5]
+																						$arrayLz4 inDeltas [float;1][0]
+																						$arrayLz4 inHandleTypes [uint32;1][1]
+																						$arrayLz4 outTimes [float;1][0.5]
+																						$arrayLz4 outHandleTypes [uint32;1][1]
+																						$arrayLz4 interpolation [uint32;1][2]
+																					}
+																				]
+																			}
+																		},
+																		{
+																			"graphCurve"
+																			{
+																				$array keys [element;3][
+																					{
+																						$arrayLz4 interpolation [uint32;2][2,2]
+																						$arrayLz4 times [float;2][2,2.0417]
+																						$arrayLz4 values [float;2][0.35,0.3491]
+																						$arrayLz4 outHandleTypes [uint32;2][1,1]
+																						$arrayLz4 easing [uint32;2][0,0]
+																						$arrayLz4 inTimes [float;2][-0.5,-0.5]
+																						$arrayLz4 inDeltas [float;2][0,0]
+																						$arrayLz4 inHandleTypes [uint32;2][1,1]
+																						$arrayLz4 outTimes [float;2][0.5,0.5]
+																						$arrayLz4 outDeltas [float;2][0,0]
+																					},
+																					{
+																						$arrayLz4 interpolation [uint32;2][2,2]
+																						$arrayLz4 times [float;2][2,2.0417]
+																						$arrayLz4 values [float;2][53.0167,53.0209]
+																						$arrayLz4 outHandleTypes [uint32;2][1,1]
+																						$arrayLz4 easing [uint32;2][0,0]
+																						$arrayLz4 inTimes [float;2][-0.5,-0.5]
+																						$arrayLz4 inDeltas [float;2][0,0]
+																						$arrayLz4 inHandleTypes [uint32;2][1,1]
+																						$arrayLz4 outTimes [float;2][0.5,0.5]
+																						$arrayLz4 outDeltas [float;2][0,0]
+																					},
+																					{
+																						$arrayLz4 interpolation [uint32;2][2,2]
+																						$arrayLz4 times [float;2][2,2.0417]
+																						$arrayLz4 values [float;2][5.88,5.8697]
+																						$arrayLz4 outHandleTypes [uint32;2][1,1]
+																						$arrayLz4 easing [uint32;2][0,0]
+																						$arrayLz4 inTimes [float;2][-0.5,-0.5]
+																						$arrayLz4 inDeltas [float;2][0,0]
+																						$arrayLz4 inHandleTypes [uint32;2][1,1]
+																						$arrayLz4 outTimes [float;2][0.5,0.5]
+																						$arrayLz4 outDeltas [float;2][0,0]
+																					}
+																				]
+																			}
+																			$string targetPath "ec/ik_solver/control/head/position"
+																			"bookmarkSet"
+																			{
+																				$array bookmarks [element;2][
+																					{
+																						$string note ""
+																						$float time 2
+																					},
+																					{
+																						$float time 2.0417
+																						$string note ""
+																					}
+																				]
+																				$string uniqueId "d138ab9a-c7c0-436b-9e9c-35a9759214d0"
+																			}
+																		},
+																		{
+																			"graphCurve"
+																			{
+																				$array keys [element;3][
+																					{
+																						$arrayLz4 interpolation [uint32;1][2]
+																						$arrayLz4 times [float;1][0]
+																						$arrayLz4 values [float;1][-61.5525]
+																						$arrayLz4 outHandleTypes [uint32;1][1]
+																						$arrayLz4 easing [uint32;1][0]
+																						$arrayLz4 inTimes [float;1][-0.5]
+																						$arrayLz4 inDeltas [float;1][0]
+																						$arrayLz4 inHandleTypes [uint32;1][1]
+																						$arrayLz4 outTimes [float;1][0.5]
+																						$arrayLz4 outDeltas [float;1][0]
+																					},
+																					{
+																						$arrayLz4 interpolation [uint32;1][2]
+																						$arrayLz4 times [float;1][0]
+																						$arrayLz4 values [float;1][180]
+																						$arrayLz4 outHandleTypes [uint32;1][1]
+																						$arrayLz4 easing [uint32;1][0]
+																						$arrayLz4 inTimes [float;1][-0.5]
+																						$arrayLz4 inDeltas [float;1][0]
+																						$arrayLz4 inHandleTypes [uint32;1][1]
+																						$arrayLz4 outTimes [float;1][0.5]
+																						$arrayLz4 outDeltas [float;1][0]
+																					},
+																					{
+																						$arrayLz4 interpolation [uint32;1][2]
+																						$arrayLz4 times [float;1][0]
+																						$arrayLz4 values [float;1][-0]
+																						$arrayLz4 outHandleTypes [uint32;1][1]
+																						$arrayLz4 easing [uint32;1][0]
+																						$arrayLz4 inTimes [float;1][-0.5]
+																						$arrayLz4 inDeltas [float;1][0]
+																						$arrayLz4 inHandleTypes [uint32;1][1]
+																						$arrayLz4 outTimes [float;1][0.5]
+																						$arrayLz4 outDeltas [float;1][0]
+																					}
+																				]
+																			}
+																			$string targetPath "ec/ik_solver/control/head/rotation"
+																			"bookmarkSet"
+																			{
+																				$array bookmarks [element;1][
+																					{
+																						$string note ""
+																						$float time 0
+																					}
+																				]
+																				$string uniqueId "385efbb6-b8fb-4ef9-8009-06c7e4d5766d"
+																			}
 																		}
 																	]
 																}
-																"animation"
-																{
-																	$string assetType "PANIMA"
-																	"assetData"
-																	{
-																		$float duration 0
-																		$array channels [element;3][
-																			{
-																				$string targetPath "ec/pfm_actor/rotation"
-																				$string interpolation "Linear"
-																				$arrayLz4 times [float;1][0]
-																				$string expression "var angles[3] := {90,((time /2.0) %1.0) *360.0,0}; var rot[4] := {0,0,0,1}; q_from_euler_angles(angles,rot); return [rot];"
-																				$arrayLz4 values [quat;1][[0.7071,0.7071,0,0]]
-																			},
-																			{
-																				$string targetPath "ec/color/color"
-																				$string interpolation "Linear"
-																				$arrayLz4 times [float;1][0]
-																				$arrayLz4 values [vec3;1][[1,1,1]]
-																				$string expression "var hsv[3] := {((time /2.0) %1.0) *360.0,1,1}; var rgb[3] := {0,0,0}; hsv_to_rgb(hsv,rgb); return [rgb];"
-																			},
-																			{
-																				$string interpolation "Linear"
-																				$arrayLz4 times [float;1][0]
-																				$string targetPath "ec/pfm_actor/position"
-																				$string expression "var pos[3] := {value[0],value[1] +(sin(time /2.0 *pi *2.0) +1.0) /2.0 *20.0,value[2]}; return [pos];"
-																				$arrayLz4 values [vec3;1][[-58.2852,31,190.7728]]
-																			}
-																		]
-																		$float speedFactor 1
-																		$string flags "None"
-																	}
-																	$uint32 assetVersion 1
-																}
+																$string actor "5cd21a5d-daa4-4d3d-8da1-2a6231f122ed"
 															}
 														]
+														$bool muted 0
 														$array audioClips [element;0][]
-														$array overlayClips [element;0][]
 														$array filmClips [element;0][]
+														$array overlayClips [element;0][]
 														$string name "animSetEditorChannels"
 														$float volume 1
 														$string uniqueId "55d2167b-26b1-4e49-89ba-ef3e7e51b93f"
@@ -428,8 +1369,6 @@ $string assetType "PFMP"
 												$string uniqueId "7989692b-e298-4de3-bc51-faca6b098c45"
 											}
 										]
-										$array bookmarkSets [element;0][]
-										$int32 activeBookmarkSet 0
 										"timeFrame"
 										{
 											$float scale 1
@@ -437,11 +1376,13 @@ $string assetType "PFMP"
 											$float start 0
 											$float duration 60
 										}
+										$int32 activeBookmarkSet 0
 										$float fadeIn 0
 										$float fadeOut 0
 										$string uniqueId "a2951b11-9dfd-4709-bf4c-9d037f24d4cb"
 									}
 								]
+								$array overlayClips [element;0][]
 								$string name "Film"
 								$float volume 1
 								$string uniqueId "e6dd472c-27df-4448-b7a3-3cfccb8f0117"
@@ -450,8 +1391,6 @@ $string assetType "PFMP"
 						$string uniqueId "8043c218-eff3-4fdd-b255-b53c66d82715"
 					}
 				]
-				$array bookmarkSets [element;0][]
-				$int32 activeBookmarkSet 0
 				"timeFrame"
 				{
 					$float scale 1
@@ -459,14 +1398,96 @@ $string assetType "PFMP"
 					$float start 0
 					$float duration 60
 				}
+				$int32 activeBookmarkSet 0
 				$float fadeIn 0
 				$float fadeOut 0
 				$string uniqueId "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 			}
 		]
+		"settings"
+		{
+			$float playheadOffset 0
+			$string mapName "pfm_demo"
+			"layoutState"
+			{
+				$array containers [element;0][]
+				$array windows [element;0][]
+				"layout_state"
+				{
+					"containers"
+					{
+						"main_container"
+						{
+							$array frameSizeRatios [float;1][0.4]
+						}
+						"viewport_container"
+						{
+							$array frameSizeRatios [float;1][0.75]
+						}
+					}
+					"windows"
+					{
+						"main"
+						{
+							"detachedWindow"
+							{
+								$vec2 pos [0,0.0213]
+								$vec2 size [1,0.9343]
+							}
+						}
+					}
+				}
+			}
+			"renderSettings"
+			{
+				$float panoramaRange 180
+				$uint32 width 1280
+				$uint32 frameRate 24
+				$string mode "combined"
+				$uint32 supersamplingFactor 2
+				$uint32 height 720
+				$bool preCalculateLight 0
+				$float exposure 50
+				$string renderEngine "cycles"
+				$uint32 numberOfFrames 1
+				$string deviceType "gpu"
+				$string preset "standard"
+				$uint32 maxTransparencyBounces 32
+				$float lightIntensityFactor 1
+				$string outputFormat "png"
+				$string colorTransform "filmic-blender"
+				$string colorTransformLook "Medium Contrast"
+				$string denoiseMode "detailed"
+				$bool renderWorld 1
+				$bool renderGameObjects 1
+				$bool renderPlayer 0
+				$bool cameraFrustumCullingEnabled 1
+				$bool pvsCullingEnabled 1
+				$bool progressiveRefinementEnabled 0
+				$bool transparentSky 0
+				$bool stereoscopic 1
+				$string previewQuality "low"
+				$string cameraType "0"
+				$string panoramaType "equirectangular"
+				$bool progressive 1
+				$uint32 samples 20
+				$uint32 tileSize 512
+				$string viewportMode "360_left_eye"
+				$float emissionStrength 0
+			}
+			$string layout "cfg/pfm/layouts/default.udm"
+			$string cameraView "Scene"
+			"workCamera"
+			{
+				$float fov 90.4761
+				$transform pose [[-66.9569,62.4277,-77.9898][-0.2391,-0.0316,0.9621,-0.127]]
+			}
+			$bool readOnly 1
+		}
 		$string name ""
 		$string uniqueId "7220022f-6cca-43cb-9ed7-0bb59c3a872d"
 		$string activeClip "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 	}
 }
+$string assetType "PFMP"
 $uint32 assetVersion 1
