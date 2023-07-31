@@ -301,7 +301,9 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 
 	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			pm:LoadTutorial("interface/asset_catalogues")
+			time.create_simple_timer(0.0, function()
+				pm:LoadTutorial("interface/asset_catalogues")
+			end)
 		end,
 	})
 	elTut:StartSlide("intro")

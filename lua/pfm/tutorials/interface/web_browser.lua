@@ -154,7 +154,9 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 
 	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			pm:LoadTutorial("interface/actor_editor")
+			time.create_simple_timer(0.0, function()
+				pm:LoadTutorial("interface/actor_editor")
+			end)
 		end,
 	})
 

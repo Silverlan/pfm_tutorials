@@ -270,7 +270,9 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 
 	elTut:RegisterSlide("viewport_next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			pm:LoadTutorial("interface/web_browser")
+			time.create_simple_timer(0.0, function()
+				pm:LoadTutorial("interface/web_browser")
+			end)
 		end,
 	})
 
