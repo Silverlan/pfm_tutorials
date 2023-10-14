@@ -635,10 +635,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 
 	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			-- pm:LoadTutorial("interface/render") -- TODO
-			time.create_simple_timer(0.0, function()
-				gui.Tutorial.close_tutorial()
-			end)
+			pm:LoadTutorial("animating/inverse_kinematics")
 		end,
 	})
 	elTut:StartSlide("intro")
