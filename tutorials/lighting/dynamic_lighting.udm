@@ -1,6 +1,7 @@
 "tutorial"
 {
 	$string name "dynamic_lighting"
+	$string project_file "projects/tutorials/lighting/01_dynamic_lighting"
 	$string icon "gui/pfm/tutorials/tutorial_dynamic_lighting"
 	$string series "lighting"
 	$uint32 position_in_series 1
