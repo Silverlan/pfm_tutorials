@@ -55,8 +55,9 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 	elTut:RegisterSlide("spot_light", {
 		init = function(tutorialData, slideData, slide)
 			slide:AddHighlight(slide:FindElementByPath("window_actor_editor/new_actor_button"))
-			slide:AddHighlight("context_menu")
+			slide:AddHighlight("window_actor_editor/new_actor_button")
 			slide:AddHighlight("context_menu/spot_light")
+			slide:SetArrowTarget("context_menu/spot_light")
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData, slide)
@@ -99,10 +100,14 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 				local item = actorEditor:GetActorItem(lm)
 				if util.is_valid(item) then
 					item:Expand(true)
+					local itemComponent = actorEditor:GetActorComponentItem(lm, "light")
+					if util.is_valid(itemComponent) then
+						itemComponent:Expand(true)
+					end
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/intensity/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/intensityType/header")
 					local elPath = tostring(lm:GetUniqueId()) .. "/light/intensity/header"
-					slide:SetArrowTarget(slide:FindElementByPath(elPath))
+					slide:SetArrowTarget(elPath)
 				end
 			end
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
@@ -130,6 +135,13 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData, slide)
+			local lm = find_light_source_actor(pm)
+			if lm == nil then
+				return true
+			end
+			return lm:GetMemberValue("ec/light/castShadows")
+		end,
 		nextSlide = "baked",
 	})
 
@@ -155,7 +167,8 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 
 	elTut:RegisterSlide("blend_fraction", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
+			slide:SetFocusElement(slide:FindElementByPath("contents"))
+			slide:AddHighlight(slide:FindElementByPath("contents"))
 			local lm = find_light_source_actor(pm)
 			if lm ~= nil then
 				local actorEditor = pm:GetActorEditor()
@@ -164,7 +177,8 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 					item:Expand(true)
 					local elPath = tostring(lm:GetUniqueId()) .. "/light_spot/blendFraction/header"
 					slide:AddHighlight(elPath)
-					slide:SetArrowTarget(slide:FindElementByPath(elPath))
+					slide:AddHighlight("property_controls/blendFraction")
+					slide:SetArrowTarget("property_controls/blendFraction")
 				end
 			end
 			slide:AddGenericMessageBox()
@@ -180,11 +194,25 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 			if lm ~= nil then
 				slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
 				slide:AddHighlight("context_menu/toggle_camera_link")
+				slide:SetArrowTarget("context_menu/toggle_camera_link")
+				local actorEditor = pm:GetActorEditor()
+				if util.is_valid(actorEditor) then
+					slideData.cbLinkModeStarted = actorEditor:AddCallback("OnCameraLinkModeEntered", function()
+						util.remove(slideData.cbLinkModeStarted)
+						slideData.linkModeEntered = true
+					end)
+				end
 			end
 			slide:AddGenericMessageBox()
 		end,
-		clear = function(tutorialData, slideData) end,
+		clear = function(tutorialData, slideData)
+			util.remove(slideData.cbLinkModeStarted)
+		end,
+		clearCondition = function(tutorialData, slideData, slide)
+			return slideData.linkModeEntered or false
+		end,
 		nextSlide = "camera_link_placement",
+		autoContinue = true,
 	})
 
 	elTut:RegisterSlide("camera_link_placement", {
@@ -200,6 +228,8 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/vp_settings/rt_enabled"))
+			slide:AddHighlight("window_primary_viewport/vp_settings/rt_enabled")
+			slide:SetArrowTarget("window_primary_viewport/vp_settings/rt_enabled")
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData, slide)
@@ -227,20 +257,24 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 
 	elTut:RegisterSlide("conclusion", {
 		init = function(tutorialData, slideData, slide)
+			-- Disable live RT
+			local el = slide:FindElementByPath("window_primary_viewport/vp_settings/rt_enabled", false)
+			local tgt = util.is_valid(el) and el:GetTarget() or nil
+			if util.is_valid(tgt) then
+				tgt:SelectOption(0)
+			end
+
 			slide:SetTutorialCompleted()
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
 		nextSlide = "next_tutorial",
 	})
-	elTut:StartSlide("conclusion")
 
 	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			-- pm:LoadTutorial("interface/render") -- TODO
-			time.create_simple_timer(0.0, function()
-				gui.Tutorial.close_tutorial()
-			end)
+			pm:LoadTutorial("lighting/static_lighting")
 		end,
 	})
+	elTut:StartSlide("intro")
 end)
