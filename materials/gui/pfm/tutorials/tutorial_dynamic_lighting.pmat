@@ -2,6 +2,6 @@
 {
 	"textures"
 	{
-		$string albedo_map "gui/pfm/tutorials/coming_soon"
+		$string albedo_map "gui/pfm/tutorials/tutorial_dynamic_lighting"
 	}
 }
