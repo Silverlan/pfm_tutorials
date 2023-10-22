@@ -27,6 +27,17 @@ gui.Tutorial.register_tutorial("intro", "tutorials/intro", function(elTut, pm)
 			slide:AddHighlight(elFocus)
 			slide:AddGenericMessageBox()
 		end,
+		nextSlide = "interface_panels",
+	})
+	elTut:RegisterSlide("interface_panels", {
+		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("actor_editor")
+			slide:SetMinWindowFrameDividerFraction(pfm.WINDOW_ACTOR_EDITOR, 0.333)
+			slide:SetFocusElement(slide:FindElementByPath("editor_frame"))
+			slide:AddHighlight(slide:FindElementByPath("editor_frame/panel_add_button"))
+			slide:SetArrowTarget("editor_frame/panel_add_button")
+			slide:AddGenericMessageBox()
+		end,
 		nextSlide = "viewport_section",
 	})
 	elTut:RegisterSlide("viewport_section", {
@@ -54,7 +65,7 @@ gui.Tutorial.register_tutorial("intro", "tutorials/intro", function(elTut, pm)
 			slideData.divider = divider
 			slideData.initialDividerPos = util.is_valid(divider) and divider:GetAbsolutePos() or Vector2i(0, 0)
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
-			slide:AddHighlight(divider)
+			slide:AddHighlight(divider, true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
@@ -71,7 +82,7 @@ gui.Tutorial.register_tutorial("intro", "tutorials/intro", function(elTut, pm)
 			slideData.actorEditor = slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID)
 			local elFocus = slide:FindElementByPath("editor_frame")
 			slide:SetFocusElement(elFocus)
-			slide:AddHighlight(slide:FindElementByPath("actor_editor_tab_button/detach_icon"))
+			slide:AddHighlight(slide:FindElementByPath("actor_editor_tab_button/detach_icon"), true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
@@ -127,6 +138,11 @@ gui.Tutorial.register_tutorial("intro", "tutorials/intro", function(elTut, pm)
 	})
 	elTut:RegisterSlide("layout_save_preference", {
 		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath("menu_bar"))
+			slide:AddHighlight(slide:FindElementByPath("menu_bar/view"))
+			slide:SetArrowTarget(slide:FindElementByPath("menu_bar/view"))
+			slide:AddHighlight("context_menu/save_current_layout_state_as_default")
+
 			pm:LoadLayout("cfg/pfm/layouts/default.udm")
 			slide:AddGenericMessageBox()
 		end,
@@ -135,7 +151,7 @@ gui.Tutorial.register_tutorial("intro", "tutorials/intro", function(elTut, pm)
 	elTut:RegisterSlide("help_menu", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath("menu_bar"))
-			slide:AddHighlight(slide:FindElementByPath("menu_bar/help"))
+			slide:AddHighlight(slide:FindElementByPath("menu_bar/help"), true)
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "tutorial_panel",
@@ -144,7 +160,7 @@ gui.Tutorial.register_tutorial("intro", "tutorials/intro", function(elTut, pm)
 		init = function(tutorialData, slideData, slide)
 			slide:SetMinWindowFrameDividerFraction(pfm.WINDOW_TUTORIAL_CATALOG, 0.5)
 			slide:SetFocusElement(slide:FindElementByPath("editor_frame"))
-			slide:AddHighlight(slide:FindElementByPath("editor_frame/tutorial_catalog_tab_button"))
+			slide:AddHighlight(slide:FindElementByPath("editor_frame/tutorial_catalog_tab_button"), true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
@@ -165,7 +181,7 @@ gui.Tutorial.register_tutorial("intro", "tutorials/intro", function(elTut, pm)
 	elTut:RegisterSlide("tutorial_panel3", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath("editor_frame"))
-			slide:AddHighlight(slide:FindElementByPath("window_tutorial_catalog/tutorials_interface"))
+			slide:AddHighlight("window_tutorial_catalog/tutorials_interface", true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
@@ -184,10 +200,9 @@ gui.Tutorial.register_tutorial("intro", "tutorials/intro", function(elTut, pm)
 		init = function(tutorialData, slideData, slide)
 			slide:SetTutorialCompleted()
 			slide:SetFocusElement(slide:FindElementByPath("editor_frame"))
-			slide:AddHighlight(slide:FindElementByPath("window_tutorial_catalog/tutorials_interface_viewport.udm"))
+			slide:AddHighlight("window_tutorial_catalog/tutorials_interface_viewport.udm", true)
 			slide:AddGenericMessageBox()
 		end,
 	})
-
 	elTut:StartSlide("welcome")
 end)

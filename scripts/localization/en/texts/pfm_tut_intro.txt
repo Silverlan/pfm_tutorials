@@ -1,6 +1,8 @@
 pfm_tut_intro_welcome = "Hello and welcome to the Pragma Filmmaker (PFM)! This tutorial will give you a brief introduction to PFM and its interface to get you started.\n\nEvery tutorial is made up of slides like this one. You can move the text-box around by clicking and dragging it with the mouse.\nSome tutorials are voiced, in which case you can toggle the audio using the audio-button to the top left. To the top-right you can see which slide you're on and how many are left for the current tutorial.\n\nYou can click the \"{pfm_continue}\" button to go to the next slide, or quit the tutorial at any time by pressing \"{pfm_end_tutorial}\"."
 
-pfm_tut_intro_interface_sections = "By default, the main interface of PFM is split into three sections: \"Data\", \"View\" and \"Animation\".\nThe highlighted section to the left is the \"data\" section. Here you can find various \"panels\" for creating and editing actors, exploring and downloading assets, etc."
+pfm_tut_intro_interface_sections = "By default, the main interface of PFM is split into three sections: The \"Data\" section, the \"View\" section and the \"Animation\" section.\nThe highlighted section to the left is the \"data\" section. At the top of the section you can find various panel tabs for creating and editing actors, exploring and downloading assets, etc."
+
+pfm_tut_intro_interface_panels = "Some panels, such as the \"{pfm_actor_editor}\", are already open by default, but you can find more available panels by pressing this button in each section. Every section has different panels available."
 
 pfm_tut_intro_viewport_section = "On the right-hand side, you can find the \"view\" section. As the name implies, this is where you can find the primary viewport, the render panel, etc."
 
@@ -18,11 +20,11 @@ pfm_tut_intro_layout_change_core2 = "As you can see, the UI sections are now div
 
 pfm_tut_intro_layout_save_preference = "Once you have arranged the interface to your liking, you can save the current layout state by selecting \"{view}\" > \"{layout}\" > \"{pfm_save_current_layout_state_as_default}\".\nThe next time you start PFM, this layout will be restored automatically.\n\nThe current layout is also stored in the project file, so opening a PFM project will restore the layout that was used when the project was last saved."
 
-pfm_tut_intro_help_menu = "If you need assistance, you can find useful resources in the \"{help}\" menu in the menu bar.\nHere you can find direct links to open the online documentation, join the Discord server, check out the online bug tracker or restart this tutorial."
+pfm_tut_intro_help_menu = "If you need assistance, you can find useful resources in the \"{help}\" menu in the menu bar.\nHere you can find direct links to the online documentation, join the community Discord server, report bugs, request features or restart this tutorial."
 
 pfm_tut_intro_tutorial_panel = "This completes this introductory tutorial. You can now move on to other tutorials by opening the \"{pfm_tutorial_catalog}\" panel."
 
-pfm_tut_intro_tutorial_panel2 = "Here you can find all available tutorials, which are ordered by category. Watch out for the colored circle to the top right of each tutorial, which indicates its difficulty (with green being the easiest and red the hardest).\nSome tutorials are numbered, which means they are part of a series. While possible to start the tutorials in any order, it is generally assumed that you have completed all preceding tutorials."
+pfm_tut_intro_tutorial_panel2 = "Here you can find all available tutorials, which are ordered by category. The colored icon at the top right of each tutorial indicates its difficulty, with green being the easiest and red the hardest.\nSome tutorials are numbered, which means they are part of a series. While it is possible to start the tutorials in any order, it is generally assumed that you have completed all preceding tutorials."
 
 pfm_tut_intro_tutorial_panel3 = "To begin with, it's usually a good idea to familiarize yourself with the interface a bit more before jumping into any advanced topics. Open the \"interface\" category to continue."
 
