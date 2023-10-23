@@ -37,6 +37,16 @@ local function get_keyframe(pm, i)
 	return dps[i]
 end
 
+local function get_data_point_at_timestamp(pm, slide, t)
+	local timeline = pm:GetTimeline()
+	local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
+	local graphCurve = util.is_valid(graphEditor) and graphEditor:GetGraphCurve(1) or nil
+	local dp = (graphCurve ~= nil and util.is_valid(graphCurve.curve)) and graphCurve.curve:FindDataPoint(1) or nil
+	if util.is_valid(dp) then
+		slide:SetArrowTarget(dp)
+	end
+end
+
 gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", function(elTut, pm)
 	elTut:RegisterSlide("intro", {
 		init = function(tutorialData, slideData, slide)
@@ -52,9 +62,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 	elTut:RegisterSlide("animation_mode", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
-			slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID .. "/timeline_toolbar_left/graph_editor")
-			)
+			slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID .. "/timeline_toolbar_left/graph_editor", true)
 			slide:AddGenericMessageBox()
 			--
 		end,
@@ -72,7 +80,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 	elTut:RegisterSlide("animation_mode_indicator", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID .. "/viewport"))
+			slide:AddHighlight(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID .. "/viewport", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -83,11 +91,12 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/cameras/header"))
+			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/cameras/header")
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/header")
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/camera/header")
 			slide:AddHighlight(
-				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/camera/contents_wrapper/fov/header"
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/camera/contents_wrapper/fov/header",
+				true
 			)
 
 			slide:AddGenericMessageBox()
@@ -108,7 +117,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slideData.fovSlider = item
 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
-			slide:AddHighlight(item)
+			slide:AddHighlight("property_controls/fov", true)
 
 			slide:AddGenericMessageBox({ tostring(camStartFov) })
 		end,
@@ -129,6 +138,15 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			local item = actorEditor.m_activeControls[uuidCamera]["ec/camera/fov"].control
 			slideData.fovSlider = item
 
+			local itemProp = actorEditor:GetPropertyEntry(uuidCamera, "camera", "ec/camera/fov")
+			if util.is_valid(itemProp) then
+				-- TODO: This is to fix a current bug where the yellow outline around an animated property
+				-- doesn't appear immediately when a property has become animated.
+				-- Once the bug is fixed, this can be removed.
+				itemProp:SetSelected(false)
+				itemProp:SetSelected(true)
+			end
+
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
 			slide:SetArrowTarget(item)
@@ -146,9 +164,8 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 				)
 			)
 			slide:AddHighlight(
-				slide:FindElementByPath(
-					pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/camera/contents_wrapper/fov/header"
-				)
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/camera/contents_wrapper/fov/header",
+				true
 			)
 
 			local el = slide:FindElementByPath(
@@ -183,11 +200,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 
-			local timeline = pm:GetTimeline()
-			local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
-			local graphCurve = util.is_valid(graphEditor) and graphEditor:GetGraphCurve(1) or nil
-			local dp = (graphCurve ~= nil and util.is_valid(graphCurve.curve)) and graphCurve.curve:GetDataPoint(0)
-				or nil
+			local dp = get_data_point_at_timestamp(pm, slide, 0.0)
 			if util.is_valid(dp) then
 				slide:SetArrowTarget(dp)
 			end
@@ -209,7 +222,19 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			end
 
 			local t = duration
-			local bm = pm:AddBookmark(t, true)
+			local cmd =
+				pfm.create_command("create_bookmark", pm:GetActiveFilmClip(), pfm.Project.KEYFRAME_BOOKMARK_SET_NAME, t)
+			if cmd ~= nil then
+				cmd:Execute()
+			end
+			local bm
+			local mainClip = pm:GetMainFilmClip()
+			if mainClip ~= nil then
+				local bmSet = mainClip:FindBookmarkSet(pfm.Project.KEYFRAME_BOOKMARK_SET_NAME)
+				if bmSet ~= nil then
+					bm = bmSet:FindBookmark(t)
+				end
+			end
 			slideData.bookmark = bm
 
 			local timeline = pm:GetTimeline()
@@ -249,7 +274,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slideData.fovSlider = item
 
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
-			slide:AddHighlight(item)
+			slide:AddHighlight("property_controls/fov", true)
 
 			slide:AddGenericMessageBox({ tostring(camEndFov) })
 		end,
@@ -267,9 +292,8 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 	elTut:RegisterSlide("graph_editor_curve", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
-
-			slide:AddHighlight("context_menu/fit_view_to_data")
+			slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID)
+			slide:AddHighlight("context_menu/fit_view_to_data", true)
 
 			slide:AddGenericMessageBox()
 		end,
@@ -292,7 +316,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID .. "/bookmark"))
+			slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID .. "/bookmark", true)
 
 			local timeline = pm:GetTimeline()
 			local playhead = util.is_valid(timeline) and timeline:GetPlayhead() or nil
@@ -323,6 +347,11 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 
+			local dp = get_keyframe(pm, 2)
+			if util.is_valid(dp) then
+				slide:SetArrowTarget(dp)
+			end
+
 			local timeline = pm:GetTimeline()
 			local playhead = util.is_valid(timeline) and timeline:GetPlayhead() or nil
 			if util.is_valid(playhead) then
@@ -345,7 +374,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 	elTut:RegisterSlide("graph_editor_move_mode", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID .. "/move"))
+			slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID .. "/move", true)
 
 			slide:AddGenericMessageBox()
 		end,
@@ -393,10 +422,15 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 	elTut:RegisterSlide("graph_editor_handle_type", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID)
 
 			slide:AddHighlight("context_menu/handle_type")
-			slide:AddHighlight("context_menu_handle_type/free")
+			slide:AddHighlight("context_menu_handle_type/free", true)
+
+			local dp = get_keyframe(pm, 2)
+			if util.is_valid(dp) then
+				slide:SetArrowTarget(dp)
+			end
 
 			slide:AddGenericMessageBox()
 		end,
@@ -407,10 +441,10 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 	elTut:RegisterSlide("graph_editor_vector_handle_type", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID)
 
 			slide:AddHighlight("context_menu/handle_type")
-			slide:AddHighlight("context_menu_handle_type/vector")
+			slide:AddHighlight("context_menu_handle_type/vector", true)
 
 			slide:AddGenericMessageBox()
 		end,
@@ -421,11 +455,34 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 	elTut:RegisterSlide("graph_editor_interp", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID)
+
+			slide:AddHighlight("context_menu/interpolation")
+			slide:AddHighlight("context_menu_interpolation/bounce", true)
+
+			local dp = get_keyframe(pm, 2)
+			if util.is_valid(dp) then
+				slide:SetArrowTarget(dp)
+			end
 
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			local timeline = pm:GetTimeline()
+			local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
+			local graphCurve = util.is_valid(graphEditor) and graphEditor:GetGraphCurve(1) or nil
+			if graphCurve == nil then
+				return true
+			end
+			local editorChannel = graphCurve.editorChannel
+			local editorGraphCurve = (editorChannel ~= nil) and editorChannel:GetGraphCurve() or nil
+			local pathKeys = (editorGraphCurve ~= nil) and editorGraphCurve:GetKey(0) or nil
+			if pathKeys == nil then
+				return true
+			end
+			return pathKeys:GetInterpolationMode(1) == pfm.udm.INTERPOLATION_BOUNCE
+		end,
 		nextSlide = "graph_editor_easing",
 	})
 
@@ -452,13 +509,41 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
+		nextSlide = "graph_editor_curve_drawing_select",
+	})
+
+	elTut:RegisterSlide("graph_editor_curve_drawing_select", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID .. "/select", true)
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			local timeline = pm:GetTimeline()
+			local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
+			if util.is_valid(graphEditor) == false then
+				return true
+			end
+			return graphEditor:GetCursorMode() == gui.PFMTimelineGraph.CURSOR_MODE_SELECT
+		end,
+		nextSlide = "graph_editor_curve_drawing",
+	})
+
+	elTut:RegisterSlide("graph_editor_curve_drawing", {
+		init = function(tutorialData, slideData, slide)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
+			slide:AddHighlight(pfm.WINDOW_TIMELINE_UI_ID, true)
+
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
 		nextSlide = "graph_editor_delete_keyframe",
 	})
 
 	elTut:RegisterSlide("graph_editor_delete_keyframe", {
 		init = function(tutorialData, slideData, slide)
-			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
-
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -470,22 +555,42 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 
-			local timeline = pm:GetTimeline()
-			local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
-			local dp0 = get_keyframe(pm, 1)
-			local dp1 = get_keyframe(pm, 2)
-			local dp2 = get_keyframe(pm, 3)
-			if util.is_valid(graphEditor) and util.is_valid(dp2) then
-				graphEditor:RemoveDataPoint(dp1)
-				dp1 = dp2
-			end
+			-- Clear the current animation and create a new animation channel
+			local cmd = pfm.create_command("keyframe_property_composition", uuidCamera, "ec/camera/fov", 0)
+			cmd:AddSubCommand("delete_editor_channel", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT)
+			cmd:AddSubCommand("delete_animation_channel", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT)
 
-			if util.is_valid(dp0) then
-				dp0:ChangeDataValue(0.0, camStartFov)
-			end
-			if util.is_valid(dp1) then
-				dp1:ChangeDataValue(duration, camEndFov)
-			end
+			cmd:AddSubCommand("add_animation_channel", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT)
+			cmd:AddSubCommand("add_editor_channel", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT)
+
+			local tStart = 0.0
+			cmd:AddSubCommand("create_keyframe", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT, tStart, 0)
+			cmd:AddSubCommand(
+				"set_keyframe_data",
+				uuidCamera,
+				"ec/camera/fov",
+				tStart,
+				tStart,
+				udm.TYPE_FLOAT,
+				0.0,
+				camStartFov,
+				0
+			)
+
+			local tEnd = tStart + duration
+			cmd:AddSubCommand("create_keyframe", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT, tEnd, 0)
+			cmd:AddSubCommand(
+				"set_keyframe_data",
+				uuidCamera,
+				"ec/camera/fov",
+				tEnd,
+				tEnd,
+				udm.TYPE_FLOAT,
+				0.0,
+				camEndFov,
+				0
+			)
+			cmd:Execute()
 
 			slide:AddGenericMessageBox()
 		end,
@@ -505,7 +610,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 	elTut:RegisterSlide("work_camera", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/cc_controls/cc_camera"))
+			slide:AddHighlight("window_primary_viewport/cc_controls/cc_camera", true)
 
 			slide:AddGenericMessageBox()
 		end,
@@ -526,10 +631,10 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 			slide:AddHighlight(slide:FindElementByPath("contents"))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/cameras/header"))
+			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/cameras/header")
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidCamera .. "/header")
 
-			slide:AddHighlight(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID .. "/manip_controls/manip_move") -- TODO: Set as primary highlight
+			slide:AddHighlight(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID .. "/manip_controls/manip_move", true)
 
 			slide:AddGenericMessageBox()
 
@@ -590,6 +695,18 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 
 			slide:AddGenericMessageBox()
 
+			local t = duration
+			local timeline = pm:GetTimeline()
+			if util.is_valid(timeline) then
+				timeline = timeline:GetTimeline()
+				if util.is_valid(timeline) then
+					local elBm = timeline:FindBookmark(t)
+					if util.is_valid(elBm) then
+						slide:SetArrowTarget(elBm)
+					end
+				end
+			end
+
 			slideData.targetEntity = ents.find_by_uuid(uuidCamera)
 			if util.is_valid(slideData.targetEntity) == false then
 				return
@@ -615,8 +732,8 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 	elTut:RegisterSlide("playback", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/cc_controls/cc_camera"))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/playback_controls"))
+			slide:AddHighlight("window_primary_viewport/cc_controls/cc_camera")
+			slide:AddHighlight("window_primary_viewport/playback_controls", true)
 
 			slide:AddGenericMessageBox()
 		end,
@@ -638,5 +755,6 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			pm:LoadTutorial("animating/inverse_kinematics")
 		end,
 	})
+
 	elTut:StartSlide("intro")
 end)

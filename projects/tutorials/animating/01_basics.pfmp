@@ -1408,36 +1408,6 @@
 		{
 			$float playheadOffset 0
 			$string mapName "pfm_demo"
-			"layoutState"
-			{
-				$array containers [element;0][]
-				$array windows [element;0][]
-				"layout_state"
-				{
-					"containers"
-					{
-						"main_container"
-						{
-							$array frameSizeRatios [float;1][0.4]
-						}
-						"viewport_container"
-						{
-							$array frameSizeRatios [float;1][0.75]
-						}
-					}
-					"windows"
-					{
-						"main"
-						{
-							"detachedWindow"
-							{
-								$vec2 pos [0,0.0213]
-								$vec2 size [1,0.9343]
-							}
-						}
-					}
-				}
-			}
 			"renderSettings"
 			{
 				$float panoramaRange 180
