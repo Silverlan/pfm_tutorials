@@ -8,6 +8,9 @@
 
 include("/pfm/pfm_core_tutorials.lua")
 
+local TARGET_ACTOR_VOLUMETRIC = "ffeb47d2-8174-4c54-a7ad-4569a5e1b397"
+local TARGET_VOLUMETRIC_LIGHT_POS = Vector(-115.369, 68.8087, -68.6765)
+local TARGET_VOLUMETRIC_LIGHT_ANG = EulerAngles(5.50483, -19.7964, 0)
 
 local function find_light_source_actor(pm)
 	local actorEditor = pm:GetActorEditor()
@@ -16,10 +19,14 @@ local function find_light_source_actor(pm)
 	end
 	local filmClip = actorEditor:GetFilmClip()
 	for _, actor in ipairs(filmClip:GetActorList()) do
-		if actor:HasComponent("light_spot") then
+		if actor:HasComponent("light_spot") and tostring(actor:GetUniqueId()) ~= TARGET_ACTOR_VOLUMETRIC then
 			return actor
 		end
 	end
+end
+
+local function find_volumetric_light_source_actor(pm)
+	return pfm.dereference(TARGET_ACTOR_VOLUMETRIC)
 end
 
 gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_lighting", function(elTut, pm)
@@ -34,7 +41,7 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 
 	elTut:RegisterSlide("soft_shadows", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport"))
+			slide:AddHighlight("window_primary_viewport")
 
 			tool.get_filmmaker():GoToWindow("primary_viewport")
 			slide:AddGenericMessageBox()
@@ -54,11 +61,22 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 
 	elTut:RegisterSlide("spot_light", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("window_actor_editor/new_actor_button"))
 			slide:AddHighlight("window_actor_editor/new_actor_button")
-			slide:AddHighlight("context_menu/spot_light")
-			slide:SetArrowTarget("context_menu/spot_light")
+			slide:AddHighlight("context_menu/spot_light", true)
 			slide:AddGenericMessageBox()
+
+			-- Move work camera to target location
+			local vp = pm:GetViewport()
+			local cam = util.is_valid(vp) and vp:GetWorkCamera() or nil
+			if util.is_valid(cam) then
+				local ent = cam:GetEntity()
+				vp:SetWorkCameraPose(
+					math.Transform(
+						Vector(-86.9118, 35.3855, 14.2118),
+						EulerAngles(0.732017, -157.95, 1.09934e-05):ToQuaternion()
+					)
+				)
+			end
 		end,
 		clearCondition = function(tutorialData, slideData, slide)
 			local lm = find_light_source_actor(pm)
@@ -79,7 +97,7 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 					item:Expand(true)
 					slide:AddHighlight(gui.PFMActorEditor.COLLECTION_LIGHTS .. "/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
-					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/header")
+					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/header", true)
 					--[[slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/radius/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/color/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light_spot/header")
@@ -104,10 +122,9 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 					if util.is_valid(itemComponent) then
 						itemComponent:Expand(true)
 					end
-					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/intensity/header")
+					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/intensityType/header")
-					local elPath = tostring(lm:GetUniqueId()) .. "/light/intensity/header"
-					slide:SetArrowTarget(elPath)
+					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/intensity/header", true)
 				end
 			end
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
@@ -127,9 +144,7 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 				local item = actorEditor:GetActorItem(lm)
 				if util.is_valid(item) then
 					item:Expand(true)
-					local elPath = tostring(lm:GetUniqueId()) .. "/light/castShadows/header"
-					slide:AddHighlight(elPath)
-					slide:SetArrowTarget(slide:FindElementByPath(elPath))
+					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/castShadows/header", true)
 				end
 			end
 			slide:AddGenericMessageBox()
@@ -175,10 +190,8 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 				local item = actorEditor:GetActorItem(lm)
 				if util.is_valid(item) then
 					item:Expand(true)
-					local elPath = tostring(lm:GetUniqueId()) .. "/light_spot/blendFraction/header"
-					slide:AddHighlight(elPath)
-					slide:AddHighlight("property_controls/blendFraction")
-					slide:SetArrowTarget("property_controls/blendFraction")
+					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light_spot/blendFraction/header")
+					slide:AddHighlight("property_controls/blendFraction", true)
 				end
 			end
 			slide:AddGenericMessageBox()
@@ -193,8 +206,7 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 			local lm = find_light_source_actor(pm)
 			if lm ~= nil then
 				slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
-				slide:AddHighlight("context_menu/toggle_camera_link")
-				slide:SetArrowTarget("context_menu/toggle_camera_link")
+				slide:AddHighlight("context_menu/toggle_camera_link", true)
 				local actorEditor = pm:GetActorEditor()
 				if util.is_valid(actorEditor) then
 					slideData.cbLinkModeStarted = actorEditor:AddCallback("OnCameraLinkModeEntered", function()
@@ -227,9 +239,7 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 	elTut:RegisterSlide("cycles", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/vp_settings/rt_enabled"))
-			slide:AddHighlight("window_primary_viewport/vp_settings/rt_enabled")
-			slide:SetArrowTarget("window_primary_viewport/vp_settings/rt_enabled")
+			slide:AddHighlight("window_primary_viewport/vp_settings/rt_enabled", true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData, slide)
@@ -248,7 +258,76 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 			slide:AddHighlight(slide:FindElementByPath("contents"))
+
+			local lm = find_light_source_actor(pm)
+			if lm ~= nil then
+				slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
+			end
+
 			slide:SetTutorialCompleted()
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "volumetric",
+	})
+
+	elTut:RegisterSlide("volumetric", {
+		init = function(tutorialData, slideData, slide)
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
+			local lm = find_volumetric_light_source_actor()
+			if lm ~= nil then
+				slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
+				slide:AddHighlight("context_menu/add_new_component")
+				slide:AddHighlight("context_menu_add_new_component/light_spot_volume", true)
+
+				local actor = pfm.dereference(TARGET_ACTOR_VOLUMETRIC)
+				if actor ~= nil then
+					-- Turn on demo light source
+					pfm.create_command(
+						"set_actor_property",
+						actor,
+						"ec/pfm_actor/visible",
+						false,
+						true,
+						udm.TYPE_BOOLEAN
+					)
+						:Execute()
+
+					-- Move work camera to target location
+					local vp = pm:GetViewport()
+					local cam = util.is_valid(vp) and vp:GetWorkCamera() or nil
+					if util.is_valid(cam) then
+						local ent = cam:GetEntity()
+						vp:SetWorkCameraPose(
+							math.Transform(TARGET_VOLUMETRIC_LIGHT_POS, TARGET_VOLUMETRIC_LIGHT_ANG:ToQuaternion())
+						)
+					end
+				end
+			end
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData, slide)
+			local actor = pfm.dereference(TARGET_ACTOR_VOLUMETRIC)
+			if actor == nil then
+				return true
+			end
+			return actor:HasComponent("light_spot_volume")
+		end,
+
+		nextSlide = "volumetric_settings",
+		autoContinue = true,
+	})
+
+	elTut:RegisterSlide("volumetric_settings", {
+		init = function(tutorialData, slideData, slide)
+			slide:AddHighlight("contents")
+			local lm = find_volumetric_light_source_actor()
+			if lm ~= nil then
+				slide:AddHighlight(TARGET_ACTOR_VOLUMETRIC .. "/header")
+				slide:AddHighlight(TARGET_ACTOR_VOLUMETRIC .. "/light_spot_volume/header")
+				slide:AddHighlight("property_controls/intensity", true)
+			end
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -276,5 +355,6 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 			pm:LoadTutorial("lighting/static_lighting")
 		end,
 	})
+
 	elTut:StartSlide("intro")
 end)
