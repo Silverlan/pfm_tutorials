@@ -14,7 +14,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 			slide:OpenWindow("model_catalog")
 			slide:SetMinWindowFrameDividerFraction("model_catalog", 0.5)
 			slide:SetFocusElement(slide:FindElementByPath("editor_frame/tab_button_container"))
-			slide:AddHighlight(slide:FindElementByPath("model_catalog_tab_button"))
+			slide:AddHighlight("model_catalog_tab_button", true)
 			slide:AddGenericMessageBox()
 
 			-- Only auto-continue if model catalog is not already open
@@ -31,6 +31,8 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("model_catalog")
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_pfm")
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_pfm_demo", true)
 			--slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/show_external_assets"))
 			slide:AddGenericMessageBox()
 		end,
@@ -50,11 +52,8 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("model_catalog")
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
-			local _, elOutline = slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_pfm_demo_plant.glb")
-			)
-			slide:AddHighlight("context_menu/import_asset")
-			slide:SetArrowTarget(elOutline)
+			local _, elOutline = slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_pfm_demo_plant.glb")
+			slide:AddHighlight("context_menu/import_asset", true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
@@ -68,7 +67,8 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("model_catalog")
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID)
+			slide:AddHighlight("context_menu/import_all_assets", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -120,9 +120,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 			slide:GoToWindow("model_catalog", 0.3)
 			slide:GoToWindow("primary_viewport", 0.5)
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
-			slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
-			)
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair", true)
 			-- TODO: Mention holding shift- or alt-key to change placing behavior
 			slide:AddGenericMessageBox()
 			local gameView = pm:GetGameView()
@@ -152,9 +150,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 	elTut:RegisterSlide("context_menu", {
 		init = function(tutorialData, slideData, slide)
 			tool.get_filmmaker():GoToWindow("model_catalog")
-			slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
-			)
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -164,11 +160,8 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 	elTut:RegisterSlide("favorites", {
 		init = function(tutorialData, slideData, slide)
 			tool.get_filmmaker():GoToWindow("model_catalog")
-			local _, elOutline = slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
-			)
-			slide:AddHighlight("context_menu/add_to_favorites")
-			slide:SetArrowTarget(elOutline)
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
+			slide:AddHighlight("context_menu/add_to_favorites", true)
 
 			slide:AddGenericMessageBox()
 		end,
@@ -187,11 +180,8 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 	elTut:RegisterSlide("pack_model", {
 		init = function(tutorialData, slideData, slide)
 			tool.get_filmmaker():GoToWindow("model_catalog")
-			local _, elOutline = slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
-			)
-			slide:AddHighlight("context_menu/pack_model")
-			slide:SetArrowTarget(elOutline)
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
+			slide:AddHighlight("context_menu/pack_model", true)
 
 			slide:AddGenericMessageBox()
 		end,
@@ -202,11 +192,8 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 	elTut:RegisterSlide("export_asset", {
 		init = function(tutorialData, slideData, slide)
 			tool.get_filmmaker():GoToWindow("model_catalog")
-			local _, elOutline = slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
-			)
-			slide:AddHighlight("context_menu/export_asset")
-			slide:SetArrowTarget(elOutline)
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
+			slide:AddHighlight("context_menu/export_asset", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -216,9 +203,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 	elTut:RegisterSlide("asset_icons", {
 		init = function(tutorialData, slideData, slide)
 			tool.get_filmmaker():GoToWindow("model_catalog")
-			slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
-			)
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -239,7 +224,9 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 			end
 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_maps"))
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_maps")
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_maps_test_portal")
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_maps_test_portal_world_1.pmdl_b", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
