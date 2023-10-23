@@ -114,12 +114,14 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 		init = function(tutorialData, slideData, slide)
 			setup_layout(slide)
 			local actorEditor = tool.get_filmmaker():GetActorEditor()
-			local item = actorEditor:GetComponentEntry(uuidActor, "color")
+			--local item = actorEditor:GetComponentEntry(uuidActor, "color")
 
-			item:Expand()
+			--item:Expand()
 
 			slide:SetFocusElement(item)
-			slide:AddHighlight(item:GetChildContainer())
+			slide:AddHighlight(uuidActor)
+			slide:AddHighlight(uuidActor .. "/color/header")
+			slide:AddHighlight(uuidActor .. "/color/contents_wrapper/color/header", true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
@@ -138,7 +140,7 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 			local item = actorEditor.m_activeControls[uuidActor]["ec/color/color"].control
 
 			slide:SetFocusElement(pm)
-			slide:AddHighlight(item)
+			slide:AddHighlight("property_controls/color", true)
 
 			slide:AddGenericMessageBox()
 		end,
@@ -162,10 +164,9 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 			item:Expand()
 
 			slide:SetFocusElement(item)
-			slide:AddHighlight(slide:FindElementByPath(uuidChair .. "/header"))
 			slide:AddHighlight(uuidChair .. "/header")
 			slide:AddHighlight("context_menu/add_new_component")
-			slide:AddHighlight("context_menu_add_new_component/color")
+			slide:AddHighlight("context_menu_add_new_component/color", true)
 			-- TODO: Describe alt-key input mode
 			-- TODO: Describe re-mapping slider range
 			slide:AddGenericMessageBox()
@@ -186,8 +187,10 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidChair .. "/header")
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidChair .. "/color/header")
 			slide:AddHighlight(
-				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidChair .. "/color/contents_wrapper/color/header"
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuidChair .. "/color/contents_wrapper/color/header",
+				true
 			)
+			-- slide:AddHighlight("property_controls/color", true)
 
 			slide:AddGenericMessageBox()
 		end,
@@ -219,9 +222,8 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 			local actorEditor = tool.get_filmmaker():GetActorEditor()
 
 			slide:SetFocusElement(actorEditor)
-			local _, elOutline = slide:AddHighlight(actorEditor:GetToolIconElement())
-			slide:AddHighlight("context_menu/fog_controller")
-			slide:SetArrowTarget(elOutline)
+			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/new_actor_button")
+			slide:AddHighlight("context_menu/fog_controller", true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
@@ -244,6 +246,7 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 				slide:AddHighlight(
 					pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. uuid .. "/fog_controller/contents_wrapper/start/header"
 				)
+				slide:AddHighlight("property_controls/start", true)
 			end
 
 			slideData.fogController = get_fog_controller(pm)
@@ -268,16 +271,14 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 			setup_layout(slide)
 
 			-- TODO: Describe alt-key input mode
-			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
+			slide:SetFocusElement(slide:FindElementByPath("contents"))
+			slide:AddHighlight("property_controls/start")
+			slide:AddHighlight("context_menu/remap_slider_range", true)
 
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "conclusion",
 	})
-
-	-- TODO: Explain what the icons in front of actors mean
-	-- TODO: Explain additional icons, like math expressions and drivers? (or maybe cover that in those tutorials)
 
 	elTut:RegisterSlide("conclusion", {
 		init = function(tutorialData, slideData, slide)
@@ -289,14 +290,10 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 
 	elTut:RegisterSlide("viewport_next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			-- pm:LoadTutorial("interface/render") -- TODO: Which one is the next series? (lighting?)
 			time.create_simple_timer(0.0, function()
-				gui.Tutorial.close_tutorial()
+				pm:LoadTutorial("lighting/dynamic_lighting")
 			end)
 		end,
 	})
-
-	-- TODO: Explain camera link?
-
 	elTut:StartSlide("intro")
 end)

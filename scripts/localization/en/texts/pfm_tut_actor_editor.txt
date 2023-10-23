@@ -8,7 +8,7 @@ pfm_tut_actor_editor_actor = "Within the collections you can find the actual act
 
 pfm_tut_actor_editor_components = "Every actor is made up of \"components\", which define the behavior and properties of the actor. For instance, all light source and particle actors have a \"{c_color}\" component, which allows you to change their color. Likewise, a character actor would have a \"{c_model}\" component, which contains various properties to change the actor's model, skin or bodygroups."
 
-pfm_tut_actor_editor_component = "You can edit a property by clicking on it.\nTry clicking on the \"{c_color_p_color}\" property of the \"{c_color}\" component to continue."
+pfm_tut_actor_editor_component = "If you expand one of the components, you can find its properties, which you can edit.\nTry expanding the \"{c_color}\" component, and then select the \"{c_color_p_color}\" property of the component to continue."
 
 pfm_tut_actor_editor_property = "Here you can now see the current value for the property. You can click it to change its value. Depending on the type of property, you may get a different input field, like a text input field or a slider.\nMost properties can also be animated, but we'll get to that in a later tutorial.\n\nFor now, try changing the color of the light source by clicking this field."
 
