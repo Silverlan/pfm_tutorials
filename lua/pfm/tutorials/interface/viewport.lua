@@ -104,7 +104,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 	elTut:RegisterSlide("manip_controls", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/manip_controls"))
+			slide:AddHighlight("window_primary_viewport/manip_controls", true)
 			slide:AddGenericMessageBox( --[[{
 				pfm.get_key_binding("pfm_action transform select"),
 				pfm.get_key_binding("pfm_action transform translate"),
@@ -193,7 +193,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 	elTut:RegisterSlide("manip_controls_fin", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/manip_controls"))
+			slide:AddHighlight("window_primary_viewport/manip_controls", true)
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "transform_space",
@@ -202,7 +202,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 	elTut:RegisterSlide("transform_space", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/vp_settings/transform_space"))
+			slide:AddHighlight("window_primary_viewport/vp_settings/transform_space", true)
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "snap_to_grid",
@@ -215,6 +215,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 				slide:FindElementByPath("window_primary_viewport/vp_settings/snap_to_grid_spacing"),
 				slide:FindElementByPath("window_primary_viewport/vp_settings/angular_spacing"),
 			})
+			slide:SetArrowTarget("window_primary_viewport/vp_settings/snap_to_grid_spacing")
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "live_render",
@@ -223,7 +224,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 	elTut:RegisterSlide("live_render", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/vp_settings/rt_enabled"))
+			slide:AddHighlight("window_primary_viewport/vp_settings/rt_enabled", true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData, slide)
@@ -255,7 +256,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 			end
 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/cc_controls"))
+			slide:AddHighlight("window_primary_viewport/cc_controls", true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
@@ -271,7 +272,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 	elTut:RegisterSlide("playback_controls", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/playback_controls"))
+			slide:AddHighlight("window_primary_viewport/playback_controls", true)
 			slide:AddGenericMessageBox({
 				pfm.get_key_binding("pfm_action toggle_play"),
 				pfm.get_key_binding("pfm_action previous_frame"),
