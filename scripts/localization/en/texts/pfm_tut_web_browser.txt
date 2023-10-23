@@ -1,15 +1,15 @@
 pfm_tut_web_browser_intro = "PFM comes with an integrated web browser, which you can use to quickly look up information on the Pragma wiki, or to download custom assets.\nAny assets you download through the browser will be automatically imported and installed by Pragma."
 
-pfm_tut_web_browser_asset_download = "You can choose from several preset bookmarks for websites that offer a large amount of assets to download.\nFor the purpose of this tutorial we will download some simple props from sfmlab.com. Since this website contains obscene ads, it is hidden by default and you have to click the \"{pfm_web_browser_enable_nsfw_content}\" switch to unhide it.\n\nIf you are uncomfortable with that, please end the tutorial now. Otherwise enable \"NSFW Content\" to continue."
+pfm_tut_web_browser_asset_download = "You can choose from several preset bookmarks for websites that offer a large amount of assets to download.\nFor the purpose of this tutorial we will download some simple props from sfmlab.com.\n\nSelect \"SFM Lab\" from the bookmark list to continue.
 
-pfm_tut_web_browser_asset_download_website = "Next, select \"SFM Lab\" from the bookmark list to continue."
-
-pfm_tut_web_browser_sfm_lab = "While the assets on these websites were designed for use with the Source Filmmaker, they should largely be compatible with PFM as well.\n\nPlease note that to change the search category on SFM Lab, you will have to click the category drop-down menu and then use the up/down arrow keys and the enter key to select the category."
+pfm_tut_web_browser_sfm_lab = "While the assets on these websites were designed for use with the Source Filmmaker or other animation software, they should largely be compatible with PFM as well.\n\nPlease note that in order to change the search category on SFM Lab through the integrated web browser, you will have to click the category drop-down menu and then use the up/down arrow keys and the enter key to select the category."
 
 pfm_tut_web_browser_sfm_lab_prop = "For this tutorial we will download this film-studio prop pack by LordAardvark.\nScroll down to the green download button and click it. Then select a free server at the bottom of the popup and start the download."
 
-pfm_tut_web_browser_sfm_lab_prop_dl = "The tutorial will continue once the download has completed. You can check the download progress in the log window."
+pfm_tut_web_browser_sfm_lab_prop_dl = "The tutorial will continue once the download has completed. You can check the download progress in the info bar."
 
 pfm_tut_web_browser_sfm_lab_prop_explorer = "The download is complete and the assets have been automatically extracted and imported and can now be found in the model catalog.\nPlease note that the automatic installation may not work properly for all assets, especially .rar-archives may cause issues during import.\nIn such cases you will have to install the assets manually. You can find more information on how to do so in the tutorial for the model catalog."
+
+pfm_tut_web_browser_upload = "If you want to share assets, such as PFM projects, Lua scripts, models, IK rigs or scenebuilds, you can upload them to Open3DLab (or SmutBase for NSFW content). Please make sure to tag your uploads with the \"pragma\" software tag if you do!"
 
 pfm_tut_web_browser_fin = "This concludes the tutorial on the web browser.\n\nYou can now end the tutorial, or press the continue-button to start the next tutorial in this series."

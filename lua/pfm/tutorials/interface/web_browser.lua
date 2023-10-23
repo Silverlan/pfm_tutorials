@@ -27,23 +27,8 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 	-- TODO: Add segment on how to navigate PFM wiki before getting into asset downloads
 	elTut:RegisterSlide("asset_download", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/enable_nsfw_content"))
-			slide:AddGenericMessageBox()
-		end,
-		clearCondition = function(tutorialData, slideData)
-			local elWb = pm:GetWindow("web_browser")
-			local browser = util.is_valid(elWb) and elWb:GetBrowser() or nil
-			if util.is_valid(browser) == false then
-				return true
-			end
-			return browser:IsNsfwContentEnabled()
-		end,
-		nextSlide = "asset_download_website",
-	})
-
-	elTut:RegisterSlide("asset_download_website", {
-		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/bookmark"))
+			slide:AddHighlight(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/bookmark")
+			-- FIXME: This highlight currently doesn't work
 			slide:AddHighlight("sfm_lab")
 			slide:AddGenericMessageBox()
 		end,
@@ -58,9 +43,10 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 		nextSlide = "sfm_lab",
 		autoContinue = true,
 	})
+
 	elTut:RegisterSlide("sfm_lab", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/browser"))
+			slide:AddHighlight(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/browser")
 			slide:AddGenericMessageBox()
 
 			local vp = tool.get_filmmaker():GetViewport()
@@ -73,7 +59,7 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 
 	elTut:RegisterSlide("sfm_lab_prop", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/browser"))
+			slide:AddHighlight(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/browser")
 			slide:AddGenericMessageBox()
 
 			local elWb = pm:GetWindow("web_browser")
@@ -102,7 +88,8 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 
 	elTut:RegisterSlide("sfm_lab_prop_dl", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/log"))
+			slide:SetFocusElement(slide:FindElementByPath("info_bar/icon_container"))
+			slide:AddHighlight("info_bar/icon_container", true)
 			slide:AddGenericMessageBox()
 
 			local elWb = pm:GetWindow("web_browser")
@@ -140,6 +127,18 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
 			slide:AddGenericMessageBox()
 		end,
+		nextSlide = "upload",
+	})
+
+	elTut:RegisterSlide("upload", {
+		init = function(tutorialData, slideData, slide)
+			pm:OpenWindow("web_browser")
+			pm:GoToWindow("web_browser")
+
+			slide:AddHighlight(pfm.WINDOW_WEB_BROWSER_UI_ID .. "/bookmark")
+			slide:AddHighlight("open3d_lab")
+			slide:AddGenericMessageBox()
+		end,
 		nextSlide = "fin",
 	})
 
@@ -159,6 +158,5 @@ gui.Tutorial.register_tutorial("web_browser", "tutorials/interface/web_browser",
 			end)
 		end,
 	})
-
 	elTut:StartSlide("intro")
 end)
