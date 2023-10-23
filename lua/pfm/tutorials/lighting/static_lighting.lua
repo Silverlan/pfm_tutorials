@@ -76,9 +76,9 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 	elTut:RegisterSlide("lightmap_atlas", {
 		init = function(tutorialData, slideData, slide)
 			tool.get_filmmaker():GoToWindow("actor_editor")
-			slide:AddHighlight(slide:FindElementByPath("window_actor_editor/new_actor_button"))
+			slide:AddHighlight("window_actor_editor/new_actor_button")
 			slide:AddHighlight("context_menu")
-			slide:AddHighlight("context_menu/point_light")
+			slide:AddHighlight("context_menu/point_light", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -102,7 +102,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light/baked/header")
-					slide:AddHighlight("property_controls/baked")
+					slide:AddHighlight("property_controls/baked", true)
 					slideData.lightActor = lm
 				end
 			end
@@ -118,7 +118,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 	elTut:RegisterSlide("live_rt", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/vp_settings/rt_enabled"))
+			slide:AddHighlight("window_primary_viewport/vp_settings/rt_enabled", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -160,9 +160,9 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 
 	elTut:RegisterSlide("sky", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("window_actor_editor/new_actor_button"))
+			slide:AddHighlight("window_actor_editor/new_actor_button")
 			slide:AddHighlight("context_menu")
-			slide:AddHighlight("context_menu/sky")
+			slide:AddHighlight("context_menu/sky", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -176,8 +176,9 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 	elTut:RegisterSlide("refresh_rt_view", {
 		init = function(tutorialData, slideData, slide)
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			local elRefresh = slide:FindElementByPath("window_primary_viewport/refresh_rt_view")
-			slide:AddHighlight(elRefresh)
+			local refreshRtViewPath = "window_primary_viewport/refresh_rt_view"
+			local elRefresh = slide:FindElementByPath(refreshRtViewPath)
+			slide:AddHighlight(refreshRtViewPath, true)
 			slide:AddGenericMessageBox()
 
 			slideData.cbOnPressed = elRefresh:AddCallback("OnPressed", function()
@@ -207,9 +208,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 					slide:AddHighlight(tostring(sky:GetUniqueId()) .. "/header")
 					slide:AddHighlight(tostring(sky:GetUniqueId()) .. "/pfm_sky/header")
 					slide:AddHighlight(tostring(sky:GetUniqueId()) .. "/pfm_sky/strength/header")
-					slide:AddHighlight("property_controls/strength")
-
-					slide:SetArrowTarget("property_controls/strength")
+					slide:AddHighlight("property_controls/strength", true)
 				end
 			end
 			slide:AddGenericMessageBox({ TARGET_SKY_STRENGTH })
@@ -244,12 +243,11 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 
 	elTut:RegisterSlide("lightmapper", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("window_actor_editor/new_actor_button"))
+			slide:AddHighlight("window_actor_editor/new_actor_button")
 			slide:AddHighlight("window_actor_editor/new_actor_button")
 			slide:AddHighlight("context_menu")
 			slide:AddHighlight("context_menu/baking")
-			slide:AddHighlight("context_menu_baking/lightmapper")
-			slide:SetArrowTarget("context_menu_baking/lightmapper")
+			slide:AddHighlight("context_menu_baking/lightmapper", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -272,8 +270,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 					item:Expand(true)
 					slide:AddHighlight(gui.PFMActorEditor.COLLECTION_BAKING .. "/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
-					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/pfm_baked_lighting/header")
-					slide:SetArrowTarget(tostring(lm:GetUniqueId()) .. "/pfm_baked_lighting/header")
+					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/pfm_baked_lighting/header", true)
 					slideData.lightActor = lm
 				end
 			end
@@ -297,10 +294,9 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 				local item = actorEditor:GetActorItem(lm)
 				if util.is_valid(item) then
 					item:Expand(true)
-					local presetElement = slide:FindElementByPath(
-						pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/property_controls/bake_preset_quality"
-					)
-					slide:AddHighlight(presetElement)
+					local presetElementPath = pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/property_controls/bake_preset_quality"
+					local presetElement = slide:FindElementByPath(presetElementPath)
+					slide:AddHighlight(presetElementPath, true)
 					slideData.presetElement = presetElement
 				end
 			end
@@ -332,9 +328,9 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 				local item = actorEditor:GetActorItem(lm)
 				if util.is_valid(item) then
 					item:Expand(true)
-					local presetElement =
-						slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/property_controls/bake_lightmaps")
-					slide:AddHighlight(presetElement)
+					local presetElementPath = pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/property_controls/bake_lightmaps"
+					local presetElement = slide:FindElementByPath(presetElementPath)
+					slide:AddHighlight(presetElementPath, true)
 					local cb
 					cb = presetElement:GetBaker():AddCallback("OnBakingStarted", function()
 						util.remove(cb)
@@ -357,7 +353,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 
 	elTut:RegisterSlide("lightmapper_render_progress", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("info_bar/icon_container"))
+			slide:AddHighlight("info_bar/icon_container", true)
 
 			local lm = find_lightmapper_actor(pm)
 			local isBaking = false
@@ -368,7 +364,6 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 					item:Expand(true)
 					local presetElement =
 						slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/property_controls/bake_lightmaps")
-					slide:AddHighlight(presetElement)
 					local cb
 					cb = presetElement:GetBaker():AddCallback("OnBakingCompleted", function()
 						util.remove(cb)
@@ -420,7 +415,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 					item:Expand(true)
 					local btPath = pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/property_controls/create_lightmap_render_job"
 					local btCreateRenderJob = slide:FindElementByPath(btPath)
-					slide:AddHighlight(btCreateRenderJob)
+					slide:AddHighlight(btPath, true)
 
 					local cb
 					slideData.initBakeCallback = function()
@@ -468,7 +463,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 					item:Expand(true)
 					local btPath = pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/property_controls/import_lightmaps"
 					local btCreateRenderJob = slide:FindElementByPath(btPath)
-					slide:AddHighlight(btCreateRenderJob)
+					slide:AddHighlight(btPath, true)
 				end
 			end
 
@@ -491,8 +486,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light_map/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light_map/exposure/header")
-					slide:AddHighlight("property_controls/exposure")
-					slide:SetArrowTarget("property_controls/exposure")
+					slide:AddHighlight("property_controls/exposure", true)
 					slideData.lightActor = lm
 				end
 			end
@@ -509,8 +503,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 			slide:AddHighlight("window_actor_editor/new_actor_button")
 			slide:AddHighlight("context_menu")
 			slide:AddHighlight("context_menu/baking")
-			slide:AddHighlight("context_menu_baking/reflection_probe")
-			slide:SetArrowTarget("context_menu_baking/reflection_probe")
+			slide:AddHighlight("context_menu_baking/reflection_probe", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -524,7 +517,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 
 	elTut:RegisterSlide("reflection_probe_placement", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("window_primary_viewport/viewport"))
+			slide:AddHighlight("window_primary_viewport", true)
 
 			slide:AddGenericMessageBox()
 
@@ -577,8 +570,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 					slide:AddHighlight(tostring(actor:GetUniqueId()) .. "/reflection_probe/header")
 					slide:AddHighlight("property_controls/bake_reflection_probe")
 
-					slide:AddHighlight(btPath)
-					slide:SetArrowTarget(btPath)
+					slide:AddHighlight(btPath, true)
 
 					local cb
 					slideData.initBakeCallback = function()
@@ -612,7 +604,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 
 	elTut:RegisterSlide("reflection_probe_baking", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight(slide:FindElementByPath("info_bar/icon_container"))
+			slide:AddHighlight("info_bar/icon_container", true)
 
 			local probeActor = find_reflection_probe_actor(pm)
 			if probeActor ~= nil then
@@ -646,8 +638,6 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 
 	elTut:RegisterSlide("reflection_probe_view", {
 		init = function(tutorialData, slideData, slide)
-			slide:SetFocusElement(slide:FindElementByPath("contents"))
-			slide:AddHighlight(slide:FindElementByPath("contents"))
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -681,5 +671,6 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 			end)
 		end,
 	})
+
 	elTut:StartSlide("intro")
 end)

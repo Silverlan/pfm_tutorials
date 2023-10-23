@@ -24,7 +24,7 @@ pfm_tut_static_lighting_lightmapper_render = "Next, click on \"{pfm_bake_lightma
 
 pfm_tut_static_lighting_lightmapper_render_progress = "Please wait for the render to complete. This may take a few minutes. Until the render is complete, the objects in the viewport may appear disorted and PFM may react slowly to inputs."
 
-pfm_tut_static_lighting_lightmapper_render_complete = "The baking is now complete. The window that has opened allows you to inspect the baked lightmaps for potential issues, but you can close it for now. In the viewport you can now view the scene with the baked lighting. Because of the low-quality settings we used, you may notice artifacts and and blurry shadows. These will improve when you render with higher quality settings."
+pfm_tut_static_lighting_lightmapper_render_complete = "The baking is now complete. The window that has opened allows you to inspect the baked lightmaps for potential issues, but you can close it for now. In the viewport you can now view the scene with the baked lighting. Because of the low-quality settings we used, you may notice artifacts and and blurry shadows. These will improve significantly when you render with higher quality settings."
 
 pfm_tut_static_lighting_lightmapper_render_job = "Before we continue, you should know about an alternative method for baking lightmaps. As mentioned earlier, baking at higher quality settings can take a long time, which is why it is generally recommended to use a render job instead. As you may remember from the render panel tutorial, a render job allows you to render without having to keep PFM running.\n\nLet's give it a shot!"
 
@@ -38,7 +38,7 @@ pfm_tut_static_lighting_reflection_probe = "You may have noticed that the charac
 
 pfm_tut_static_lighting_reflection_probe_placement = "Reflection probes capture reflection information of the scene all around them. To be most effective, the reflection probe should be placed near the center of your scene, in view of the scene camera. It should be roughly in eye height and there should be no other static actors or walls nearby obstructing it.\n\nMove the reflection probe to the indicated position in the scene to continue."
 
-pfm_tut_static_lighting_reflection_probe_bake = "Once you have found a good position for your reflection probe, it still has to be baked. Fortunately this is much faster compared to baking lightmaps and should only take a few seconds.\n\nPress the \"{pfm_bake_reflection_probe}\" button to continue."
+pfm_tut_static_lighting_reflection_probe_bake = "Once you have found a good position for your reflection probe, it still has to be baked. Fortunately this is much faster compared to baking lightmaps and should only take a few seconds.\n\nSelect the \"{c_reflection_probe}\" component and press the \"{pfm_bake_reflection_probe}\" button to continue."
 
 pfm_tut_static_lighting_reflection_probe_baking = "Please wait for the baking to complete."
 
