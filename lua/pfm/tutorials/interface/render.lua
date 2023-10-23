@@ -32,7 +32,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 	elTut:RegisterSlide("render_engine", {
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
-			slide:AddHighlight(slide:FindElementByPath("window_render/render_engine"))
+			slide:AddHighlight("window_render/render_engine")
 			slide:AddGenericMessageBox()
 
 			slideData.renderEngineField = slide:FindElementByPath(pfm.WINDOW_RENDER_UI_ID .. "/render_engine")
@@ -89,7 +89,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
 			slide:SetFocusElement(pm)
-			slide:AddHighlight(slide:FindElementByPath("info_bar/icon_container"))
+			slide:AddHighlight("info_bar/icon_container", true)
 			slide:AddGenericMessageBox()
 
 			slideData.renderCompleted = false
@@ -119,7 +119,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 	elTut:RegisterSlide("saved_render", {
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
-			slide:AddHighlight(slide:FindElementByPath("window_render/bt_open_output_dir"))
+			slide:AddHighlight("window_render/bt_open_output_dir")
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "render_job",
@@ -128,7 +128,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 	elTut:RegisterSlide("render_job", {
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
-			slide:AddHighlight(slide:FindElementByPath("window_render/bt_create_render_job"))
+			slide:AddHighlight("window_render/bt_create_render_job")
 			slide:AddGenericMessageBox()
 
 			slideData.renderJobCreated = false
@@ -237,7 +237,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 	elTut:RegisterSlide("vr_view", {
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
-			slide:AddHighlight(slide:FindElementByPath("window_render/render_viewport"))
+			slide:AddHighlight("window_render/render_viewport")
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "vr_view_mode",
@@ -247,7 +247,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_render/preview_mode"))
+			slide:AddHighlight("window_render/preview_mode", true)
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "image_sequence",
@@ -257,7 +257,8 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight(slide:FindElementByPath("window_render/frame_count"))
+			slide:AddHighlight("window_render/frame_count")
+			slide:AddHighlight("context_menu/to_end_of_clip", true)
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "conclusion",
@@ -278,6 +279,5 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 			end)
 		end,
 	})
-
 	elTut:StartSlide("intro")
 end)
