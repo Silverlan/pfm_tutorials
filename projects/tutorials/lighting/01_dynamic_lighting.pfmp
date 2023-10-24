@@ -2,99 +2,20 @@
 {
 	"session"
 	{
-		"settings"
-		{
-			$float playheadOffset 0
-			$string mapName "pfm_demo"
-			"renderSettings"
-			{
-				$float panoramaRange 180
-				$uint32 width 1280
-				$uint32 frameRate 24
-				$uint32 height 720
-				$bool preCalculateLight 0
-				$string mode "combined"
-				$uint32 supersamplingFactor 2
-				$float exposure 50
-				$uint32 numberOfFrames 1
-				$string renderEngine "cycles"
-				$string deviceType "gpu"
-				$string preset "standard"
-				$uint32 maxTransparencyBounces 32
-				$float lightIntensityFactor 1
-				$string outputFormat "png"
-				$string colorTransform "filmic-blender"
-				$string colorTransformLook "Medium Contrast"
-				$string denoiseMode "detailed"
-				$bool renderWorld 1
-				$bool renderGameObjects 1
-				$bool renderPlayer 0
-				$bool cameraFrustumCullingEnabled 1
-				$bool pvsCullingEnabled 1
-				$bool progressiveRefinementEnabled 0
-				$bool transparentSky 0
-				$string previewQuality "low"
-				$bool stereoscopic 1
-				$string cameraType "0"
-				$string panoramaType "equirectangular"
-				$uint32 samples 20
-				$bool progressive 1
-				$uint32 tileSize 512
-				$string viewportMode "360_left_eye"
-				$float emissionStrength 0
-			}
-			"layoutState"
-			{
-				$array containers [element;0][]
-				$array windows [element;0][]
-				"layout_state"
-				{
-					"containers"
-					{
-						"main_container"
-						{
-							$array frameSizeRatios [float;1][0.2648]
-						}
-						"viewport_container"
-						{
-							$array frameSizeRatios [float;1][0.75]
-						}
-					}
-					"windows"
-					{
-						"main"
-						{
-							"detachedWindow"
-							{
-								$vec2 pos [0.287,0.0463]
-								$vec2 size [0.6667,0.8704]
-							}
-						}
-					}
-				}
-			}
-			"workCamera"
-			{
-				$transform pose [[-79.0657,73.4519,80.3042][-0.9621,-0.1584,-0.2192,0.0361]]
-				$float fov 57
-			}
-			$string cameraView "Work"
-			$string layout "cfg/pfm/layouts/default.udm"
-			$bool readOnly 1
-		}
 		$array clips [element;1][
 			{
 				"scene"
 				{
 					$array groups [element;0][]
 					$string name ""
-					$array actors [element;0][]
-					$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 					$string uniqueId "383d4edb-f5f5-4f27-81be-f79706911cd8"
+					$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+					$array actors [element;0][]
 					$bool visible 1
 				}
-				$string camera ""
 				$string name "new_project"
+				$string camera ""
+				$array bookmarkSets [element;0][]
 				$array trackGroups [element;1][
 					{
 						$bool muted 0
@@ -102,10 +23,9 @@
 						$bool visible 1
 						$array tracks [element;1][
 							{
-								$bool muted 0
 								$array animationClips [element;0][]
+								$bool muted 0
 								$array audioClips [element;0][]
-								$array overlayClips [element;0][]
 								$array filmClips [element;1][
 									{
 										"scene"
@@ -114,6 +34,8 @@
 												{
 													$array groups [element;0][]
 													$string name "environment"
+													$string uniqueId "c203a4ae-3eff-4fca-9d61-bd2d5d0d3321"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$array actors [element;1][
 														{
 															$array components [element;5][
@@ -123,8 +45,8 @@
 																	{
 																		$vec3 position [0,0,50]
 																		$quat rotation [1,0,0,0]
-																		$vec3 scale [1,1,1]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																	$string uniqueId "0c465473-a858-4127-af5a-c4836b48b163"
@@ -142,8 +64,8 @@
 																	"properties"
 																	{
 																		$float strength 0.3
-																		$bool transparent 0
 																		$string skyTexture "skies/dusk379.hdr"
+																		$bool transparent 0
 																	}
 																	$string uniqueId "5ef703d2-ed75-4971-9713-4e4d95270c7d"
 																},
@@ -174,13 +96,13 @@
 															$string name "sky"
 														}
 													]
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$string uniqueId "c203a4ae-3eff-4fca-9d61-bd2d5d0d3321"
 													$bool visible 1
 												},
 												{
 													$array groups [element;0][]
 													$string name "cameras"
+													$string uniqueId "4b4f1f85-0789-478e-bc5b-bf91dba41106"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$array actors [element;1][
 														{
 															$array components [element;3][
@@ -190,8 +112,8 @@
 																	{
 																		$vec3 position [-58.4763,105.51,-35.8552]
 																		$quat rotation [0.5476,0.1952,-0.7664,0.2732]
-																		$vec3 scale [1,1,1]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																	$string uniqueId "ed213285-4498-4ad5-a9d1-1a1ea027ac1f"
@@ -208,8 +130,8 @@
 																	$string type "camera"
 																	"properties"
 																	{
-																		$float fov 57
 																		$float farz 32768
+																		$float fov 57
 																		$float nearz 1
 																		$float focalDistance 72
 																	}
@@ -220,12 +142,12 @@
 															$string name "scene_camera"
 														}
 													]
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$string uniqueId "4b4f1f85-0789-478e-bc5b-bf91dba41106"
 													$bool visible 1
 												},
 												{
 													$string name "misc"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
 													$array actors [element;1][
 														{
 															$string name "tutorial_script"
@@ -238,8 +160,8 @@
 																	{
 																		$vec3 position [5.451,33.9354,11.2042]
 																		$quat rotation [-0.52,0,0.8542,-0]
-																		$vec3 scale [1,1,1]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																},
@@ -248,22 +170,20 @@
 																	$string uniqueId "2eec4988-7af2-4671-b69a-b46678548f66"
 																	"properties"
 																	{
-																		$bool executeOnSpawn 1
-																		$string scriptFile "pfm/tutorials/lighting/dynamic_lighting.lua"
 																		$string code "time.create_simple_timer(0.1,function() gui.Tutorial.start_tutorial('dynamic_lighting') end)"
+																		$string scriptFile "pfm/tutorials/lighting/dynamic_lighting.lua"
+																		$bool executeOnSpawn 1
 																	}
 																}
 															]
 														}
 													]
-													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$bool visible 1
 													$array groups [element;0][]
 												},
 												{
 													$bool visible 1
-													$string uniqueId "df88d629-423a-4241-84e9-df5fbbfa7762"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$array actors [element;1][
 														{
 															$string name "generic_char"
@@ -273,8 +193,8 @@
 																	{
 																		$vec3 position [-118.8946,0.32,-84.7394]
 																		$quat rotation [0.9562,0,0.2929,-0]
-																		$vec3 scale [1,1,1]
 																		$bool visible 1
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																	$string type "pfm_actor"
@@ -319,28 +239,10 @@
 																	{
 																		"bone"
 																		{
-																			"R.lowerFoot"
+																			"L.hand"
 																			{
-																				$vec3 position [0,1.866,-0.0001]
-																				$quat rotation [0.8063,0.5916,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"lowerBody"
-																			{
-																				$vec3 position [0,30.277,0]
-																				$quat rotation [0.9998,0.0181,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"L.finger.002"
-																			{
-																				$vec3 position [0,0.7503,0.0001]
-																				$quat rotation [0.997,-0.0774,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"Chest"
-																			{
-																				$vec3 position [0,5.6238,-0.0003]
-																				$quat rotation [0.9909,-0.1341,0,-0]
+																				$vec3 position [0.0009,7.223,-0.0001]
+																				$quat rotation [0.9985,-0.0172,0.0009,0.0509]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger.008"
@@ -355,10 +257,28 @@
 																				$quat rotation [0.9995,-0.0328,0,0]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.hand"
+																			"L.finger.002"
 																			{
-																				$vec3 position [0.0009,7.223,-0.0001]
-																				$quat rotation [0.9985,-0.0172,0.0009,0.0509]
+																				$vec3 position [0,0.7503,0.0001]
+																				$quat rotation [0.997,-0.0774,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"Chest"
+																			{
+																				$vec3 position [0,5.6238,-0.0003]
+																				$quat rotation [0.9909,-0.1341,0,-0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.lowerFoot"
+																			{
+																				$vec3 position [0,1.866,-0.0001]
+																				$quat rotation [0.8063,0.5916,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"lowerBody"
+																			{
+																				$vec3 position [0,30.277,0]
+																				$quat rotation [0.9998,0.0181,0,0]
 																				$vec3 scale [1,1,1]
 																			}
 																			"UpperChest"
@@ -379,10 +299,10 @@
 																				$quat rotation [0.544,-0.4978,-0.4038,-0.5414]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.upperArm"
+																			"R.finger.001"
 																			{
-																				$vec3 position [0.0001,6.0533,0.0004]
-																				$quat rotation [0.96,-0.2767,0.0122,-0.0423]
+																				$vec3 position [-0,0.5924,0]
+																				$quat rotation [0.7003,0.0981,-0.7003,0.0981]
 																				$vec3 scale [1,1,1]
 																			}
 																			"L.finger.010"
@@ -391,10 +311,10 @@
 																				$quat rotation [0.7056,-0.0463,-0.7056,-0.0463]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.finger.001"
+																			"L.upperArm"
 																			{
-																				$vec3 position [-0,0.5924,0]
-																				$quat rotation [0.7003,0.0981,-0.7003,0.0981]
+																				$vec3 position [0.0001,6.0533,0.0004]
+																				$quat rotation [0.96,-0.2767,0.0122,-0.0423]
 																				$vec3 scale [1,1,1]
 																			}
 																			"L.finger"
@@ -403,16 +323,16 @@
 																				$quat rotation [0.6993,-0.0327,0.7063,-0.1044]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.finger.001"
-																			{
-																				$vec3 position [0,0.5924,0]
-																				$quat rotation [0.7003,-0.0981,-0.7003,-0.0981]
-																				$vec3 scale [1,1,1]
-																			}
 																			"head"
 																			{
 																				$vec3 position [0,2.9788,0.0001]
 																				$quat rotation [0,0,0.9966,0.0814]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.001"
+																			{
+																				$vec3 position [0,0.5924,0]
+																				$quat rotation [0.7003,-0.0981,-0.7003,-0.0981]
 																				$vec3 scale [1,1,1]
 																			}
 																			"L.finger.003"
@@ -421,16 +341,16 @@
 																				$quat rotation [0.6847,-0.1058,0.6991,-0.1764]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.finger.004"
-																			{
-																				$vec3 position [0.0001,0.8316,0]
-																				$quat rotation [0.706,-0.039,-0.706,-0.039]
-																				$vec3 scale [1,1,1]
-																			}
 																			"R.hand"
 																			{
 																				$vec3 position [-0.0009,7.223,0.0001]
 																				$quat rotation [0.9927,0.0225,-0.1068,0.0487]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.004"
+																			{
+																				$vec3 position [0.0001,0.8316,0]
+																				$quat rotation [0.706,-0.039,-0.706,-0.039]
 																				$vec3 scale [1,1,1]
 																			}
 																			"L.finger.005"
@@ -457,28 +377,16 @@
 																				$quat rotation [0.9964,-0.0859,0,0]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.finger.012"
-																			{
-																				$vec3 position [1.1741,1.3781,-0.4181]
-																				$quat rotation [0.8163,-0.0235,0.4692,-0.3362]
-																				$vec3 scale [1,1,1]
-																			}
 																			"R.finger.003"
 																			{
 																				$vec3 position [0.2693,2.6578,-0.0153]
 																				$quat rotation [0.6225,0.1866,0.7551,0.0866]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.finger.013"
+																			"L.finger.012"
 																			{
-																				$vec3 position [0,0.4504,0]
-																				$quat rotation [0.7815,0.0654,-0.6056,0.135]
-																				$vec3 scale [1,1,1]
-																			}
-																			"R.lowerArm"
-																			{
-																				$vec3 position [-0.0001,6.8408,0.0006]
-																				$quat rotation [0.9995,0.0328,0,0]
+																				$vec3 position [1.1741,1.3781,-0.4181]
+																				$quat rotation [0.8163,-0.0235,0.4692,-0.3362]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger.002"
@@ -487,10 +395,16 @@
 																				$quat rotation [0.997,0.0774,0,0]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.finger.014"
+																			"R.lowerArm"
 																			{
-																				$vec3 position [0.0001,0.683,-0]
-																				$quat rotation [0.9926,0.0115,0.0617,0.1039]
+																				$vec3 position [-0.0001,6.8408,0.0006]
+																				$quat rotation [0.9995,0.0328,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.finger.013"
+																			{
+																				$vec3 position [0,0.4504,0]
+																				$quat rotation [0.7815,0.0654,-0.6056,0.135]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger.005"
@@ -499,10 +413,10 @@
 																				$quat rotation [0.9998,0.0201,0,0]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.finger.009"
+																			"L.finger.014"
 																			{
-																				$vec3 position [-0.7978,2.4445,0.0098]
-																				$quat rotation [0.7,-0.0279,0.7066,-0.0997]
+																				$vec3 position [0.0001,0.683,-0]
+																				$quat rotation [0.9926,0.0115,0.0617,0.1039]
 																				$vec3 scale [1,1,1]
 																			}
 																			"L.upperLeg"
@@ -511,16 +425,16 @@
 																				$quat rotation [0.0019,-0.7072,0.0253,0.7066]
 																				$vec3 scale [1,1,1]
 																			}
+																			"L.finger.009"
+																			{
+																				$vec3 position [-0.7978,2.4445,0.0098]
+																				$quat rotation [0.7,-0.0279,0.7066,-0.0997]
+																				$vec3 scale [1,1,1]
+																			}
 																			"L.finger.011"
 																			{
 																				$vec3 position [-0,0.6525,-0.0001]
 																				$quat rotation [0.9882,-0.1539,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"neck"
-																			{
-																				$vec3 position [0,6.1738,0.1266]
-																				$quat rotation [0.9925,0.1219,0,0]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger.004"
@@ -529,10 +443,10 @@
 																				$quat rotation [0.706,0.039,-0.706,0.039]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.shoulder"
+																			"neck"
 																			{
-																				$vec3 position [0,3.7266,0]
-																				$quat rotation [0.0563,-0.7353,0.6752,-0.016]
+																				$vec3 position [0,6.1738,0.1266]
+																				$quat rotation [0.9925,0.1219,0,0]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger.009"
@@ -541,22 +455,28 @@
 																				$quat rotation [0.6283,0.102,0.7711,0.0172]
 																				$vec3 scale [1,1,1]
 																			}
+																			"R.shoulder"
+																			{
+																				$vec3 position [0,3.7266,0]
+																				$quat rotation [0.0563,-0.7353,0.6752,-0.016]
+																				$vec3 scale [1,1,1]
+																			}
 																			"R.upperArm"
 																			{
 																				$vec3 position [-0.0007,6.0527,-0.0002]
 																				$quat rotation [0.7286,0.1797,0.6251,-0.2146]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.finger"
-																			{
-																				$vec3 position [0.8105,2.4955,-0.0942]
-																				$quat rotation [0.6281,0.1072,0.7704,0.0215]
-																				$vec3 scale [1,1,1]
-																			}
 																			"L.lowerFoot"
 																			{
 																				$vec3 position [0,1.866,-0.0001]
 																				$quat rotation [0.8063,0.5916,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger"
+																			{
+																				$vec3 position [0.8105,2.4955,-0.0942]
+																				$quat rotation [0.6281,0.1072,0.7704,0.0215]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger.006"
@@ -583,16 +503,16 @@
 																				$quat rotation [0.9882,0.1539,0,0]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.finger.012"
-																			{
-																				$vec3 position [1.2359,1.3786,0.1609]
-																				$quat rotation [0.5906,0.3219,0.7333,-0.0994]
-																				$vec3 scale [1,1,1]
-																			}
 																			"R.foot"
 																			{
 																				$vec3 position [0,13.7513,0.0013]
 																				$quat rotation [0.7055,0.0451,-0.707,0.0223]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.012"
+																			{
+																				$vec3 position [1.2359,1.3786,0.1609]
+																				$quat rotation [0.5906,0.3219,0.7333,-0.0994]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger.013"
@@ -639,8 +559,8 @@
 																{
 																	"properties"
 																	{
-																		$vec3 viewTarget [0,0,0]
 																		$float blinkDuration 0.2
+																		$vec3 viewTarget [0,0,0]
 																		$bool blinkingEnabled 1
 																		$float localViewTargetFactor 1
 																	}
@@ -659,21 +579,21 @@
 															$string uniqueId "5412d7ff-05b4-4f49-a18c-8bbb0f7d6870"
 														}
 													]
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "df88d629-423a-4241-84e9-df5fbbfa7762"
 													$string name "actors"
 													$array groups [element;0][]
 												},
 												{
 													$bool visible 1
-													$string uniqueId "25af161c-8d5b-4c8e-9acd-26022b9062ee"
-													$array actors [element;0][]
 													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$array actors [element;0][]
+													$string uniqueId "25af161c-8d5b-4c8e-9acd-26022b9062ee"
 													$string name "lighting"
 													$array groups [element;0][]
 												},
 												{
 													$bool visible 1
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "6bc7cd4d-e8ce-4168-acf3-2f0dd6db7dd2"
 													$array actors [element;1][
 														{
 															$string name "chair"
@@ -684,8 +604,8 @@
 																		$vec3 position [-158.6408,13.1592,-76.8538]
 																		$quat rotation [0.9627,0,-0.2705,0]
 																		$bool static 1
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
+																		$bool visible 1
 																	}
 																	$string type "pfm_actor"
 																	$string uniqueId "77222978-0110-4c46-84c5-551f50c6c971"
@@ -736,12 +656,12 @@
 															$string uniqueId "83481110-e6d6-416d-80fc-a6b4f55d2aba"
 														}
 													]
-													$string uniqueId "6bc7cd4d-e8ce-4168-acf3-2f0dd6db7dd2"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$string name "scenebuild"
 													$array groups [element;0][]
 												},
 												{
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "262be633-cff6-41e1-b4ee-2a31665449b8"
 													$array actors [element;1][
 														{
 															$string name "spotlight_volumetric"
@@ -754,8 +674,8 @@
 																	{
 																		$vec3 position [-167.653,144.274,79.2671]
 																		$quat rotation [0.7071,0.7071,0,0]
-																		$vec3 scale [1,1,1]
 																		$bool visible 0
+																		$vec3 scale [1,1,1]
 																		$bool static 0
 																	}
 																},
@@ -772,8 +692,8 @@
 																	$string uniqueId "229e222c-2c74-41be-b264-0d2a74e32e89"
 																	"properties"
 																	{
-																		$float intensity 66.875
 																		$uint8 intensityType 0
+																		$float intensity 66.875
 																		$bool castShadows 1
 																		$float falloffExponent 1
 																		$bool baked 0
@@ -809,20 +729,21 @@
 															]
 														}
 													]
-													$string uniqueId "262be633-cff6-41e1-b4ee-2a31665449b8"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$bool visible 1
 													$string name "tutorial"
 													$array groups [element;0][]
 												}
 											]
 											$string name ""
-											$array actors [element;0][]
-											$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 											$string uniqueId "83c01533-31ca-4cdd-a620-203dfdd837a0"
+											$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+											$array actors [element;0][]
 											$bool visible 1
 										}
-										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
 										$string name "shot1"
+										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
+										$array bookmarkSets [element;0][]
 										$array trackGroups [element;1][
 											{
 												$bool muted 0
@@ -830,11 +751,11 @@
 												$bool visible 1
 												$array tracks [element;1][
 													{
-														$bool muted 0
 														$array animationClips [element;0][]
+														$bool muted 0
 														$array audioClips [element;0][]
-														$array overlayClips [element;0][]
 														$array filmClips [element;0][]
+														$array overlayClips [element;0][]
 														$string name "animSetEditorChannels"
 														$float volume 1
 														$string uniqueId "55d2167b-26b1-4e49-89ba-ef3e7e51b93f"
@@ -843,8 +764,6 @@
 												$string uniqueId "7989692b-e298-4de3-bc51-faca6b098c45"
 											}
 										]
-										$array bookmarkSets [element;0][]
-										$int32 activeBookmarkSet 0
 										"timeFrame"
 										{
 											$float scale 1
@@ -852,11 +771,13 @@
 											$float start 0
 											$float duration 60
 										}
+										$int32 activeBookmarkSet 0
 										$float fadeIn 0
 										$float fadeOut 0
 										$string uniqueId "a2951b11-9dfd-4709-bf4c-9d037f24d4cb"
 									}
 								]
+								$array overlayClips [element;0][]
 								$string name "Film"
 								$float volume 1
 								$string uniqueId "e6dd472c-27df-4448-b7a3-3cfccb8f0117"
@@ -865,8 +786,6 @@
 						$string uniqueId "8043c218-eff3-4fdd-b255-b53c66d82715"
 					}
 				]
-				$array bookmarkSets [element;0][]
-				$int32 activeBookmarkSet 0
 				"timeFrame"
 				{
 					$float scale 1
@@ -874,11 +793,62 @@
 					$float start 0
 					$float duration 60
 				}
+				$int32 activeBookmarkSet 0
 				$float fadeIn 0
 				$float fadeOut 0
 				$string uniqueId "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 			}
 		]
+		"settings"
+		{
+			$float playheadOffset 0
+			$string mapName "pfm_demo"
+			"renderSettings"
+			{
+				$float panoramaRange 180
+				$uint32 width 1280
+				$uint32 frameRate 24
+				$string mode "combined"
+				$uint32 supersamplingFactor 2
+				$uint32 height 720
+				$bool preCalculateLight 0
+				$float exposure 50
+				$string renderEngine "cycles"
+				$uint32 numberOfFrames 1
+				$string deviceType "gpu"
+				$string preset "standard"
+				$uint32 maxTransparencyBounces 32
+				$float lightIntensityFactor 1
+				$string outputFormat "png"
+				$string colorTransform "filmic-blender"
+				$string colorTransformLook "Medium Contrast"
+				$string denoiseMode "detailed"
+				$bool renderWorld 1
+				$bool renderGameObjects 1
+				$bool renderPlayer 0
+				$bool cameraFrustumCullingEnabled 1
+				$bool pvsCullingEnabled 1
+				$bool progressiveRefinementEnabled 0
+				$bool transparentSky 0
+				$bool stereoscopic 1
+				$string previewQuality "low"
+				$string cameraType "0"
+				$string panoramaType "equirectangular"
+				$bool progressive 1
+				$uint32 samples 20
+				$uint32 tileSize 512
+				$string viewportMode "360_left_eye"
+				$float emissionStrength 0
+			}
+			$bool readOnly 1
+			$string layout "cfg/pfm/layouts/default.udm"
+			$string cameraView "Work"
+			"workCamera"
+			{
+				$float fov 57
+				$transform pose [[-54.9415,51.5747,56.2371][0.9969,0.0575,0.0543,-0.0031]]
+			}
+		}
 		$string name ""
 		$string uniqueId "7220022f-6cca-43cb-9ed7-0bb59c3a872d"
 		$string activeClip "a9a0857e-dcee-44ee-ba15-04a5fc634466"
