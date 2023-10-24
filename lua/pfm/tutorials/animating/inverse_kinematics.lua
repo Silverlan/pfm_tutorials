@@ -57,13 +57,13 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 				"bone",
 			}
 			itemNames = table.merge(itemNames, boneNames)
-			for _, boneName in ipairs(itemNames) do
+			for i, boneName in ipairs(itemNames) do
 				local path = bonePath
 				if #path > 0 then
 					path = path .. "/"
 				end
 				path = path .. boneName
-				slide:AddHighlight(path .. "/header")
+				slide:AddHighlight(path .. "/header", i == #itemNames)
 				bonePath = path
 			end
 
@@ -89,7 +89,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			slide:AddHighlight(TUT_ACTOR_UUID .. "/" .. TUT_HAND_BONE .. "/header")
 			slide:AddHighlight("context_menu")
 			slide:AddHighlight("context_menu/add_ik_control")
-			slide:AddHighlight("context_menu_add_ik_control/ik_control_chain_4")
+			slide:AddHighlight("context_menu_add_ik_control/ik_control_chain_4", true)
 
 			slide:AddGenericMessageBox({ TUT_HAND_IK_CHAIN_LENGTH })
 		end,
@@ -113,7 +113,8 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 					.. TUT_ACTOR_UUID
 					.. "/ik_solver/control/"
 					.. TUT_HAND_BONE
-					.. "/header"
+					.. "/header",
+				true
 			)
 			slide:AddGenericMessageBox()
 
@@ -177,32 +178,24 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			slide:OpenWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 
+			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/header")
+			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/header")
 			slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/header")
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/base_properties/header"
 			)
 			slide:AddHighlight(
-				slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/header")
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID
+					.. "/"
+					.. TUT_ACTOR_UUID
+					.. "/ik_solver/base_properties/rigConfigFile/header"
 			)
 			slide:AddHighlight(
-				slide:FindElementByPath(
-					pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/base_properties/header"
-				)
-			)
-			slide:AddHighlight(
-				slide:FindElementByPath(
-					pfm.WINDOW_ACTOR_EDITOR_UI_ID
-						.. "/"
-						.. TUT_ACTOR_UUID
-						.. "/ik_solver/base_properties/rigConfigFile/header"
-				)
-			)
-			slide:AddHighlight(
-				slide:FindElementByPath(
-					pfm.WINDOW_ACTOR_EDITOR_UI_ID
-						.. "/"
-						.. TUT_ACTOR_UUID
-						.. "/ik_solver/base_properties/rigConfigFile/header"
-				)
+
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID
+					.. "/"
+					.. TUT_ACTOR_UUID
+					.. "/ik_solver/base_properties/rigConfigFile/header",
+				true
 			)
 
 			slide:AddGenericMessageBox()
@@ -216,9 +209,8 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 
 			slide:AddHighlight(
-				slide:FindElementByPath(
-					pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/base_property_controls/rigConfigFile/browse_button"
-				)
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/base_property_controls/rigConfigFile/browse_button",
+				true
 			)
 
 			slide:AddGenericMessageBox({ TUT_IK_RIG })
@@ -240,11 +232,14 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/header")
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/header")
-			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/control/header")
+			slide:AddHighlight(
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/control/header",
+				true
+			)
 
 			slide:AddGenericMessageBox()
 		end,
-		nextSlide = "ik_rig_limits",
+		nextSlide = "conclusion",
 	})
 
 	elTut:RegisterSlide("conclusion", {
@@ -257,11 +252,12 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 
 	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			-- pm:LoadTutorial("interface/render") -- TODO
+			-- pm:LoadTutorial("animating/constraints") -- TODO
 			time.create_simple_timer(0.0, function()
 				gui.Tutorial.close_tutorial()
 			end)
 		end,
 	})
-	elTut:StartSlide("conclusion")
+
+	elTut:StartSlide("intro")
 end)
