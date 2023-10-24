@@ -37,16 +37,6 @@ local function get_keyframe(pm, i)
 	return dps[i]
 end
 
-local function get_data_point_at_timestamp(pm, slide, t)
-	local timeline = pm:GetTimeline()
-	local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
-	local graphCurve = util.is_valid(graphEditor) and graphEditor:GetGraphCurve(1) or nil
-	local dp = (graphCurve ~= nil and util.is_valid(graphCurve.curve)) and graphCurve.curve:FindDataPoint(1) or nil
-	if util.is_valid(dp) then
-		slide:SetArrowTarget(dp)
-	end
-end
-
 gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", function(elTut, pm)
 	elTut:RegisterSlide("intro", {
 		init = function(tutorialData, slideData, slide)
@@ -149,7 +139,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
-			slide:SetArrowTarget(item)
+			slide:SetArrowTarget("property_controls/fov")
 
 			slide:AddGenericMessageBox()
 		end,
@@ -200,7 +190,7 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 
-			local dp = get_data_point_at_timestamp(pm, slide, 0.0)
+			local dp = get_keyframe(pm, 1)
 			if util.is_valid(dp) then
 				slide:SetArrowTarget(dp)
 			end
@@ -555,41 +545,22 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_TIMELINE_UI_ID))
 
-			-- Clear the current animation and create a new animation channel
+			-- Clear the current animation
 			local cmd = pfm.create_command("keyframe_property_composition", uuidCamera, "ec/camera/fov", 0)
 			cmd:AddSubCommand("delete_editor_channel", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT)
 			cmd:AddSubCommand("delete_animation_channel", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT)
+			cmd:Execute()
 
+			--  Create a new animation channel with keyframes
+			local cmd = pfm.create_command("keyframe_property_composition", uuidCamera, "ec/camera/fov", 0)
 			cmd:AddSubCommand("add_animation_channel", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT)
 			cmd:AddSubCommand("add_editor_channel", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT)
 
 			local tStart = 0.0
-			cmd:AddSubCommand("create_keyframe", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT, tStart, 0)
-			cmd:AddSubCommand(
-				"set_keyframe_data",
-				uuidCamera,
-				"ec/camera/fov",
-				tStart,
-				tStart,
-				udm.TYPE_FLOAT,
-				0.0,
-				camStartFov,
-				0
-			)
+			cmd:AddSubCommand("create_keyframe", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT, tStart, 0, camStartFov)
 
 			local tEnd = tStart + duration
-			cmd:AddSubCommand("create_keyframe", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT, tEnd, 0)
-			cmd:AddSubCommand(
-				"set_keyframe_data",
-				uuidCamera,
-				"ec/camera/fov",
-				tEnd,
-				tEnd,
-				udm.TYPE_FLOAT,
-				0.0,
-				camEndFov,
-				0
-			)
+			cmd:AddSubCommand("create_keyframe", uuidCamera, "ec/camera/fov", udm.TYPE_FLOAT, tEnd, 0, camEndFov)
 			cmd:Execute()
 
 			slide:AddGenericMessageBox()
