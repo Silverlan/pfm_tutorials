@@ -37,6 +37,22 @@ local function get_keyframe(pm, i)
 	return dps[i]
 end
 
+local function get_key_data(pm)
+	local timeline = pm:GetTimeline()
+	local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
+	local graphCurve = util.is_valid(graphEditor) and graphEditor:GetGraphCurve(1) or nil
+	if graphCurve == nil then
+		return
+	end
+	local editorChannel = graphCurve.editorChannel
+	local editorGraphCurve = (editorChannel ~= nil) and editorChannel:GetGraphCurve() or nil
+	local pathKeys = (editorGraphCurve ~= nil) and editorGraphCurve:GetKey(0) or nil
+	if pathKeys == nil then
+		return
+	end
+	return pathKeys
+end
+
 gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", function(elTut, pm)
 	elTut:RegisterSlide("intro", {
 		init = function(tutorialData, slideData, slide)
@@ -425,6 +441,14 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			local keyData = get_key_data(pm)
+			if keyData == nil then
+				return true
+			end
+			return keyData:GetHandleType(1, pfm.udm.EditorGraphCurveKeyData.HANDLE_IN)
+				== pfm.udm.KEYFRAME_HANDLE_TYPE_FREE
+		end,
 		nextSlide = "graph_editor_vector_handle_type",
 	})
 
@@ -439,6 +463,14 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			local keyData = get_key_data(pm)
+			if keyData == nil then
+				return true
+			end
+			return keyData:GetHandleType(1, pfm.udm.EditorGraphCurveKeyData.HANDLE_IN)
+				== pfm.udm.KEYFRAME_HANDLE_TYPE_VECTOR
+		end,
 		nextSlide = "graph_editor_interp",
 	})
 
@@ -459,19 +491,11 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 		end,
 		clear = function(tutorialData, slideData) end,
 		clearCondition = function(tutorialData, slideData)
-			local timeline = pm:GetTimeline()
-			local graphEditor = util.is_valid(timeline) and timeline:GetGraphEditor() or nil
-			local graphCurve = util.is_valid(graphEditor) and graphEditor:GetGraphCurve(1) or nil
-			if graphCurve == nil then
+			local keyData = get_key_data(pm)
+			if keyData == nil then
 				return true
 			end
-			local editorChannel = graphCurve.editorChannel
-			local editorGraphCurve = (editorChannel ~= nil) and editorChannel:GetGraphCurve() or nil
-			local pathKeys = (editorGraphCurve ~= nil) and editorGraphCurve:GetKey(0) or nil
-			if pathKeys == nil then
-				return true
-			end
-			return pathKeys:GetInterpolationMode(1) == pfm.udm.INTERPOLATION_BOUNCE
+			return keyData:GetInterpolationMode(1) == pfm.udm.INTERPOLATION_BOUNCE
 		end,
 		nextSlide = "graph_editor_easing",
 	})
