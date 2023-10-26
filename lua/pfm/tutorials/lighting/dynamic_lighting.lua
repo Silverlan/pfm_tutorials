@@ -190,6 +190,7 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 				local item = actorEditor:GetActorItem(lm)
 				if util.is_valid(item) then
 					item:Expand(true)
+					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light_spot/header")
 					slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/light_spot/blendFraction/header")
 					slide:AddHighlight("property_controls/blendFraction", true)
 				end
@@ -273,9 +274,21 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 
 	elTut:RegisterSlide("volumetric", {
 		init = function(tutorialData, slideData, slide)
+			-- Disable Live RT mode
+			local el = slide:FindElementByPath("window_primary_viewport/vp_settings/rt_enabled", false)
+			local tgt = util.is_valid(el) and el:GetTarget() or nil
+			if util.is_valid(tgt) then
+				tgt:SelectOption(0)
+			end
+
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
 			local lm = find_volumetric_light_source_actor()
 			if lm ~= nil then
+				local actorEditor = pm:GetActorEditor()
+				local item = actorEditor:GetActorItem(lm)
+				if util.is_valid(item) then
+					item:Expand(true)
+				end
 				slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
 				slide:AddHighlight("context_menu/add_new_component")
 				slide:AddHighlight("context_menu_add_new_component/light_spot_volume", true)
