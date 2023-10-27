@@ -207,6 +207,50 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
+		nextSlide = "model_import",
+	})
+
+	elTut:RegisterSlide("model_import", {
+		init = function(tutorialData, slideData, slide)
+			tool.get_filmmaker():GoToWindow("model_catalog")
+
+			local window = pm:GetWindow("model_catalog")
+			local explorer = util.is_valid(window) and window:GetExplorer() or nil
+			if util.is_valid(explorer) then
+				explorer:SetPath("pfm/")
+				explorer:Update()
+			end
+
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/model_explorer"))
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		nextSlide = "model_import_choice",
+	})
+
+	elTut:RegisterSlide("model_import_choice", {
+		init = function(tutorialData, slideData, slide)
+			tool.get_filmmaker():GoToWindow("model_catalog")
+
+			local window = pm:GetWindow("model_catalog")
+			local explorer = util.is_valid(window) and window:GetExplorer() or nil
+			if util.is_valid(explorer) then
+				explorer:SetPath("pfm/")
+				explorer:Update()
+			end
+
+			local filePath = "tutorials/interface/assets/BarramundiFish.glb"
+			util.open_path_in_explorer(file.get_file_path(filePath), file.get_file_name(filePath))
+
+			slide:AddHighlight("context_menu/import_as_single_model")
+
+			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/model_explorer"))
+			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData) end,
+		clearCondition = function(tutorialData, slideData)
+			return asset.exists("pfm/BarramundiFish/barramundifish", asset.TYPE_MODEL)
+		end,
 		nextSlide = "map_import",
 	})
 
