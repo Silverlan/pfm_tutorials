@@ -1,6 +1,6 @@
 pfm_tut_web_browser_intro = "PFM comes with an integrated web browser, which you can use to quickly look up information on the Pragma wiki, or to download custom assets.\nAny assets you download through the browser will be automatically imported and installed by Pragma."
 
-pfm_tut_web_browser_asset_download = "You can choose from several preset bookmarks for websites that offer a large amount of assets to download.\nFor the purpose of this tutorial we will download some simple props from sfmlab.com.\n\nSelect \"SFM Lab\" from the bookmark list to continue.
+pfm_tut_web_browser_asset_download = "You can choose from several preset bookmarks for websites that offer a large amount of assets to download.\nFor the purpose of this tutorial we will download some simple props from sfmlab.com.\n\nSelect \"SFM Lab\" from the bookmark list to continue."
 
 pfm_tut_web_browser_sfm_lab = "While the assets on these websites were designed for use with the Source Filmmaker or other animation software, they should largely be compatible with PFM as well.\n\nPlease note that in order to change the search category on SFM Lab through the integrated web browser, you will have to click the category drop-down menu and then use the up/down arrow keys and the enter key to select the category."
 
