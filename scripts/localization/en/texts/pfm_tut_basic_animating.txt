@@ -18,7 +18,7 @@ pfm_tut_basic_animating_graph_editor_playhead = "We'll use a duration of {} seco
 
 pfm_tut_basic_animating_graph_editor_2nd_fov_keyframe = "Next, change the camera's fov to {}° to create a new keyframe at this timestamp."
 
-pfm_tut_basic_animating_graph_editor_curve = "As you can see, a graph curve has now formed between the two keyframes in the graph editor. If the curve is not entirely visible or too small, you can right-click inside the graph and choose \"{pfm_fit_view_to_data}\" to make the view fit the graph curve."
+pfm_tut_basic_animating_graph_editor_curve = "As you can see, a graph curve has now formed between the two keyframes in the graph editor. If the curve is not entirely visible or too small, you can right-click inside the graph and choose \"{pfm_fit_view_to_data}\" to make the view fit the graph curve.\n\nTo see the effect of the animation curve on the fov-property of the camera, you can move the playhead between the two keyframes."
 
 pfm_tut_basic_animating_graph_editor_controls = "To move the graph view you can hold down the middle mouse button and move the mouse. You can zoom in and out on the x-axis using the scroll wheel, or the y-axis by holding down the ctrl-key at the same time. Holding down the alt-key while zooming, will zoom in/out on both axes.\nYou can also hold the ctrl-key and the right mouse-button at the same time and move the mouse to zoom in and out on the current mouse position."
 

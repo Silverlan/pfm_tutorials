@@ -726,6 +726,12 @@ gui.Tutorial.register_tutorial("basic_animating", "tutorials/animating/basics", 
 
 	elTut:RegisterSlide("playback", {
 		init = function(tutorialData, slideData, slide)
+			local timeline = pm:GetTimeline()
+			local playhead = util.is_valid(timeline) and timeline:GetPlayhead() or nil
+			if util.is_valid(playhead) then
+				playhead:SetTimeOffset(0.0)
+			end
+
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 			slide:AddHighlight("window_primary_viewport/cc_controls/cc_camera")
 			slide:AddHighlight("window_primary_viewport/playback_controls", true)
