@@ -1,0 +1,229 @@
+$array bones [element;14][
+	{
+		$string name "J_Bip_L_Hand"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_L_LowerArm"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_L_UpperArm"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_L_Shoulder"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_C_UpperChest"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_R_Shoulder"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_C_Chest"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_C_Spine"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_C_Hips"
+		$bool locked 1
+	},
+	{
+		$string name "J_Bip_R_Hand"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_R_LowerArm"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_R_UpperArm"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_C_Neck"
+		$bool locked 0
+	},
+	{
+		$string name "J_Bip_C_Head"
+		$bool locked 0
+	}
+]
+$array controls [element;6][
+	{
+		$string bone "J_Bip_L_Hand"
+		$string type "OrientedDrag"
+		$float rigidity 5
+		$float maxForce -1
+	},
+	{
+		$string bone "J_Bip_L_LowerArm"
+		$string type "Drag"
+		$float rigidity 2
+		$float maxForce -1
+	},
+	{
+		$string bone "J_Bip_C_UpperChest"
+		$string type "Drag"
+		$float rigidity 3
+		$float maxForce -1
+	},
+	{
+		$string bone "J_Bip_R_Hand"
+		$string type "OrientedDrag"
+		$float rigidity 5
+		$float maxForce -1
+	},
+	{
+		$string bone "J_Bip_R_LowerArm"
+		$string type "Drag"
+		$float rigidity 2
+		$float maxForce -1
+	},
+	{
+		$string bone "J_Bip_C_Head"
+		$string type "OrientedDrag"
+		$float rigidity 5
+		$float maxForce -1
+	}
+]
+$array constraints [element;13][
+	{
+		$string type "Fixed"
+		$string bone0 "J_Bip_L_LowerArm"
+		$string bone1 "J_Bip_L_Hand"
+		$float maxForce -1
+		$float rigidity 1000
+		$string axis "Z"
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+	},
+	{
+		$string bone0 "J_Bip_L_UpperArm"
+		$string type "Hinge"
+		$string bone1 "J_Bip_L_LowerArm"
+		$float rigidity 1000
+		$float maxForce -1
+		$float maxAngle 5
+		$string axis "Y"
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+		$float minAngle -140
+	},
+	{
+		$string bone0 "J_Bip_L_Shoulder"
+		$string type "BallSocket"
+		$string bone1 "J_Bip_L_UpperArm"
+		$float rigidity 1000
+		$float maxForce -1
+		$string axis "X"
+		$ang minAngles [-5,-136,-55]
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+		$ang maxAngles [5,32,110]
+	},
+	{
+		$string type "Fixed"
+		$string bone0 "J_Bip_C_UpperChest"
+		$string bone1 "J_Bip_L_Shoulder"
+		$float maxForce -1
+		$float rigidity 1000
+		$string axis "Z"
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+	},
+	{
+		$string type "Fixed"
+		$string bone0 "J_Bip_C_UpperChest"
+		$string bone1 "J_Bip_R_Shoulder"
+		$float maxForce -1
+		$float rigidity 1000
+		$string axis "Z"
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+	},
+	{
+		$string bone0 "J_Bip_C_Chest"
+		$string type "BallSocket"
+		$string bone1 "J_Bip_C_UpperChest"
+		$float rigidity 1000
+		$float maxForce -1
+		$string axis "Y"
+		$ang minAngles [-50,-31,-5]
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+		$ang maxAngles [10,31,5]
+	},
+	{
+		$string bone0 "J_Bip_C_Spine"
+		$string type "BallSocket"
+		$string bone1 "J_Bip_C_Chest"
+		$float rigidity 1000
+		$float maxForce -1
+		$string axis "Y"
+		$ang minAngles [-42,-30,-5]
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+		$ang maxAngles [12,19,5]
+	},
+	{
+		$string bone0 "J_Bip_C_Hips"
+		$string type "BallSocket"
+		$string bone1 "J_Bip_C_Spine"
+		$float rigidity 1000
+		$float maxForce -1
+		$string axis "Y"
+		$ang minAngles [-41,-35,-5]
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+		$ang maxAngles [10,36,5]
+	},
+	{
+		$string type "Fixed"
+		$string bone0 "J_Bip_R_LowerArm"
+		$string bone1 "J_Bip_R_Hand"
+		$float maxForce -1
+		$float rigidity 1000
+		$string axis "Z"
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+	},
+	{
+		$string bone0 "J_Bip_R_UpperArm"
+		$string type "Hinge"
+		$string bone1 "J_Bip_R_LowerArm"
+		$float rigidity 1000
+		$float maxForce -1
+		$float maxAngle 140
+		$string axis "Y"
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+		$float minAngle -5
+	},
+	{
+		$string bone0 "J_Bip_R_Shoulder"
+		$string type "BallSocket"
+		$string bone1 "J_Bip_R_UpperArm"
+		$float rigidity 1000
+		$float maxForce -1
+		$string axis "NegX"
+		$ang minAngles [-5,-32,-110]
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+		$ang maxAngles [5,136,55]
+	},
+	{
+		$string type "Fixed"
+		$string bone0 "J_Bip_C_UpperChest"
+		$string bone1 "J_Bip_C_Neck"
+		$float maxForce -1
+		$float rigidity 1000
+		$string axis "Z"
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+	},
+	{
+		$string type "Fixed"
+		$string bone0 "J_Bip_C_Neck"
+		$string bone1 "J_Bip_C_Head"
+		$float maxForce -1
+		$float rigidity 1000
+		$string axis "Z"
+		$stransform offsetPose [[0,0,0][1,0,0,0][1,1,1]]
+	}
+]
