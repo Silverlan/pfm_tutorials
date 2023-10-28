@@ -517,7 +517,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 
 	elTut:RegisterSlide("reflection_probe_placement", {
 		init = function(tutorialData, slideData, slide)
-			slide:AddHighlight("window_primary_viewport", true)
+			slide:AddHighlight(slide:FindElementByPath("contents"))
 
 			slide:AddGenericMessageBox()
 
