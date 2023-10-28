@@ -67,7 +67,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("model_catalog")
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID))
-			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID)
+			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/model_explorer")
 			slide:AddHighlight("context_menu/import_all_assets", true)
 			slide:AddGenericMessageBox()
 		end,
@@ -212,16 +212,6 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 
 	elTut:RegisterSlide("model_import", {
 		init = function(tutorialData, slideData, slide)
-			tool.get_filmmaker():GoToWindow("model_catalog")
-
-			local window = pm:GetWindow("model_catalog")
-			local explorer = util.is_valid(window) and window:GetExplorer() or nil
-			if util.is_valid(explorer) then
-				explorer:SetPath("pfm/")
-				explorer:Update()
-			end
-
-			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/model_explorer"))
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -230,6 +220,12 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 
 	elTut:RegisterSlide("model_import_choice", {
 		init = function(tutorialData, slideData, slide)
+			local window = slide:GoToWindow("model_catalog")
+			local teFilter = util.is_valid(window) and window:GetFilterElement() or nil
+			if util.is_valid(teFilter) then
+				teFilter:SetText("")
+			end
+
 			tool.get_filmmaker():GoToWindow("model_catalog")
 
 			local window = pm:GetWindow("model_catalog")
@@ -256,11 +252,6 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 
 	elTut:RegisterSlide("map_import", {
 		init = function(tutorialData, slideData, slide)
-			local window = slide:GoToWindow("model_catalog")
-			local teFilter = util.is_valid(window) and window:GetFilterElement() or nil
-			if util.is_valid(teFilter) then
-				teFilter:SetText("")
-			end
 			local explorer = util.is_valid(window) and window:GetExplorer() or nil
 			if util.is_valid(explorer) then
 				explorer:SetPath("")
