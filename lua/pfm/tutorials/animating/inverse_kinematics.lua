@@ -17,7 +17,7 @@ local TUT_IK_RIG = "anime_test"
 gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/inverse_kinematics", function(elTut, pm)
 	elTut:RegisterSlide("intro", {
 		init = function(tutorialData, slideData, slide)
-			slide:OpenWindow("actor_editor")
+			slide:GoToWindow("actor_editor")
 
 			slide:AddGenericMessageBox()
 		end,
@@ -33,7 +33,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 
 	elTut:RegisterSlide("determine_bone", {
 		init = function(tutorialData, slideData, slide)
-			slide:OpenWindow("actor_editor")
+			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 
 			local actor = pfm.dereference(TUT_ACTOR_UUID)
@@ -74,7 +74,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 				slideData.itemHandBone = slide:FindElementByPath(TUT_ACTOR_UUID .. "/" .. TUT_HAND_BONE, false)
 			end
 			if util.is_valid(slideData.itemHandBone) == false then
-				return true
+				return false
 			end
 			return slideData.itemHandBone:IsSelected()
 		end,
@@ -83,7 +83,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 
 	elTut:RegisterSlide("select_chain_length", {
 		init = function(tutorialData, slideData, slide)
-			slide:OpenWindow("actor_editor")
+			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("editor_frame/window_actor_editor"))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
 			slide:AddHighlight(TUT_ACTOR_UUID .. "/" .. TUT_HAND_BONE .. "/header")
@@ -102,7 +102,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 
 	elTut:RegisterSlide("controls", {
 		init = function(tutorialData, slideData, slide)
-			slide:OpenWindow("actor_editor")
+			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/header")
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/header")
@@ -137,7 +137,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 
 	elTut:RegisterSlide("controls2", {
 		init = function(tutorialData, slideData, slide)
-			slide:OpenWindow("actor_editor")
+			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/header")
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/header")
@@ -175,7 +175,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 
 	elTut:RegisterSlide("ik_rig_property", {
 		init = function(tutorialData, slideData, slide)
-			slide:OpenWindow("actor_editor")
+			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/header")
@@ -205,7 +205,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 
 	elTut:RegisterSlide("ik_rig_file", {
 		init = function(tutorialData, slideData, slide)
-			slide:OpenWindow("actor_editor")
+			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 
 			slide:AddHighlight(
@@ -228,7 +228,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 
 	elTut:RegisterSlide("ik_rig_hand_control", {
 		init = function(tutorialData, slideData, slide)
-			slide:OpenWindow("actor_editor")
+			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/header")
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. TUT_ACTOR_UUID .. "/ik_solver/header")
