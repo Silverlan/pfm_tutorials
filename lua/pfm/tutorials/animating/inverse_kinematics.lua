@@ -11,7 +11,8 @@ include("/pfm/pfm_core_tutorials.lua")
 local TUT_HAND_BONE = "J_Bip_L_Hand"
 local TUT_HAND_IK_CHAIN_LENGTH = 4
 local TUT_ACTOR_UUID = "180f36ee-f747-4b85-80df-290ad4afc2ef"
-local TUT_IK_RIG = "anime_test"
+local TUT_IK_RIG = "tut_demo_ik_rig"
+local TUT_IK_HAND_TARGET_LOCATION = Vector(-112.117, 55.6728, -88.7924)
 
 
 gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/inverse_kinematics", function(elTut, pm)
@@ -118,7 +119,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			)
 			slide:AddGenericMessageBox()
 
-			local targetInfo = slide:AddViewportTarget(Vector(5, 45, 10), function()
+			local targetInfo = slide:AddViewportTarget(TUT_IK_HAND_TARGET_LOCATION, function()
 				local ent = ents.find_by_uuid(TUT_ACTOR_UUID)
 				local ikSolverC = (ent ~= nil) and ent:GetComponent(ents.COMPONENT_IK_SOLVER) or nil
 				local idx = (ikSolverC ~= nil) and ikSolverC:GetMemberIndex("control/" .. TUT_HAND_BONE .. "/position")
@@ -152,7 +153,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			)
 			slide:AddGenericMessageBox()
 
-			local targetInfo = slide:AddViewportTarget(Vector(5, 45, 10), function()
+			local targetInfo = slide:AddViewportTarget(Vector(), function()
 				local ent = ents.find_by_uuid(TUT_ACTOR_UUID)
 				local ikSolverC = (ent ~= nil) and ent:GetComponent(ents.COMPONENT_IK_SOLVER) or nil
 				local idx = (ikSolverC ~= nil) and ikSolverC:GetMemberIndex("control/" .. TUT_HAND_BONE .. "/position")
@@ -199,6 +200,16 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			)
 
 			slide:AddGenericMessageBox()
+		end,
+		clearCondition = function(tutorialData, slideData, slide)
+			if util.is_valid(slideData.itemRigConfigFile) == false then
+				slideData.itemRigConfigFile =
+					slide:FindElementByPath(TUT_ACTOR_UUID .. "/ik_solver/base_properties/rigConfigFile", false)
+			end
+			if util.is_valid(slideData.itemRigConfigFile) == false then
+				return false
+			end
+			return slideData.itemRigConfigFile:IsSelected()
 		end,
 		nextSlide = "ik_rig_file",
 	})
