@@ -665,10 +665,7 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 
 	elTut:RegisterSlide("next_tutorial", {
 		init = function(tutorialData, slideData, slide)
-			-- pm:LoadTutorial("interface/render") -- TODO
-			time.create_simple_timer(0.0, function()
-				gui.Tutorial.close_tutorial()
-			end)
+			pm:LoadTutorial("animating/animation_basics")
 		end,
 	})
 
