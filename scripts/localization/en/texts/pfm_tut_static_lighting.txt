@@ -46,4 +46,4 @@ pfm_tut_static_lighting_reflection_probe_view = "A new window has opened, which 
 
 pfm_tut_static_lighting_reflection_probe_dynamic_actors = "You can now close the reflection probe view. If you take a look at the viewport, you'll notice that the character no longer appears black, which means it is now affected by the reflection probe. Please note that reflection probes only apply some indirect lighting to dynamic actors, you will still need to place dynamic light sources as well to make sure your dynamic actors are lit properly."
 
-pfm_tut_static_lighting_conclusion = "This concludes the tutorial on static lighting.\n\nYou can now end the tutorial, or press the continue-button to start the next tutorial in this series."
+pfm_tut_static_lighting_conclusion = "This concludes the tutorial on static lighting.\n\nYou can now end the tutorial, or press the continue-button to start the next series."
