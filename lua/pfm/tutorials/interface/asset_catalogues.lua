@@ -8,6 +8,8 @@
 
 include("/pfm/pfm_core_tutorials.lua")
 
+local DRAG_AND_DROP_ASSET = "data/pfm/tutorials/BarramundiFish.glb"
+
 gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_catalogues", function(elTut, pm)
 	elTut:RegisterSlide("intro", {
 		init = function(tutorialData, slideData, slide)
@@ -235,7 +237,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 				explorer:Update()
 			end
 
-			local filePath = "tutorials/interface/assets/BarramundiFish.glb"
+			local filePath = DRAG_AND_DROP_ASSET
 			util.open_path_in_explorer(file.get_file_path(filePath), file.get_file_name(filePath))
 
 			slide:AddHighlight("context_menu/import_as_single_model")
