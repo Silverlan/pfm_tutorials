@@ -254,6 +254,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 
 	elTut:RegisterSlide("map_import", {
 		init = function(tutorialData, slideData, slide)
+			local window = pm:GetWindow("model_catalog")
 			local explorer = util.is_valid(window) and window:GetExplorer() or nil
 			if util.is_valid(explorer) then
 				explorer:SetPath("")
