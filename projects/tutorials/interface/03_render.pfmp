@@ -13,7 +13,7 @@
 					$array actors [element;0][]
 					$bool visible 1
 				}
-				$string name "new_project"
+				$string name "tut_render"
 				$string camera ""
 				$array bookmarkSets [element;0][]
 				$array trackGroups [element;1][
