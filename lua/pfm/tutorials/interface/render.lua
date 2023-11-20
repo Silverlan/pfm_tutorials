@@ -119,7 +119,8 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 	elTut:RegisterSlide("saved_render", {
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
-			slide:AddHighlight("window_render/bt_open_output_dir")
+			slide:AddHighlight("window_render/misc_options")
+			slide:AddHighlight("context_menu/open_output_dir")
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "render_job",
