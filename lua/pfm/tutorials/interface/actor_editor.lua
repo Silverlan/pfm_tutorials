@@ -68,7 +68,15 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 				end
 			end
 
+			actorEditor:SetActorDragAndDropFilter(function(uuid, propertyPath, header, isCollection)
+				return isCollection
+			end)
+
 			slide:AddGenericMessageBox()
+		end,
+		clear = function(tutorialData, slideData)
+			local actorEditor = tool.get_filmmaker():GetActorEditor()
+			actorEditor:SetActorDragAndDropFilter(nil)
 		end,
 		nextSlide = "actor",
 	})
