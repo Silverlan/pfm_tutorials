@@ -20,8 +20,20 @@ pfm_tut_render_vr_render_start = "Now press the \"{pfm_render_image}\" button to
 
 pfm_tut_render_vr_view = "When rendering VR images, you can click and drag the left mouse button in the render preview to look around as a 360 degree view."
 
-pfm_tut_render_vr_view_mode = "You can click this option to toggle the preview between the left eye and the right eye, or select \"{pfm_cycles_preview_mode_flat}\" to view the actual equirectangular image. Please note that PFM can only render image sequences. In order to render a VR video, you will need a video editing software capable of working with equirectangular images."
+pfm_tut_render_vr_view_mode = "You can click this option to toggle the preview between the left eye and the right eye, or select \"{pfm_cycles_preview_mode_flat}\" to view the actual equirectangular image."
 
-pfm_tut_render_image_sequence = "To render a sequence of images instead of a single frame, you can change the number of frames in the settings. To render the entire film clip, you can right-click the field and choose \"{pfm_number_of_frames_set_to_end_of_clip}\"."
+pfm_tut_render_image_sequence = "To render a sequence of images instead of a single frame, you can change the number of frames in the settings. To render the entire film clip, you can right-click the field and choose \"{pfm_number_of_frames_set_to_end_of_clip}\". For this demonstration, let's try rendering {0} frames in sequence using the Pragma renderer.\n\nChange the slider value to {0} to continue."
+
+pfm_tut_render_image_sequence_render = "Next, press the \"{pfm_render_image}\" button, which will start the render process for the sequence."
+
+pfm_tut_render_image_sequence_render_wait = "Please wait for the render to complete before continuing."
+
+pfm_tut_render_image_sequence_timeline = "The frames are automatically saved to the output directory, but you can also use the timeline controls to jump between the frames and preview them in PFM."
+
+pfm_tut_render_video = "PFM cannot generate video files. In order to create a video from the rendered image sequence, you still need a video editing program. You can export the timeline in the FCPXML format through the menu bar, which contains information about all of the rendered frames, as well as the audio in your PFM project. You can then import the FCPXML file into your video editing software and all of the frames and audio should appear automatically with the correct settings (like the frame rate)."
+
+pfm_tut_render_video_davinci = "While most video editing programs should support the FCPXML format, the recommended program for use with PFM is \"DaVinci Resolve\", which can be downloaded for free. If you have \"DaVinci Resolve\" installed, you can use this option to launch it directly and import the timeline."
+
+pfm_tut_render_settings = "One more thing before we conclude: When using the Pragma renderer, you should enable supersampling to prevent aliasing in the render. The higher the supersampling factor, the better the results will be, however depending on your GPU's capabilities, higher factor values may cause PFM to crash if not enough VRAM is available. You can try enabling tiled rendering, which helps reduce the required amount of VRAM, however this feature is currently experimental and may result in rendering artifacts."
 
 pfm_tut_render_conclusion = "This concludes the tutorial on the render panel.\n\nYou can now end the tutorial, or press the continue-button to start the next tutorial in this series."

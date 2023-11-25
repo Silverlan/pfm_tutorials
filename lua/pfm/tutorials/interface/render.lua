@@ -8,6 +8,8 @@
 
 include("/pfm/pfm_core_tutorials.lua")
 
+local imageSequenceFrameCount = 24
+
 gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(elTut, pm)
 	elTut:RegisterSlide("intro", {
 		init = function(tutorialData, slideData, slide)
@@ -257,9 +259,142 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 	elTut:RegisterSlide("image_sequence", {
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
-			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID))
-			slide:AddHighlight("window_render/frame_count")
-			slide:AddHighlight("context_menu/to_end_of_clip", true)
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_RENDER_UI_ID))
+			slide:AddHighlight("window_render/frame_count", true)
+			slide:AddGenericMessageBox({ tostring(imageSequenceFrameCount) })
+
+			local vp = slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID, false, true)
+			if util.is_valid(vp) then
+				vp:SwitchToSceneCamera()
+			end
+
+			local timeline = pm:GetTimeline()
+			local playhead = util.is_valid(timeline) and timeline:GetPlayhead() or nil
+			if util.is_valid(playhead) then
+				playhead:SetTimeOffset(0.0)
+			end
+
+			local elPreset = slide:FindElementByPath("window_render/preset")
+			elPreset = util.is_valid(elPreset) and elPreset:GetTarget() or nil
+			if util.is_valid(elPreset) then
+				elPreset:SelectOption("standard")
+			end
+		end,
+		clearCondition = function(tutorialData, slideData, slide)
+			local el = slide:FindElementByPath("window_render/frame_count", false)
+			if util.is_valid(el) == false then
+				return true
+			end
+			return el:GetValue() == imageSequenceFrameCount
+		end,
+		nextSlide = "image_sequence_render",
+	})
+
+	elTut:RegisterSlide("image_sequence_render", {
+		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("render")
+			slide:AddHighlight(slide:FindElementByPath("window_render/bt_render_image"))
+			slide:AddGenericMessageBox()
+
+			slideData.renderStarted = false
+			local elWindowRender = slide:FindElementByPath("window_render")
+			if util.is_valid(elWindowRender) then
+				slideData.elRenderWindow = elWindowRender
+				slideData.cbOnRenderImage = elWindowRender:AddCallback(
+					"OnRenderImage",
+					function(el, preview, prepareOnly)
+						if preview ~= true and prepareOnly ~= true then
+							util.remove(slideData.cbOnRenderImage)
+							slideData.renderStarted = true
+						end
+					end
+				)
+			end
+		end,
+		clearCondition = function(tutorialData, slideData)
+			if util.is_valid(slideData.elRenderWindow) == false then
+				return true
+			end
+			return slideData.renderStarted
+		end,
+		clear = function(tutorialData, slideData)
+			util.remove(slideData.cbOnRenderImage)
+		end,
+		nextSlide = "image_sequence_render_wait",
+		autoContinue = true,
+	})
+
+	elTut:RegisterSlide("image_sequence_render_wait", {
+		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("render")
+			slide:SetFocusElement(pm)
+			slide:AddHighlight("info_bar/icon_container", true)
+			slide:AddGenericMessageBox()
+
+			slideData.renderCompleted = false
+			local elWindowRender = slide:FindElementByPath("window_render")
+			if util.is_valid(elWindowRender) then
+				slideData.elRenderWindow = elWindowRender
+				slideData.cbOnRenderComplete = elWindowRender:AddCallback(
+					"OnRenderComplete",
+					function(el, preview, prepareOnly)
+						slideData.renderCompleted = true
+					end
+				)
+			end
+		end,
+		clearCondition = function(tutorialData, slideData)
+			if util.is_valid(slideData.elRenderWindow) == false then
+				return true
+			end
+			return slideData.renderCompleted
+		end,
+		clear = function(tutorialData, slideData)
+			util.remove(slideData.cbOnRenderComplete)
+		end,
+		nextSlide = "image_sequence_timeline",
+	})
+
+	elTut:RegisterSlide("image_sequence_timeline", {
+		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("render")
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_RENDER_UI_ID))
+			slide:AddHighlight("window_render/playback_controls/pc_next_frame")
+			slide:AddHighlight("window_render/playback_controls/pc_prev_frame", true)
+			slide:AddGenericMessageBox()
+		end,
+		nextSlide = "video",
+	})
+
+	elTut:RegisterSlide("video", {
+		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("render")
+			slide:SetFocusElement(slide:FindElementByPath("menu_bar"))
+			slide:AddHighlight("menu_bar/file")
+			slide:AddHighlight("context_menu/export")
+			slide:AddHighlight("context_menu_export/export_timeline", true)
+			slide:AddGenericMessageBox()
+		end,
+		nextSlide = "video_davinci",
+	})
+
+	elTut:RegisterSlide("video_davinci", {
+		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("render")
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_RENDER_UI_ID .. "/left_contents"))
+			slide:AddHighlight(pfm.WINDOW_RENDER_UI_ID .. "/misc_options")
+			slide:AddHighlight("context_menu/import_to_davinci", true)
+			slide:AddGenericMessageBox()
+		end,
+		nextSlide = "conclusion",
+	})
+
+	elTut:RegisterSlide("settings", {
+		init = function(tutorialData, slideData, slide)
+			slide:GoToWindow("render")
+			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_RENDER_UI_ID))
+			slide:AddHighlight(pfm.WINDOW_RENDER_UI_ID .. "/controls_menu")
+			slide:AddHighlight(pfm.WINDOW_RENDER_UI_ID .. "/ss_factor", true)
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "conclusion",
