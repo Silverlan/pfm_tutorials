@@ -122,7 +122,7 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
 			slide:AddHighlight("window_render/misc_options")
-			slide:AddHighlight("context_menu/open_output_dir")
+			slide:AddHighlight("context_menu/open_output_dir", true)
 			slide:AddGenericMessageBox()
 		end,
 		nextSlide = "render_job",
