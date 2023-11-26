@@ -22,7 +22,7 @@ pfm_tut_render_vr_view = "When rendering VR images, you can click and drag the l
 
 pfm_tut_render_vr_view_mode = "You can click this option to toggle the preview between the left eye and the right eye, or select \"{pfm_cycles_preview_mode_flat}\" to view the actual equirectangular image."
 
-pfm_tut_render_image_sequence = "To render a sequence of images instead of a single frame, you can change the number of frames in the settings. To render the entire film clip, you can right-click the field and choose \"{pfm_number_of_frames_set_to_end_of_clip}\". For this demonstration, let's try rendering {0} frames in sequence using the Pragma renderer.\n\nChange the slider value to {0} to continue."
+pfm_tut_render_image_sequence = "To render a sequence of images instead of a single frame, you can change the number of frames in the settings. To render the entire film clip, you can right-click the field and choose \"{pfm_number_of_frames_set_to_end_of_clip}\". For this demonstration, let's try rendering {0} frames in sequence using the Pragma renderer.\n\nPress the continue-button to change the number of frames to {0}."
 
 pfm_tut_render_image_sequence_render = "Next, press the \"{pfm_render_image}\" button, which will start the render process for the sequence."
 

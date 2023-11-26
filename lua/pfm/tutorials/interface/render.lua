@@ -260,7 +260,8 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("render")
 			slide:SetFocusElement(slide:FindElementByPath(pfm.WINDOW_RENDER_UI_ID))
-			slide:AddHighlight("window_render/frame_count", true)
+			slide:AddHighlight("window_render/frame_count")
+			slide:AddHighlight("context_menu/to_end_of_clip", true)
 			slide:AddGenericMessageBox({ tostring(imageSequenceFrameCount) })
 
 			local vp = slide:FindElementByPath(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID, false, true)
@@ -280,13 +281,13 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 				elPreset:SelectOption("standard")
 			end
 		end,
-		clearCondition = function(tutorialData, slideData, slide)
+		--[[clearCondition = function(tutorialData, slideData, slide)
 			local el = slide:FindElementByPath("window_render/frame_count", false)
 			if util.is_valid(el) == false then
 				return true
 			end
 			return el:GetValue() == imageSequenceFrameCount
-		end,
+		end,]]
 		nextSlide = "image_sequence_render",
 	})
 
@@ -295,6 +296,11 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 			slide:GoToWindow("render")
 			slide:AddHighlight(slide:FindElementByPath("window_render/bt_render_image"))
 			slide:AddGenericMessageBox()
+
+			local el = slide:FindElementByPath("window_render/frame_count", false)
+			if util.is_valid(el) then
+				el:SetValue(imageSequenceFrameCount)
+			end
 
 			slideData.renderStarted = false
 			local elWindowRender = slide:FindElementByPath("window_render")
