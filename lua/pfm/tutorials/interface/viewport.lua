@@ -287,7 +287,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 			if util.is_valid(vp) == false then
 				return true
 			end
-			return vp:GetPlayState() == gui.PFMPlayButton.STATE_PLAYING
+			return vp:GetPlayState() == pfm.util.PlaybackState.STATE_PLAYING
 		end,
 		nextSlide = "fin",
 	})
