@@ -152,7 +152,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 				if animC == nil then
 					return Vector()
 				end
-				local pose = animC:GetGlobalBonePose("lowerBody")
+				local pose = animC:GetBonePose("lowerBody", math.COORDINATE_SPACE_WORLD)
 				return (pose ~= nil) and pose:GetOrigin() or Vector()
 			end, charChairToleranceDistance)
 			if util.is_valid(targetInfo.lineEntity) then
