@@ -51,36 +51,6 @@
 				$string viewportMode "360_left_eye"
 				$float emissionStrength 0
 			}
-			"layoutState"
-			{
-				$array windows [element;0][]
-				$array containers [element;0][]
-				"layout_state"
-				{
-					"containers"
-					{
-						"main_container"
-						{
-							$array frameSizeRatios [float;1][0.2594]
-						}
-						"viewport_container"
-						{
-							$array frameSizeRatios [float;1][0.75]
-						}
-					}
-					"windows"
-					{
-						"main"
-						{
-							"detachedWindow"
-							{
-								$vec2 pos [0.2167,0.0352]
-								$vec2 size [0.6667,0.8704]
-							}
-						}
-					}
-				}
-			}
 		}
 		$array clips [element;1][
 			{
