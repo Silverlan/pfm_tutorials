@@ -12,7 +12,11 @@ local TUT_HAND_BONE = "J_Bip_L_Hand"
 local TUT_HAND_IK_CHAIN_LENGTH = 4
 
 
-local function get_character_target()
+
+local function get_character_target(tutorialData)
+	if tutorialData.characterTarget ~= nil then
+		return ents.find_by_uuid(tutorialData.characterTarget)
+	end
 	local ent, c = ents.citerator(ents.COMPONENT_IK_SOLVER)()
 	if ent == nil then
 		return
@@ -20,8 +24,8 @@ local function get_character_target()
 	return ent
 end
 
-local function get_target_uuid()
-	local entTgt = get_character_target()
+local function get_target_uuid(tutorialData)
+	local entTgt = get_character_target(tutorialData)
 	if util.is_valid(entTgt) == false then
 		return ""
 	end
@@ -56,13 +60,17 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
-			return get_character_target() ~= nil
+			return get_character_target(tutorialData) ~= nil
 		end,
 		nextSlide = "move_tool",
 	})
 
 	elTut:RegisterSlide("move_tool", {
 		init = function(tutorialData, slideData, slide)
+			local entTgt = get_character_target(tutorialData)
+			if entTgt ~= nil then
+				tutorialData.characterTarget = tostring(entTgt:GetUuid())
+			end
 			slide:AddHighlight(pfm.WINDOW_PRIMARY_VIEWPORT_UI_ID .. "/manip_controls/manip_move", true)
 
 			slide:AddGenericMessageBox()
@@ -98,7 +106,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("actor_editor")
 
-			local charTarget = get_character_target()
+			local charTarget = get_character_target(tutorialData)
 			if util.is_valid(charTarget) then
 				local uuidChar = tostring(charTarget:GetUuid())
 
@@ -140,7 +148,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 				vp:SetManipulatorMode(gui.PFMViewport.MANIPULATOR_MODE_SELECT)
 			end
 
-			local charTarget = get_character_target()
+			local charTarget = get_character_target(tutorialData)
 			if util.is_valid(charTarget) then
 				local actorC = charTarget:GetComponent(ents.COMPONENT_PFM_ACTOR)
 				local actor = (actorC ~= nil) and actorC:GetActorData() or nil
@@ -150,7 +158,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 				end
 			end
 
-			local actor = pfm.dereference(get_target_uuid())
+			local actor = pfm.dereference(get_target_uuid(tutorialData))
 			local ent = (actor ~= nil) and actor:FindEntity() or nil
 			local mdl = util.is_valid(ent) and ent:GetModel() or nil
 			local boneNames = {}
@@ -166,7 +174,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			local bonePath = ""
 			local itemNames = {
 				"actors",
-				get_target_uuid(),
+				get_target_uuid(tutorialData),
 				"animated",
 				"bone",
 			}
@@ -185,7 +193,8 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 		end,
 		clearCondition = function(tutorialData, slideData, slide)
 			if util.is_valid(slideData.itemHandBone) == false then
-				slideData.itemHandBone = slide:FindElementByPath(get_target_uuid() .. "/" .. TUT_HAND_BONE, false)
+				slideData.itemHandBone =
+					slide:FindElementByPath(get_target_uuid(tutorialData) .. "/" .. TUT_HAND_BONE, false)
 			end
 			if util.is_valid(slideData.itemHandBone) == false then
 				return false
@@ -200,7 +209,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("editor_frame/window_actor_editor"))
 			slide:AddHighlight(slide:FindElementByPath(pfm.WINDOW_ACTOR_EDITOR_UI_ID))
-			slide:AddHighlight(get_target_uuid() .. "/" .. TUT_HAND_BONE .. "/header")
+			slide:AddHighlight(get_target_uuid(tutorialData) .. "/" .. TUT_HAND_BONE .. "/header")
 			slide:AddHighlight("context_menu")
 			slide:AddHighlight("context_menu/add_ik_control")
 			slide:AddHighlight("context_menu_add_ik_control/ik_control_chain_4", true)
@@ -208,7 +217,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			slide:AddGenericMessageBox({ TUT_HAND_IK_CHAIN_LENGTH })
 		end,
 		clearCondition = function(tutorialData, slideData, slide)
-			return util.is_valid(slide:FindElementByPath(get_target_uuid() .. "/ik_solver/header", false))
+			return util.is_valid(slide:FindElementByPath(get_target_uuid(tutorialData) .. "/ik_solver/header", false))
 		end,
 		nextSlide = "controls",
 		autoContinue = true,
@@ -218,13 +227,17 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
-			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid() .. "/header")
-			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid() .. "/ik_solver/header")
-			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid() .. "/ik_solver/control/header")
+			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid(tutorialData) .. "/header")
+			slide:AddHighlight(
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid(tutorialData) .. "/ik_solver/header"
+			)
+			slide:AddHighlight(
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid(tutorialData) .. "/ik_solver/control/header"
+			)
 			slide:AddHighlight(
 				pfm.WINDOW_ACTOR_EDITOR_UI_ID
 					.. "/"
-					.. get_target_uuid()
+					.. get_target_uuid(tutorialData)
 					.. "/ik_solver/control/"
 					.. TUT_HAND_BONE
 					.. "/header",
@@ -233,7 +246,7 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 			slide:AddGenericMessageBox()
 
 			--[[local targetInfo = slide:AddViewportTarget(TUT_IK_HAND_TARGET_LOCATION, function()
-				local ent = ents.find_by_uuid(get_target_uuid())
+				local ent = ents.find_by_uuid(get_target_uuid(tutorialData))
 				local ikSolverC = (ent ~= nil) and ent:GetComponent(ents.COMPONENT_IK_SOLVER) or nil
 				local idx = (ikSolverC ~= nil) and ikSolverC:GetMemberIndex("control/" .. TUT_HAND_BONE .. "/position")
 					or nil
@@ -253,13 +266,17 @@ gui.Tutorial.register_tutorial("inverse_kinematics", "tutorials/animating/invers
 		init = function(tutorialData, slideData, slide)
 			slide:GoToWindow("actor_editor")
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
-			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid() .. "/header")
-			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid() .. "/ik_solver/header")
-			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid() .. "/ik_solver/control/header")
+			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid(tutorialData) .. "/header")
+			slide:AddHighlight(
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid(tutorialData) .. "/ik_solver/header"
+			)
+			slide:AddHighlight(
+				pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/" .. get_target_uuid(tutorialData) .. "/ik_solver/control/header"
+			)
 			slide:AddHighlight(
 				pfm.WINDOW_ACTOR_EDITOR_UI_ID
 					.. "/"
-					.. get_target_uuid()
+					.. get_target_uuid(tutorialData)
 					.. "/ik_solver/control/"
 					.. TUT_HAND_BONE
 					.. "/header"
