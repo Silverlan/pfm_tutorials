@@ -3,6 +3,5 @@
 	$string name "vr_animating"
 	$string icon "gui/pfm/tutorials/tutorial_vr_animating"
 	$string series "animating"
-	$uint32 position_in_series 8
 	$string difficulty "intermediate"
 }

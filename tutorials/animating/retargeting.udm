@@ -3,6 +3,6 @@
 	$string name "retargeting"
 	$string icon "gui/pfm/tutorials/tutorial_retargeting"
 	$string series "animating"
-	$uint32 position_in_series 7
+	$uint32 position_in_series 8
 	$string difficulty "intermediate"
 }
