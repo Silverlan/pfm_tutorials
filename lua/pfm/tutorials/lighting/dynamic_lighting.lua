@@ -186,6 +186,17 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 			slide:AddHighlight(slide:FindElementByPath("contents"))
 			local lm = find_light_source_actor(pm)
 			if lm ~= nil then
+				local cmd = pfm.create_command(
+					"set_actor_property",
+					tostring(lm:GetUniqueId()),
+					"ec/light/baked",
+					nil,
+					false,
+					udm.TYPE_BOOLEAN
+				)
+				if cmd ~= nil then
+					cmd:Execute()
+				end
 				local actorEditor = pm:GetActorEditor()
 				local item = actorEditor:GetActorItem(lm)
 				if util.is_valid(item) then
