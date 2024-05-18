@@ -2,133 +2,145 @@
 {
 	"session"
 	{
+		$string activeClip "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 		$array clips [element;1][
 			{
+				$int32 activeBookmarkSet 0
+				$array bookmarkSets [element;0][]
+				$string camera ""
+				$float fadeIn 0
+				$float fadeOut 0
+				$string name "new_project"
 				"scene"
 				{
+					$array actors [element;0][]
 					$array groups [element;0][]
 					$string name ""
-					$string uniqueId "383d4edb-f5f5-4f27-81be-f79706911cd8"
 					$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-					$array actors [element;0][]
+					$string uniqueId "383d4edb-f5f5-4f27-81be-f79706911cd8"
 					$bool visible 1
 				}
-				$string name "new_project"
-				$string camera ""
-				$array bookmarkSets [element;0][]
+				"timeFrame"
+				{
+					$float duration 60
+					$float offset 0
+					$float scale 1
+					$float start 0
+				}
 				$array trackGroups [element;1][
 					{
 						$bool muted 0
 						$string name "subClipTrackGroup"
-						$bool visible 1
 						$array tracks [element;1][
 							{
 								$array animationClips [element;0][]
-								$bool muted 0
 								$array audioClips [element;0][]
 								$array filmClips [element;1][
 									{
+										$int32 activeBookmarkSet 0
+										$array bookmarkSets [element;0][]
+										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
+										$float fadeIn 0
+										$float fadeOut 0
+										$string name "shot1"
 										"scene"
 										{
+											$array actors [element;0][]
 											$array groups [element;6][
 												{
+													$array actors [element;0][]
 													$array groups [element;0][]
 													$string name "environment"
-													$string uniqueId "c203a4ae-3eff-4fca-9d61-bd2d5d0d3321"
 													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$array actors [element;0][]
+													$string uniqueId "c203a4ae-3eff-4fca-9d61-bd2d5d0d3321"
 													$bool visible 1
 												},
 												{
-													$array groups [element;0][]
-													$string name "cameras"
-													$string uniqueId "4b4f1f85-0789-478e-bc5b-bf91dba41106"
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$array actors [element;1][
 														{
 															$array components [element;3][
 																{
-																	$string type "pfm_actor"
 																	"properties"
 																	{
 																		$vec3 position [-44.5195,105.2144,77.3258]
 																		$quat rotation [0.2351,0.0372,0.9593,-0.1517]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 0
+																		$bool visible 1
 																	}
+																	$string type "pfm_actor"
 																	$string uniqueId "ed213285-4498-4ad5-a9d1-1a1ea027ac1f"
 																},
 																{
-																	$string type "pfm_camera"
 																	"properties"
 																	{
 
 																	}
+																	$string type "pfm_camera"
 																	$string uniqueId "2fc017da-127d-4f6e-ae54-3149a230c517"
 																},
 																{
-																	$string type "camera"
 																	"properties"
 																	{
 																		$float farz 32768
+																		$float focalDistance 72
 																		$float fov 90
 																		$float nearz 1
-																		$float focalDistance 72
 																	}
+																	$string type "camera"
 																	$string uniqueId "e6b3a51e-3175-4484-b291-45cd86d8b2c8"
 																}
 															]
-															$string uniqueId "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
 															$string name "scene_camera"
+															$string uniqueId "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
 														}
 													]
+													$array groups [element;0][]
+													$string name "cameras"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "4b4f1f85-0789-478e-bc5b-bf91dba41106"
 													$bool visible 1
 												},
 												{
-													$string name "misc"
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
 													$array actors [element;1][
 														{
-															$string name "tutorial_script"
-															$string uniqueId "301d206d-881f-4245-934b-c8fe78a68392"
 															$array components [element;2][
 																{
-																	$string type "pfm_actor"
-																	$string uniqueId "b5017504-cca8-4056-b90e-59ecb45d695f"
 																	"properties"
 																	{
 																		$vec3 position [5.451,33.9354,11.2042]
 																		$quat rotation [-0.52,0,0.8542,-0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 0
+																		$bool visible 1
 																	}
+																	$string type "pfm_actor"
+																	$string uniqueId "b5017504-cca8-4056-b90e-59ecb45d695f"
 																},
 																{
-																	$string type "lua_script"
-																	$string uniqueId "2eec4988-7af2-4671-b69a-b46678548f66"
 																	"properties"
 																	{
 																		$string code "time.create_simple_timer(0.1,function() gui.Tutorial.start_tutorial('static_lighting') end)"
-																		$string scriptFile "pfm/tutorials/lighting/static_lighting.lua"
 																		$bool executeOnSpawn 1
+																		$string scriptFile "pfm/tutorials/lighting/static_lighting.lua"
 																	}
+																	$string type "lua_script"
+																	$string uniqueId "2eec4988-7af2-4671-b69a-b46678548f66"
 																}
 															]
+															$string name "tutorial_script"
+															$string uniqueId "301d206d-881f-4245-934b-c8fe78a68392"
 														}
 													]
-													$bool visible 1
 													$array groups [element;0][]
+													$string name "misc"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
+													$bool visible 1
 												},
 												{
-													$bool visible 1
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$array actors [element;1][
 														{
-															$string name "generic_char"
-															$string uniqueId "0d2e3f21-5bbe-48d5-9dfe-15d240da4a74"
 															$array components [element;8][
 																{
 																	"properties"
@@ -136,127 +148,55 @@
 																		$vec3 position [85.1246,8.32,73.7605]
 																		$quat rotation [0.3953,0,-0.9186,0]
 																		$vec3 scale [1.75,1.75,1.75]
-																		$bool visible 1
 																		$bool static 0
+																		$bool visible 1
 																	}
-																	$string uniqueId "9cbbcdb9-2356-4092-a891-a0e2c2d30dd3"
 																	$string type "pfm_actor"
+																	$string uniqueId "9cbbcdb9-2356-4092-a891-a0e2c2d30dd3"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "471dca0e-0ed3-493f-b8ef-90ab4751504b"
 																	$string type "pfm_model"
+																	$string uniqueId "471dca0e-0ed3-493f-b8ef-90ab4751504b"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "pfm/demo/generic_char"
 																		"bodyGroup"
 																		{
 																			$uint32 Man 0
 																		}
+																		$string model "pfm/demo/generic_char"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "8bef1492-4e2b-428d-bd3f-808833cf0ab9"
 																	$string type "model"
+																	$string uniqueId "8bef1492-4e2b-428d-bd3f-808833cf0ab9"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "765688b1-feb7-424b-8de4-e41f022c2861"
 																	$string type "render"
+																	$string uniqueId "765688b1-feb7-424b-8de4-e41f022c2861"
 																},
 																{
 																	"properties"
 																	{
 																		"bone"
 																		{
-																			"R.lowerFoot"
-																			{
-																				$vec3 position [0,1.866,-0.0001]
-																				$quat rotation [0.8063,0.5916,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"lowerBody"
-																			{
-																				$vec3 position [0,30.277,0]
-																				$quat rotation [0.9998,0.0181,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"L.finger.002"
-																			{
-																				$vec3 position [0,0.7503,0.0001]
-																				$quat rotation [0.997,-0.0774,0,0]
-																				$vec3 scale [1,1,1]
-																			}
 																			"Chest"
 																			{
 																				$vec3 position [0,5.6238,-0.0003]
 																				$quat rotation [0.9909,-0.1341,0,-0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"R.finger.008"
-																			{
-																				$vec3 position [0,0.6421,-0]
-																				$quat rotation [0.9964,0.0859,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"L.lowerArm"
-																			{
-																				$vec3 position [0.0001,6.8408,-0.0006]
-																				$quat rotation [0.9995,-0.0328,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"L.hand"
-																			{
-																				$vec3 position [0.0009,7.223,-0.0001]
-																				$quat rotation [0.9985,-0.0172,0.0009,0.0509]
-																				$vec3 scale [1,1,1]
-																			}
-																			"UpperChest"
-																			{
-																				$vec3 position [0,3.5002,-0.0003]
-																				$quat rotation [1,0.0058,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"middleBody"
-																			{
-																				$vec3 position [0,5.7929,-0.0004]
-																				$quat rotation [0.9999,0.0206,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"L.shoulder"
-																			{
-																				$vec3 position [0,3.7266,0]
-																				$quat rotation [0.544,-0.4978,-0.4038,-0.5414]
-																				$vec3 scale [1,1,1]
-																			}
-																			"L.upperArm"
-																			{
-																				$vec3 position [0.0001,6.0533,0.0004]
-																				$quat rotation [0.96,-0.2767,0.0122,-0.0423]
-																				$vec3 scale [1,1,1]
-																			}
-																			"L.finger.010"
-																			{
-																				$vec3 position [0,0.6563,0]
-																				$quat rotation [0.7056,-0.0463,-0.7056,-0.0463]
-																				$vec3 scale [1,1,1]
-																			}
-																			"R.finger.001"
-																			{
-																				$vec3 position [-0,0.5924,0]
-																				$quat rotation [0.7003,0.0981,-0.7003,0.0981]
 																				$vec3 scale [1,1,1]
 																			}
 																			"L.finger"
@@ -271,10 +211,10 @@
 																				$quat rotation [0.7003,-0.0981,-0.7003,-0.0981]
 																				$vec3 scale [1,1,1]
 																			}
-																			"head"
+																			"L.finger.002"
 																			{
-																				$vec3 position [0,2.9788,0.0001]
-																				$quat rotation [0,0,0.9966,0.0814]
+																				$vec3 position [0,0.7503,0.0001]
+																				$quat rotation [0.997,-0.0774,0,0]
 																				$vec3 scale [1,1,1]
 																			}
 																			"L.finger.003"
@@ -287,12 +227,6 @@
 																			{
 																				$vec3 position [0.0001,0.8316,0]
 																				$quat rotation [0.706,-0.039,-0.706,-0.039]
-																				$vec3 scale [1,1,1]
-																			}
-																			"R.hand"
-																			{
-																				$vec3 position [-0.0009,7.223,0.0001]
-																				$quat rotation [0.9927,0.0225,-0.1068,0.0487]
 																				$vec3 scale [1,1,1]
 																			}
 																			"L.finger.005"
@@ -319,58 +253,16 @@
 																				$quat rotation [0.9964,-0.0859,0,0]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.finger.012"
-																			{
-																				$vec3 position [1.1741,1.3781,-0.4181]
-																				$quat rotation [0.8163,-0.0235,0.4692,-0.3362]
-																				$vec3 scale [1,1,1]
-																			}
-																			"R.finger.003"
-																			{
-																				$vec3 position [0.2693,2.6578,-0.0153]
-																				$quat rotation [0.6225,0.1866,0.7551,0.0866]
-																				$vec3 scale [1,1,1]
-																			}
-																			"L.finger.013"
-																			{
-																				$vec3 position [0,0.4504,0]
-																				$quat rotation [0.7815,0.0654,-0.6056,0.135]
-																				$vec3 scale [1,1,1]
-																			}
-																			"R.lowerArm"
-																			{
-																				$vec3 position [-0.0001,6.8408,0.0006]
-																				$quat rotation [0.9995,0.0328,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"R.finger.002"
-																			{
-																				$vec3 position [-0,0.7503,-0.0001]
-																				$quat rotation [0.997,0.0774,0,0]
-																				$vec3 scale [1,1,1]
-																			}
-																			"L.finger.014"
-																			{
-																				$vec3 position [0.0001,0.683,-0]
-																				$quat rotation [0.9926,0.0115,0.0617,0.1039]
-																				$vec3 scale [1,1,1]
-																			}
-																			"R.finger.005"
-																			{
-																				$vec3 position [0,0.7723,-0]
-																				$quat rotation [0.9998,0.0201,0,0]
-																				$vec3 scale [1,1,1]
-																			}
 																			"L.finger.009"
 																			{
 																				$vec3 position [-0.7978,2.4445,0.0098]
 																				$quat rotation [0.7,-0.0279,0.7066,-0.0997]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.upperLeg"
+																			"L.finger.010"
 																			{
-																				$vec3 position [2.8904,-0.7783,-0.2877]
-																				$quat rotation [0.0019,-0.7072,0.0253,0.7066]
+																				$vec3 position [0,0.6563,0]
+																				$quat rotation [0.7056,-0.0463,-0.7056,-0.0463]
 																				$vec3 scale [1,1,1]
 																			}
 																			"L.finger.011"
@@ -379,34 +271,70 @@
 																				$quat rotation [0.9882,-0.1539,0,0]
 																				$vec3 scale [1,1,1]
 																			}
-																			"neck"
+																			"L.finger.012"
 																			{
-																				$vec3 position [0,6.1738,0.1266]
-																				$quat rotation [0.9925,0.1219,0,0]
+																				$vec3 position [1.1741,1.3781,-0.4181]
+																				$quat rotation [0.8163,-0.0235,0.4692,-0.3362]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.finger.004"
+																			"L.finger.013"
 																			{
-																				$vec3 position [-0.0001,0.8316,0]
-																				$quat rotation [0.706,0.039,-0.706,0.039]
+																				$vec3 position [0,0.4504,0]
+																				$quat rotation [0.7815,0.0654,-0.6056,0.135]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.shoulder"
+																			"L.finger.014"
+																			{
+																				$vec3 position [0.0001,0.683,-0]
+																				$quat rotation [0.9926,0.0115,0.0617,0.1039]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.foot"
+																			{
+																				$vec3 position [-0.0002,13.7513,-0.0011]
+																				$quat rotation [0.7065,0.0223,-0.706,0.0451]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.hand"
+																			{
+																				$vec3 position [0.0009,7.223,-0.0001]
+																				$quat rotation [0.9985,-0.0172,0.0009,0.0509]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.lowerArm"
+																			{
+																				$vec3 position [0.0001,6.8408,-0.0006]
+																				$quat rotation [0.9995,-0.0328,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.lowerFoot"
+																			{
+																				$vec3 position [0,1.866,-0.0001]
+																				$quat rotation [0.8063,0.5916,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.lowerLeg"
+																			{
+																				$vec3 position [-0.0001,12.7209,0.0012]
+																				$quat rotation [1,-0.0031,-0,-0.0085]
+																				$vec3 scale [1,1,1]
+																			}
+																			"L.shoulder"
 																			{
 																				$vec3 position [0,3.7266,0]
-																				$quat rotation [0.0563,-0.7353,0.6752,-0.016]
+																				$quat rotation [0.544,-0.4978,-0.4038,-0.5414]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.finger.009"
+																			"L.upperArm"
 																			{
-																				$vec3 position [-0.7822,2.4449,0.159]
-																				$quat rotation [0.6283,0.102,0.7711,0.0172]
+																				$vec3 position [0.0001,6.0533,0.0004]
+																				$quat rotation [0.96,-0.2767,0.0122,-0.0423]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.upperArm"
+																			"L.upperLeg"
 																			{
-																				$vec3 position [-0.0007,6.0527,-0.0002]
-																				$quat rotation [0.7286,0.1797,0.6251,-0.2146]
+																				$vec3 position [2.8904,-0.7783,-0.2877]
+																				$quat rotation [0.0019,-0.7072,0.0253,0.7066]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger"
@@ -415,10 +343,34 @@
 																				$quat rotation [0.6281,0.1072,0.7704,0.0215]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.lowerFoot"
+																			"R.finger.001"
 																			{
-																				$vec3 position [0,1.866,-0.0001]
-																				$quat rotation [0.8063,0.5916,0,0]
+																				$vec3 position [-0,0.5924,0]
+																				$quat rotation [0.7003,0.0981,-0.7003,0.0981]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.002"
+																			{
+																				$vec3 position [-0,0.7503,-0.0001]
+																				$quat rotation [0.997,0.0774,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.003"
+																			{
+																				$vec3 position [0.2693,2.6578,-0.0153]
+																				$quat rotation [0.6225,0.1866,0.7551,0.0866]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.004"
+																			{
+																				$vec3 position [-0.0001,0.8316,0]
+																				$quat rotation [0.706,0.039,-0.706,0.039]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.005"
+																			{
+																				$vec3 position [0,0.7723,-0]
+																				$quat rotation [0.9998,0.0201,0,0]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger.006"
@@ -431,6 +383,18 @@
 																			{
 																				$vec3 position [-0.0001,0.747,0]
 																				$quat rotation [0.7038,0.0684,-0.7038,0.0684]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.008"
+																			{
+																				$vec3 position [0,0.6421,-0]
+																				$quat rotation [0.9964,0.0859,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.finger.009"
+																			{
+																				$vec3 position [-0.7822,2.4449,0.159]
+																				$quat rotation [0.6283,0.102,0.7711,0.0172]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.finger.010"
@@ -451,12 +415,6 @@
 																				$quat rotation [0.5906,0.3219,0.7333,-0.0994]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.foot"
-																			{
-																				$vec3 position [0,13.7513,0.0013]
-																				$quat rotation [0.7055,0.0451,-0.707,0.0223]
-																				$vec3 scale [1,1,1]
-																			}
 																			"R.finger.013"
 																			{
 																				$vec3 position [-0,0.4505,0]
@@ -469,22 +427,28 @@
 																				$quat rotation [0.9905,0.0101,-0.0888,0.1041]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.lowerLeg"
+																			"R.foot"
 																			{
-																				$vec3 position [-0.0001,12.7209,0.0012]
-																				$quat rotation [1,-0.0031,-0,-0.0085]
+																				$vec3 position [0,13.7513,0.0013]
+																				$quat rotation [0.7055,0.0451,-0.707,0.0223]
 																				$vec3 scale [1,1,1]
 																			}
-																			"L.foot"
+																			"R.hand"
 																			{
-																				$vec3 position [-0.0002,13.7513,-0.0011]
-																				$quat rotation [0.7065,0.0223,-0.706,0.0451]
+																				$vec3 position [-0.0009,7.223,0.0001]
+																				$quat rotation [0.9927,0.0225,-0.1068,0.0487]
 																				$vec3 scale [1,1,1]
 																			}
-																			"R.upperLeg"
+																			"R.lowerArm"
 																			{
-																				$vec3 position [-2.8904,-0.7783,-0.2877]
-																				$quat rotation [0.0253,0.7067,0.0019,-0.7071]
+																				$vec3 position [-0.0001,6.8408,0.0006]
+																				$quat rotation [0.9995,0.0328,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.lowerFoot"
+																			{
+																				$vec3 position [0,1.866,-0.0001]
+																				$quat rotation [0.8063,0.5916,0,0]
 																				$vec3 scale [1,1,1]
 																			}
 																			"R.lowerLeg"
@@ -493,2058 +457,2095 @@
 																				$quat rotation [1,0.0031,0.0006,-0.0085]
 																				$vec3 scale [1,1,1]
 																			}
+																			"R.shoulder"
+																			{
+																				$vec3 position [0,3.7266,0]
+																				$quat rotation [0.0563,-0.7353,0.6752,-0.016]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.upperArm"
+																			{
+																				$vec3 position [-0.0007,6.0527,-0.0002]
+																				$quat rotation [0.7286,0.1797,0.6251,-0.2146]
+																				$vec3 scale [1,1,1]
+																			}
+																			"R.upperLeg"
+																			{
+																				$vec3 position [-2.8904,-0.7783,-0.2877]
+																				$quat rotation [0.0253,0.7067,0.0019,-0.7071]
+																				$vec3 scale [1,1,1]
+																			}
+																			"UpperChest"
+																			{
+																				$vec3 position [0,3.5002,-0.0003]
+																				$quat rotation [1,0.0058,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"head"
+																			{
+																				$vec3 position [0,2.9788,0.0001]
+																				$quat rotation [0,0,0.9966,0.0814]
+																				$vec3 scale [1,1,1]
+																			}
+																			"lowerBody"
+																			{
+																				$vec3 position [0,30.277,0]
+																				$quat rotation [0.9998,0.0181,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"middleBody"
+																			{
+																				$vec3 position [0,5.7929,-0.0004]
+																				$quat rotation [0.9999,0.0206,0,0]
+																				$vec3 scale [1,1,1]
+																			}
+																			"neck"
+																			{
+																				$vec3 position [0,6.1738,0.1266]
+																				$quat rotation [0.9925,0.1219,0,0]
+																				$vec3 scale [1,1,1]
+																			}
 																		}
 																	}
-																	$string uniqueId "56da8591-029a-4a67-9555-33dd00d446e1"
 																	$string type "animated"
+																	$string uniqueId "56da8591-029a-4a67-9555-33dd00d446e1"
 																},
 																{
 																	"properties"
 																	{
-																		$vec3 viewTarget [0,0,0]
 																		$float blinkDuration 0.2
 																		$bool blinkingEnabled 1
 																		$float localViewTargetFactor 1
+																		$vec3 viewTarget [0,0,0]
 																	}
-																	$string uniqueId "463405b1-e231-4e52-be4a-44dff87d03fa"
 																	$string type "eye"
+																	$string uniqueId "463405b1-e231-4e52-be4a-44dff87d03fa"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "89b41e97-7e19-4814-8d22-4c7cba485284"
 																	$string type "flex"
+																	$string uniqueId "89b41e97-7e19-4814-8d22-4c7cba485284"
 																},
 																{
 																	"properties"
 																	{
+																		$float glowFactor 0
 																		$vec3 outlineColor [0,0,0]
 																		$float outlineWidth 0.0025
-																		$float glowFactor 0
 																		$bool scaleByDistance 0
 																	}
-																	$string uniqueId "68c7477b-8079-45bc-82aa-1a1c98ffbe2d"
 																	$string type "pfm_outline"
+																	$string uniqueId "68c7477b-8079-45bc-82aa-1a1c98ffbe2d"
 																}
 															]
+															$string name "generic_char"
+															$string uniqueId "0d2e3f21-5bbe-48d5-9dfe-15d240da4a74"
 														}
 													]
-													$string uniqueId "df88d629-423a-4241-84e9-df5fbbfa7762"
+													$array groups [element;0][]
 													$string name "actors"
-													$array groups [element;0][]
-												},
-												{
-													$bool visible 1
 													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$array actors [element;0][]
-													$string uniqueId "25af161c-8d5b-4c8e-9acd-26022b9062ee"
-													$string name "lighting"
-													$array groups [element;0][]
+													$string uniqueId "df88d629-423a-4241-84e9-df5fbbfa7762"
+													$bool visible 1
 												},
 												{
+													$array actors [element;0][]
+													$array groups [element;0][]
+													$string name "lighting"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "25af161c-8d5b-4c8e-9acd-26022b9062ee"
 													$bool visible 1
-													$string uniqueId "6bc7cd4d-e8ce-4168-acf3-2f0dd6db7dd2"
+												},
+												{
 													$array actors [element;32][
 														{
-															$string name "floor"
-															$string uniqueId "54e5a3fc-c390-446d-b7b1-8be84a574bfd"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [0,0,0]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [4,0.2,4]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "22afa422-54a0-4550-8c1c-3586489e3bdf"
 																	$string type "pfm_actor"
+																	$string uniqueId "22afa422-54a0-4550-8c1c-3586489e3bdf"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "4d4b86f4-5ae2-4904-bd49-645ab18c405b"
 																	$string type "pfm_model"
+																	$string uniqueId "4d4b86f4-5ae2-4904-bd49-645ab18c405b"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/floor"
 																		"bodyGroup"
 																		{
 																			$uint32 Floor 0
 																		}
+																		$string model "props/flat_bedroom/floor"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "897087f8-869d-4d8d-b752-e970bbfca5f4"
 																	$string type "model"
+																	$string uniqueId "897087f8-869d-4d8d-b752-e970bbfca5f4"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "19fcb333-6034-434f-a409-a7fce1790200"
 																	$string type "render"
+																	$string uniqueId "19fcb333-6034-434f-a409-a7fce1790200"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "00cf9c54-7c1e-41f8-9e1a-915befb2d59e"
 																	$string type "light_map_receiver"
+																	$string uniqueId "00cf9c54-7c1e-41f8-9e1a-915befb2d59e"
 																}
 															]
+															$string name "floor"
+															$string uniqueId "54e5a3fc-c390-446d-b7b1-8be84a574bfd"
 														},
 														{
-															$string name "bed_frame"
-															$string uniqueId "1823662f-88fb-45d6-acd7-dc149652e117"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-106.4059,8.1381,88.2262]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "f8aff286-e6d6-4805-8f21-b1fd73d80db2"
 																	$string type "pfm_actor"
+																	$string uniqueId "f8aff286-e6d6-4805-8f21-b1fd73d80db2"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "adbf378f-4ace-43bc-8b4a-fb8a9314bfd1"
 																	$string type "pfm_model"
+																	$string uniqueId "adbf378f-4ace-43bc-8b4a-fb8a9314bfd1"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/bed_frame"
 																		"bodyGroup"
 																		{
 																			$uint32 "Bed frame" 0
 																		}
+																		$string model "props/flat_bedroom/bed_frame"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "56b53ae5-184b-4516-9dc8-42d82492f995"
 																	$string type "model"
+																	$string uniqueId "56b53ae5-184b-4516-9dc8-42d82492f995"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "dd9ab8d2-d8a5-425c-a4d4-6f639140fee6"
 																	$string type "render"
+																	$string uniqueId "dd9ab8d2-d8a5-425c-a4d4-6f639140fee6"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "0b0d8556-7240-4a51-9b00-07454a00f766"
 																	$string type "light_map_receiver"
+																	$string uniqueId "0b0d8556-7240-4a51-9b00-07454a00f766"
 																}
 															]
+															$string name "bed_frame"
+															$string uniqueId "1823662f-88fb-45d6-acd7-dc149652e117"
 														},
 														{
-															$string name "bed"
-															$string uniqueId "e330d8e7-e67b-4de8-a131-2f14c66fef49"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-106.4059,34.9866,88.2262]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "e127c88b-8875-44e6-bfb1-52ba68e1cb3d"
 																	$string type "pfm_actor"
+																	$string uniqueId "e127c88b-8875-44e6-bfb1-52ba68e1cb3d"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "c0f815f0-626d-45bf-9a0b-66828c7bd823"
 																	$string type "pfm_model"
+																	$string uniqueId "c0f815f0-626d-45bf-9a0b-66828c7bd823"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/bed"
 																		"bodyGroup"
 																		{
 																			$uint32 Bed 0
 																		}
+																		$string model "props/flat_bedroom/bed"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "ebfd5b65-43bf-436a-a22f-0c3039a33845"
 																	$string type "model"
+																	$string uniqueId "ebfd5b65-43bf-436a-a22f-0c3039a33845"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "a04e27a9-b022-4dac-be2b-cf2803d3a57e"
 																	$string type "render"
+																	$string uniqueId "a04e27a9-b022-4dac-be2b-cf2803d3a57e"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "cb2788fb-4d20-4f18-bb30-006d8e474e61"
 																	$string type "light_map_receiver"
+																	$string uniqueId "cb2788fb-4d20-4f18-bb30-006d8e474e61"
 																}
 															]
+															$string name "bed"
+															$string uniqueId "e330d8e7-e67b-4de8-a131-2f14c66fef49"
 														},
 														{
-															$string name "pillow"
-															$string uniqueId "3875a566-7cc6-4ace-8f6b-1014f95d026c"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-106.4059,53.4855,143.9418]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "5ed65e15-af03-4e3e-aae0-ba58bc08d459"
 																	$string type "pfm_actor"
+																	$string uniqueId "5ed65e15-af03-4e3e-aae0-ba58bc08d459"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "9a0f896a-ac26-4621-b022-574328cf5a48"
 																	$string type "pfm_model"
+																	$string uniqueId "9a0f896a-ac26-4621-b022-574328cf5a48"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/pillow"
 																		"bodyGroup"
 																		{
 																			$uint32 Pillow 0
 																		}
+																		$string model "props/flat_bedroom/pillow"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "62c39b5c-7246-4b5b-b96e-6a2f56901dd5"
 																	$string type "model"
+																	$string uniqueId "62c39b5c-7246-4b5b-b96e-6a2f56901dd5"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "d9baef2e-ed81-41bd-befe-0bae773f6c93"
 																	$string type "render"
+																	$string uniqueId "d9baef2e-ed81-41bd-befe-0bae773f6c93"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "1a85f91f-285a-4b03-bb21-dcdea2eddafd"
 																	$string type "light_map_receiver"
+																	$string uniqueId "1a85f91f-285a-4b03-bb21-dcdea2eddafd"
 																}
 															]
+															$string name "pillow"
+															$string uniqueId "3875a566-7cc6-4ace-8f6b-1014f95d026c"
 														},
 														{
-															$string name "sofa"
-															$string uniqueId "fe40b835-0c96-4b9d-8924-4ad8eaa5e651"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-0.2875,8.1783,139.4311]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "40b8ae60-c23b-47ba-9450-e48d978c8d8e"
 																	$string type "pfm_actor"
+																	$string uniqueId "40b8ae60-c23b-47ba-9450-e48d978c8d8e"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "913c0030-f6ab-434d-b433-1cd549f68664"
 																	$string type "pfm_model"
+																	$string uniqueId "913c0030-f6ab-434d-b433-1cd549f68664"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/sofa"
 																		"bodyGroup"
 																		{
 																			$uint32 Sofa 0
 																		}
+																		$string model "props/flat_bedroom/sofa"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "34c94d92-88cf-437f-8f1c-29cc65e4b5d3"
 																	$string type "model"
+																	$string uniqueId "34c94d92-88cf-437f-8f1c-29cc65e4b5d3"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "87c28e0b-e542-4d5d-ac64-4605200234cb"
 																	$string type "render"
+																	$string uniqueId "87c28e0b-e542-4d5d-ac64-4605200234cb"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "54dbb6a8-7a12-44dd-8f3e-4f6e19383932"
 																	$string type "light_map_receiver"
+																	$string uniqueId "54dbb6a8-7a12-44dd-8f3e-4f6e19383932"
 																}
 															]
+															$string name "sofa"
+															$string uniqueId "fe40b835-0c96-4b9d-8924-4ad8eaa5e651"
 														},
 														{
-															$string name "pillow_001"
-															$string uniqueId "c9ac4682-f6c8-4886-9e27-8c5deeb4ab03"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [6.1342,49.5628,145.952]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "52582024-1891-4aff-ae2a-2c025935612d"
 																	$string type "pfm_actor"
+																	$string uniqueId "52582024-1891-4aff-ae2a-2c025935612d"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "d949841d-5170-4500-837b-26997654ed10"
 																	$string type "pfm_model"
+																	$string uniqueId "d949841d-5170-4500-837b-26997654ed10"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/pillow_001"
 																		"bodyGroup"
 																		{
 																			$uint32 Pillow.001 0
 																		}
+																		$string model "props/flat_bedroom/pillow_001"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "3b344b51-0c1a-4c34-8570-290374aafd3b"
 																	$string type "model"
+																	$string uniqueId "3b344b51-0c1a-4c34-8570-290374aafd3b"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "fdf1e7bd-7b1b-4e08-aac8-e9c3813e9a68"
 																	$string type "render"
+																	$string uniqueId "fdf1e7bd-7b1b-4e08-aac8-e9c3813e9a68"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "dbfb3402-72d4-4265-aee3-1a7dfdb37af2"
 																	$string type "light_map_receiver"
+																	$string uniqueId "dbfb3402-72d4-4265-aee3-1a7dfdb37af2"
 																}
 															]
+															$string name "pillow_001"
+															$string uniqueId "c9ac4682-f6c8-4886-9e27-8c5deeb4ab03"
 														},
 														{
-															$string name "pillow_002"
-															$string uniqueId "8dcaf096-6e16-42f0-990a-9c079b96f995"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [23.5921,51.4138,150.8332]
 																		$quat rotation [-0.5501,0.095,0.0141,0.8296]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "f4370ed9-ad4e-4d70-9e29-893eafc2cc44"
 																	$string type "pfm_actor"
+																	$string uniqueId "f4370ed9-ad4e-4d70-9e29-893eafc2cc44"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "5424b591-7f9e-42c5-bcb0-85d732a6efb1"
 																	$string type "pfm_model"
+																	$string uniqueId "5424b591-7f9e-42c5-bcb0-85d732a6efb1"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/pillow_002"
 																		"bodyGroup"
 																		{
 																			$uint32 Pillow.002 0
 																		}
+																		$string model "props/flat_bedroom/pillow_002"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "667c65fb-31bc-4130-aee6-66d04c720572"
 																	$string type "model"
+																	$string uniqueId "667c65fb-31bc-4130-aee6-66d04c720572"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "f47013dc-7068-4bc9-b127-9b5a7b9131f5"
 																	$string type "render"
+																	$string uniqueId "f47013dc-7068-4bc9-b127-9b5a7b9131f5"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "eebcd6c3-ccfc-4cd1-8b44-ba717484026c"
 																	$string type "light_map_receiver"
+																	$string uniqueId "eebcd6c3-ccfc-4cd1-8b44-ba717484026c"
 																}
 															]
+															$string name "pillow_002"
+															$string uniqueId "8dcaf096-6e16-42f0-990a-9c079b96f995"
 														},
 														{
-															$string name "bookshelf"
-															$string uniqueId "57000715-d7c5-4fb4-85d5-561748f6e5fa"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [105.1969,8.1776,146.2995]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "c3359f57-abd5-4e57-b5e1-5aee676bc565"
 																	$string type "pfm_actor"
+																	$string uniqueId "c3359f57-abd5-4e57-b5e1-5aee676bc565"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "d26c00e1-8116-4545-be2b-c6f9c2797da8"
 																	$string type "pfm_model"
+																	$string uniqueId "d26c00e1-8116-4545-be2b-c6f9c2797da8"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/bookshelf"
 																		"bodyGroup"
 																		{
 																			$uint32 Bookshelf 0
 																		}
+																		$string model "props/flat_bedroom/bookshelf"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "1e11194f-a810-46ea-99d3-e52c32572a29"
 																	$string type "model"
+																	$string uniqueId "1e11194f-a810-46ea-99d3-e52c32572a29"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "626aebd6-bc2b-4dde-8821-39716c643d34"
 																	$string type "render"
+																	$string uniqueId "626aebd6-bc2b-4dde-8821-39716c643d34"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "3bfcfb24-786c-41e3-836a-79271c0da41c"
 																	$string type "light_map_receiver"
+																	$string uniqueId "3bfcfb24-786c-41e3-836a-79271c0da41c"
 																}
 															]
+															$string name "bookshelf"
+															$string uniqueId "57000715-d7c5-4fb4-85d5-561748f6e5fa"
 														},
 														{
-															$string name "table"
-															$string uniqueId "8edaed01-672b-4ce6-8fd4-08ea1b931df5"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-129.1969,7.9306,-61.6421]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "35cffac7-4b54-43dd-82c6-2e29b2398662"
 																	$string type "pfm_actor"
+																	$string uniqueId "35cffac7-4b54-43dd-82c6-2e29b2398662"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "75293205-dbeb-48e8-99d8-e75029574530"
 																	$string type "pfm_model"
+																	$string uniqueId "75293205-dbeb-48e8-99d8-e75029574530"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/table"
 																		"bodyGroup"
 																		{
 																			$uint32 Table 0
 																		}
+																		$string model "props/flat_bedroom/table"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "b914e78d-8eda-4bf2-b5d8-4fd3c08decee"
 																	$string type "model"
+																	$string uniqueId "b914e78d-8eda-4bf2-b5d8-4fd3c08decee"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "6d1dfeb7-5c6c-4bf2-9afd-381a063aa4a6"
 																	$string type "render"
+																	$string uniqueId "6d1dfeb7-5c6c-4bf2-9afd-381a063aa4a6"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "31e60b0e-861a-4094-9b39-1a14dded004b"
 																	$string type "light_map_receiver"
+																	$string uniqueId "31e60b0e-861a-4094-9b39-1a14dded004b"
 																}
 															]
+															$string name "table"
+															$string uniqueId "8edaed01-672b-4ce6-8fd4-08ea1b931df5"
 														},
 														{
-															$string name "book_002"
-															$string uniqueId "848b7941-65f4-42d3-93ca-05156571580a"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [135.1291,75.207,146.9861]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "afbb3353-3f4b-4700-a8d9-46083ecc7ae6"
 																	$string type "pfm_actor"
+																	$string uniqueId "afbb3353-3f4b-4700-a8d9-46083ecc7ae6"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "ca3451ac-06c6-402d-944b-852b343e75b4"
 																	$string type "pfm_model"
+																	$string uniqueId "ca3451ac-06c6-402d-944b-852b343e75b4"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/book_002"
 																		"bodyGroup"
 																		{
 																			$uint32 Book.002 0
 																		}
+																		$string model "props/flat_bedroom/book_002"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "22f858a8-9cdd-44d9-afb1-a27c607f04c2"
 																	$string type "model"
+																	$string uniqueId "22f858a8-9cdd-44d9-afb1-a27c607f04c2"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "b781a23b-2cb6-4ce3-b3ec-cb3b25799e64"
 																	$string type "render"
+																	$string uniqueId "b781a23b-2cb6-4ce3-b3ec-cb3b25799e64"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "96748b88-67d6-4559-b882-4f3aaac672ce"
 																	$string type "light_map_receiver"
+																	$string uniqueId "96748b88-67d6-4559-b882-4f3aaac672ce"
 																}
 															]
+															$string name "book_002"
+															$string uniqueId "848b7941-65f4-42d3-93ca-05156571580a"
 														},
 														{
-															$string name "book_001"
-															$string uniqueId "99cdf11a-c4a1-4ab4-8e08-ba49002f6952"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [103.4855,104.4697,147.2646]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "d2e50b90-3c7c-46a4-ab0f-a00113d2c296"
 																	$string type "pfm_actor"
+																	$string uniqueId "d2e50b90-3c7c-46a4-ab0f-a00113d2c296"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "3676f1ed-b8c3-454f-bba7-37ed0ad062f7"
 																	$string type "pfm_model"
+																	$string uniqueId "3676f1ed-b8c3-454f-bba7-37ed0ad062f7"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/book_001"
 																		"bodyGroup"
 																		{
 																			$uint32 Book.001 0
 																		}
+																		$string model "props/flat_bedroom/book_001"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "0dc795eb-4439-449e-b3c9-8f1f16da51bc"
 																	$string type "model"
+																	$string uniqueId "0dc795eb-4439-449e-b3c9-8f1f16da51bc"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "2e37c89b-561a-4e87-a670-508d48dd23bb"
 																	$string type "render"
+																	$string uniqueId "2e37c89b-561a-4e87-a670-508d48dd23bb"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "231750e8-a3c2-47cb-9ea7-9dfad1c9c994"
 																	$string type "light_map_receiver"
+																	$string uniqueId "231750e8-a3c2-47cb-9ea7-9dfad1c9c994"
 																}
 															]
+															$string name "book_001"
+															$string uniqueId "99cdf11a-c4a1-4ab4-8e08-ba49002f6952"
 														},
 														{
-															$string name "coffe_table"
-															$string uniqueId "10582296-0172-49a2-99d1-ba188937d678"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [47.8824,22.156,-35.2233]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "5aef65ac-004f-4531-9e5b-2297ce2f10ff"
 																	$string type "pfm_actor"
+																	$string uniqueId "5aef65ac-004f-4531-9e5b-2297ce2f10ff"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "e74fab6f-8839-414d-9df4-c02e3a6da7ee"
 																	$string type "pfm_model"
+																	$string uniqueId "e74fab6f-8839-414d-9df4-c02e3a6da7ee"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/coffe_table"
 																		"bodyGroup"
 																		{
 																			$uint32 "Coffe table" 0
 																		}
+																		$string model "props/flat_bedroom/coffe_table"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "b0ea8dc8-d8ad-4496-8e1b-0b5510a260f9"
 																	$string type "model"
+																	$string uniqueId "b0ea8dc8-d8ad-4496-8e1b-0b5510a260f9"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "d6faa445-806e-4b78-ae61-7dc5babeef24"
 																	$string type "render"
+																	$string uniqueId "d6faa445-806e-4b78-ae61-7dc5babeef24"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "ecf27490-7320-4a0e-9d5b-20264f491617"
 																	$string type "light_map_receiver"
+																	$string uniqueId "ecf27490-7320-4a0e-9d5b-20264f491617"
 																}
 															]
+															$string name "coffe_table"
+															$string uniqueId "10582296-0172-49a2-99d1-ba188937d678"
 														},
 														{
-															$string name "carpet"
-															$string uniqueId "dee51d29-39ad-42b9-9166-2ae287fd5562"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [47.4401,8.3237,-34.823]
 																		$quat rotation [0,0.2253,-0,0.9743]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "c3c0d6f0-39fc-4208-83de-c30364bb83a5"
 																	$string type "pfm_actor"
+																	$string uniqueId "c3c0d6f0-39fc-4208-83de-c30364bb83a5"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "a0e5bbe6-dd42-4cd0-b0d8-d805225b3747"
 																	$string type "pfm_model"
+																	$string uniqueId "a0e5bbe6-dd42-4cd0-b0d8-d805225b3747"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/carpet"
 																		"bodyGroup"
 																		{
 																			$uint32 Carpet 0
 																		}
+																		$string model "props/flat_bedroom/carpet"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "3ba828eb-201f-4b9c-993e-01d13dfdbb25"
 																	$string type "model"
+																	$string uniqueId "3ba828eb-201f-4b9c-993e-01d13dfdbb25"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "6a7f3708-65ae-42bf-8df5-e6edd6d1b000"
 																	$string type "render"
+																	$string uniqueId "6a7f3708-65ae-42bf-8df5-e6edd6d1b000"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "b5eba8aa-d3fe-4760-97f4-eb9363d9ab73"
 																	$string type "light_map_receiver"
+																	$string uniqueId "b5eba8aa-d3fe-4760-97f4-eb9363d9ab73"
 																}
 															]
+															$string name "carpet"
+															$string uniqueId "dee51d29-39ad-42b9-9166-2ae287fd5562"
 														},
 														{
-															$string name "cushion"
-															$string uniqueId "716dde53-bfec-418b-8301-b899056ebd3e"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [110.894,11.264,-33.9365]
 																		$quat rotation [0,0.1734,-0,0.9848]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "bb8630de-2e12-4f28-85cf-2e457376e6a1"
 																	$string type "pfm_actor"
+																	$string uniqueId "bb8630de-2e12-4f28-85cf-2e457376e6a1"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "681abd4a-eefa-4081-836b-8d0766b8ee60"
 																	$string type "pfm_model"
+																	$string uniqueId "681abd4a-eefa-4081-836b-8d0766b8ee60"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/cushion"
 																		"bodyGroup"
 																		{
 																			$uint32 Cushion 0
 																		}
+																		$string model "props/flat_bedroom/cushion"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "71825e41-6c1e-47dc-8cf9-87d6cd0d7e81"
 																	$string type "model"
+																	$string uniqueId "71825e41-6c1e-47dc-8cf9-87d6cd0d7e81"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "223fd22f-343b-4e31-b54a-86158d2bf9ca"
 																	$string type "render"
+																	$string uniqueId "223fd22f-343b-4e31-b54a-86158d2bf9ca"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "18f32e83-336e-43a9-bf32-233df25f3328"
 																	$string type "light_map_receiver"
+																	$string uniqueId "18f32e83-336e-43a9-bf32-233df25f3328"
 																}
 															]
+															$string name "cushion"
+															$string uniqueId "716dde53-bfec-418b-8301-b899056ebd3e"
 														},
 														{
-															$string name "book_003"
-															$string uniqueId "542eecab-4d2c-4232-9596-3c122e62432b"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [135.7596,50.8485,146.8722]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "d4c699f7-e905-4753-83a7-a3d97dae6c83"
 																	$string type "pfm_actor"
+																	$string uniqueId "d4c699f7-e905-4753-83a7-a3d97dae6c83"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "30b401c7-4600-4b4a-beee-a06763e04a85"
 																	$string type "pfm_model"
+																	$string uniqueId "30b401c7-4600-4b4a-beee-a06763e04a85"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/book_003"
 																		"bodyGroup"
 																		{
 																			$uint32 Book.003 0
 																		}
+																		$string model "props/flat_bedroom/book_003"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "3a3967e6-2f89-45f3-b0fe-4a1295905715"
 																	$string type "model"
+																	$string uniqueId "3a3967e6-2f89-45f3-b0fe-4a1295905715"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "fcc70b71-6196-42ac-a710-07edf657602c"
 																	$string type "render"
+																	$string uniqueId "fcc70b71-6196-42ac-a710-07edf657602c"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "6b82b422-3dfc-41eb-9043-cf2199b4964e"
 																	$string type "light_map_receiver"
+																	$string uniqueId "6b82b422-3dfc-41eb-9043-cf2199b4964e"
 																}
 															]
+															$string name "book_003"
+															$string uniqueId "542eecab-4d2c-4232-9596-3c122e62432b"
 														},
 														{
-															$string name "cushion_001"
-															$string uniqueId "46f446d5-a868-4a89-981d-942566cc0d2e"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [56.6312,11.264,-95.6467]
 																		$quat rotation [0,0.764,-0,0.6453]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "c80cc4a2-a35f-4d71-9b8b-3f1258c25d61"
 																	$string type "pfm_actor"
+																	$string uniqueId "c80cc4a2-a35f-4d71-9b8b-3f1258c25d61"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "95a04f3e-5139-42f9-af8b-65f025132a1b"
 																	$string type "pfm_model"
+																	$string uniqueId "95a04f3e-5139-42f9-af8b-65f025132a1b"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/cushion_001"
 																		"bodyGroup"
 																		{
 																			$uint32 Cushion.001 0
 																		}
+																		$string model "props/flat_bedroom/cushion_001"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "33e30bf0-aa37-4359-bc19-864c6b5f813a"
 																	$string type "model"
+																	$string uniqueId "33e30bf0-aa37-4359-bc19-864c6b5f813a"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "869bb164-ad1e-478e-91e5-20114117baa7"
 																	$string type "render"
+																	$string uniqueId "869bb164-ad1e-478e-91e5-20114117baa7"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "3452fa78-c78a-426a-b785-000db7e2664b"
 																	$string type "light_map_receiver"
+																	$string uniqueId "3452fa78-c78a-426a-b785-000db7e2664b"
 																}
 															]
+															$string name "cushion_001"
+															$string uniqueId "46f446d5-a868-4a89-981d-942566cc0d2e"
 														},
 														{
-															$string name "trash_bin"
-															$string uniqueId "9a37c9d9-868b-4bec-9bd2-d38f76e59e49"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-142.7328,6.9433,-132.5347]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "5cf1298d-c811-4df3-af9c-f711bc1a74d2"
 																	$string type "pfm_actor"
+																	$string uniqueId "5cf1298d-c811-4df3-af9c-f711bc1a74d2"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "40ebcded-3cba-4e0d-9d47-6f1f6986065a"
 																	$string type "pfm_model"
+																	$string uniqueId "40ebcded-3cba-4e0d-9d47-6f1f6986065a"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/trash_bin"
 																		"bodyGroup"
 																		{
 																			$uint32 "Trash bin" 0
 																		}
+																		$string model "props/flat_bedroom/trash_bin"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "8e60dcfd-c563-4309-a8cc-7ee4ac4edab2"
 																	$string type "model"
+																	$string uniqueId "8e60dcfd-c563-4309-a8cc-7ee4ac4edab2"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "7af8caf2-4243-485a-bf34-bb99744f21c4"
 																	$string type "render"
+																	$string uniqueId "7af8caf2-4243-485a-bf34-bb99744f21c4"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "e6dc74db-9196-4185-af4c-a6f6dcbb0576"
 																	$string type "light_map_receiver"
+																	$string uniqueId "e6dc74db-9196-4185-af4c-a6f6dcbb0576"
 																}
 															]
+															$string name "trash_bin"
+															$string uniqueId "9a37c9d9-868b-4bec-9bd2-d38f76e59e49"
 														},
 														{
-															$string name "book"
-															$string uniqueId "090a56a1-ce61-40a9-afa5-0fc6a43abb5d"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [99.8374,75.0766,146.8722]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "c59d9102-8b77-40c0-8269-e9fdfda6dde3"
 																	$string type "pfm_actor"
+																	$string uniqueId "c59d9102-8b77-40c0-8269-e9fdfda6dde3"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "c3566f9b-316b-4fec-b23e-2f985c072202"
 																	$string type "pfm_model"
+																	$string uniqueId "c3566f9b-316b-4fec-b23e-2f985c072202"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/book"
 																		"bodyGroup"
 																		{
 																			$uint32 Book 0
 																		}
+																		$string model "props/flat_bedroom/book"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "c598a4df-8fbb-46fc-aed6-ae9c9a717766"
 																	$string type "model"
+																	$string uniqueId "c598a4df-8fbb-46fc-aed6-ae9c9a717766"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "4880dff2-9f30-4852-8208-b58877288edb"
 																	$string type "render"
+																	$string uniqueId "4880dff2-9f30-4852-8208-b58877288edb"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "3fa73fca-a79c-4cb6-be27-5a228e2ed87d"
 																	$string type "light_map_receiver"
+																	$string uniqueId "3fa73fca-a79c-4cb6-be27-5a228e2ed87d"
 																}
 															]
+															$string name "book"
+															$string uniqueId "090a56a1-ce61-40a9-afa5-0fc6a43abb5d"
 														},
 														{
-															$string name "chair"
-															$string uniqueId "6f39fde5-96f3-4014-a377-655e7e636173"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-69.5129,42.2934,-50.1588]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "6929ac64-04f6-46ee-af6f-a3b037a96368"
 																	$string type "pfm_actor"
+																	$string uniqueId "6929ac64-04f6-46ee-af6f-a3b037a96368"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "89ffa4cf-ef38-475e-ba86-7020f0d71787"
 																	$string type "pfm_model"
+																	$string uniqueId "89ffa4cf-ef38-475e-ba86-7020f0d71787"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/chair"
 																		"bodyGroup"
 																		{
 																			$uint32 Chair 0
 																		}
+																		$string model "props/flat_bedroom/chair"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "91c13912-8a2c-4eb4-8fd3-0a35e309072a"
 																	$string type "model"
+																	$string uniqueId "91c13912-8a2c-4eb4-8fd3-0a35e309072a"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "f5d31ad2-550f-4680-a7e1-4aaf4b56960f"
 																	$string type "render"
+																	$string uniqueId "f5d31ad2-550f-4680-a7e1-4aaf4b56960f"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "b44221c7-c2eb-4286-9ffe-939fa9f642ec"
 																	$string type "light_map_receiver"
+																	$string uniqueId "b44221c7-c2eb-4286-9ffe-939fa9f642ec"
 																}
 															]
+															$string name "chair"
+															$string uniqueId "6f39fde5-96f3-4014-a377-655e7e636173"
 														},
 														{
-															$string name "mug"
-															$string uniqueId "f58552a6-2aba-49ce-89a6-f839e23d74b2"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [67.4648,26.6932,-32.121]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "06534ef2-87a9-4100-9a58-350103af521f"
 																	$string type "pfm_actor"
+																	$string uniqueId "06534ef2-87a9-4100-9a58-350103af521f"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "1136ccf7-8c45-471a-93ac-7ef8a5230067"
 																	$string type "pfm_model"
+																	$string uniqueId "1136ccf7-8c45-471a-93ac-7ef8a5230067"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/mug"
 																		"bodyGroup"
 																		{
 																			$uint32 Mug 0
 																		}
+																		$string model "props/flat_bedroom/mug"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "61ef1e7b-5136-45bf-82a2-38d33c3ef820"
 																	$string type "model"
+																	$string uniqueId "61ef1e7b-5136-45bf-82a2-38d33c3ef820"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "cfa82f70-f2e8-4693-b809-b1de2f422456"
 																	$string type "render"
+																	$string uniqueId "cfa82f70-f2e8-4693-b809-b1de2f422456"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "6e25defd-b5c5-4c00-aab3-dd0beb40f847"
 																	$string type "light_map_receiver"
+																	$string uniqueId "6e25defd-b5c5-4c00-aab3-dd0beb40f847"
 																}
 															]
+															$string name "mug"
+															$string uniqueId "f58552a6-2aba-49ce-89a6-f839e23d74b2"
 														},
 														{
-															$string name "mug_001"
-															$string uniqueId "2bb5eeae-5769-4815-bf1f-4742dfdcb533"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [52.2377,27.344,-58.1678]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "30f0883f-4e64-4d94-8698-03a722d6580f"
 																	$string type "pfm_actor"
+																	$string uniqueId "30f0883f-4e64-4d94-8698-03a722d6580f"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "32c3b5af-90d7-4ab3-9b9a-ad46737c3cdd"
 																	$string type "pfm_model"
+																	$string uniqueId "32c3b5af-90d7-4ab3-9b9a-ad46737c3cdd"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/mug_001"
 																		"bodyGroup"
 																		{
 																			$uint32 Mug.001 0
 																		}
+																		$string model "props/flat_bedroom/mug_001"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "02e449d4-6c0a-450d-9d88-c0788cc6314c"
 																	$string type "model"
+																	$string uniqueId "02e449d4-6c0a-450d-9d88-c0788cc6314c"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "afdf8c4a-6638-4eba-bf29-8201b5e7c3f9"
 																	$string type "render"
+																	$string uniqueId "afdf8c4a-6638-4eba-bf29-8201b5e7c3f9"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "d0c35e30-5ae0-4327-a33e-c08a61658303"
 																	$string type "light_map_receiver"
+																	$string uniqueId "d0c35e30-5ae0-4327-a33e-c08a61658303"
 																}
 															]
+															$string name "mug_001"
+															$string uniqueId "2bb5eeae-5769-4815-bf1f-4742dfdcb533"
 														},
 														{
-															$string name "photo_frame"
-															$string uniqueId "90656797-3609-4507-bfd4-ee70e63da98d"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [102.73,59.6279,145.8552]
 																		$quat rotation [0,0.1571,-0,0.9876]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "8bd6d0ac-3978-4cfc-84e8-ec81ee9bb762"
 																	$string type "pfm_actor"
+																	$string uniqueId "8bd6d0ac-3978-4cfc-84e8-ec81ee9bb762"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "eed7c699-cc4e-4a32-b79f-3ec149659af2"
 																	$string type "pfm_model"
+																	$string uniqueId "eed7c699-cc4e-4a32-b79f-3ec149659af2"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/photo_frame"
 																		"bodyGroup"
 																		{
 																			$uint32 "Photo frame" 0
 																		}
+																		$string model "props/flat_bedroom/photo_frame"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "44f4da58-c264-431c-8f74-e27ba18bac3b"
 																	$string type "model"
+																	$string uniqueId "44f4da58-c264-431c-8f74-e27ba18bac3b"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "7296621c-60e2-47bd-bd42-8f31156939d7"
 																	$string type "render"
+																	$string uniqueId "7296621c-60e2-47bd-bd42-8f31156939d7"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "0731563b-34c7-4155-bbab-b172e48cb9a8"
 																	$string type "light_map_receiver"
+																	$string uniqueId "0731563b-34c7-4155-bbab-b172e48cb9a8"
 																}
 															]
+															$string name "photo_frame"
+															$string uniqueId "90656797-3609-4507-bfd4-ee70e63da98d"
 														},
 														{
-															$string name "photo_frame_001"
-															$string uniqueId "8ba8f24c-c461-4d29-9bd6-43c851767e95"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [76.4431,59.6279,145.8552]
 																		$quat rotation [-0,-0.1761,-0,0.9844]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "a3f0a872-8702-4ed0-af72-bfe52953e78f"
 																	$string type "pfm_actor"
+																	$string uniqueId "a3f0a872-8702-4ed0-af72-bfe52953e78f"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "ca72e72b-9fac-419e-9eaa-d3f198aeeacc"
 																	$string type "pfm_model"
+																	$string uniqueId "ca72e72b-9fac-419e-9eaa-d3f198aeeacc"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/photo_frame_001"
 																		"bodyGroup"
 																		{
 																			$uint32 "Photo frame.001" 0
 																		}
+																		$string model "props/flat_bedroom/photo_frame_001"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "43cd349d-8e37-433f-813b-f82f01755aac"
 																	$string type "model"
+																	$string uniqueId "43cd349d-8e37-433f-813b-f82f01755aac"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "b6ecf9b6-5106-4877-8a19-3b562ba8f74a"
 																	$string type "render"
+																	$string uniqueId "b6ecf9b6-5106-4877-8a19-3b562ba8f74a"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "bb804a0e-f908-4afc-90c4-f2534c638686"
 																	$string type "light_map_receiver"
+																	$string uniqueId "bb804a0e-f908-4afc-90c4-f2534c638686"
 																}
 															]
+															$string name "photo_frame_001"
+															$string uniqueId "8ba8f24c-c461-4d29-9bd6-43c851767e95"
 														},
 														{
-															$string name "pc"
-															$string uniqueId "d2870b9a-4fc5-409c-8b40-6f0f18320c91"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-146.1456,57.7586,-42.25]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "f300ba90-372e-42fb-867d-81b83058e46b"
 																	$string type "pfm_actor"
+																	$string uniqueId "f300ba90-372e-42fb-867d-81b83058e46b"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "2afdd3ed-3764-442f-87cc-9232452279f9"
 																	$string type "pfm_model"
+																	$string uniqueId "2afdd3ed-3764-442f-87cc-9232452279f9"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/pc"
 																		"bodyGroup"
 																		{
 																			$uint32 PC 0
 																		}
+																		$string model "props/flat_bedroom/pc"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "87439de7-5ceb-43ba-a506-74bdd37f64a6"
 																	$string type "model"
+																	$string uniqueId "87439de7-5ceb-43ba-a506-74bdd37f64a6"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "68914694-b0e0-4240-8f52-c5968c2e1337"
 																	$string type "render"
+																	$string uniqueId "68914694-b0e0-4240-8f52-c5968c2e1337"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "922e6068-9cc9-4efd-9347-fe4c720bed05"
 																	$string type "light_map_receiver"
+																	$string uniqueId "922e6068-9cc9-4efd-9347-fe4c720bed05"
 																}
 															]
+															$string name "pc"
+															$string uniqueId "d2870b9a-4fc5-409c-8b40-6f0f18320c91"
 														},
 														{
-															$string name "keyboard"
-															$string uniqueId "34680232-3297-4e37-84ed-721ff019fe2b"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-118.104,57.6306,-44.216]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "092563b8-fc28-4df0-9bda-d73b0283159d"
 																	$string type "pfm_actor"
+																	$string uniqueId "092563b8-fc28-4df0-9bda-d73b0283159d"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "3d7f60e0-8647-44c0-81f6-a9bb9f09d563"
 																	$string type "pfm_model"
+																	$string uniqueId "3d7f60e0-8647-44c0-81f6-a9bb9f09d563"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/keyboard"
 																		"bodyGroup"
 																		{
 																			$uint32 Keyboard 0
 																		}
+																		$string model "props/flat_bedroom/keyboard"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "66867ad1-fc5a-4735-aaf1-41cb02f223d2"
 																	$string type "model"
+																	$string uniqueId "66867ad1-fc5a-4735-aaf1-41cb02f223d2"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "72de9f8a-f88e-4142-919b-1a89af6891ef"
 																	$string type "render"
+																	$string uniqueId "72de9f8a-f88e-4142-919b-1a89af6891ef"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "e0d83085-083f-4b94-9394-f0f776097d92"
 																	$string type "light_map_receiver"
+																	$string uniqueId "e0d83085-083f-4b94-9394-f0f776097d92"
 																}
 															]
+															$string name "keyboard"
+															$string uniqueId "34680232-3297-4e37-84ed-721ff019fe2b"
 														},
 														{
-															$string name "plant"
-															$string uniqueId "ec7e767f-3834-4da8-8dd3-b16d1ac27a2d"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-146.372,57.7977,-97.6879]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "ab370c0b-4c95-4048-8244-fff9d3d83237"
 																	$string type "pfm_actor"
+																	$string uniqueId "ab370c0b-4c95-4048-8244-fff9d3d83237"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "5e65e5dc-70dc-4c10-b11a-a63f3e632fa8"
 																	$string type "pfm_model"
+																	$string uniqueId "5e65e5dc-70dc-4c10-b11a-a63f3e632fa8"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/plant"
 																		"bodyGroup"
 																		{
 																			$uint32 Plant 0
 																		}
+																		$string model "props/flat_bedroom/plant"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "e7a31b88-5142-4d77-bb3f-67d562242c21"
 																	$string type "model"
+																	$string uniqueId "e7a31b88-5142-4d77-bb3f-67d562242c21"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "ab9a1a26-a373-4cf6-ba4f-7ee3ecc4b33d"
 																	$string type "render"
+																	$string uniqueId "ab9a1a26-a373-4cf6-ba4f-7ee3ecc4b33d"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "5dcdfcfb-f295-4b13-bcba-8ad1eeae8b28"
 																	$string type "light_map_receiver"
+																	$string uniqueId "5dcdfcfb-f295-4b13-bcba-8ad1eeae8b28"
 																}
 															]
+															$string name "plant"
+															$string uniqueId "ec7e767f-3834-4da8-8dd3-b16d1ac27a2d"
 														},
 														{
-															$string name "wall"
-															$string uniqueId "e47e56ef-6f8e-4877-bc1c-781a315bf2dc"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [0,0,0]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "a2a111f4-4b24-4aad-a313-1a8a5be89231"
 																	$string type "pfm_actor"
+																	$string uniqueId "a2a111f4-4b24-4aad-a313-1a8a5be89231"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "46bda7d9-f5ac-4647-a7c6-5a123132d050"
 																	$string type "pfm_model"
+																	$string uniqueId "46bda7d9-f5ac-4647-a7c6-5a123132d050"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/wall"
 																		"bodyGroup"
 																		{
 																			$uint32 Wall 0
 																		}
+																		$string model "props/flat_bedroom/wall"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "90454622-30ba-4768-96a2-b62185a2f39b"
 																	$string type "model"
+																	$string uniqueId "90454622-30ba-4768-96a2-b62185a2f39b"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "b48f5983-041b-410f-b303-22026771999f"
 																	$string type "render"
+																	$string uniqueId "b48f5983-041b-410f-b303-22026771999f"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "1176ef22-c78d-4269-b464-3efa25a2e2f1"
 																	$string type "light_map_receiver"
+																	$string uniqueId "1176ef22-c78d-4269-b464-3efa25a2e2f1"
 																}
 															]
+															$string name "wall"
+															$string uniqueId "e47e56ef-6f8e-4877-bc1c-781a315bf2dc"
 														},
 														{
-															$string name "window"
-															$string uniqueId "7fbd367d-7300-4c46-a64f-c2906f8eb17d"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [1.5066,117.2865,171.0316]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "adaa8247-8291-4e29-9e9e-9509433bebc6"
 																	$string type "pfm_actor"
+																	$string uniqueId "adaa8247-8291-4e29-9e9e-9509433bebc6"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "54530f7d-629a-43ed-b80e-768b6df720ca"
 																	$string type "pfm_model"
+																	$string uniqueId "54530f7d-629a-43ed-b80e-768b6df720ca"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/window"
 																		"bodyGroup"
 																		{
 																			$uint32 Window 0
 																		}
+																		$string model "props/flat_bedroom/window"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "a246e456-109e-4325-be4b-e782943cabf3"
 																	$string type "model"
+																	$string uniqueId "a246e456-109e-4325-be4b-e782943cabf3"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "f8e95951-24cb-4bc8-b3d5-bd89ef86dc8e"
 																	$string type "render"
+																	$string uniqueId "f8e95951-24cb-4bc8-b3d5-bd89ef86dc8e"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "6817f150-9baf-4a8f-ad0d-853148c241ab"
 																	$string type "light_map_receiver"
+																	$string uniqueId "6817f150-9baf-4a8f-ad0d-853148c241ab"
 																}
 															]
+															$string name "window"
+															$string uniqueId "7fbd367d-7300-4c46-a64f-c2906f8eb17d"
 														},
 														{
-															$string name "board"
-															$string uniqueId "e31676a8-aae8-4356-b144-d61a857a1df3"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-160.1641,122.0554,-52.977]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "a1e09453-02dc-49ea-848c-b2e888f9e02e"
 																	$string type "pfm_actor"
+																	$string uniqueId "a1e09453-02dc-49ea-848c-b2e888f9e02e"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "eee576ea-af3b-4e4c-a8b5-e88a0b6f13d9"
 																	$string type "pfm_model"
+																	$string uniqueId "eee576ea-af3b-4e4c-a8b5-e88a0b6f13d9"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/board"
 																		"bodyGroup"
 																		{
 																			$uint32 Board 0
 																		}
+																		$string model "props/flat_bedroom/board"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "f9b10af7-5afb-46ca-961d-74cf576e6e90"
 																	$string type "model"
+																	$string uniqueId "f9b10af7-5afb-46ca-961d-74cf576e6e90"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "02d471e6-c68a-44ea-8e8b-0bf61d9ce54a"
 																	$string type "render"
+																	$string uniqueId "02d471e6-c68a-44ea-8e8b-0bf61d9ce54a"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "49972b4d-27de-45e4-b41d-82612a3db27e"
 																	$string type "light_map_receiver"
+																	$string uniqueId "49972b4d-27de-45e4-b41d-82612a3db27e"
 																}
 															]
+															$string name "board"
+															$string uniqueId "e31676a8-aae8-4356-b144-d61a857a1df3"
 														},
 														{
-															$string name "wallshelf"
-															$string uniqueId "7e463de1-59a7-4d34-933b-40b3cf3125b8"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-150.7929,130.0088,90.7683]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "ad87b941-0fd3-4cf0-a3a5-af3b5100d955"
 																	$string type "pfm_actor"
+																	$string uniqueId "ad87b941-0fd3-4cf0-a3a5-af3b5100d955"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "150e55e8-7fa5-42c5-80c0-c21f815a706f"
 																	$string type "pfm_model"
+																	$string uniqueId "150e55e8-7fa5-42c5-80c0-c21f815a706f"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/wallshelf"
 																		"bodyGroup"
 																		{
 																			$uint32 Wallshelf 0
 																		}
+																		$string model "props/flat_bedroom/wallshelf"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "542c0f21-6e46-49a7-9673-89471f2a7eeb"
 																	$string type "model"
+																	$string uniqueId "542c0f21-6e46-49a7-9673-89471f2a7eeb"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "ea3e8306-18cb-400a-80ba-ad99ac4aa3c1"
 																	$string type "render"
+																	$string uniqueId "ea3e8306-18cb-400a-80ba-ad99ac4aa3c1"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "8768c696-1426-4603-98fe-6c8838c8f66e"
 																	$string type "light_map_receiver"
+																	$string uniqueId "8768c696-1426-4603-98fe-6c8838c8f66e"
 																}
 															]
+															$string name "wallshelf"
+															$string uniqueId "7e463de1-59a7-4d34-933b-40b3cf3125b8"
 														},
 														{
-															$string name "succulent"
-															$string uniqueId "ab4fdcb0-cc64-4b51-bec2-8fe8cdbb8990"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-148.6856,127.7138,114.6735]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "8e9bdd6b-ea87-4e32-a964-0c0b3a1bc800"
 																	$string type "pfm_actor"
+																	$string uniqueId "8e9bdd6b-ea87-4e32-a964-0c0b3a1bc800"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "c4793772-18a3-4c20-9d14-e2bb2d0a48e9"
 																	$string type "pfm_model"
+																	$string uniqueId "c4793772-18a3-4c20-9d14-e2bb2d0a48e9"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/succulent"
 																		"bodyGroup"
 																		{
 																			$uint32 Succulent 0
 																		}
+																		$string model "props/flat_bedroom/succulent"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "3f5480e9-c913-48c3-a2e9-ecdd81dda69f"
 																	$string type "model"
+																	$string uniqueId "3f5480e9-c913-48c3-a2e9-ecdd81dda69f"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "1092847d-7128-4a76-94a7-1549e75dcc02"
 																	$string type "render"
+																	$string uniqueId "1092847d-7128-4a76-94a7-1549e75dcc02"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "560794d2-bceb-4456-be8f-c26e8bf0c788"
 																	$string type "light_map_receiver"
+																	$string uniqueId "560794d2-bceb-4456-be8f-c26e8bf0c788"
 																}
 															]
+															$string name "succulent"
+															$string uniqueId "ab4fdcb0-cc64-4b51-bec2-8fe8cdbb8990"
 														},
 														{
-															$string name "succulent_001"
-															$string uniqueId "6caf6282-c4db-4e30-9c99-ce1c04195376"
 															$array components [element;5][
 																{
 																	"properties"
 																	{
 																		$vec3 position [-149.608,111.5977,66.2825]
 																		$quat rotation [1,0,0,0]
-																		$bool visible 1
 																		$vec3 scale [1,1,1]
 																		$bool static 1
+																		$bool visible 1
 																	}
-																	$string uniqueId "f540690c-b64b-4acb-8cf9-b32ebe432456"
 																	$string type "pfm_actor"
+																	$string uniqueId "f540690c-b64b-4acb-8cf9-b32ebe432456"
 																},
 																{
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
-																	$string uniqueId "e06eb9b5-ecd6-4809-af82-6d810fefcfc0"
 																	$string type "pfm_model"
+																	$string uniqueId "e06eb9b5-ecd6-4809-af82-6d810fefcfc0"
 																},
 																{
 																	"properties"
 																	{
-																		$uint32 skin 0
-																		$string model "props/flat_bedroom/succulent_001"
 																		"bodyGroup"
 																		{
 																			$uint32 Succulent.001 0
 																		}
+																		$string model "props/flat_bedroom/succulent_001"
+																		$uint32 skin 0
 																	}
-																	$string uniqueId "e5a677e9-fe26-4024-a8e4-dd00f9deb3d7"
 																	$string type "model"
+																	$string uniqueId "e5a677e9-fe26-4024-a8e4-dd00f9deb3d7"
 																},
 																{
 																	"properties"
 																	{
 																		$bool castShadows 1
 																	}
-																	$string uniqueId "f92f9b66-9371-4a2b-9e59-f4c27689a6a5"
 																	$string type "render"
+																	$string uniqueId "f92f9b66-9371-4a2b-9e59-f4c27689a6a5"
 																},
 																{
 																	"properties"
 																	{
 
 																	}
-																	$string uniqueId "efa986b5-2430-4d40-ab65-af37df643250"
 																	$string type "light_map_receiver"
+																	$string uniqueId "efa986b5-2430-4d40-ab65-af37df643250"
 																}
 															]
+															$string name "succulent_001"
+															$string uniqueId "6caf6282-c4db-4e30-9c99-ce1c04195376"
 														}
 													]
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$string name "scenebuild"
 													$array groups [element;0][]
+													$string name "scenebuild"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "6bc7cd4d-e8ce-4168-acf3-2f0dd6db7dd2"
+													$bool visible 1
 												}
 											]
 											$string name ""
-											$string uniqueId "83c01533-31ca-4cdd-a620-203dfdd837a0"
 											$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-											$array actors [element;0][]
+											$string uniqueId "83c01533-31ca-4cdd-a620-203dfdd837a0"
 											$bool visible 1
 										}
-										$string name "shot1"
-										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
-										$array bookmarkSets [element;0][]
+										"timeFrame"
+										{
+											$float duration 60
+											$float offset 0
+											$float scale 1
+											$float start 0
+										}
 										$array trackGroups [element;1][
 											{
 												$bool muted 0
 												$string name "channelTrackGroup"
-												$bool visible 1
 												$array tracks [element;1][
 													{
 														$array animationClips [element;0][]
-														$bool muted 0
 														$array audioClips [element;0][]
 														$array filmClips [element;0][]
-														$array overlayClips [element;0][]
+														$bool muted 0
 														$string name "animSetEditorChannels"
-														$float volume 1
+														$array overlayClips [element;0][]
 														$string uniqueId "55d2167b-26b1-4e49-89ba-ef3e7e51b93f"
+														$float volume 1
 													}
 												]
 												$string uniqueId "7989692b-e298-4de3-bc51-faca6b098c45"
+												$bool visible 1
 											}
 										]
-										"timeFrame"
-										{
-											$float scale 1
-											$float offset 0
-											$float start 0
-											$float duration 60
-										}
-										$int32 activeBookmarkSet 0
-										$float fadeIn 0
-										$float fadeOut 0
 										$string uniqueId "a2951b11-9dfd-4709-bf4c-9d037f24d4cb"
 									}
 								]
-								$array overlayClips [element;0][]
+								$bool muted 0
 								$string name "Film"
-								$float volume 1
+								$array overlayClips [element;0][]
 								$string uniqueId "e6dd472c-27df-4448-b7a3-3cfccb8f0117"
+								$float volume 1
 							}
 						]
 						$string uniqueId "8043c218-eff3-4fdd-b255-b53c66d82715"
+						$bool visible 1
 					}
 				]
-				"timeFrame"
-				{
-					$float scale 1
-					$float offset 0
-					$float start 0
-					$float duration 60
-				}
-				$int32 activeBookmarkSet 0
-				$float fadeIn 0
-				$float fadeOut 0
 				$string uniqueId "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 			}
 		]
+		$string name ""
 		"settings"
 		{
-			$float playheadOffset 0
-			$string mapName "empty"
+			$string cameraView "Work"
+			$string layout "cfg/pfm/layouts/default.udm"
 			"layoutState"
 			{
 				$array containers [element;0][]
-				$array windows [element;0][]
 				"layout_state"
 				{
 					"containers"
@@ -2570,56 +2571,55 @@
 						}
 					}
 				}
+				$array windows [element;0][]
 			}
+			$string mapName "empty"
+			$float playheadOffset 0
+			$bool readOnly 1
 			"renderSettings"
 			{
-				$float panoramaRange 180
-				$uint32 width 1280
-				$uint32 frameRate 24
-				$string mode "combined"
-				$uint32 supersamplingFactor 2
-				$uint32 height 720
-				$bool preCalculateLight 0
-				$float exposure 50
-				$string renderEngine "cycles"
-				$uint32 numberOfFrames 1
-				$string deviceType "gpu"
-				$string preset "standard"
-				$uint32 maxTransparencyBounces 32
-				$float lightIntensityFactor 1
-				$string outputFormat "png"
+				$bool cameraFrustumCullingEnabled 1
+				$string cameraType "0"
 				$string colorTransform "filmic-blender"
 				$string colorTransformLook "Medium Contrast"
 				$string denoiseMode "detailed"
-				$bool renderWorld 1
+				$string deviceType "gpu"
+				$float emissionStrength 0
+				$float exposure 50
+				$uint32 frameRate 24
+				$uint32 height 720
+				$float lightIntensityFactor 1
+				$uint32 maxTransparencyBounces 32
+				$string mode "combined"
+				$uint32 numberOfFrames 1
+				$string outputFormat "png"
+				$float panoramaRange 180
+				$string panoramaType "equirectangular"
+				$bool preCalculateLight 0
+				$string preset "standard"
+				$string previewQuality "low"
+				$bool progressive 1
+				$bool progressiveRefinementEnabled 0
+				$bool pvsCullingEnabled 1
+				$string renderEngine "cycles"
 				$bool renderGameObjects 1
 				$bool renderPlayer 0
-				$bool cameraFrustumCullingEnabled 1
-				$bool pvsCullingEnabled 1
-				$bool progressiveRefinementEnabled 0
-				$bool transparentSky 0
-				$bool stereoscopic 1
-				$string previewQuality "low"
-				$string cameraType "0"
-				$string panoramaType "equirectangular"
-				$bool progressive 1
+				$bool renderWorld 1
 				$uint32 samples 20
+				$bool stereoscopic 1
+				$uint32 supersamplingFactor 2
 				$uint32 tileSize 512
+				$bool transparentSky 0
 				$string viewportMode "360_left_eye"
-				$float emissionStrength 0
+				$uint32 width 1280
 			}
-			$bool readOnly 1
-			$string layout "cfg/pfm/layouts/default.udm"
-			$string cameraView "Work"
 			"workCamera"
 			{
 				$float fov 90
 				$transform pose [[63.1501,76.5538,25.0716][-0.6416,-0.0287,0.7657,-0.0342]]
 			}
 		}
-		$string name ""
 		$string uniqueId "7220022f-6cca-43cb-9ed7-0bb59c3a872d"
-		$string activeClip "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 	}
 }
 $string assetType "PFMP"

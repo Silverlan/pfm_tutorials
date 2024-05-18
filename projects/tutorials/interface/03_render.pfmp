@@ -2,288 +2,253 @@
 {
 	"session"
 	{
-		"settings"
-		{
-			$float playheadOffset 0
-			$string mapName "pfm_demo"
-			"renderSettings"
-			{
-				$float panoramaRange 180
-				$uint32 width 1280
-				$uint32 frameRate 24
-				$uint32 height 720
-				$bool preCalculateLight 0
-				$string mode "combined"
-				$uint32 supersamplingFactor 1
-				$float exposure 50
-				$uint32 numberOfFrames 1
-				$string renderEngine "pragma"
-				$string deviceType "gpu"
-				$string preset "standard"
-				$uint32 maxTransparencyBounces 32
-				$float lightIntensityFactor 1
-				$string outputFormat "png"
-				$string colorTransform "filmic-blender"
-				$string colorTransformLook "Medium Contrast"
-				$string denoiseMode "detailed"
-				$bool renderWorld 1
-				$bool renderGameObjects 1
-				$bool renderPlayer 0
-				$bool cameraFrustumCullingEnabled 1
-				$bool pvsCullingEnabled 1
-				$bool progressiveRefinementEnabled 0
-				$bool transparentSky 0
-				$string previewQuality "low"
-				$bool stereoscopic 0
-				$string cameraType "0"
-				$string panoramaType "0"
-				$uint32 samples 20
-				$bool progressive 1
-				$uint32 tileSize 512
-				$string viewportMode "360_left_eye"
-				$float emissionStrength 0
-			}
-			"workCamera"
-			{
-				$transform pose [[-126.938,44.7671,144.329][0.9031,-0.0016,0.4295,0.0008]]
-				$float fov 90
-			}
-			$string cameraView "Work"
-			$string layout "cfg/pfm/layouts/default.udm"
-			$bool readOnly 1
-		}
+		$string activeClip "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 		$array clips [element;1][
 			{
+				$int32 activeBookmarkSet 0
+				$array bookmarkSets [element;0][]
+				$string camera ""
+				$float fadeIn 0
+				$float fadeOut 0
+				$string name "tut_render"
 				"scene"
 				{
+					$array actors [element;0][]
 					$array groups [element;0][]
 					$string name ""
-					$array actors [element;0][]
 					$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 					$string uniqueId "383d4edb-f5f5-4f27-81be-f79706911cd8"
 					$bool visible 1
 				}
-				$string camera ""
-				$string name "tut_render"
+				"timeFrame"
+				{
+					$float duration 60
+					$float offset 0
+					$float scale 1
+					$float start 0
+				}
 				$array trackGroups [element;1][
 					{
 						$bool muted 0
 						$string name "subClipTrackGroup"
-						$bool visible 1
 						$array tracks [element;1][
 							{
-								$bool muted 0
 								$array animationClips [element;0][]
 								$array audioClips [element;0][]
-								$array overlayClips [element;0][]
 								$array filmClips [element;1][
 									{
+										$int32 activeBookmarkSet 0
+										$array bookmarkSets [element;1][
+											{
+												$array bookmarks [element;0][]
+												$string name "keyframe"
+												$string uniqueId "252fdbb5-6d68-4f79-b8a6-c814e435733d"
+											}
+										]
+										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
+										$float fadeIn 0
+										$float fadeOut 0
+										$string name "shot1"
 										"scene"
 										{
+											$array actors [element;0][]
 											$array groups [element;3][
 												{
-													$array groups [element;0][]
-													$string name "environment"
 													$array actors [element;1][
 														{
 															$array components [element;5][
 																{
-																	$string type "pfm_actor"
 																	"properties"
 																	{
 																		$vec3 position [0,0,50]
 																		$quat rotation [1,0,0,0]
 																		$vec3 scale [1,1,1]
-																		$bool visible 1
 																		$bool static 0
+																		$bool visible 1
 																	}
+																	$string type "pfm_actor"
 																	$string uniqueId "0c465473-a858-4127-af5a-c4836b48b163"
 																},
 																{
-																	$string type "skybox"
 																	"properties"
 																	{
 
 																	}
+																	$string type "skybox"
 																	$string uniqueId "9706e0ab-1707-4b89-8755-f20d72252d29"
 																},
 																{
-																	$string type "pfm_sky"
 																	"properties"
 																	{
+																		$string skyTexture "skies/dusk379.hdr"
 																		$float strength 0.3
 																		$bool transparent 0
-																		$string skyTexture "skies/dusk379.hdr"
 																	}
+																	$string type "pfm_sky"
 																	$string uniqueId "5ef703d2-ed75-4971-9713-4e4d95270c7d"
 																},
 																{
-																	$string type "pfm_model"
 																	"properties"
 																	{
-																		$float flexControllerScale 1
 																		$bool flexControllerLimitsEnabled 1
+																		$float flexControllerScale 1
 																		"materialOverrides"
 																		{
 
 																		}
 																	}
+																	$string type "pfm_model"
 																	$string uniqueId "28039042-4fee-47a2-a0f6-f06f47d4760e"
 																},
 																{
-																	$string type "model"
 																	"properties"
 																	{
 																		$string model "maps/empty_sky/skybox_3"
 																		$uint32 skin 0
 																	}
+																	$string type "model"
 																	$string uniqueId "ee40c886-d6c9-479e-b358-b77a6d9ff1d2"
 																}
 															]
-															$string uniqueId "fea528ec-e49b-4d6b-9721-99e53644e53a"
 															$string name "sky"
+															$string uniqueId "fea528ec-e49b-4d6b-9721-99e53644e53a"
 														}
 													]
+													$array groups [element;0][]
+													$string name "environment"
 													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$string uniqueId "c203a4ae-3eff-4fca-9d61-bd2d5d0d3321"
 													$bool visible 1
 												},
 												{
-													$array groups [element;0][]
-													$string name "cameras"
 													$array actors [element;1][
 														{
 															$array components [element;3][
 																{
-																	$string type "pfm_actor"
 																	"properties"
 																	{
 																		$vec3 position [-37.2063,75.0292,232.1595]
 																		$quat rotation [0.0304,0.0064,0.9773,-0.2095]
 																		$vec3 scale [1,1,1]
-																		$bool visible 1
 																		$bool static 0
+																		$bool visible 1
 																	}
+																	$string type "pfm_actor"
 																	$string uniqueId "ed213285-4498-4ad5-a9d1-1a1ea027ac1f"
 																},
 																{
-																	$string type "pfm_camera"
 																	"properties"
 																	{
 
 																	}
+																	$string type "pfm_camera"
 																	$string uniqueId "2fc017da-127d-4f6e-ae54-3149a230c517"
 																},
 																{
-																	$string type "camera"
 																	"properties"
 																	{
-																		$float fov 90
 																		$float farz 32768
-																		$float nearz 1
 																		$float focalDistance 72
+																		$float fov 90
+																		$float nearz 1
 																	}
+																	$string type "camera"
 																	$string uniqueId "e6b3a51e-3175-4484-b291-45cd86d8b2c8"
 																}
 															]
-															$string uniqueId "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
 															$string name "scene_camera"
+															$string uniqueId "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
 														}
 													]
+													$array groups [element;0][]
+													$string name "cameras"
 													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 													$string uniqueId "4b4f1f85-0789-478e-bc5b-bf91dba41106"
 													$bool visible 1
 												},
 												{
-													$string name "misc"
 													$array actors [element;1][
 														{
-															$string name "tutorial_script"
-															$string uniqueId "301d206d-881f-4245-934b-c8fe78a68392"
 															$array components [element;2][
 																{
-																	$string type "pfm_actor"
-																	$string uniqueId "b5017504-cca8-4056-b90e-59ecb45d695f"
 																	"properties"
 																	{
 																		$vec3 position [5.451,33.9354,11.2042]
 																		$quat rotation [-0.52,0,0.8542,-0]
 																		$vec3 scale [1,1,1]
-																		$bool visible 1
 																		$bool static 0
+																		$bool visible 1
 																	}
+																	$string type "pfm_actor"
+																	$string uniqueId "b5017504-cca8-4056-b90e-59ecb45d695f"
 																},
 																{
-																	$string type "lua_script"
-																	$string uniqueId "2eec4988-7af2-4671-b69a-b46678548f66"
 																	"properties"
 																	{
+																		$string code "time.create_simple_timer(0.1,function() gui.Tutorial.start_tutorial('render') end)"
 																		$bool executeOnSpawn 1
 																		$string scriptFile "pfm/tutorials/interface/render.lua"
-																		$string code "time.create_simple_timer(0.1,function() gui.Tutorial.start_tutorial('render') end)"
 																	}
+																	$string type "lua_script"
+																	$string uniqueId "2eec4988-7af2-4671-b69a-b46678548f66"
 																}
 															]
+															$string name "tutorial_script"
+															$string uniqueId "301d206d-881f-4245-934b-c8fe78a68392"
 														}
 													]
-													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
-													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
-													$bool visible 1
 													$array groups [element;0][]
+													$string name "misc"
+													$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
+													$string uniqueId "1f5eb9a2-f8a2-48b1-9dd2-80aa18bab859"
+													$bool visible 1
 												}
 											]
 											$string name ""
-											$array actors [element;0][]
 											$stransform transform [[0,0,0][1,0,0,0][1,1,1]]
 											$string uniqueId "83c01533-31ca-4cdd-a620-203dfdd837a0"
 											$bool visible 1
 										}
-										$string camera "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
-										$string name "shot1"
+										"timeFrame"
+										{
+											$float duration 60
+											$float offset 0
+											$float scale 1
+											$float start 0
+										}
 										$array trackGroups [element;1][
 											{
 												$bool muted 0
 												$string name "channelTrackGroup"
-												$bool visible 1
 												$array tracks [element;1][
 													{
-														$bool muted 0
 														$array animationClips [element;1][
 															{
-																$string uniqueId "011594bf-6672-4e3b-94a3-898a03c0eaeb"
 																$string actor "e95c48a2-ab47-47db-8681-b62acdcf2a8f"
-																$string name "scene_camera"
 																"animation"
 																{
 																	"assetData"
 																	{
-																		$string flags "None"
-																		$float speedFactor 1
 																		$array channels [element;2][
 																			{
-																				$string targetPath "ec/pfm_actor/position"
 																				$string interpolation "Linear"
-																				$arrayLz4 times [float;25][0,0.0202,0.0505,0.0606,0.1111,0.1212,0.1717,0.2222,0.2525,0.303,0.3535,0.3939,0.4545,0.5051,0.5657,0.6465,0.7374,0.7879,0.798,0.8586,0.899,0.9192,0.9495,0.9899,1]
-																				$arrayLz4 values [vec3;25][[-114.8143,75.0292,232.1595],[-114.7243,74.997,232.1595],[-114.4826,74.8386,232.1595],[-114.3705,74.7595,232.1595],[-113.53,74.1939,232.1595],[-113.2973,74.0505,232.1595],[-111.7198,73.2065,232.1595],[-109.2119,72.1834,232.1595],[-107.0425,71.4994,232.1595],[-101.5824,70.2638,232.1595],[-91.6713,68.932,232.1595],[-78.5014,67.8128,232.1595],[-61.7013,66.0689,232.1595],[-53.9235,64.5764,232.1595],[-48.0949,62.7643,232.1595],[-43.2955,60.3594,232.1595],[-40.1022,57.7486,232.1595],[-38.9676,56.3787,232.1595],[-38.7829,56.114,232.1595],[-37.9235,54.6059,232.1595],[-37.556,53.6917,232.1595],[-37.4253,53.2673,232.1595],[-37.2892,52.6775,232.1595],[-37.2095,51.9911,232.1595],[-37.2063,51.8395,232.1595]]
+																				$string targetPath "ec/pfm_actor/position"
+																				$arrayLz4 times [float;25;100][8FUAAAAAeHqlPBfZTj21N3g9ZojjPbU3+D0g0i8+ZohjPq5HgT7RIps+9P20PkOtyT45tOg+PE4BP7fRED8GgSU/P8Y8P9CzST+6SUw/Ns1bP90kZj+xUGs/bxJzPxZqfT8AAIA/]
+																				$arrayLz4 values [vec3;25;300][8QTsoOXC8w6WQtUoaEPXcuXCd/6VDABiF/fkwl2tDABisr3kwt2EDABxXA/jwkdjlCQAYjiY4sLbGQwAcYpw38K6aZIYAHF+bNrC512QDABxwxXWwrH/jgwAcTAqy8IRh4wMAHG1V7fCL92JDABxuACdwieghwwAcSLOdsJHI4QMAHGqsVfCHieBDABxLWFAwqUOewwAcZguLcIHcHEMAHGnaCDCkf5mDABx094bwsqDYQwAcbEhG8K8dGAMAHGqsRfCcWxaDABxWDkWwk3EVgwAcYKzFcK3EVUMAHEkKBXCw7VSDABxh9YUwuP2TwwAwEDTFMKmW09C1ShoQw==]
 																			},
 																			{
-																				$string targetPath "ec/pfm_actor/rotation"
 																				$string interpolation "Linear"
-																				$arrayLz4 times [float;11][0,0.0808,0.1616,0.2626,0.3535,0.5556,0.6667,0.8081,0.8889,0.9899,1]
-																				$arrayLz4 values [quat;11][[0.5563,0.1192,0.8041,-0.1724],[0.5534,0.1186,0.8061,-0.1728],[0.5431,0.1163,0.8131,-0.1743],[0.5135,0.11,0.8321,-0.1784],[0.4583,0.0982,0.8637,-0.1852],[0.1952,0.0418,0.9581,-0.2054],[0.1023,0.0219,0.9724,-0.2084],[0.049,0.0104,0.9766,-0.2093],[0.036,0.0076,0.9771,-0.2094],[0.0304,0.0064,0.9773,-0.2095],[0.0304,0.0064,0.9773,-0.2095]]
+																				$string targetPath "ec/pfm_actor/rotation"
+																				$arrayLz4 times [float;11;44][8B0AAAAAeHqlPXh6JT6Cc4Y+9P20Ps07Dj/arCo/pN9OP/OOYz8Wan0/AACAPw==]
+																				$arrayLz4 values [quat;11;176][95EhH/Q9f9lNP6CJML6taQ4/j+TyPZJcTj988jC+n6sNP7Iu7j1SJ1A/s3syvpoICz+uR+E9gQRVP32uNr68dAM/FR3JPXEbXT8SpT2+TKbqPno2Kz0LRnU/YVRSvoLiRz6hZ7M8Ne94P89mVb6qgtE9w2QqPHUCej+9Ula+ObRIPWwJ+Ts6I3o/9GxWvrx0Ez0Xt9E7VTB6PyuHVr5sCfk8EABQvmwJ+Tw=]
 																			}
 																		]
 																		$float duration 0
+																		$string flags "None"
+																		$float speedFactor 1
 																	}
 																	$string assetType "PANIMA"
 																	$uint32 assetVersion 1
-																}
-																"timeFrame"
-																{
-																	$float scale 1
-																	$float duration 0
-																	$float start 0
-																	$float offset 0
 																}
 																"editorData"
 																{
@@ -291,8 +256,6 @@
 																		{
 																			"bookmarkSet"
 																			{
-																				$string uniqueId "f6fdaf69-6cb1-467c-af68-bec2d469c840"
-																				$string name "default"
 																				$array bookmarks [element;6][
 																					{
 																						$string note ""
@@ -317,57 +280,57 @@
 																					{
 																						$string note ""
 																						$float time 1
+																					}
+																				]
+																				$string name "default"
+																				$string uniqueId "f6fdaf69-6cb1-467c-af68-bec2d469c840"
+																			}
+																			"graphCurve"
+																			{
+																				$array keys [element;3][
+																					{
+																						$arrayLz4 easing [uint32;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 inDeltas [float;2;8][gCV1AsAAAACA]
+																						$arrayLz4 inHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 inTimes [float;2;8][gPT9JL8i/Wa/]
+																						$arrayLz4 interpolation [uint32;2;8][gAIAAAACAAAA]
+																						$arrayLz4 outDeltas [float;2;8][gCV1AkAAAAAA]
+																						$arrayLz4 outHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 outTimes [float;2;8][gPT9JD8i/WY/]
+																						$arrayLz4 times [float;2;8][gAAAAAAAAIA/]
+																						$arrayLz4 values [float;2;8][gOyg5cJA0xTC]
+																					},
+																					{
+																						$arrayLz4 easing [uint32;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 inDeltas [float;2;8][gAAAAABfB5JA]
+																						$arrayLz4 inHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 inTimes [float;2;8][gDsBjb6JQaC+]
+																						$arrayLz4 interpolation [uint32;2;8][gAIAAAACAAAA]
+																						$arrayLz4 outDeltas [float;2;8][gAAAAIBfB5LA]
+																						$arrayLz4 outHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 outTimes [float;2;8][gDsBjT6JQaA+]
+																						$arrayLz4 times [float;2;8][gAAAAAAAAIA/]
+																						$arrayLz4 values [float;2;8][gPMOlkKmW09C]
+																					},
+																					{
+																						$arrayLz4 easing [uint32;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 inDeltas [float;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 inHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 inTimes [float;2;8][gAAAwL8AAMC/]
+																						$arrayLz4 interpolation [uint32;2;8][gAIAAAACAAAA]
+																						$arrayLz4 outDeltas [float;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 outHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 outTimes [float;2;8][gAAAwD8AAMA/]
+																						$arrayLz4 times [float;2;8][gAAAAAAAAIA/]
+																						$arrayLz4 values [float;2;8][gNUoaEPVKGhD]
 																					}
 																				]
 																			}
 																			$string targetPath "ec/pfm_actor/position"
-																			"graphCurve"
-																			{
-																				$array keys [element;3][
-																					{
-																						$arrayLz4 interpolation [uint32;2][2,2]
-																						$arrayLz4 values [float;2][-114.8143,-37.2063]
-																						$arrayLz4 easing [uint32;2][0,0]
-																						$arrayLz4 outDeltas [float;2][2.0384,0]
-																						$arrayLz4 inTimes [float;2][-0.6445,-0.9023]
-																						$arrayLz4 inDeltas [float;2][-2.0384,-0]
-																						$arrayLz4 inHandleTypes [uint32;2][1,1]
-																						$arrayLz4 outTimes [float;2][0.6445,0.9023]
-																						$arrayLz4 outHandleTypes [uint32;2][1,1]
-																						$arrayLz4 times [float;2][0,1]
-																					},
-																					{
-																						$arrayLz4 interpolation [uint32;2][2,2]
-																						$arrayLz4 values [float;2][75.0292,51.8395]
-																						$arrayLz4 easing [uint32;2][0,0]
-																						$arrayLz4 outDeltas [float;2][-0,-4.5634]
-																						$arrayLz4 inTimes [float;2][-0.2754,-0.313]
-																						$arrayLz4 inDeltas [float;2][0,4.5634]
-																						$arrayLz4 inHandleTypes [uint32;2][1,1]
-																						$arrayLz4 outTimes [float;2][0.2754,0.313]
-																						$arrayLz4 outHandleTypes [uint32;2][1,1]
-																						$arrayLz4 times [float;2][0,1]
-																					},
-																					{
-																						$arrayLz4 interpolation [uint32;2][2,2]
-																						$arrayLz4 values [float;2][232.1595,232.1595]
-																						$arrayLz4 easing [uint32;2][0,0]
-																						$arrayLz4 outDeltas [float;2][0,0]
-																						$arrayLz4 inTimes [float;2][-1.5,-1.5]
-																						$arrayLz4 inDeltas [float;2][0,0]
-																						$arrayLz4 inHandleTypes [uint32;2][1,1]
-																						$arrayLz4 outTimes [float;2][1.5,1.5]
-																						$arrayLz4 outHandleTypes [uint32;2][1,1]
-																						$arrayLz4 times [float;2][0,1]
-																					}
-																				]
-																			}
 																		},
 																		{
 																			"bookmarkSet"
 																			{
-																				$string uniqueId "08447be6-b9da-4ff9-a85d-62555257555a"
-																				$string name "default"
 																				$array bookmarks [element;6][
 																					{
 																						$string note ""
@@ -394,110 +357,147 @@
 																						$float time 1
 																					}
 																				]
+																				$string name "default"
+																				$string uniqueId "08447be6-b9da-4ff9-a85d-62555257555a"
 																			}
-																			$string targetPath "ec/pfm_actor/rotation"
 																			"graphCurve"
 																			{
 																				$array keys [element;3][
 																					{
-																						$arrayLz4 interpolation [uint32;2][2,2]
-																						$arrayLz4 values [float;2][24.1958,24.1958]
-																						$arrayLz4 easing [uint32;2][0,0]
-																						$arrayLz4 outDeltas [float;2][0,0]
-																						$arrayLz4 inTimes [float;2][-1.5,-1.5]
-																						$arrayLz4 inDeltas [float;2][0,0]
-																						$arrayLz4 inHandleTypes [uint32;2][1,1]
-																						$arrayLz4 outTimes [float;2][1.5,1.5]
-																						$arrayLz4 outHandleTypes [uint32;2][1,1]
-																						$arrayLz4 times [float;2][0,1]
+																						$arrayLz4 easing [uint32;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 inDeltas [float;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 inHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 inTimes [float;2;8][gAAAwL8AAMC/]
+																						$arrayLz4 interpolation [uint32;2;8][gAIAAAACAAAA]
+																						$arrayLz4 outDeltas [float;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 outHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 outTimes [float;2;8][gAAAwD8AAMA/]
+																						$arrayLz4 times [float;2;8][gAAAAAAAAIA/]
+																						$arrayLz4 values [float;2;8][gACRwUEAkcFB]
 																					},
 																					{
-																						$arrayLz4 interpolation [uint32;2][2,2]
-																						$arrayLz4 values [float;2][110.6474,176.4402]
-																						$arrayLz4 easing [uint32;2][0,0]
-																						$arrayLz4 outDeltas [float;2][-0,0]
-																						$arrayLz4 inTimes [float;2][-0.6208,-0.6855]
-																						$arrayLz4 inDeltas [float;2][0,-0]
-																						$arrayLz4 inHandleTypes [uint32;2][1,1]
-																						$arrayLz4 outTimes [float;2][0.6208,0.6855]
-																						$arrayLz4 outHandleTypes [uint32;2][1,1]
-																						$arrayLz4 times [float;2][0,1]
+																						$arrayLz4 easing [uint32;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 inDeltas [float;2;8][gAAAAAAAAACA]
+																						$arrayLz4 inHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 inTimes [float;2;8][gMDsHr/ufC+/]
+																						$arrayLz4 interpolation [uint32;2;8][gAIAAAACAAAA]
+																						$arrayLz4 outDeltas [float;2;8][gAAAAIAAAAAA]
+																						$arrayLz4 outHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 outTimes [float;2;8][gMDsHj/ufC8/]
+																						$arrayLz4 times [float;2;8][gAAAAAAAAIA/]
+																						$arrayLz4 values [float;2;8][gHhL3UKxcDBD]
 																					},
 																					{
-																						$arrayLz4 interpolation [uint32;2][2,2]
-																						$arrayLz4 values [float;2][-0.0083,-0.0083]
-																						$arrayLz4 easing [uint32;2][0,0]
-																						$arrayLz4 outDeltas [float;2][0,0]
-																						$arrayLz4 inTimes [float;2][-1.5,-1.5]
-																						$arrayLz4 inDeltas [float;2][0,0]
-																						$arrayLz4 inHandleTypes [uint32;2][1,1]
-																						$arrayLz4 outTimes [float;2][1.5,1.5]
-																						$arrayLz4 outHandleTypes [uint32;2][1,1]
-																						$arrayLz4 times [float;2][0,1]
+																						$arrayLz4 easing [uint32;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 inDeltas [float;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 inHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 inTimes [float;2;8][gAAAwL8AAMC/]
+																						$arrayLz4 interpolation [uint32;2;8][gAIAAAACAAAA]
+																						$arrayLz4 outDeltas [float;2;8][gAAAAAAAAAAA]
+																						$arrayLz4 outHandleTypes [uint32;2;8][gAEAAAABAAAA]
+																						$arrayLz4 outTimes [float;2;8][gAAAwD8AAMA/]
+																						$arrayLz4 times [float;2;8][gAAAAAAAAIA/]
+																						$arrayLz4 values [float;2;8][gLn8B7y5/Ae8]
 																					}
 																				]
 																			}
+																			$string targetPath "ec/pfm_actor/rotation"
 																		}
 																	]
 																}
+																$string name "scene_camera"
+																"timeFrame"
+																{
+																	$float duration 0
+																	$float offset 0
+																	$float scale 1
+																	$float start 0
+																}
+																$string uniqueId "011594bf-6672-4e3b-94a3-898a03c0eaeb"
 															}
 														]
 														$array audioClips [element;0][]
-														$array overlayClips [element;0][]
 														$array filmClips [element;0][]
+														$bool muted 0
 														$string name "animSetEditorChannels"
-														$float volume 1
+														$array overlayClips [element;0][]
 														$string uniqueId "55d2167b-26b1-4e49-89ba-ef3e7e51b93f"
+														$float volume 1
 													}
 												]
 												$string uniqueId "7989692b-e298-4de3-bc51-faca6b098c45"
+												$bool visible 1
 											}
 										]
-										$array bookmarkSets [element;1][
-											{
-												$string uniqueId "252fdbb5-6d68-4f79-b8a6-c814e435733d"
-												$string name "keyframe"
-												$array bookmarks [element;0][]
-											}
-										]
-										$int32 activeBookmarkSet 0
-										"timeFrame"
-										{
-											$float scale 1
-											$float offset 0
-											$float start 0
-											$float duration 60
-										}
-										$float fadeIn 0
-										$float fadeOut 0
 										$string uniqueId "a2951b11-9dfd-4709-bf4c-9d037f24d4cb"
 									}
 								]
+								$bool muted 0
 								$string name "Film"
-								$float volume 1
+								$array overlayClips [element;0][]
 								$string uniqueId "e6dd472c-27df-4448-b7a3-3cfccb8f0117"
+								$float volume 1
 							}
 						]
 						$string uniqueId "8043c218-eff3-4fdd-b255-b53c66d82715"
+						$bool visible 1
 					}
 				]
-				$array bookmarkSets [element;0][]
-				$int32 activeBookmarkSet 0
-				"timeFrame"
-				{
-					$float scale 1
-					$float offset 0
-					$float start 0
-					$float duration 60
-				}
-				$float fadeIn 0
-				$float fadeOut 0
 				$string uniqueId "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 			}
 		]
 		$string name ""
+		"settings"
+		{
+			$string cameraView "Work"
+			$string layout "cfg/pfm/layouts/default.udm"
+			$string mapName "pfm_demo"
+			$float playheadOffset 0
+			$bool readOnly 1
+			"renderSettings"
+			{
+				$bool cameraFrustumCullingEnabled 1
+				$string cameraType "0"
+				$string colorTransform "filmic-blender"
+				$string colorTransformLook "Medium Contrast"
+				$string denoiseMode "detailed"
+				$string deviceType "gpu"
+				$float emissionStrength 0
+				$float exposure 50
+				$uint32 frameRate 24
+				$uint32 height 720
+				$float lightIntensityFactor 1
+				$uint32 maxTransparencyBounces 32
+				$string mode "combined"
+				$uint32 numberOfFrames 1
+				$string outputFormat "png"
+				$float panoramaRange 180
+				$string panoramaType "0"
+				$bool preCalculateLight 0
+				$string preset "standard"
+				$string previewQuality "low"
+				$bool progressive 1
+				$bool progressiveRefinementEnabled 0
+				$bool pvsCullingEnabled 1
+				$string renderEngine "pragma"
+				$bool renderGameObjects 1
+				$bool renderPlayer 0
+				$bool renderWorld 1
+				$uint32 samples 20
+				$bool stereoscopic 0
+				$uint32 supersamplingFactor 1
+				$uint32 tileSize 512
+				$bool transparentSky 0
+				$string viewportMode "360_left_eye"
+				$uint32 width 1280
+			}
+			"workCamera"
+			{
+				$float fov 90
+				$transform pose [[-126.938,44.7671,144.329][0.9031,-0.0016,0.4295,0.0008]]
+			}
+		}
 		$string uniqueId "7220022f-6cca-43cb-9ed7-0bb59c3a872d"
-		$string activeClip "a9a0857e-dcee-44ee-ba15-04a5fc634466"
 	}
 }
 $string assetType "PFMP"
