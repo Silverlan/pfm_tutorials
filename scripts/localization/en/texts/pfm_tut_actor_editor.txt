@@ -12,7 +12,7 @@ pfm_tut_actor_editor_component = "If you expand one of the components, you can f
 
 pfm_tut_actor_editor_property = "Here you can now see the current value for the property. You can click it to change its value. Depending on the type of property, you may get a different input field, like a text input field or a slider.\nMost properties can also be animated, but we'll get to that in a later tutorial.\n\nFor now, try changing the color of the light source by clicking this field."
 
-pfm_tut_actor_editor_new_component = "By default, actors will only have a small number of components depending on their type and you may need to add additional components yourself. For example, if you create a prop such as this chair, it will not have a \"{c_color_p_color}\" component by default. If you want to change its color, you will have to add the component manually first.\n\nTo do so, right-click the actor, then choose \"{pfm_add_new_component}\" and then click the \"{c_color}\" component in the list."
+pfm_tut_actor_editor_new_component = "By default, actors will only have a small number of components depending on their type and you may need to add additional components yourself. For example, if you create a prop such as this chair, it will not have a \"{c_color_p_color}\" component by default. If you want to change its color, you will have to add the component manually first.\n\nTo do so, right-click the actor, then choose \"{pfm_add_component}\" and then click the \"{c_color}\" component in the list."
 
 pfm_tut_actor_editor_chair_color = "Now try changing the chair's color to green."
 

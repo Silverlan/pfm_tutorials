@@ -173,8 +173,9 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 
 			slide:SetFocusElement(item)
 			slide:AddHighlight(uuidChair .. "/header")
-			slide:AddHighlight("context_menu/add_new_component")
-			slide:AddHighlight("context_menu_add_new_component/color", true)
+			slide:AddHighlight("context_menu/add_component")
+			slide:AddHighlight("context_menu_add_component/rendering")
+			slide:AddHighlight("context_menu_rendering/color", true)
 			-- TODO: Describe alt-key input mode
 			-- TODO: Describe re-mapping slider range
 			slide:AddGenericMessageBox()

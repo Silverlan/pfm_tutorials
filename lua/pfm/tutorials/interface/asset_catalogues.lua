@@ -195,7 +195,8 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 		init = function(tutorialData, slideData, slide)
 			tool.get_filmmaker():GoToWindow("model_catalog")
 			slide:AddHighlight(pfm.WINDOW_MODEL_CATALOG_UI_ID .. "/models_props_living_room_armchair")
-			slide:AddHighlight("context_menu/export_asset/gltf", true)
+			slide:AddHighlight("context_menu/export_asset")
+			slide:AddHighlight("context_menu_export_asset/gltf", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,

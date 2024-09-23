@@ -301,8 +301,10 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 					item:Expand(true)
 				end
 				slide:AddHighlight(tostring(lm:GetUniqueId()) .. "/header")
-				slide:AddHighlight("context_menu/add_new_component")
-				slide:AddHighlight("context_menu_add_new_component/light_spot_volume", true)
+				slide:AddHighlight("context_menu/add_component")
+				slide:AddHighlight("context_menu_add_component/rendering")
+				slide:AddHighlight("context_menu_rendering/lighting")
+				slide:AddHighlight("context_menu_lighting/light_spot_volume", true)
 
 				local actor = pfm.dereference(TARGET_ACTOR_VOLUMETRIC)
 				if actor ~= nil then
