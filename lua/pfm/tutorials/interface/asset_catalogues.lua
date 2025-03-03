@@ -248,7 +248,7 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 		end,
 		clear = function(tutorialData, slideData) end,
 		clearCondition = function(tutorialData, slideData)
-			return asset.exists("pfm/BarramundiFish/barramundifish", asset.TYPE_MODEL)
+			return asset.exists("pfm/barramundifish", asset.TYPE_MODEL)
 		end,
 		nextSlide = "map_import",
 	})
