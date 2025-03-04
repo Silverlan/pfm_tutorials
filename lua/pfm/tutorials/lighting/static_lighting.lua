@@ -78,7 +78,8 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 			tool.get_filmmaker():GoToWindow("actor_editor")
 			slide:AddHighlight("window_actor_editor/new_actor_button")
 			slide:AddHighlight("context_menu")
-			slide:AddHighlight("context_menu/point_light", true)
+			slide:AddHighlight("context_menu/lights")
+			slide:AddHighlight("context_menu_lights/point_light", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,
@@ -162,7 +163,8 @@ gui.Tutorial.register_tutorial("static_lighting", "tutorials/lighting/static_lig
 		init = function(tutorialData, slideData, slide)
 			slide:AddHighlight("window_actor_editor/new_actor_button")
 			slide:AddHighlight("context_menu")
-			slide:AddHighlight("context_menu/sky", true)
+			slide:AddHighlight("context_menu/scene")
+			slide:AddHighlight("context_menu_scene/sky", true)
 			slide:AddGenericMessageBox()
 		end,
 		clear = function(tutorialData, slideData) end,

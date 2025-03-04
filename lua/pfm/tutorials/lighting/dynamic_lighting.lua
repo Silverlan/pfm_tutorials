@@ -62,7 +62,8 @@ gui.Tutorial.register_tutorial("dynamic_lighting", "tutorials/lighting/dynamic_l
 	elTut:RegisterSlide("spot_light", {
 		init = function(tutorialData, slideData, slide)
 			slide:AddHighlight("window_actor_editor/new_actor_button")
-			slide:AddHighlight("context_menu/spot_light", true)
+			slide:AddHighlight("context_menu/lights")
+			slide:AddHighlight("context_menu_lights/spot_light", true)
 			slide:AddGenericMessageBox()
 
 			-- Move work camera to target location
