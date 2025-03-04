@@ -20,8 +20,10 @@ pfm_tut_actor_editor_custom_components = "Using Pragma's scripting API, you can 
 
 pfm_tut_actor_editor_create_icon = "You can create new actors, such as cameras, light sources, etc. by clicking this icon. You can also create new props or characters from this menu, however it is generally recommended to use the \"{pfm_model_catalog}\" for that instead.\n\nTo continue this tutorial, try creating a \"{c_fog_controller}\" actor."
 
-pfm_tut_actor_editor_fog_distance = "Now try changing the fog \"{c_fog_controller_p_start}\" property until you can see the fog appearing in the scene."
+pfm_tut_actor_editor_fog_distance = "Now try changing the fog \"{c_fog_controller_p_start}\" property by clicking and dragging this slider input field to the left until you can see the fog appearing in the scene."
 
-pfm_tut_actor_editor_fog_distance_range = "Sometimes you may want to set values outside of the default slider range of a property. In this case you can right-click the slider and select \"{pfm_remap_slider_range}\" to change the slider range."
+pfm_tut_actor_editor_fog_distance_range = "When you have a slider input field like this one, there are several different methods to change its value. You can click and drag the slider, click the arrows on the left and right to increment or decrement the value by 1, or click the input field and type in a new value directly, which also allows you to enter values beyond the slider's default range.\n\nWhen using the click-and-drag method, you can also hold down the shift key to change the value in smaller increments, or the control key to round the value to the nearest whole number."
+
+pfm_tut_actor_editor_keyframe = "You may have noticed this small diamond icon next to the property. This icon indicates that the property can be animated. By clicking it, you can insert a keyframe at the current time, which will store the current value of the property. By creating multiple keyframes at different times, you can create an animation that interpolates between the values of the keyframes.\n\nThis feature will be covered in more detail in a later tutorial, for now you can just ignore it."
 
 pfm_tut_actor_editor_conclusion = "This concludes the tutorial on the actor editor, as well as the series on the basic interface. There are still some interface elements, like the graph editor, that will be covered in future tutorials.\n\nYou can now end the tutorial, or press the continue-button to start the next series."

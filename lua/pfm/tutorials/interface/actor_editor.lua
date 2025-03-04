@@ -232,7 +232,8 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 
 			slide:SetFocusElement(actorEditor)
 			slide:AddHighlight(pfm.WINDOW_ACTOR_EDITOR_UI_ID .. "/new_actor_button")
-			slide:AddHighlight("context_menu/fog_controller", true)
+			slide:AddHighlight("context_menu/effects")
+			slide:AddHighlight("context_menu_effects/fog_controller", true)
 			slide:AddGenericMessageBox()
 		end,
 		clearCondition = function(tutorialData, slideData)
@@ -279,10 +280,21 @@ gui.Tutorial.register_tutorial("actor_editor", "tutorials/interface/actor_editor
 		init = function(tutorialData, slideData, slide)
 			setup_layout(slide)
 
-			-- TODO: Describe alt-key input mode
 			slide:SetFocusElement(slide:FindElementByPath("contents"))
 			slide:AddHighlight("property_controls/start")
 			slide:AddHighlight("context_menu/remap_slider_range", true)
+
+			slide:AddGenericMessageBox()
+		end,
+		nextSlide = "keyframe",
+	})
+
+	elTut:RegisterSlide("keyframe", {
+		init = function(tutorialData, slideData, slide)
+			setup_layout(slide)
+
+			slide:SetFocusElement(slide:FindElementByPath("contents"))
+			slide:AddHighlight("property_controls/keyframe_marker", true)
 
 			slide:AddGenericMessageBox()
 		end,
