@@ -412,7 +412,11 @@ gui.Tutorial.register_tutorial("render", "tutorials/interface/render", function(
 	elTut:RegisterSlide("viewport_next_tutorial", {
 		init = function(tutorialData, slideData, slide)
 			time.create_simple_timer(0.0, function()
-				pm:LoadTutorial("interface/web_browser")
+				local nextTutorial = "interface/web_browser"
+				if(console.get_convar_bool("pfm_sensitive_content_enabled") == false) then
+					nextTutorial = "interface/actor_editor"
+				end
+				pm:LoadTutorial(nextTutorial)
 			end)
 		end,
 	})

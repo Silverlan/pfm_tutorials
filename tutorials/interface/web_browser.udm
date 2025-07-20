@@ -6,4 +6,5 @@
 	$string series "interface"
 	$uint32 position_in_series 4
 	$string difficulty "beginner"
+	$bool contains_sensitive_content 1
 }
