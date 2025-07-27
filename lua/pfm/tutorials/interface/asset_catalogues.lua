@@ -234,6 +234,22 @@ gui.Tutorial.register_tutorial("asset_catalogues", "tutorials/interface/asset_ca
 			end
 
 			local filePath = DRAG_AND_DROP_ASSET
+
+			-- If the application is running in a sandboxed environment, we can't
+			-- open an explorer window to the asset file. As a work-around, we'll
+			-- copy it to the user data location first.
+			if(engine.is_application_sandboxed()) then
+				local programPath = util.get_program_write_path()
+				local programWritePath = util.get_program_path()
+				if(programWritePath ~= programPath) then
+					local absFilePath = file.find_absolute_path(filePath)
+					if(absFilePath ~= nil) then
+                        file.create_path(file.get_file_path(absFilePath))
+						file.copy(absFilePath, absFilePath)
+					end
+				end
+			end
+
 			util.open_path_in_explorer(file.get_file_path(filePath), file.get_file_name(filePath))
 
 			slide:AddHighlight("context_menu/import_as_single_model")
