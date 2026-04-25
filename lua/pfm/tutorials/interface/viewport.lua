@@ -41,7 +41,7 @@ gui.Tutorial.register_tutorial("viewport", "tutorials/interface/viewport", funct
 			if util.is_valid(slideData.targetEntity) == false then
 				return
 			end
-			local el = gui.create("WIGameObjectSelectionOutline")
+			local el = gui.create("game_object_selection_outline")
 			local elTgt = slide:FindElementByPath("window_primary_viewport/viewport", false)
 			if elTgt ~= nil then
 				el:SetTarget(elTgt, slideData.targetEntity)
